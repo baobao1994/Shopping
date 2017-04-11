@@ -18,16 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    SHTabbarController *tabBarVc = [[SHTabbarController alloc] init];
-//    self.window.rootViewController = tabBarVc;
-//    
-//    CATransition *anim = [[CATransition alloc] init];
-//    anim.type = @"rippleEffect";
-//    anim.duration = 1.0;
-//    [self.window.layer addAnimation:anim forKey:nil];
-//    
-//    [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    SHTabbarController *tabBarVc = [[SHTabbarController alloc] init];
+    self.window.rootViewController = tabBarVc;
+    
+    CATransition *anim = [[CATransition alloc] init];
+    anim.type = @"rippleEffect";
+    anim.duration = 1.0;
+    [self.window.layer addAnimation:anim forKey:nil];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -7,11 +7,9 @@
 //
 
 #import "SHTabbarController.h"
-//#import "SHHomeViewController.h"
-//#import "SHIMViewController.h"
-//#import "SHBussinessViewController.h"
-//#import "SHOAViewController.h"
-//#import "SHMyViewController.h"
+#import "HomeViewController.h"
+#import "MyViewController.h"
+#import "OrderViewController.h"
 #import "SHNavigationController.h"
 
 @interface SHTabbarController ()
@@ -41,27 +39,19 @@
 }
 
 - (void)setUpAllChildVc {
-//    SHHomeViewController *HomeVC = [[SHHomeViewController alloc] init];
-//    [self setUpOneChildVcWithVc:HomeVC Image:@"tabbar_home_normal" selectedImage:@"tabbar_home_select" title:@"首页"];
-//
-//    SHIMViewController *IMVC = [[SHIMViewController alloc] init];
-//    [self setUpOneChildVcWithVc:IMVC Image:@"tabbar_score_normal" selectedImage:@"tabbar_score_select" title:@"消息"];
-//
-//    SHBussinessViewController *BussinessVC = [[SHBussinessViewController alloc] init];
-//    [self setUpOneChildVcWithVc:BussinessVC Image:@"tabbar_prize_normal" selectedImage:@"tabbar_prize_select" title:@"交易"];
-//
-//    SHOAViewController *OAVC = [[SHOAViewController alloc] init];
-//    [self setUpOneChildVcWithVc:OAVC Image:@"tabbar_order_normal" selectedImage:@"tabbar_order_select" title:@"OA办公"];
-//    
-//    SHMyViewController *MyVC = [[SHMyViewController alloc] init];
-//    [self setUpOneChildVcWithVc:MyVC Image:@"tabbar_my_normal" selectedImage:@"tabbar_my_select" title:@"我的"];
+    HomeViewController *HomeVC = [[HomeViewController alloc] init];
+    [self setUpOneChildVcWithVc:HomeVC Image:@"tabbar_home_normal" selectedImage:@"tabbar_home_select" title:@"首页"];
+    OrderViewController *OrderVC = [[OrderViewController alloc] init];
+    [self setUpOneChildVcWithVc:OrderVC Image:@"tabbar_order_normal" selectedImage:@"tabbar_order_select" title:@"订单"];
+    MyViewController *MyVC = [[MyViewController alloc] init];
+    [self setUpOneChildVcWithVc:MyVC Image:@"tabbar_my_normal" selectedImage:@"tabbar_my_select" title:@"我的"];
 }
 
 #pragma mark - 初始化设置tabBar上面单个按钮的方法
 
 - (void)setUpOneChildVcWithVc:(UIViewController *)Vc Image:(NSString *)image selectedImage:(NSString *)selectedImage title:(NSString *)title {
     SHNavigationController *navigationController = [[SHNavigationController alloc] initWithRootViewController:Vc];
-    Vc.view.backgroundColor = RandomColor;
+    Vc.view.backgroundColor = [UIColor whiteColor];
     
     UIImage *myImage = [UIImage imageNamed:image];
     myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

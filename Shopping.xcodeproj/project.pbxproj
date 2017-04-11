@@ -234,6 +234,12 @@
 		BAF3CF5E1E9CCBB10000C9A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF5D1E9CCBB10000C9A9 /* Info.plist */; };
 		BAF3CF651E9CCEB60000C9A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF601E9CCEB60000C9A9 /* Info.plist */; };
 		BAF3CF671E9CCEB60000C9A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF631E9CCEB60000C9A9 /* Info.plist */; };
+		BAF3CF891E9CDE090000C9A9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CF871E9CDE090000C9A9 /* HomeViewController.m */; };
+		BAF3CF8A1E9CDE090000C9A9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF881E9CDE090000C9A9 /* HomeViewController.xib */; };
+		BAF3CF8E1E9CDE170000C9A9 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CF8C1E9CDE170000C9A9 /* MyViewController.m */; };
+		BAF3CF8F1E9CDE170000C9A9 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF8D1E9CDE170000C9A9 /* MyViewController.xib */; };
+		BAF3CF931E9CDE220000C9A9 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CF911E9CDE220000C9A9 /* OrderViewController.m */; };
+		BAF3CF941E9CDE220000C9A9 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF921E9CDE220000C9A9 /* OrderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -615,6 +621,15 @@
 		BAF3CF611E9CCEB60000C9A9 /* ShoppingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingTests.m; sourceTree = "<group>"; };
 		BAF3CF631E9CCEB60000C9A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAF3CF641E9CCEB60000C9A9 /* ShoppingUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingUITests.m; sourceTree = "<group>"; };
+		BAF3CF861E9CDE090000C9A9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		BAF3CF871E9CDE090000C9A9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		BAF3CF881E9CDE090000C9A9 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		BAF3CF8B1E9CDE170000C9A9 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		BAF3CF8C1E9CDE170000C9A9 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		BAF3CF8D1E9CDE170000C9A9 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		BAF3CF901E9CDE220000C9A9 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		BAF3CF911E9CDE220000C9A9 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		BAF3CF921E9CDE220000C9A9 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -821,6 +836,9 @@
 		BAF3CCD51E9C79C70000C9A9 /* Model(模型) */ = {
 			isa = PBXGroup;
 			children = (
+				BAF3CF831E9CDB2D0000C9A9 /* Home */,
+				BAF3CF841E9CDB2D0000C9A9 /* My */,
+				BAF3CF851E9CDB2D0000C9A9 /* Order */,
 				BAF3CE311E9CAC8A0000C9A9 /* WinMessage.h */,
 				BAF3CE321E9CAC8A0000C9A9 /* WinMessage.m */,
 			);
@@ -875,6 +893,9 @@
 		BAF3CCDF1E9C79C70000C9A9 /* View(视图) */ = {
 			isa = PBXGroup;
 			children = (
+				BAF3CF801E9CDB260000C9A9 /* Home */,
+				BAF3CF811E9CDB260000C9A9 /* My */,
+				BAF3CF821E9CDB260000C9A9 /* Order */,
 			);
 			path = "View(视图)";
 			sourceTree = "<group>";
@@ -882,6 +903,9 @@
 		BAF3CCE01E9C79C70000C9A9 /* ViewController(控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				BAF3CF7D1E9CDB1F0000C9A9 /* Home */,
+				BAF3CF7E1E9CDB1F0000C9A9 /* My */,
+				BAF3CF7F1E9CDB1F0000C9A9 /* Order */,
 				BAF3CCE11E9C79C70000C9A9 /* ViewController.h */,
 				BAF3CCE21E9C79C70000C9A9 /* ViewController.m */,
 			);
@@ -1513,6 +1537,78 @@
 			path = ShoppingUITests;
 			sourceTree = "<group>";
 		};
+		BAF3CF7D1E9CDB1F0000C9A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BAF3CF861E9CDE090000C9A9 /* HomeViewController.h */,
+				BAF3CF871E9CDE090000C9A9 /* HomeViewController.m */,
+				BAF3CF881E9CDE090000C9A9 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BAF3CF7E1E9CDB1F0000C9A9 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				BAF3CF8B1E9CDE170000C9A9 /* MyViewController.h */,
+				BAF3CF8C1E9CDE170000C9A9 /* MyViewController.m */,
+				BAF3CF8D1E9CDE170000C9A9 /* MyViewController.xib */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BAF3CF7F1E9CDB1F0000C9A9 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				BAF3CF901E9CDE220000C9A9 /* OrderViewController.h */,
+				BAF3CF911E9CDE220000C9A9 /* OrderViewController.m */,
+				BAF3CF921E9CDE220000C9A9 /* OrderViewController.xib */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		BAF3CF801E9CDB260000C9A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BAF3CF811E9CDB260000C9A9 /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BAF3CF821E9CDB260000C9A9 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		BAF3CF831E9CDB2D0000C9A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BAF3CF841E9CDB2D0000C9A9 /* My */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		BAF3CF851E9CDB2D0000C9A9 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1626,6 +1722,7 @@
 				BAF3CF3E1E9CBE3D0000C9A9 /* compose_photo_video_highlighted@2x.png in Resources */,
 				BAF3CF1F1E9CBE3D0000C9A9 /* camera_flashlight_open_disable@2x.png in Resources */,
 				BAF3CE1F1E9CA88E0000C9A9 /* rocker_image@2x.png in Resources */,
+				BAF3CF941E9CDE220000C9A9 /* OrderViewController.xib in Resources */,
 				BAF3CF201E9CBE3D0000C9A9 /* camera_image_capture_background_highlighted@2x.png in Resources */,
 				BAF3CF321E9CBE3D0000C9A9 /* compose_live_photo_open_only_icon@2x.png in Resources */,
 				BAF3CF411E9CBE3D0000C9A9 /* headlines_icon_arrow@2x.png in Resources */,
@@ -1677,6 +1774,7 @@
 				BAF3CE1E1E9CA88E0000C9A9 /* rocker_ball@3x.png in Resources */,
 				BAF3CF471E9CBE3D0000C9A9 /* timeline_image_gif@2x.png in Resources */,
 				BAF3CCA51E9C73BF0000C9A9 /* Main.storyboard in Resources */,
+				BAF3CF8F1E9CDE170000C9A9 /* MyViewController.xib in Resources */,
 				BAF3CE141E9CA88E0000C9A9 /* refreshing_image_1@2x.png in Resources */,
 				BAF3CE011E9CA88E0000C9A9 /* footerArrow.png in Resources */,
 				BAF3CF481E9CBE3D0000C9A9 /* video_delete_button@2x.png in Resources */,
@@ -1713,6 +1811,7 @@
 				BAF3CF151E9CBE3D0000C9A9 /* camera_camera_background@2x.png in Resources */,
 				BAF3CE0B1E9CA88E0000C9A9 /* refresh_rocker@2x.png in Resources */,
 				BAF3CF3D1E9CBE3D0000C9A9 /* compose_photo_video@2x.png in Resources */,
+				BAF3CF8A1E9CDE090000C9A9 /* HomeViewController.xib in Resources */,
 				BAF3CF281E9CBE3D0000C9A9 /* compose_gifbutton_background_highlighted@2x.png in Resources */,
 				BAF3CF1C1E9CBE3D0000C9A9 /* camera_flashlight_auto_disable@2x.png in Resources */,
 				BAF3CE111E9CA88E0000C9A9 /* refreshing_image_13@2x.png in Resources */,
@@ -1750,6 +1849,7 @@
 				BAF3CE4F1E9CB4F70000C9A9 /* AFSecurityPolicy.m in Sources */,
 				BAF3CD251E9C88FD0000C9A9 /* UIView+Addtion.m in Sources */,
 				BAF3CD571E9CA4F10000C9A9 /* UIButton+WebCache.m in Sources */,
+				BAF3CF891E9CDE090000C9A9 /* HomeViewController.m in Sources */,
 				BAF3CD551E9CA4F10000C9A9 /* SDWebImageManager.m in Sources */,
 				BAF3CF081E9CBE3D0000C9A9 /* HXPhotoPreviewViewCell.m in Sources */,
 				BAF3CF0B1E9CBE3D0000C9A9 /* HXPhotoTools.m in Sources */,
@@ -1798,6 +1898,7 @@
 				BAF3CF021E9CBE3D0000C9A9 /* HXCameraPreviewViewController.m in Sources */,
 				BAF3CDF91E9CA88E0000C9A9 /* PaddingTextField.m in Sources */,
 				BAF3CE231E9CA88E0000C9A9 /* AutoLoopScrollLabel.m in Sources */,
+				BAF3CF8E1E9CDE170000C9A9 /* MyViewController.m in Sources */,
 				BAF3CD1B1E9C88FD0000C9A9 /* NSDate+Addition.m in Sources */,
 				BAF3CF111E9CBE3D0000C9A9 /* HXVideoPresentTransition.m in Sources */,
 				BAF3CDFE1E9CA88E0000C9A9 /* UIViewController+Pop.m in Sources */,
@@ -1850,6 +1951,7 @@
 				BAF3CE7F1E9CB8520000C9A9 /* CLLockInfoView.m in Sources */,
 				BAF3CD181E9C88FD0000C9A9 /* LocalImageCache.m in Sources */,
 				BAF3CF531E9CBE3D0000C9A9 /* UIView+HXExtension.m in Sources */,
+				BAF3CF931E9CDE220000C9A9 /* OrderViewController.m in Sources */,
 				BAF3CD521E9CA4F10000C9A9 /* SDWebImageDecoder.m in Sources */,
 				BAF3CD1E1E9C88FD0000C9A9 /* UIButton+Addition.m in Sources */,
 				BAF3CF5A1E9CBFF70000C9A9 /* SHTabbarController.m in Sources */,
@@ -2019,7 +2121,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks/**";
-				GCC_PREFIX_HEADER = "/Users/guoweiwen1994/Desktop/InCommonUseTools 2/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/guoweiwen1994/Desktop/Shopping/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Shopping/Resource(资源)/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2033,7 +2135,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks/**";
-				GCC_PREFIX_HEADER = "/Users/guoweiwen1994/Desktop/InCommonUseTools 2/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "/Users/guoweiwen1994/Desktop/Shopping/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Shopping/Resource(资源)/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
