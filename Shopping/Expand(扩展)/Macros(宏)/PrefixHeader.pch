@@ -13,6 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <BmobSDK/Bmob.h>
 
 #define isEmptyString(obj) ([(obj) respondsToSelector:@selector(length)]==NO || (obj)==nil || [(obj) isEqual:[NSNull null]] || [(obj) length]==0)
 #define safeArray(obj) ((obj != nil && [(obj) respondsToSelector:@selector(objectAtIndex:)]) ? (obj) : nil)

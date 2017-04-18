@@ -26,11 +26,15 @@
     anim.type = @"rippleEffect";
     anim.duration = 1.0;
     [self.window.layer addAnimation:anim forKey:nil];
-    
+    self.window.backgroundColor = UIColorFromHexColor(0XFFFFFF);
     [self.window makeKeyAndVisible];
+    [self initBmob];
     return YES;
 }
 
+- (void)initBmob {
+    [Bmob registerWithAppKey:@"32fbb0135e919115092c0e0850636a77"];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

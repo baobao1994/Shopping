@@ -13,7 +13,7 @@
 + (UIImage *)imageOfRoundRectWithImage: (UIImage *)image
                                   size: (CGSize)size
                                 radius: (CGFloat)radius;
-+ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size;
 + (UIImage *)imageWithImageSimple:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

@@ -79,8 +79,8 @@ void addRoundRectToPath(CGContextRef context, CGRect rect, float radius, CGImage
     return image;
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0, 0, 1, 1);
++ (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size {
+    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);

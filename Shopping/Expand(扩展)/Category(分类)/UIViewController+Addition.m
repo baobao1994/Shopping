@@ -22,7 +22,7 @@
 }
 
 - (void)setNavigationBarColor:(UIColor *)color alpha:(CGFloat)alpha {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[color colorWithAlphaComponent:alpha > 0.95f ? 0.95f : alpha]] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[color colorWithAlphaComponent:alpha > 0.95f ? 0.95f : alpha] andSize:CGSizeMake(1, 1)] forBarMetrics:UIBarMetricsDefault];
     if (self.navigationController.viewControllers.count > 1) {
         UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
         view.backgroundColor = color; [self.view addSubview:view];

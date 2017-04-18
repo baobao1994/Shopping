@@ -10,6 +10,6 @@
 
 @interface CABasicAnimation (Addition)
 
-+(CABasicAnimation *)opacityForever_Animation:(float)time;
++ (CABasicAnimation *)opacityForever_Animation:(float)time;
 
 @end
