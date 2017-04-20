@@ -10,6 +10,10 @@
 
 @implementation ConstString
 
+#pragma mark - System
+
+NSString * const BaiduMapKey = @"W9qfPDQ0PRjNaGdBfI86SXPitQhuHKyt";
+
 #pragma mark - UserInfo
 
 NSString * const UserNameKey = @"user_name";
@@ -26,11 +30,11 @@ NSString * const ErrorTipsNoNetwork = @"网络连接错误，请稍后重试";
 
 #pragma mark - Scrollow
 
-NSString *const kIsCanScroll = @"isCanScroll";
-NSString *const kCanScroll = @"canScroll";
-NSString *const kNoScroll = @"noScroll";
-NSString *const kGoTopNotificationName = @"goTop";
-NSString *const kLeaveTopNotificationName = @"leaveTop";
+NSString * const kIsCanScroll = @"isCanScroll";
+NSString * const kCanScroll = @"canScroll";
+NSString * const kNoScroll = @"noScroll";
+NSString * const kGoTopNotificationName = @"goTop";
+NSString * const kLeaveTopNotificationName = @"leaveTop";
 
 #pragma mark - Cache
 NSString * const UserInfoCacheFile = @"cacheFile";

@@ -18,6 +18,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<string>baidumap</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -27,6 +29,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>访问照相机</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>是否允许定位</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问图片</string>
 	<key>UILaunchStoryboardName</key>
