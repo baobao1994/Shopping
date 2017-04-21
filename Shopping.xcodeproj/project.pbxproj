@@ -2422,7 +2422,7 @@
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/BaiduMapKit",
 				);
-				GCC_PREFIX_HEADER = "/Users/guoweiwen1994/Desktop/Shopping/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Shopping/Resource(资源)/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2448,7 +2448,7 @@
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/BaiduMapKit",
 				);
-				GCC_PREFIX_HEADER = "/Users/guoweiwen1994/Desktop/Shopping/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Shopping/Expand(扩展)/Macros(宏)/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Shopping/Resource(资源)/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
