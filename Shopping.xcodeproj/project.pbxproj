@@ -28,6 +28,14 @@
 		A520A2AE1EABB4A300359DB1 /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2AD1EABB4A300359DB1 /* AddressModel.m */; };
 		A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2B01EABB84900359DB1 /* EditAddressViewController.m */; };
 		A520A2B31EABB84900359DB1 /* EditAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A2B11EABB84900359DB1 /* EditAddressViewController.xib */; };
+		A520A2CE1EAC96A000359DB1 /* chiken_01.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2C61EAC96A000359DB1 /* chiken_01.png */; };
+		A520A2CF1EAC96A000359DB1 /* chiken_02.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2C71EAC96A000359DB1 /* chiken_02.png */; };
+		A520A2D01EAC96A000359DB1 /* chiken_03.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2C81EAC96A000359DB1 /* chiken_03.png */; };
+		A520A2D11EAC96A000359DB1 /* chiken_04.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2C91EAC96A000359DB1 /* chiken_04.png */; };
+		A520A2D21EAC96A000359DB1 /* chiken_05.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CA1EAC96A000359DB1 /* chiken_05.png */; };
+		A520A2D31EAC96A000359DB1 /* chiken_06.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CB1EAC96A000359DB1 /* chiken_06.png */; };
+		A520A2D41EAC96A000359DB1 /* chiken_07.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CC1EAC96A000359DB1 /* chiken_07.png */; };
+		A520A2D51EAC96A000359DB1 /* chiken_08.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CD1EAC96A000359DB1 /* chiken_08.png */; };
 		BA3017CC1E9E0A4200F7C518 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017C71E9E0A4200F7C518 /* JVFloatLabeledTextField.m */; };
 		BA3017CD1E9E0A4200F7C518 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017C91E9E0A4200F7C518 /* JVFloatLabeledTextView.m */; };
 		BA3017CE1E9E0A4200F7C518 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017CB1E9E0A4200F7C518 /* NSString+TextDirectionality.m */; };
@@ -367,6 +375,14 @@
 		A520A2AF1EABB84900359DB1 /* EditAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressViewController.h; sourceTree = "<group>"; };
 		A520A2B01EABB84900359DB1 /* EditAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressViewController.m; sourceTree = "<group>"; };
 		A520A2B11EABB84900359DB1 /* EditAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAddressViewController.xib; sourceTree = "<group>"; };
+		A520A2C61EAC96A000359DB1 /* chiken_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_01.png; sourceTree = "<group>"; };
+		A520A2C71EAC96A000359DB1 /* chiken_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_02.png; sourceTree = "<group>"; };
+		A520A2C81EAC96A000359DB1 /* chiken_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_03.png; sourceTree = "<group>"; };
+		A520A2C91EAC96A000359DB1 /* chiken_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_04.png; sourceTree = "<group>"; };
+		A520A2CA1EAC96A000359DB1 /* chiken_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_05.png; sourceTree = "<group>"; };
+		A520A2CB1EAC96A000359DB1 /* chiken_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_06.png; sourceTree = "<group>"; };
+		A520A2CC1EAC96A000359DB1 /* chiken_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_07.png; sourceTree = "<group>"; };
+		A520A2CD1EAC96A000359DB1 /* chiken_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_08.png; sourceTree = "<group>"; };
 		BA3017C61E9E0A4200F7C518 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		BA3017C71E9E0A4200F7C518 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		BA3017C81E9E0A4200F7C518 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
@@ -1434,6 +1450,14 @@
 		BAF3CDA11E9CA88E0000C9A9 /* PullAddDownTableView */ = {
 			isa = PBXGroup;
 			children = (
+				A520A2C61EAC96A000359DB1 /* chiken_01.png */,
+				A520A2C71EAC96A000359DB1 /* chiken_02.png */,
+				A520A2C81EAC96A000359DB1 /* chiken_03.png */,
+				A520A2C91EAC96A000359DB1 /* chiken_04.png */,
+				A520A2CA1EAC96A000359DB1 /* chiken_05.png */,
+				A520A2CB1EAC96A000359DB1 /* chiken_06.png */,
+				A520A2CC1EAC96A000359DB1 /* chiken_07.png */,
+				A520A2CD1EAC96A000359DB1 /* chiken_08.png */,
 				BAF3CDA21E9CA88E0000C9A9 /* EGORefreshTableFooterView.h */,
 				BAF3CDA31E9CA88E0000C9A9 /* EGORefreshTableFooterView.m */,
 				BAF3CDA41E9CA88E0000C9A9 /* EGORefreshTableHeaderView.h */,
@@ -2114,6 +2138,7 @@
 				BAF3CF4B1E9CBE3D0000C9A9 /* video_next_button@2x.png in Resources */,
 				BAF3CF221E9CBE3D0000C9A9 /* camera_overturn_highlighted@2x.png in Resources */,
 				BAF3CF181E9CBE3D0000C9A9 /* camera_close_highlighted@2x.png in Resources */,
+				A520A2CE1EAC96A000359DB1 /* chiken_01.png in Resources */,
 				BAF3CCAA1E9C73BF0000C9A9 /* LaunchScreen.storyboard in Resources */,
 				BAF3CF2F1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@3x.png in Resources */,
 				BAF3CE201E9CA88E0000C9A9 /* rocker_image@3x.png in Resources */,
@@ -2129,6 +2154,7 @@
 				BAF3CF671E9CCEB60000C9A9 /* Info.plist in Resources */,
 				BAF3CE081E9CA88E0000C9A9 /* refresh_logo@3x.png in Resources */,
 				BAF3CF351E9CBE3D0000C9A9 /* compose_photo_original@2x.png in Resources */,
+				A520A2D21EAC96A000359DB1 /* chiken_05.png in Resources */,
 				BAF3CF141E9CBE3D0000C9A9 /* camera_ Focusing@2x.png in Resources */,
 				BAF3CF491E9CBE3D0000C9A9 /* video_delete_button_highlighted@2x.png in Resources */,
 				BAF3CF5E1E9CCBB10000C9A9 /* Info.plist in Resources */,
@@ -2136,6 +2162,7 @@
 				BAF3CE1D1E9CA88E0000C9A9 /* rocker_ball@2x.png in Resources */,
 				BA3017F71E9E0CFE00F7C518 /* CouponViewController.xib in Resources */,
 				BA30180C1E9E256600F7C518 /* MyFooterview.xib in Resources */,
+				A520A2D51EAC96A000359DB1 /* chiken_08.png in Resources */,
 				BAF3CE041E9CA88E0000C9A9 /* headerArrow@2x.png in Resources */,
 				BAF3CF371E9CBE3D0000C9A9 /* compose_photo_photograph@2x.png in Resources */,
 				BAF3CE181E9CA88E0000C9A9 /* refreshing_image_5@2x.png in Resources */,
@@ -2169,6 +2196,8 @@
 				A520A29E1EAB42B900359DB1 /* PlaceBubbleView.xib in Resources */,
 				BAF3CF361E9CBE3D0000C9A9 /* compose_photo_original_highlighted@2x.png in Resources */,
 				BAF3CF5C1E9CCA700000C9A9 /* Assets.xcassets in Resources */,
+				A520A2D11EAC96A000359DB1 /* chiken_04.png in Resources */,
+				A520A2CF1EAC96A000359DB1 /* chiken_02.png in Resources */,
 				BAF3CE031E9CA88E0000C9A9 /* headerArrow.png in Resources */,
 				BAF3CF2C1E9CBE3D0000C9A9 /* compose_live_photo_background@2x.png in Resources */,
 				BAF3CE3E1E9CB4020000C9A9 /* ic_back@3x.png in Resources */,
@@ -2176,6 +2205,7 @@
 				BAF3CE101E9CA88E0000C9A9 /* refreshing_image_12@2x.png in Resources */,
 				A520A2A31EAB5BD000359DB1 /* MyAddressViewController.xib in Resources */,
 				BAF3CF341E9CBE3D0000C9A9 /* compose_photo_filter_checkbox_checked@2x.png in Resources */,
+				A520A2D01EAC96A000359DB1 /* chiken_03.png in Resources */,
 				BAF3CE0C1E9CA88E0000C9A9 /* refresh_rocker@3x.png in Resources */,
 				BAF3CF1A1E9CBE3D0000C9A9 /* camera_flashlight@2x.png in Resources */,
 				BAF3CF231E9CBE3D0000C9A9 /* camera_tag_dot_white@2x.png in Resources */,
@@ -2185,6 +2215,7 @@
 				BAF3CF4D1E9CBE3D0000C9A9 /* video_next_button_highlighted@2x.png in Resources */,
 				BAF3CF251E9CBE3D0000C9A9 /* camera_video_background_highlighted@2x.png in Resources */,
 				BAF3CF4A1E9CBE3D0000C9A9 /* video_delete_dustbin@2x.png in Resources */,
+				A520A2D31EAC96A000359DB1 /* chiken_06.png in Resources */,
 				A520A2991EAB33B500359DB1 /* PlaceTableViewCell.xib in Resources */,
 				BAF3CF151E9CBE3D0000C9A9 /* camera_camera_background@2x.png in Resources */,
 				BAF3CE0B1E9CA88E0000C9A9 /* refresh_rocker@2x.png in Resources */,
@@ -2194,6 +2225,7 @@
 				BAF3CF1C1E9CBE3D0000C9A9 /* camera_flashlight_auto_disable@2x.png in Resources */,
 				BA3017E81E9E0C6000F7C518 /* RegisterViewController.xib in Resources */,
 				BAF3CE111E9CA88E0000C9A9 /* refreshing_image_13@2x.png in Resources */,
+				A520A2D41EAC96A000359DB1 /* chiken_07.png in Resources */,
 				BAF3CEFD1E9CBE3D0000C9A9 /* Demo1ViewController.xib in Resources */,
 				BAF3CDE91E9CA88E0000C9A9 /* PayPasswordView.xib in Resources */,
 				BAF3CF501E9CBE3D0000C9A9 /* 椭圆-1@2x.png in Resources */,

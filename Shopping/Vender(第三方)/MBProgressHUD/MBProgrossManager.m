@@ -21,8 +21,8 @@
     return sharedAccountManagerInstance;
 }
 
-- (MBProgressHUD *)showOnlyText:(NSString *)text  HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack {
-  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:rootViewController.view animated:YES];
+- (MBProgressHUD *)showOnlyText:(NSString *)text HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack {
+   MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:rootViewController.view animated:YES];
     hudDidHidden = hudHiddenCallBack;
     hud.mode = MBProgressHUDModeText;
     hud.labelText = text;
@@ -36,6 +36,28 @@
     hud.labelText = text;
     hud.delegate = self;
     noNeedCallBack = YES;
+    return hud;
+}
+
+- (MBProgressHUD *)showSuccessOnlyText:(NSString *)text HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack {
+    MBProgressHUD *hud =  [MBProgressHUD showHUDAddedTo:rootViewController.view animated:YES];
+    hudDidHidden = hudHiddenCallBack;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/success.png"]]];
+    hud.labelText = text;
+    hud.delegate = self;
+    [hud hide:YES afterDelay:1.5];
+    return hud;
+}
+
+- (MBProgressHUD *)showErrorOnlyText:(NSString *)text HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack {
+    MBProgressHUD *hud =  [MBProgressHUD showHUDAddedTo:rootViewController.view animated:YES];
+    hudDidHidden = hudHiddenCallBack;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/error.png"]]];
+    hud.labelText = text;
+    hud.delegate = self;
+    [hud hide:YES afterDelay:1.5];
     return hud;
 }
 

@@ -13,16 +13,20 @@
 #pragma mark - System
 
 NSString * const BaiduMapKey = @"W9qfPDQ0PRjNaGdBfI86SXPitQhuHKyt";
+NSString * const SMSModelNameKey = @"shopping";
+NSString * const UserTable = @"User";
+NSString * const ObjectIdKey = @"objectId";
 
 #pragma mark - UserInfo
 
 NSString * const UserNameKey = @"user_name";
 NSString * const UserImageNameKey = @"user_imageName";
-NSString * const UserTelePhoneKey = @"user_telePhone";
+NSString * const UserTelePhoneKey = @"user_telephone";
 NSString * const UserBalanceKey = @"user_balance";
 NSString * const UserCouponKey = @"user_coupon";
 NSString * const UserIntegralKey = @"user_integral";
 NSString * const UserPasswordKey = @"user_password";
+NSString * const UserIsRememberKey = @"user_is_remember";
 NSString * const UserAddressKey = @"user_address";
 NSString * const UserDetailAddressKey = @"user_detail_address";
 NSString * const UserSexKey = @"user_sex";

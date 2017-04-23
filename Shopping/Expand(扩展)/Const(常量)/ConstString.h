@@ -13,6 +13,9 @@
 #pragma mark - System
 
 extern NSString * const BaiduMapKey;
+extern NSString * const SMSModelNameKey;
+extern NSString * const UserTable;
+extern NSString * const ObjectIdKey;
 
 #pragma mark - UserInfo
 
@@ -23,6 +26,7 @@ extern NSString * const UserBalanceKey;
 extern NSString * const UserCouponKey;
 extern NSString * const UserIntegralKey;
 extern NSString * const UserPasswordKey;
+extern NSString * const UserIsRememberKey;
 extern NSString * const UserAddressKey;
 extern NSString * const UserDetailAddressKey;
 extern NSString * const UserSexKey;

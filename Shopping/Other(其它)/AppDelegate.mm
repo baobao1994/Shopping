@@ -9,8 +9,12 @@
 #import "AppDelegate.h"
 #import "SHTabbarController.h"
 #import "ConstString.h"
+#import "UserManager.h"
+#import "UserInfoModel.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) UserManager *userManager;
 
 @end
 
@@ -31,6 +35,10 @@
     [self.window makeKeyAndVisible];
     [self initBmob];
     [self initBaiduMap];
+    self.userManager = UserManagerInstance;
+    if (!self.userManager.userInfo.isRemember) {
+        [self.userManager deleteUser];
+    }
     return YES;
 }
 

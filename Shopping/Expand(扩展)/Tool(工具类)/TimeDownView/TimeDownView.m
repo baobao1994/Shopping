@@ -12,9 +12,7 @@
 
 @interface TimeDownView()
 
-@property (nonatomic, strong) UIButton *timeButton;
 @property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, assign) NSInteger time;
 
 @end
 
@@ -61,7 +59,7 @@
 
 - (void)timeDown {
     _time --;
-    if (_time == 0) {
+    if (_time <= 0) {
         [_timeButton setTitle:@"重新获取" forState:UIControlStateNormal];
         _timeButton.enabled = YES;
         [self refreshButtonWidth];

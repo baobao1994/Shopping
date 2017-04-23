@@ -39,6 +39,8 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
+#pragma mark - Private Method
+
 - (void)setUp {
     if (self.isEdit) {
         self.title = @"编辑地址";

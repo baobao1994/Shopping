@@ -11,5 +11,7 @@
 @interface TimeDownView : UIView
 
 @property (nonatomic, copy) void (^didCountDown)(void);
+@property (nonatomic, strong) UIButton *timeButton;
+@property (nonatomic, assign) NSInteger time;
 
 @end

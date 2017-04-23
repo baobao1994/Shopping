@@ -31,7 +31,7 @@ static const NSString *PopToTagKey = @"PopToTagKey";
     self.navigationItem.leftBarButtonItem = backItem;
 }
 
-- (void)createNavigationRightItem:(NSString *)rightItemImageName {
+- (void)createNavigationRightItem:(NSString *)rightItemImageName  {
     UIButton *helpBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     if (rightItemImageName) {
         [helpBtn setImage:[UIImage imageNamed:rightItemImageName] forState:UIControlStateNormal];

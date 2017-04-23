@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class UserInfoModel;
+
 @interface MyHeaderView : UIView
 
 @property (weak, nonatomic) IBOutlet UIButton *changeUserLogoButton;
-@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+
+- (void)setHeaderContent:(UserInfoModel *)userInfoModel replaceLocalImage:(UIImage *)localImage;
 
 @end

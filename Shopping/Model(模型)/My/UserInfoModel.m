@@ -13,6 +13,7 @@
 
 - (id)initWithDictionary:(NSDictionary *)dic {
     if (self = [super init]) {
+        self.userObjectId = [dic objectForKey:ObjectIdKey];
         self.userName = [dic objectForKey:UserNameKey];
         self.userImageName = [dic objectForKey:UserImageNameKey];
         self.userTelePhone = [dic objectForKey:UserTelePhoneKey];
@@ -20,11 +21,13 @@
         self.userCoupon = [dic objectForKey:UserCouponKey];
         self.userIntegral = [dic objectForKey:UserIntegralKey];
         self.userPassword = [dic objectForKey:UserPasswordKey];
+        self.isRemember = [[dic objectForKey:UserIsRememberKey] boolValue];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.userObjectId forKey:ObjectIdKey];
     if (!isEmptyString(self.userName)) {
         [aCoder encodeObject:self.userName forKey:UserNameKey];
     }
@@ -40,10 +43,12 @@
     if (!isEmptyString(self.userPassword)) {
         [aCoder encodeObject:self.userPassword forKey:UserPasswordKey];
     }
+    [aCoder encodeObject:[NSNumber numberWithBool:self.isRemember] forKey:UserIsRememberKey];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
+        self.userObjectId = [aDecoder decodeObjectForKey:ObjectIdKey];
         self.userName = [aDecoder decodeObjectForKey:UserNameKey];
         self.userImageName = [aDecoder decodeObjectForKey:UserImageNameKey];
         self.userTelePhone = [aDecoder decodeObjectForKey:UserTelePhoneKey];
@@ -51,6 +56,7 @@
         self.userCoupon = [aDecoder decodeObjectForKey:UserCouponKey];
         self.userIntegral = [aDecoder decodeObjectForKey:UserIntegralKey];
         self.userPassword = [aDecoder decodeObjectForKey:UserPasswordKey];
+        self.isRemember = [[aDecoder decodeObjectForKey:UserIsRememberKey] boolValue];
     }
     return self;
 }

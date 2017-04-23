@@ -8,6 +8,7 @@
 #import "MBProgressHUD.h"
 
 @interface MBProgressHUD (ND)
+
 + (void)showSuccess:(NSString *)success toView:(UIView *)view;
 + (void)showError:(NSString *)error toView:(UIView *)view;
 
@@ -16,11 +17,12 @@
 
 + (void)showSuccess:(NSString *)success;
 + (void)showError:(NSString *)error;
-+(void)showTextOnly:(NSString *)text;
++ (void)showTextOnly:(NSString *)text;
 
 + (MBProgressHUD *)showMessage:(NSString *)message;
 
 + (void)hideHUDForView:(UIView *)view;
 + (void)hideHUD;
+
 
 @end

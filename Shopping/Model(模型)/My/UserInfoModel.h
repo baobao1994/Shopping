@@ -10,6 +10,7 @@
 
 @interface UserInfoModel : NSObject
 
+@property (nonatomic, copy) NSString *userObjectId;
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *userImageName;
 @property (nonatomic, copy) NSString *userTelePhone;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSNumber *userCoupon;
 @property (nonatomic, copy) NSNumber *userIntegral;
 @property (nonatomic, copy) NSString *userPassword;
+@property (nonatomic, assign) BOOL isRemember;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 

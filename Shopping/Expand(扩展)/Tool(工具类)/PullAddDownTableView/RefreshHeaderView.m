@@ -189,18 +189,19 @@ typedef enum{
 }
 
 - (void)loadComponent {
-    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh_logo"]];
-    logoImageView.center = CGPointMake(self.center.x, 90);
-    logoImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    [self addSubview:logoImageView];
+//    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh_logo"]];
+//    logoImageView.center = CGPointMake(self.center.x, 90);
+//    logoImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//    [self addSubview:logoImageView];
     
-    _normalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh_normal_image"]];
+    _normalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"chiken_01"]];
+    _normalImageView.frame = CGRectMake(0, 0, 40, 40);
     _normalImageView.center = CGPointMake(self.center.x, -_normalImageView.frame.size.height / 2 - 10);
     [self addSubview:_normalImageView];
     
     NSMutableArray *images = [[NSMutableArray alloc] initWithCapacity:6];
-    for (int i = 1; i < 16; i++) {
-        NSString *imageName = [NSString stringWithFormat:@"refreshing_image_%d", i];
+    for (int i = 1; i < 9; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"chiken_%02d", i];
         UIImage *image = [UIImage imageNamed:imageName];
         [images addObject:image];
     }
@@ -208,19 +209,19 @@ typedef enum{
     _normalImageView.animationRepeatCount = MAXFLOAT;
     _normalImageView.animationDuration = 0.4;
     
-    _rockerImageLayer = [CALayer layer];
-    _rockerImageLayer.frame = CGRectMake(0, 0, 2.0f, 13.0f);
-    _rockerImageLayer.position = CGPointMake(self.center.x + 33, -24);
-    _rockerImageLayer.anchorPoint = CGPointMake(0.5, 1);
-    _rockerImageLayer.contents = (id)[UIImage imageNamed:@"refresh_rocker"].CGImage;
-    [self.layer addSublayer:_rockerImageLayer];
+//    _rockerImageLayer = [CALayer layer];
+//    _rockerImageLayer.frame = CGRectMake(0, 0, 2.0f, 13.0f);
+//    _rockerImageLayer.position = CGPointMake(self.center.x + 33, -24);
+//    _rockerImageLayer.anchorPoint = CGPointMake(0.5, 1);
+//    _rockerImageLayer.contents = (id)[UIImage imageNamed:@"refresh_rocker"].CGImage;
+//    [self.layer addSublayer:_rockerImageLayer];
     
-    _rockerBallLayer = [CALayer layer];
-    _rockerBallLayer.frame = CGRectMake(0, 0, 5.0f, 5.0f);
-    _rockerBallLayer.position = CGPointMake(self.center.x + 33, -37);
-    
-    _rockerBallLayer.contents = (id)[UIImage imageNamed:@"rocker_ball"].CGImage;
-    [self.layer addSublayer:_rockerBallLayer];
+//    _rockerBallLayer = [CALayer layer];
+//    _rockerBallLayer.frame = CGRectMake(0, 0, 5.0f, 5.0f);
+//    _rockerBallLayer.position = CGPointMake(self.center.x + 33, -37);
+//    
+//    _rockerBallLayer.contents = (id)[UIImage imageNamed:@"rocker_ball"].CGImage;
+//    [self.layer addSublayer:_rockerBallLayer];
 }
 
 @end

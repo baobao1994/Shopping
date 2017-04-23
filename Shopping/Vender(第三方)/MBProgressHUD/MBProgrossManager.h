@@ -19,5 +19,7 @@ typedef void (^HudDidHidden)();
 + (MBProgrossManager *)shareInstance;
 -(MBProgressHUD *)showOnlyText:(NSString *)text  HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack;
 -(MBProgressHUD *)ShowWaitingViewWithText:(NSString *)text;
+-(MBProgressHUD *)showSuccessOnlyText:(NSString *)text  HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack;
+-(MBProgressHUD *)showErrorOnlyText:(NSString *)text  HudHiddenCallBack:(HudDidHidden)hudHiddenCallBack;
 
 @end

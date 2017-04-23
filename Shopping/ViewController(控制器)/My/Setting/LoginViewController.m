@@ -9,8 +9,22 @@
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
 #import "ForgetPwdViewController.h"
+#import "JVFloatLabeledTextField.h"
+#import "NSString+MD5.h"
+#import "UserInfoModel.h"
+#import "ConstString.h"
+#import "MBProgressHUD+ND.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *telephoneTF;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *pwdTF;
+@property (weak, nonatomic) IBOutlet UISwitch *rememberSwitch;
+@property (nonatomic, strong) UserInfoModel *userInfoModel;
 
 @end
 
@@ -18,25 +32,69 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"登录";
+    self.userInfoModel = UserManagerInstance.userInfo;
+    if (self.userInfoModel) {
+        if (self.userInfoModel.isRemember) {
+            self.rememberSwitch.on = YES;
+        } else {
+            self.rememberSwitch.on = NO;
+        }
+    }
+    self.contentViewWidthConstraint.constant = UIScreenWidth;
+    self.contentViewHeightConstraint.constant = UIScreenHeight - 63;
+    self.scrollView.contentSize = CGSizeMake(UIScreenWidth, UIScreenHeight);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)didSelectLoginBtn:(UIButton *)sender {
+    if (self.telephoneTF.text.length == 0) {
+        [MBProgrossManagerInstance showErrorOnlyText:@"请输入手机号" HudHiddenCallBack:nil];
+    } else if (self.pwdTF.text.length == 0) {
+        [MBProgrossManagerInstance showErrorOnlyText:@"请输入密码" HudHiddenCallBack:nil];
+    } else {
+        BmobQuery *bquery = [BmobQuery queryWithClassName:UserTable];
+        [bquery whereKey:UserTelePhoneKey equalTo:self.telephoneTF.text];
+        [bquery whereKey:UserPasswordKey equalTo:[self.pwdTF.text md5HexDigest]];
+        [bquery countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+            if (number) {
+                [MBProgrossManagerInstance showSuccessOnlyText:@"登录成功" HudHiddenCallBack:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            } else {
+                [MBProgrossManagerInstance showErrorOnlyText:@"账号密码错误" HudHiddenCallBack:nil];
+            }
+        }];
+        [bquery calcInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            if (array.count) {
+                [UserManagerInstance deleteUser];
+                self.userInfoModel = [[UserInfoModel alloc] initWithDictionary:array[0]];
+                self.userInfoModel.isRemember = self.rememberSwitch.isOn;
+                [UserManagerInstance saveUserInfo:self.userInfoModel];
+            }
+        }];
+    }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.navigationController pushViewController:[[RegisterViewController alloc] init] animated:YES];
+- (IBAction)didSelectPushRegisterVCBtn:(UIButton *)sender {
+    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)didSelectForgetPwdVCBtn:(UIButton *)sender {
+    ForgetPwdViewController *forgetPwdVC = [[ForgetPwdViewController alloc] init];
+    [self.navigationController pushViewController:forgetPwdVC animated:YES];
 }
-*/
+
+- (IBAction)didSelectHideKeyBoardBtn:(UIButton *)sender {
+    [self.view endEditing:YES];
+}
+
+- (IBAction)hideKeyBoard:(JVFloatLabeledTextField *)sender {
+    [sender resignFirstResponder];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
 
 @end

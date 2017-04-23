@@ -7,21 +7,22 @@
 //
 
 #import "MyViewController.h"
-#import "SearchPlaceViewController.h"
 #import "UITableViewCell+Addition.h"
 #import "MyAddressViewController.h"
 #import "MyAddressViewController.h"
 #import "PullToRefreshTableView.h"
 #import "HXPhotoViewController.h"
 #import "CATransition+Addition.h"
+#import "UIViewController+Pop.h"
 #import "LoginViewController.h"
 #import "MyTableViewCell.h"
 #import "UserInfoModel.h"
 #import "MyHeaderView.h"
 #import "MyFooterview.h"
-#import "UserManager.h"
+#import "ConstString.h"
 #import "MyModel.h"
 #import "Toast.h"
+#import "ForgetPwdViewController.h"
 
 @interface MyViewController () <PullToRefreshTableViewDelegate,UITableViewDelegate,UITableViewDataSource,HXPhotoViewControllerDelegate>
 
@@ -31,7 +32,7 @@
 @property (nonatomic, strong) NSMutableArray *itemArr;
 @property (strong, nonatomic) HXPhotoManager *manager;
 @property (nonatomic, strong) UIImage *userImage;
-@property (nonatomic, strong) UserManager *userManager;
+@property (nonatomic, strong) UserInfoModel *userInfoModel;
 
 @end
 
@@ -40,20 +41,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tableView.customTableDelegate = self;
-    [_tableView setRefreshCategory:NoRefresh];
-    _userManager = [UserManager shareInstance];
+    [_tableView setRefreshCategory:DropdownRefresh];
+    _tableView.customTableDelegate = self;
+    [self createNavigationRightItem:@"setting"];
     [self initItemData];
     [self initPhoto];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if (UserManagerInstance.userInfo) {
+        self.userInfoModel = UserManagerInstance.userInfo;
+    } else {
+        self.userImage = nil;
+    }
+    [self.tableView reloadData];
+}
+
+- (void)selectedNavigationRightItem:(id)sender {
+    NSLog(@"setting");
 }
 
 #pragma mark - PullToRefreshTableViewDelegate method
 
 - (void)getHeaderDataSoure {
-    [self reloadList];
+    if (UserManagerInstance.userInfo) {
+        [self reloadList];
+    } else {
+        [self pushLoginViewController];
+        [self.tableView doneLoadingTableViewData];
+    }
 }
 
 #pragma mark - UITableView Delegate method
@@ -89,6 +106,7 @@
         _myHeaderView = [[MyHeaderView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 150)];
         [_myHeaderView.changeUserLogoButton addTarget:self action:@selector(didSelectChangeUserLogoBtn:) forControlEvents:UIControlEventTouchUpInside];
     }
+    [_myHeaderView setHeaderContent:self.userInfoModel replaceLocalImage:self.userImage];
     return _myHeaderView;
 }
 
@@ -101,11 +119,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (_userManager.userInfo) {
-        
+    if (UserManagerInstance.userInfo) {
+        NSInteger row = indexPath.row;
+        if (row == 0) {
+            ForgetPwdViewController *forg = [[ForgetPwdViewController alloc] init];
+            [self.navigationController pushViewController:forg animated:YES];
+        } else if (row == 1) {
+            
+        } else if (row == 2) {
+            [self pushMyAddressViewController];
+        }
     } else {
-//        [self pushLoginViewController];
-//        [self pushSearcPlaceViewController];
+        [self pushLoginViewController];
         [self pushMyAddressViewController];
     }
 }
@@ -134,12 +159,6 @@
     [self.navigationController pushViewController:loginVC animated:NO];
 }
 
-- (void)pushSearcPlaceViewController {
-    SearchPlaceViewController *loginVC = [[SearchPlaceViewController alloc] init];
-    [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
-    [self.navigationController pushViewController:loginVC animated:NO];
-}
-
 - (void)pushMyAddressViewController {
     MyAddressViewController *loginVC = [[MyAddressViewController alloc] init];
     [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
@@ -147,12 +166,20 @@
 }
 
 - (void)reloadList {
-    [_tableView hideLoadedAllDataView];
+    BmobQuery *query = [BmobQuery queryWithClassName:UserTable];
+    [query getObjectInBackgroundWithId:_userInfoModel.userObjectId block:^(BmobObject *object, NSError *error) {
+        BOOL isRemeber = self.userInfoModel.isRemember;
+        self.userInfoModel = [[UserInfoModel alloc] initWithDictionary:(NSDictionary *)object];
+        self.userInfoModel.isRemember = isRemeber;
+        [UserManagerInstance saveUserInfo:self.userInfoModel];
+        [_tableView doneLoadingTableViewData];
+        [_tableView reloadData];
+    }];
 }
 
 - (void)initItemData {
     self.itemArr = [[NSMutableArray alloc] init];
-    NSArray *itemArr = @[@[@"integral_mall",@"积分商城"],@[@"collect",@"我的收藏"],@[@"collect",@"我的地址"]];
+    NSArray *itemArr = @[@[@"integral_mall",@"积分商城"],@[@"collect",@"我的收藏"],@[@"address",@"我的地址"]];
     for (NSArray *arr in itemArr) {
         MyModel *myModel = [[MyModel alloc] init];
         myModel.itemImageName = arr[0];
@@ -174,19 +201,22 @@
 #pragma mark - didSelectBtn
 
 - (void)didSelectChangeUserLogoBtn:(UIButton *)sender {
-    HXPhotoViewController *photoVC = [[HXPhotoViewController alloc] init];
-    photoVC.delegate = self;
-    photoVC.manager = self.manager;
-    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:photoVC] animated:YES completion:nil];
+    if (UserManagerInstance.userInfo.isRemember) {
+        HXPhotoViewController *photoVC = [[HXPhotoViewController alloc] init];
+        photoVC.delegate = self;
+        photoVC.manager = self.manager;
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:photoVC] animated:YES completion:nil];
+    } else {
+        [self pushLoginViewController];
+    }
 }
 
 #pragma mark - HXPhotoViewControllerDelegate
 
 - (void)photoViewControllerDidNext:(NSArray *)allList Photos:(NSArray *)photos Videos:(NSArray *)videos Original:(BOOL)original {
     if (photos.count) {
-        [[Toast makeText:@"更换头像成功"] show];
         HXPhotoModel *photoModel = photos[0];
-        self.myHeaderView.userImageView.image = photoModel.thumbPhoto;
+        self.userImage = photoModel.thumbPhoto;
         NSString *path_sandox = NSHomeDirectory();
         //设置一个图片的存储路径
         NSString *imagePath = [path_sandox stringByAppendingString:@"/Documents/logo.png"];
@@ -196,15 +226,14 @@
         BmobFile *imageFile = [[BmobFile alloc] initWithFilePath:imagePath];
         [imageFile saveInBackground:^(BOOL isSuccessful, NSError *error) {
             if (isSuccessful) {
-//                BmobObject *obj = [[BmobObject alloc] initWithClassName:@"_User"];
-//                [obj setObject:imageFile.url forKey:@"userImageUrl"];
-//                if (self.userImage) {
-//                    [obj updateInBackground];
-//                } else {
-//                    [obj saveInBackground];
-//                }
+                BmobObject *obj = [BmobObject objectWithoutDataWithClassName:UserTable objectId:self.userInfoModel.userObjectId];
+                [obj setObject:imageFile.url forKey:UserImageNameKey];
+                    [obj updateInBackground];
+                [MBProgrossManagerInstance showSuccessOnlyText:@"更换头像成功" HudHiddenCallBack:^{
+                    [self getHeaderDataSoure];
+                }];
             } else {
-//                [[Toast makeText:@"更换头像失败"] show];
+                [MBProgrossManagerInstance showErrorOnlyText:@"更换头像失败,请重试" HudHiddenCallBack:nil];
             }
         }];
     }
