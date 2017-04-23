@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlaceBubbleView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbV-4c-c7R">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="76"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTz-ga-q2a">
+                    <rect key="frame" x="340" y="0.0" width="35" height="76"/>
+                    <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="didSelectSureBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="HP3-FX-MN1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qTz-ga-q2a" firstAttribute="leading" secondItem="QbV-4c-c7R" secondAttribute="trailing" id="3fS-gZ-AO6"/>
+                <constraint firstAttribute="trailing" secondItem="qTz-ga-q2a" secondAttribute="trailing" id="95I-Uv-S2j"/>
+                <constraint firstAttribute="bottom" secondItem="QbV-4c-c7R" secondAttribute="bottom" id="FMB-Bm-wVv"/>
+                <constraint firstAttribute="trailing" secondItem="QbV-4c-c7R" secondAttribute="trailing" constant="35" id="STI-cY-mMn"/>
+                <constraint firstItem="qTz-ga-q2a" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="THh-jb-mZw"/>
+                <constraint firstAttribute="bottom" secondItem="qTz-ga-q2a" secondAttribute="bottom" id="d9M-Kr-uAX"/>
+                <constraint firstItem="QbV-4c-c7R" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m9T-Ld-LmG"/>
+                <constraint firstItem="QbV-4c-c7R" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mlG-a2-RKW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressLabel" destination="QbV-4c-c7R" id="5Ok-gg-gln"/>
+            </connections>
+            <point key="canvasLocation" x="-6.5" y="114"/>
+        </view>
+    </objects>
+</document>

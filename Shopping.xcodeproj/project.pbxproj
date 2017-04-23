@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50A04361EAB05E900764A42 /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50A04351EAB05E900764A42 /* BaiduMapManager.m */; };
+		A50A044A1EAB08ED00764A42 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A50A04431EAB08ED00764A42 /* MBProgressHUD.bundle */; };
+		A50A044B1EAB08ED00764A42 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A50A04451EAB08ED00764A42 /* MBProgressHUD.m */; };
+		A50A044C1EAB08ED00764A42 /* MBProgressHUD+ND.m in Sources */ = {isa = PBXBuildFile; fileRef = A50A04471EAB08ED00764A42 /* MBProgressHUD+ND.m */; };
+		A50A044D1EAB08ED00764A42 /* MBProgrossManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50A04491EAB08ED00764A42 /* MBProgrossManager.m */; };
+		A520A28A1EAB0A3300359DB1 /* TLMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2891EAB0A3300359DB1 /* TLMBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A520A28E1EAB0DCE00359DB1 /* SearchPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A28C1EAB0DCE00359DB1 /* SearchPlaceViewController.m */; };
+		A520A28F1EAB0DCE00359DB1 /* SearchPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A28D1EAB0DCE00359DB1 /* SearchPlaceViewController.xib */; };
+		A520A2921EAB32EE00359DB1 /* PlaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2911EAB32EE00359DB1 /* PlaceView.m */; };
+		A520A2941EAB330500359DB1 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A2931EAB330500359DB1 /* PlaceView.xib */; };
+		A520A2981EAB33B500359DB1 /* PlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2961EAB33B500359DB1 /* PlaceTableViewCell.m */; };
+		A520A2991EAB33B500359DB1 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A2971EAB33B500359DB1 /* PlaceTableViewCell.xib */; };
+		A520A29C1EAB42B100359DB1 /* PlaceBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A29B1EAB42B100359DB1 /* PlaceBubbleView.m */; };
+		A520A29E1EAB42B900359DB1 /* PlaceBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A29D1EAB42B900359DB1 /* PlaceBubbleView.xib */; };
+		A520A2A21EAB5BD000359DB1 /* MyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2A01EAB5BD000359DB1 /* MyAddressViewController.m */; };
+		A520A2A31EAB5BD000359DB1 /* MyAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A2A11EAB5BD000359DB1 /* MyAddressViewController.xib */; };
+		A520A2AA1EABB06100359DB1 /* MyAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2A81EABB06100359DB1 /* MyAddressTableViewCell.m */; };
+		A520A2AB1EABB06100359DB1 /* MyAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A2A91EABB06100359DB1 /* MyAddressTableViewCell.xib */; };
+		A520A2AE1EABB4A300359DB1 /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2AD1EABB4A300359DB1 /* AddressModel.m */; };
+		A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A520A2B01EABB84900359DB1 /* EditAddressViewController.m */; };
+		A520A2B31EABB84900359DB1 /* EditAddressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A520A2B11EABB84900359DB1 /* EditAddressViewController.xib */; };
 		BA3017CC1E9E0A4200F7C518 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017C71E9E0A4200F7C518 /* JVFloatLabeledTextField.m */; };
 		BA3017CD1E9E0A4200F7C518 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017C91E9E0A4200F7C518 /* JVFloatLabeledTextView.m */; };
 		BA3017CE1E9E0A4200F7C518 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017CB1E9E0A4200F7C518 /* NSString+TextDirectionality.m */; };
@@ -84,7 +105,6 @@
 		BAF3CD251E9C88FD0000C9A9 /* UIView+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD121E9C88FD0000C9A9 /* UIView+Addtion.m */; };
 		BAF3CD261E9C88FD0000C9A9 /* UIView+NIB.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD141E9C88FD0000C9A9 /* UIView+NIB.m */; };
 		BAF3CD271E9C88FD0000C9A9 /* UIViewController+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD161E9C88FD0000C9A9 /* UIViewController+Addition.m */; };
-		BAF3CD4D1E9CA4F10000C9A9 /* TLMBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD2A1E9CA4F10000C9A9 /* TLMBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BAF3CD4E1E9CA4F10000C9A9 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD2D1E9CA4F10000C9A9 /* MKAnnotationView+WebCache.m */; };
 		BAF3CD4F1E9CA4F10000C9A9 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD2F1E9CA4F10000C9A9 /* NSData+ImageContentType.m */; };
 		BAF3CD501E9CA4F10000C9A9 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CD311E9CA4F10000C9A9 /* SDImageCache.m */; };
@@ -313,6 +333,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50A04341EAB05E900764A42 /* BaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapManager.h; sourceTree = "<group>"; };
+		A50A04351EAB05E900764A42 /* BaiduMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapManager.m; sourceTree = "<group>"; };
+		A50A04431EAB08ED00764A42 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		A50A04441EAB08ED00764A42 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A50A04451EAB08ED00764A42 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		A50A04461EAB08ED00764A42 /* MBProgressHUD+ND.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ND.h"; sourceTree = "<group>"; };
+		A50A04471EAB08ED00764A42 /* MBProgressHUD+ND.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+ND.m"; sourceTree = "<group>"; };
+		A50A04481EAB08ED00764A42 /* MBProgrossManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgrossManager.h; sourceTree = "<group>"; };
+		A50A04491EAB08ED00764A42 /* MBProgrossManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgrossManager.m; sourceTree = "<group>"; };
+		A520A2881EAB0A3300359DB1 /* TLMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMBProgressHUD.h; sourceTree = "<group>"; };
+		A520A2891EAB0A3300359DB1 /* TLMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMBProgressHUD.m; sourceTree = "<group>"; };
+		A520A28B1EAB0DCE00359DB1 /* SearchPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPlaceViewController.h; sourceTree = "<group>"; };
+		A520A28C1EAB0DCE00359DB1 /* SearchPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPlaceViewController.m; sourceTree = "<group>"; };
+		A520A28D1EAB0DCE00359DB1 /* SearchPlaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPlaceViewController.xib; sourceTree = "<group>"; };
+		A520A2901EAB32EE00359DB1 /* PlaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceView.h; sourceTree = "<group>"; };
+		A520A2911EAB32EE00359DB1 /* PlaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceView.m; sourceTree = "<group>"; };
+		A520A2931EAB330500359DB1 /* PlaceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceView.xib; sourceTree = "<group>"; };
+		A520A2951EAB33B500359DB1 /* PlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewCell.h; sourceTree = "<group>"; };
+		A520A2961EAB33B500359DB1 /* PlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewCell.m; sourceTree = "<group>"; };
+		A520A2971EAB33B500359DB1 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		A520A29A1EAB42B100359DB1 /* PlaceBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceBubbleView.h; sourceTree = "<group>"; };
+		A520A29B1EAB42B100359DB1 /* PlaceBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceBubbleView.m; sourceTree = "<group>"; };
+		A520A29D1EAB42B900359DB1 /* PlaceBubbleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceBubbleView.xib; sourceTree = "<group>"; };
+		A520A29F1EAB5BD000359DB1 /* MyAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressViewController.h; sourceTree = "<group>"; };
+		A520A2A01EAB5BD000359DB1 /* MyAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressViewController.m; sourceTree = "<group>"; };
+		A520A2A11EAB5BD000359DB1 /* MyAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAddressViewController.xib; sourceTree = "<group>"; };
+		A520A2A71EABB06100359DB1 /* MyAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressTableViewCell.h; sourceTree = "<group>"; };
+		A520A2A81EABB06100359DB1 /* MyAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressTableViewCell.m; sourceTree = "<group>"; };
+		A520A2A91EABB06100359DB1 /* MyAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyAddressTableViewCell.xib; sourceTree = "<group>"; };
+		A520A2AC1EABB4A300359DB1 /* AddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressModel.h; sourceTree = "<group>"; };
+		A520A2AD1EABB4A300359DB1 /* AddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressModel.m; sourceTree = "<group>"; };
+		A520A2AF1EABB84900359DB1 /* EditAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressViewController.h; sourceTree = "<group>"; };
+		A520A2B01EABB84900359DB1 /* EditAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressViewController.m; sourceTree = "<group>"; };
+		A520A2B11EABB84900359DB1 /* EditAddressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAddressViewController.xib; sourceTree = "<group>"; };
 		BA3017C61E9E0A4200F7C518 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		BA3017C71E9E0A4200F7C518 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		BA3017C81E9E0A4200F7C518 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
@@ -433,8 +487,6 @@
 		BAF3CD141E9C88FD0000C9A9 /* UIView+NIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NIB.m"; sourceTree = "<group>"; };
 		BAF3CD151E9C88FD0000C9A9 /* UIViewController+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Addition.h"; sourceTree = "<group>"; };
 		BAF3CD161E9C88FD0000C9A9 /* UIViewController+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Addition.m"; sourceTree = "<group>"; };
-		BAF3CD291E9CA4F10000C9A9 /* TLMBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLMBProgressHUD.h; sourceTree = "<group>"; };
-		BAF3CD2A1E9CA4F10000C9A9 /* TLMBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLMBProgressHUD.m; sourceTree = "<group>"; };
 		BAF3CD2C1E9CA4F10000C9A9 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		BAF3CD2D1E9CA4F10000C9A9 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		BAF3CD2E1E9CA4F10000C9A9 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -807,6 +859,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50A04331EAB05E900764A42 /* BaiduManager */ = {
+			isa = PBXGroup;
+			children = (
+				A50A04341EAB05E900764A42 /* BaiduMapManager.h */,
+				A50A04351EAB05E900764A42 /* BaiduMapManager.m */,
+			);
+			path = BaiduManager;
+			sourceTree = "<group>";
+		};
 		BA3017C51E9E0A4200F7C518 /* JVFloatLabeledTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1039,6 +1100,7 @@
 			isa = PBXGroup;
 			children = (
 				BAF3CD5E1E9CA88D0000C9A9 /* AlertView */,
+				A50A04331EAB05E900764A42 /* BaiduManager */,
 				BAF3CD6C1E9CA88D0000C9A9 /* BasePopViewController */,
 				BAF3CE561E9CB8520000C9A9 /* CoreLock */,
 				BAF3CD6F1E9CA88D0000C9A9 /* CScrollerView */,
@@ -1164,8 +1226,15 @@
 		BAF3CD281E9CA4F10000C9A9 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				BAF3CD291E9CA4F10000C9A9 /* TLMBProgressHUD.h */,
-				BAF3CD2A1E9CA4F10000C9A9 /* TLMBProgressHUD.m */,
+				A520A2881EAB0A3300359DB1 /* TLMBProgressHUD.h */,
+				A520A2891EAB0A3300359DB1 /* TLMBProgressHUD.m */,
+				A50A04431EAB08ED00764A42 /* MBProgressHUD.bundle */,
+				A50A04441EAB08ED00764A42 /* MBProgressHUD.h */,
+				A50A04451EAB08ED00764A42 /* MBProgressHUD.m */,
+				A50A04461EAB08ED00764A42 /* MBProgressHUD+ND.h */,
+				A50A04471EAB08ED00764A42 /* MBProgressHUD+ND.m */,
+				A50A04481EAB08ED00764A42 /* MBProgrossManager.h */,
+				A50A04491EAB08ED00764A42 /* MBProgrossManager.m */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -1809,6 +1878,15 @@
 				BA3017F31E9E0CFE00F7C518 /* CouponViewController.h */,
 				BA3017F41E9E0CFE00F7C518 /* CouponViewController.m */,
 				BA3017F51E9E0CFE00F7C518 /* CouponViewController.xib */,
+				A520A28B1EAB0DCE00359DB1 /* SearchPlaceViewController.h */,
+				A520A28C1EAB0DCE00359DB1 /* SearchPlaceViewController.m */,
+				A520A28D1EAB0DCE00359DB1 /* SearchPlaceViewController.xib */,
+				A520A29F1EAB5BD000359DB1 /* MyAddressViewController.h */,
+				A520A2A01EAB5BD000359DB1 /* MyAddressViewController.m */,
+				A520A2A11EAB5BD000359DB1 /* MyAddressViewController.xib */,
+				A520A2AF1EABB84900359DB1 /* EditAddressViewController.h */,
+				A520A2B01EABB84900359DB1 /* EditAddressViewController.m */,
+				A520A2B11EABB84900359DB1 /* EditAddressViewController.xib */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1842,6 +1920,18 @@
 				BA3018081E9E255C00F7C518 /* MyFooterview.h */,
 				BA3018091E9E255C00F7C518 /* MyFooterview.m */,
 				BA30180B1E9E256600F7C518 /* MyFooterview.xib */,
+				A520A2901EAB32EE00359DB1 /* PlaceView.h */,
+				A520A2911EAB32EE00359DB1 /* PlaceView.m */,
+				A520A2931EAB330500359DB1 /* PlaceView.xib */,
+				A520A2951EAB33B500359DB1 /* PlaceTableViewCell.h */,
+				A520A2961EAB33B500359DB1 /* PlaceTableViewCell.m */,
+				A520A2971EAB33B500359DB1 /* PlaceTableViewCell.xib */,
+				A520A29A1EAB42B100359DB1 /* PlaceBubbleView.h */,
+				A520A29B1EAB42B100359DB1 /* PlaceBubbleView.m */,
+				A520A29D1EAB42B900359DB1 /* PlaceBubbleView.xib */,
+				A520A2A71EABB06100359DB1 /* MyAddressTableViewCell.h */,
+				A520A2A81EABB06100359DB1 /* MyAddressTableViewCell.m */,
+				A520A2A91EABB06100359DB1 /* MyAddressTableViewCell.xib */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1867,6 +1957,8 @@
 				BA3018031E9E162B00F7C518 /* MyModel.m */,
 				BA3018051E9E180D00F7C518 /* UserInfoModel.h */,
 				BA3018061E9E180D00F7C518 /* UserInfoModel.m */,
+				A520A2AC1EABB4A300359DB1 /* AddressModel.h */,
+				A520A2AD1EABB4A300359DB1 /* AddressModel.m */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -2002,11 +2094,14 @@
 				BAF3CF4C1E9CBE3D0000C9A9 /* video_next_button_disabled@2x.png in Resources */,
 				BAF3CE091E9CA88E0000C9A9 /* refresh_normal_image@2x.png in Resources */,
 				BAF3CE0A1E9CA88E0000C9A9 /* refresh_normal_image@3x.png in Resources */,
+				A520A2AB1EABB06100359DB1 /* MyAddressTableViewCell.xib in Resources */,
 				BAF3CE071E9CA88E0000C9A9 /* refresh_logo@2x.png in Resources */,
 				BA3017ED1E9E0C6B00F7C518 /* SettingViewController.xib in Resources */,
+				A520A2941EAB330500359DB1 /* PlaceView.xib in Resources */,
 				BAF3CF4E1E9CBE3D0000C9A9 /* VideoSendIcon@2x.png in Resources */,
 				BAF3CF4F1E9CBE3D0000C9A9 /* 椭圆-1-拷贝@2x.png in Resources */,
 				BAF3CF441E9CBE3D0000C9A9 /* icon_shanchu@2x.png in Resources */,
+				A520A28F1EAB0DCE00359DB1 /* SearchPlaceViewController.xib in Resources */,
 				BAF3CF381E9CBE3D0000C9A9 /* compose_photo_photograph_highlighted@2x.png in Resources */,
 				BAF3CE3D1E9CB4020000C9A9 /* ic_back@2x.png in Resources */,
 				BAF3CF451E9CBE3D0000C9A9 /* multimedia_videocard_play@2x.png in Resources */,
@@ -2049,6 +2144,7 @@
 				BAF3CCA51E9C73BF0000C9A9 /* Main.storyboard in Resources */,
 				BA3018011E9E130800F7C518 /* MyTableViewCell.xib in Resources */,
 				BAF3CF8F1E9CDE170000C9A9 /* MyViewController.xib in Resources */,
+				A50A044A1EAB08ED00764A42 /* MBProgressHUD.bundle in Resources */,
 				BAF3CE141E9CA88E0000C9A9 /* refreshing_image_1@2x.png in Resources */,
 				BA3017FC1E9E12F100F7C518 /* MyHeaderView.xib in Resources */,
 				BAF3CE011E9CA88E0000C9A9 /* footerArrow.png in Resources */,
@@ -2059,6 +2155,7 @@
 				BAF3CF2E1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@2x.png in Resources */,
 				BAF3CF331E9CBE3D0000C9A9 /* compose_live_photo_open_only_icon@3x.png in Resources */,
 				BAF3CF2B1E9CBE3D0000C9A9 /* compose_guide_check_box_right@2x.png in Resources */,
+				A520A2B31EABB84900359DB1 /* EditAddressViewController.xib in Resources */,
 				BAF3CF3F1E9CBE3D0000C9A9 /* compose_pic_add@2x.png in Resources */,
 				BAF3CE151E9CA88E0000C9A9 /* refreshing_image_2@2x.png in Resources */,
 				BAF3CE1C1E9CA88E0000C9A9 /* refreshing_image_9@2x.png in Resources */,
@@ -2069,6 +2166,7 @@
 				BAF3CE021E9CA88E0000C9A9 /* footerArrow@2x.png in Resources */,
 				BA3017E61E9E0C6000F7C518 /* LoginViewController.xib in Resources */,
 				BA3017F21E9E0C8D00F7C518 /* IntegralViewController.xib in Resources */,
+				A520A29E1EAB42B900359DB1 /* PlaceBubbleView.xib in Resources */,
 				BAF3CF361E9CBE3D0000C9A9 /* compose_photo_original_highlighted@2x.png in Resources */,
 				BAF3CF5C1E9CCA700000C9A9 /* Assets.xcassets in Resources */,
 				BAF3CE031E9CA88E0000C9A9 /* headerArrow.png in Resources */,
@@ -2076,6 +2174,7 @@
 				BAF3CE3E1E9CB4020000C9A9 /* ic_back@3x.png in Resources */,
 				BAF3CE121E9CA88E0000C9A9 /* refreshing_image_14@2x.png in Resources */,
 				BAF3CE101E9CA88E0000C9A9 /* refreshing_image_12@2x.png in Resources */,
+				A520A2A31EAB5BD000359DB1 /* MyAddressViewController.xib in Resources */,
 				BAF3CF341E9CBE3D0000C9A9 /* compose_photo_filter_checkbox_checked@2x.png in Resources */,
 				BAF3CE0C1E9CA88E0000C9A9 /* refresh_rocker@3x.png in Resources */,
 				BAF3CF1A1E9CBE3D0000C9A9 /* camera_flashlight@2x.png in Resources */,
@@ -2086,6 +2185,7 @@
 				BAF3CF4D1E9CBE3D0000C9A9 /* video_next_button_highlighted@2x.png in Resources */,
 				BAF3CF251E9CBE3D0000C9A9 /* camera_video_background_highlighted@2x.png in Resources */,
 				BAF3CF4A1E9CBE3D0000C9A9 /* video_delete_dustbin@2x.png in Resources */,
+				A520A2991EAB33B500359DB1 /* PlaceTableViewCell.xib in Resources */,
 				BAF3CF151E9CBE3D0000C9A9 /* camera_camera_background@2x.png in Resources */,
 				BAF3CE0B1E9CA88E0000C9A9 /* refresh_rocker@2x.png in Resources */,
 				BAF3CF3D1E9CBE3D0000C9A9 /* compose_photo_video@2x.png in Resources */,
@@ -2126,6 +2226,8 @@
 				BAF3CE521E9CB4F70000C9A9 /* AFURLSessionManager.m in Sources */,
 				BAF3CE781E9CB8520000C9A9 /* CLLockVC.m in Sources */,
 				BAF3CE4F1E9CB4F70000C9A9 /* AFSecurityPolicy.m in Sources */,
+				A50A044D1EAB08ED00764A42 /* MBProgrossManager.m in Sources */,
+				A520A2AE1EABB4A300359DB1 /* AddressModel.m in Sources */,
 				BAF3CD251E9C88FD0000C9A9 /* UIView+Addtion.m in Sources */,
 				BA3017CD1E9E0A4200F7C518 /* JVFloatLabeledTextView.m in Sources */,
 				BAF3CD571E9CA4F10000C9A9 /* UIButton+WebCache.m in Sources */,
@@ -2149,6 +2251,7 @@
 				BA3017CE1E9E0A4200F7C518 /* NSString+TextDirectionality.m in Sources */,
 				BAF3CE501E9CB4F70000C9A9 /* AFURLRequestSerialization.m in Sources */,
 				BA3017FA1E9E12E500F7C518 /* MyHeaderView.m in Sources */,
+				A50A04361EAB05E900764A42 /* BaiduMapManager.m in Sources */,
 				BAF3CEFC1E9CBE3D0000C9A9 /* Demo1ViewController.m in Sources */,
 				BAF3CDEF1E9CA88E0000C9A9 /* NSTimer+Addition.m in Sources */,
 				BAF3CE2A1E9CA88E0000C9A9 /* VerifyRegexTool.m in Sources */,
@@ -2158,6 +2261,7 @@
 				BAF3CD511E9CA4F10000C9A9 /* SDWebImageCompat.m in Sources */,
 				BAF3CE211E9CA88E0000C9A9 /* RadioButton.m in Sources */,
 				BAF3CDF51E9CA88E0000C9A9 /* UIBadgeView.m in Sources */,
+				A520A2AA1EABB06100359DB1 /* MyAddressTableViewCell.m in Sources */,
 				BAF3CCF11E9C81B10000C9A9 /* UIImage+CreateBarcode.m in Sources */,
 				BAF3CE271E9CA88E0000C9A9 /* ScratchCardView.m in Sources */,
 				BAF3CE301E9CABEF0000C9A9 /* ConstString.m in Sources */,
@@ -2169,6 +2273,7 @@
 				BAF3CEFE1E9CBE3D0000C9A9 /* Demo2ViewController.m in Sources */,
 				BAF3CF011E9CBE3D0000C9A9 /* HXAlbumTitleButton.m in Sources */,
 				BAF3CDF41E9CA88E0000C9A9 /* LaunchView.m in Sources */,
+				A520A28A1EAB0A3300359DB1 /* TLMBProgressHUD.m in Sources */,
 				BAF3CDF21E9CA88E0000C9A9 /* JOBadgeView.m in Sources */,
 				BAF3CD5D1E9CA4F10000C9A9 /* UIView+WebCacheOperation.m in Sources */,
 				BAF3CDE71E9CA88E0000C9A9 /* PayPasswordAlertView.m in Sources */,
@@ -2177,9 +2282,11 @@
 				BAF3CE331E9CAC8A0000C9A9 /* WinMessage.m in Sources */,
 				BAF3CE221E9CA88E0000C9A9 /* CheckNetReachability.m in Sources */,
 				BAF3CE551E9CB55C0000C9A9 /* NetWorkManager.m in Sources */,
+				A50A044B1EAB08ED00764A42 /* MBProgressHUD.m in Sources */,
 				BA3017F61E9E0CFE00F7C518 /* CouponViewController.m in Sources */,
 				BAF3CF041E9CBE3D0000C9A9 /* HXCollectionView.m in Sources */,
 				BAF3CE821E9CB8520000C9A9 /* CLLockMainView.m in Sources */,
+				A520A2A21EAB5BD000359DB1 /* MyAddressViewController.m in Sources */,
 				BA3017F11E9E0C8D00F7C518 /* IntegralViewController.m in Sources */,
 				BA3018001E9E130800F7C518 /* MyTableViewCell.m in Sources */,
 				BAF3CE241E9CA88E0000C9A9 /* AutoScrollLabel.m in Sources */,
@@ -2193,6 +2300,7 @@
 				BAF3CD1B1E9C88FD0000C9A9 /* NSDate+Addition.m in Sources */,
 				BAF3CF111E9CBE3D0000C9A9 /* HXVideoPresentTransition.m in Sources */,
 				BAF3CDFE1E9CA88E0000C9A9 /* UIViewController+Pop.m in Sources */,
+				A520A28E1EAB0DCE00359DB1 /* SearchPlaceViewController.m in Sources */,
 				BAF3CD5C1E9CA4F10000C9A9 /* UIImageView+WebCache.m in Sources */,
 				BAF3CE001E9CA88E0000C9A9 /* EGORefreshTableHeaderView.m in Sources */,
 				BAF3CD5A1E9CA4F10000C9A9 /* UIImage+WebP.m in Sources */,
@@ -2204,6 +2312,7 @@
 				BAF3CDED1E9CA88E0000C9A9 /* AdPageView.m in Sources */,
 				BAF3CDF71E9CA88E0000C9A9 /* UIViewController+Loading.m in Sources */,
 				BAF3CF0A1E9CBE3D0000C9A9 /* HXPhotoSubViewCell.m in Sources */,
+				A50A044C1EAB08ED00764A42 /* MBProgressHUD+ND.m in Sources */,
 				BAF3CDFB1E9CA88E0000C9A9 /* PanelViewController.m in Sources */,
 				BAF3CE061E9CA88E0000C9A9 /* PullToRefreshTableView.m in Sources */,
 				BAF3CD501E9CA4F10000C9A9 /* SDImageCache.m in Sources */,
@@ -2228,9 +2337,11 @@
 				BAF3CE801E9CB8520000C9A9 /* CLLockItemView.m in Sources */,
 				BAF3CD1F1E9C88FD0000C9A9 /* UIImage+ImageCache.m in Sources */,
 				BAF3CF001E9CBE3D0000C9A9 /* HXAlbumModel.m in Sources */,
+				A520A29C1EAB42B100359DB1 /* PlaceBubbleView.m in Sources */,
 				BAF3CCE31E9C79C70000C9A9 /* AppDelegate.mm in Sources */,
 				BAF3CF591E9CBFF70000C9A9 /* SHNavigationController.m in Sources */,
 				BAF3CF121E9CBE3D0000C9A9 /* HXVideoPreviewViewController.m in Sources */,
+				A520A2921EAB32EE00359DB1 /* PlaceView.m in Sources */,
 				BAF3CD191E9C88FD0000C9A9 /* NSArray+Combinations.m in Sources */,
 				BAF3CD231E9C88FD0000C9A9 /* UITextField+Addition.m in Sources */,
 				BA3018071E9E180D00F7C518 /* UserInfoModel.m in Sources */,
@@ -2241,9 +2352,9 @@
 				BAF3CD4F1E9CA4F10000C9A9 /* NSData+ImageContentType.m in Sources */,
 				BAF3CE7A1E9CB8520000C9A9 /* NSString+File.m in Sources */,
 				BAF3CD211E9C88FD0000C9A9 /* UITableView+TableHeadView.m in Sources */,
-				BAF3CD4D1E9CA4F10000C9A9 /* TLMBProgressHUD.m in Sources */,
 				BAF3CE7F1E9CB8520000C9A9 /* CLLockInfoView.m in Sources */,
 				BAF3CD181E9C88FD0000C9A9 /* LocalImageCache.m in Sources */,
+				A520A2981EAB33B500359DB1 /* PlaceTableViewCell.m in Sources */,
 				BABD07261EA5F9BA005675CC /* CATransition+Addition.m in Sources */,
 				BAF3CF531E9CBE3D0000C9A9 /* UIView+HXExtension.m in Sources */,
 				BAF3CF931E9CDE220000C9A9 /* OrderViewController.m in Sources */,
@@ -2258,6 +2369,7 @@
 				BAF3CDEC1E9CA88E0000C9A9 /* BasePopViewController.m in Sources */,
 				BAF3CE811E9CB8520000C9A9 /* CLLockLabel.m in Sources */,
 				BAF3CD221E9C88FD0000C9A9 /* UITableViewCell+Addition.m in Sources */,
+				A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */,
 				BAF3CDF81E9CA88E0000C9A9 /* ModalMenuView.m in Sources */,
 				BAF3CDEE1E9CA88E0000C9A9 /* CycleScrollView.m in Sources */,
 				BAF3CCF41E9C82820000C9A9 /* UIImage+Addition.m in Sources */,

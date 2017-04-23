@@ -23,6 +23,14 @@ NSString * const UserBalanceKey = @"user_balance";
 NSString * const UserCouponKey = @"user_coupon";
 NSString * const UserIntegralKey = @"user_integral";
 NSString * const UserPasswordKey = @"user_password";
+NSString * const UserAddressKey = @"user_address";
+NSString * const UserDetailAddressKey = @"user_detail_address";
+NSString * const UserSexKey = @"user_sex";
+
+#pragma mark - Address
+
+NSString * const AddressLatitudeKey = @"address_latitude";
+NSString * const AddressLongitudeKey = @"address_longitude";
 
 #pragma mark - Tips
 

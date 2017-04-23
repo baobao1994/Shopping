@@ -23,6 +23,14 @@ extern NSString * const UserBalanceKey;
 extern NSString * const UserCouponKey;
 extern NSString * const UserIntegralKey;
 extern NSString * const UserPasswordKey;
+extern NSString * const UserAddressKey;
+extern NSString * const UserDetailAddressKey;
+extern NSString * const UserSexKey;
+
+#pragma mark - Address
+
+extern NSString * const AddressLatitudeKey;
+extern NSString * const AddressLongitudeKey;
 
 #pragma mark - Tips
 

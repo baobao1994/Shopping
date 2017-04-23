@@ -7,7 +7,10 @@
 //
 
 #import "MyViewController.h"
+#import "SearchPlaceViewController.h"
 #import "UITableViewCell+Addition.h"
+#import "MyAddressViewController.h"
+#import "MyAddressViewController.h"
 #import "PullToRefreshTableView.h"
 #import "HXPhotoViewController.h"
 #import "CATransition+Addition.h"
@@ -101,7 +104,9 @@
     if (_userManager.userInfo) {
         
     } else {
-        [self pushLoginViewController];
+//        [self pushLoginViewController];
+//        [self pushSearcPlaceViewController];
+        [self pushMyAddressViewController];
     }
 }
 
@@ -125,6 +130,18 @@
 
 - (void)pushLoginViewController {
     LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
+    [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+- (void)pushSearcPlaceViewController {
+    SearchPlaceViewController *loginVC = [[SearchPlaceViewController alloc] init];
+    [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
+    [self.navigationController pushViewController:loginVC animated:NO];
+}
+
+- (void)pushMyAddressViewController {
+    MyAddressViewController *loginVC = [[MyAddressViewController alloc] init];
     [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
     [self.navigationController pushViewController:loginVC animated:NO];
 }
