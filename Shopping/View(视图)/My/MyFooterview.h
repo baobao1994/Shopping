@@ -10,4 +10,6 @@
 
 @interface MyFooterview : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 @end

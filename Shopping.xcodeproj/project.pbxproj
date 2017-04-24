@@ -70,6 +70,7 @@
 		BA48EFFF1EA4CD1900999921 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48EFFE1EA4CD1900999921 /* libsqlite3.tbd */; };
 		BA48F0011EA4CD2200999921 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0001EA4CD2200999921 /* libc++.tbd */; };
 		BA48F0031EA4CD3900999921 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0021EA4CD3900999921 /* libWeChatSDK.a */; };
+		BA557A091EAD9F7E00A77EF7 /* SystemInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */; };
 		BABD07231EA5EB44005675CC /* TimeDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07221EA5EB44005675CC /* TimeDownView.m */; };
 		BABD07261EA5F9BA005675CC /* CATransition+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07251EA5F9BA005675CC /* CATransition+Addition.m */; };
 		BABD07291EA60318005675CC /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07281EA60318005675CC /* UserManager.m */; };
@@ -430,6 +431,8 @@
 		BA48EFFE1EA4CD1900999921 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BA48F0001EA4CD2200999921 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		BA48F0021EA4CD3900999921 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		BA557A071EAD9F7E00A77EF7 /* SystemInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfoModel.h; sourceTree = "<group>"; };
+		BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfoModel.m; sourceTree = "<group>"; };
 		BABD07211EA5EB44005675CC /* TimeDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDownView.h; sourceTree = "<group>"; };
 		BABD07221EA5EB44005675CC /* TimeDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDownView.m; sourceTree = "<group>"; };
 		BABD07241EA5F9BA005675CC /* CATransition+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransition+Addition.h"; sourceTree = "<group>"; };
@@ -1165,6 +1168,8 @@
 				BAF3CE321E9CAC8A0000C9A9 /* WinMessage.m */,
 				BABD07271EA60318005675CC /* UserManager.h */,
 				BABD07281EA60318005675CC /* UserManager.m */,
+				BA557A071EAD9F7E00A77EF7 /* SystemInfoModel.h */,
+				BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */,
 			);
 			path = "Model(模型)";
 			sourceTree = "<group>";
@@ -2273,6 +2278,7 @@
 				BAF3CF031E9CBE3D0000C9A9 /* HXCameraViewController.m in Sources */,
 				BAF3CE2D1E9CAB9A0000C9A9 /* LiveTitleLabel.m in Sources */,
 				BAF3CDE51E9CA88E0000C9A9 /* CustomAlertView.m in Sources */,
+				BA557A091EAD9F7E00A77EF7 /* SystemInfoModel.m in Sources */,
 				BA3017EC1E9E0C6B00F7C518 /* SettingViewController.m in Sources */,
 				BAF3CE4D1E9CB4F70000C9A9 /* AFHTTPSessionManager.m in Sources */,
 				BAF3CD241E9C88FD0000C9A9 /* UITextView+Addition.m in Sources */,

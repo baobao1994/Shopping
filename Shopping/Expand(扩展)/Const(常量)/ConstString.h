@@ -14,11 +14,17 @@
 
 extern NSString * const BaiduMapKey;
 extern NSString * const SMSModelNameKey;
+extern NSString * const SystemTable;
 extern NSString * const UserTable;
+extern NSString * const AddressTable;
 extern NSString * const ObjectIdKey;
+extern NSString * const SystemServiceTelKey;
+extern NSString * const SystemOpenTimeKey;
+extern NSString * const SystemIsOpenKey;
 
 #pragma mark - UserInfo
 
+extern NSString * const UserObjectIdKey;
 extern NSString * const UserNameKey;
 extern NSString * const UserImageNameKey;
 extern NSString * const UserTelePhoneKey;
@@ -51,5 +57,6 @@ extern NSString * const kLeaveTopNotificationName;
 #pragma mark - Cache
 extern NSString * const UserInfoCacheFile;
 extern NSString * const UserInfoCache;
+extern NSString * const SystemInfoCache;
 
 @end

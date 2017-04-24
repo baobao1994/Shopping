@@ -14,11 +14,17 @@
 
 NSString * const BaiduMapKey = @"W9qfPDQ0PRjNaGdBfI86SXPitQhuHKyt";
 NSString * const SMSModelNameKey = @"shopping";
+NSString * const SystemTable = @"System";
 NSString * const UserTable = @"User";
+NSString * const AddressTable = @"Address";
 NSString * const ObjectIdKey = @"objectId";
+NSString * const SystemServiceTelKey = @"system_service_tel";
+NSString * const SystemOpenTimeKey = @"system_open_time";
+NSString * const SystemIsOpenKey = @"system_is_open";
 
 #pragma mark - UserInfo
 
+NSString * const UserObjectIdKey = @"user_objectId";
 NSString * const UserNameKey = @"user_name";
 NSString * const UserImageNameKey = @"user_imageName";
 NSString * const UserTelePhoneKey = @"user_telephone";
@@ -49,7 +55,9 @@ NSString * const kGoTopNotificationName = @"goTop";
 NSString * const kLeaveTopNotificationName = @"leaveTop";
 
 #pragma mark - Cache
+
 NSString * const UserInfoCacheFile = @"cacheFile";
 NSString * const UserInfoCache = @"userInfoCache";
+NSString * const SystemInfoCache = @"systemInfoCache";
 
 @end

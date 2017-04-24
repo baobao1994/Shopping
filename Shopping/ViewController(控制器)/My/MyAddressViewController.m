@@ -13,6 +13,8 @@
 #import "AddressModel.h"
 #import "MBProgrossManager.h"
 #import "EditAddressViewController.h"
+#import "ConstString.h"
+#import "UserInfoModel.h"
 
 @interface MyAddressViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -28,16 +30,25 @@
     [super viewDidLoad];
     self.title = @"我的地址";
     self.editAddressVC = [[EditAddressViewController alloc] init];
-    self.myAddressArr = [[NSMutableArray alloc] init];
-    AddressModel *addressModel = [[AddressModel alloc] init];
-    addressModel.name = @"123";
-    addressModel.sex = @"male";
-    addressModel.telephone = @"11111111111";
-    addressModel.detailAddress = @"白璧_司徒拔道";
-    addressModel.address = @"司徒拔道湾仔区53号-a座";
-    addressModel.longitude = [NSNumber numberWithDouble:114.186165];
-    addressModel.latitude = [NSNumber numberWithDouble:22.272413];
-    [self.myAddressArr addObject:addressModel];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (!self.myAddressArr) {
+        self.myAddressArr = [[NSMutableArray alloc] init];
+    }
+    BmobQuery *bquery = [BmobQuery queryWithClassName:AddressTable];
+    [bquery whereKey:UserObjectIdKey equalTo:UserManagerInstance.userInfo.userObjectId];
+    [bquery calcInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        [self.myAddressArr removeAllObjects];
+        for (BmobObject *obj in array) {
+            AddressModel *addreModel = [[AddressModel alloc] initWithDictionary:(NSDictionary *)obj];
+            [self.myAddressArr addObject:addreModel];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 #pragma mark - Table view delegate

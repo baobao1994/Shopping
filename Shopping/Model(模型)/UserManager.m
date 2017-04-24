@@ -17,6 +17,7 @@
     if (self = [super init]) {
         NSDictionary *userDic = [self getUserDicFromFile];
         self.userInfo = [userDic objectForKey:UserInfoCache];
+        self.systemInfo = [userDic objectForKey:SystemInfoCache];
     }
     return self;
 }
@@ -60,6 +61,20 @@
     self.userInfo = nil;
     NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
     DELETE_FILE(cachePath);
+}
+
+- (void)saveSystemInfo {
+    [self saveSystemInfo:_systemInfo];
+}
+
+- (void)saveSystemInfo:(SystemInfoModel *)systemInfo {
+    self.systemInfo = systemInfo;
+    NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:SystemInfoCache];
+    NSMutableDictionary *userDic = [NSMutableDictionary dictionaryWithCapacity:1];
+    if (systemInfo != nil) {
+        [userDic setObject:systemInfo forKey:SystemInfoCache];
+    }
+    [NSKeyedArchiver archiveRootObject:userDic toFile:cachePath];
 }
 
 #pragma mark - Private Method

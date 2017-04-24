@@ -33,6 +33,9 @@
                 <constraint firstAttribute="bottom" secondItem="9ua-hJ-9x2" secondAttribute="bottom" id="zEY-Fn-rsv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="titleLabel" destination="9ua-hJ-9x2" id="3hx-YF-PLb"/>
+            </connections>
             <point key="canvasLocation" x="24" y="85"/>
         </view>
     </objects>

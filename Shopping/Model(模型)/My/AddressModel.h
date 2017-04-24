@@ -10,6 +10,7 @@
 
 @interface AddressModel : NSObject
 
+@property (nonatomic, copy) NSString *objectId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *sex;
 @property (nonatomic, copy) NSString *telephone;

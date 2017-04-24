@@ -16,13 +16,13 @@
 #import "UIViewController+Pop.h"
 #import "LoginViewController.h"
 #import "MyTableViewCell.h"
+#import "SystemInfoModel.h"
 #import "UserInfoModel.h"
 #import "MyHeaderView.h"
 #import "MyFooterview.h"
 #import "ConstString.h"
 #import "MyModel.h"
 #import "Toast.h"
-#import "ForgetPwdViewController.h"
 
 @interface MyViewController () <PullToRefreshTableViewDelegate,UITableViewDelegate,UITableViewDataSource,HXPhotoViewControllerDelegate>
 
@@ -33,6 +33,7 @@
 @property (strong, nonatomic) HXPhotoManager *manager;
 @property (nonatomic, strong) UIImage *userImage;
 @property (nonatomic, strong) UserInfoModel *userInfoModel;
+@property (nonatomic, strong) SystemInfoModel *systemInfoModel;
 
 @end
 
@@ -52,9 +53,11 @@
     [super viewWillAppear:animated];
     if (UserManagerInstance.userInfo) {
         self.userInfoModel = UserManagerInstance.userInfo;
+        self.systemInfoModel = UserManagerInstance.systemInfo;
     } else {
         self.userImage = nil;
     }
+    [self getHeaderDataSoure];
     [self.tableView reloadData];
 }
 
@@ -114,6 +117,11 @@
     if (!_myFooterview) {
         _myFooterview = [[MyFooterview alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 40)];
     }
+    if (_systemInfoModel.isOpen) {
+        _myFooterview.titleLabel.text = [NSString stringWithFormat:@"营业时间:%@\n客服热线:%@",_systemInfoModel.openTime,_systemInfoModel.serviceTel];
+    } else {
+        _myFooterview.titleLabel.text = @"今天店家休息暂不营业！";
+    }
     return _myFooterview;
 }
 
@@ -122,8 +130,7 @@
     if (UserManagerInstance.userInfo) {
         NSInteger row = indexPath.row;
         if (row == 0) {
-            ForgetPwdViewController *forg = [[ForgetPwdViewController alloc] init];
-            [self.navigationController pushViewController:forg animated:YES];
+            
         } else if (row == 1) {
             
         } else if (row == 2) {
@@ -166,14 +173,23 @@
 }
 
 - (void)reloadList {
-    BmobQuery *query = [BmobQuery queryWithClassName:UserTable];
-    [query getObjectInBackgroundWithId:_userInfoModel.userObjectId block:^(BmobObject *object, NSError *error) {
+    BmobQuery *userQuery = [BmobQuery queryWithClassName:UserTable];
+    [userQuery getObjectInBackgroundWithId:_userInfoModel.userObjectId block:^(BmobObject *object, NSError *error) {
         BOOL isRemeber = self.userInfoModel.isRemember;
         self.userInfoModel = [[UserInfoModel alloc] initWithDictionary:(NSDictionary *)object];
         self.userInfoModel.isRemember = isRemeber;
         [UserManagerInstance saveUserInfo:self.userInfoModel];
         [_tableView doneLoadingTableViewData];
         [_tableView reloadData];
+    }];
+    BmobQuery *systemQuery = [BmobQuery queryWithClassName:SystemTable];
+    [systemQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            self.systemInfoModel = [[SystemInfoModel alloc] initWithDictionary:(NSDictionary *)array[0]];
+            [UserManagerInstance saveSystemInfo:self.systemInfoModel];
+            [_tableView doneLoadingTableViewData];
+            [_tableView reloadData];
+        }
     }];
 }
 

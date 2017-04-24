@@ -28,7 +28,7 @@
     }
     self.nameLabel.text = [NSString stringWithFormat:@"%@%@",addressModel.name,sex];
     self.telephoneLabel.text = addressModel.telephone;
-    self.addressLabel.text = [NSString stringWithFormat:@"%@ - %@",addressModel.detailAddress,addressModel.address];
+    self.addressLabel.text = [NSString stringWithFormat:@"%@ - %@",addressModel.address,addressModel.detailAddress];
 }
 
 @end

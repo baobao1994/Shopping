@@ -13,6 +13,7 @@
 
 - (id)initWithDictionary:(NSDictionary *)dic {
     if (self = [super init]) {
+        self.objectId = [dic objectForKey:ObjectIdKey];
         self.name = [dic objectForKey:UserNameKey];
         self.sex = [dic objectForKey:UserSexKey];
         self.telephone = [dic objectForKey:UserTelePhoneKey];
