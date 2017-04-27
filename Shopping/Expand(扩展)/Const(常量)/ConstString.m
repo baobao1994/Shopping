@@ -59,5 +59,6 @@ NSString * const kLeaveTopNotificationName = @"leaveTop";
 NSString * const UserInfoCacheFile = @"cacheFile";
 NSString * const UserInfoCache = @"userInfoCache";
 NSString * const SystemInfoCache = @"systemInfoCache";
+NSString * const LogoCache = @"logoCache.png";
 
 @end

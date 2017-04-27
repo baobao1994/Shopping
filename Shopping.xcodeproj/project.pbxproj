@@ -51,9 +51,9 @@
 		BA3017F71E9E0CFE00F7C518 /* CouponViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3017F51E9E0CFE00F7C518 /* CouponViewController.xib */; };
 		BA3017FA1E9E12E500F7C518 /* MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017F91E9E12E500F7C518 /* MyHeaderView.m */; };
 		BA3017FC1E9E12F100F7C518 /* MyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3017FB1E9E12F100F7C518 /* MyHeaderView.xib */; };
-		BA3018001E9E130800F7C518 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017FE1E9E130800F7C518 /* MyTableViewCell.m */; };
-		BA3018011E9E130800F7C518 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3017FF1E9E130800F7C518 /* MyTableViewCell.xib */; };
-		BA3018041E9E162B00F7C518 /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3018031E9E162B00F7C518 /* MyModel.m */; };
+		BA3018001E9E130800F7C518 /* TableStaticViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017FE1E9E130800F7C518 /* TableStaticViewCell.m */; };
+		BA3018011E9E130800F7C518 /* TableStaticViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3017FF1E9E130800F7C518 /* TableStaticViewCell.xib */; };
+		BA3018041E9E162B00F7C518 /* TableStaticModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3018031E9E162B00F7C518 /* TableStaticModel.m */; };
 		BA3018071E9E180D00F7C518 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3018061E9E180D00F7C518 /* UserInfoModel.m */; };
 		BA30180A1E9E255C00F7C518 /* MyFooterview.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3018091E9E255C00F7C518 /* MyFooterview.m */; };
 		BA30180C1E9E256600F7C518 /* MyFooterview.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA30180B1E9E256600F7C518 /* MyFooterview.xib */; };
@@ -90,6 +90,10 @@
 		BAE004F81EA8C09300373085 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BAE004F71EA8C09300373085 /* mapapi.bundle */; };
 		BAE5954A1EA5C37700663616 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE595481EA5C37700663616 /* ForgetPwdViewController.m */; };
 		BAE5954B1EA5C37700663616 /* ForgetPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE595491EA5C37700663616 /* ForgetPwdViewController.xib */; };
+		BAED90E31EB1F4F7005BF0EC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAED90E11EB1F4F7005BF0EC /* AboutViewController.m */; };
+		BAED90E41EB1F4F7005BF0EC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAED90E21EB1F4F7005BF0EC /* AboutViewController.xib */; };
+		BAED90E81EB1F51D005BF0EC /* PersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAED90E61EB1F51D005BF0EC /* PersonInfoViewController.m */; };
+		BAED90E91EB1F51D005BF0EC /* PersonInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAED90E71EB1F51D005BF0EC /* PersonInfoViewController.xib */; };
 		BAF3CCA51E9C73BF0000C9A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CCA31E9C73BF0000C9A9 /* Main.storyboard */; };
 		BAF3CCAA1E9C73BF0000C9A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CCA81E9C73BF0000C9A9 /* LaunchScreen.storyboard */; };
 		BAF3CCE31E9C79C70000C9A9 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CCD81E9C79C70000C9A9 /* AppDelegate.mm */; };
@@ -408,11 +412,11 @@
 		BA3017F81E9E12E500F7C518 /* MyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHeaderView.h; sourceTree = "<group>"; };
 		BA3017F91E9E12E500F7C518 /* MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHeaderView.m; sourceTree = "<group>"; };
 		BA3017FB1E9E12F100F7C518 /* MyHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyHeaderView.xib; sourceTree = "<group>"; };
-		BA3017FD1E9E130800F7C518 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
-		BA3017FE1E9E130800F7C518 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
-		BA3017FF1E9E130800F7C518 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
-		BA3018021E9E162B00F7C518 /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
-		BA3018031E9E162B00F7C518 /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
+		BA3017FD1E9E130800F7C518 /* TableStaticViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableStaticViewCell.h; sourceTree = "<group>"; };
+		BA3017FE1E9E130800F7C518 /* TableStaticViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableStaticViewCell.m; sourceTree = "<group>"; };
+		BA3017FF1E9E130800F7C518 /* TableStaticViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableStaticViewCell.xib; sourceTree = "<group>"; };
+		BA3018021E9E162B00F7C518 /* TableStaticModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableStaticModel.h; sourceTree = "<group>"; };
+		BA3018031E9E162B00F7C518 /* TableStaticModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableStaticModel.m; sourceTree = "<group>"; };
 		BA3018051E9E180D00F7C518 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
 		BA3018061E9E180D00F7C518 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
 		BA3018081E9E255C00F7C518 /* MyFooterview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFooterview.h; sourceTree = "<group>"; };
@@ -457,6 +461,12 @@
 		BAE595471EA5C37700663616 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
 		BAE595481EA5C37700663616 /* ForgetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
 		BAE595491EA5C37700663616 /* ForgetPwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPwdViewController.xib; sourceTree = "<group>"; };
+		BAED90E01EB1F4F7005BF0EC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		BAED90E11EB1F4F7005BF0EC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		BAED90E21EB1F4F7005BF0EC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		BAED90E51EB1F51D005BF0EC /* PersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoViewController.h; sourceTree = "<group>"; };
+		BAED90E61EB1F51D005BF0EC /* PersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoViewController.m; sourceTree = "<group>"; };
+		BAED90E71EB1F51D005BF0EC /* PersonInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonInfoViewController.xib; sourceTree = "<group>"; };
 		BAF3CC971E9C73BF0000C9A9 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAF3CCA41E9C73BF0000C9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAF3CCA91E9C73BF0000C9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -915,6 +925,12 @@
 				BA3017E91E9E0C6B00F7C518 /* SettingViewController.h */,
 				BA3017EA1E9E0C6B00F7C518 /* SettingViewController.m */,
 				BA3017EB1E9E0C6B00F7C518 /* SettingViewController.xib */,
+				BAED90E01EB1F4F7005BF0EC /* AboutViewController.h */,
+				BAED90E11EB1F4F7005BF0EC /* AboutViewController.m */,
+				BAED90E21EB1F4F7005BF0EC /* AboutViewController.xib */,
+				BAED90E51EB1F51D005BF0EC /* PersonInfoViewController.h */,
+				BAED90E61EB1F51D005BF0EC /* PersonInfoViewController.m */,
+				BAED90E71EB1F51D005BF0EC /* PersonInfoViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1943,9 +1959,9 @@
 				BA3017F81E9E12E500F7C518 /* MyHeaderView.h */,
 				BA3017F91E9E12E500F7C518 /* MyHeaderView.m */,
 				BA3017FB1E9E12F100F7C518 /* MyHeaderView.xib */,
-				BA3017FD1E9E130800F7C518 /* MyTableViewCell.h */,
-				BA3017FE1E9E130800F7C518 /* MyTableViewCell.m */,
-				BA3017FF1E9E130800F7C518 /* MyTableViewCell.xib */,
+				BA3017FD1E9E130800F7C518 /* TableStaticViewCell.h */,
+				BA3017FE1E9E130800F7C518 /* TableStaticViewCell.m */,
+				BA3017FF1E9E130800F7C518 /* TableStaticViewCell.xib */,
 				BA3018081E9E255C00F7C518 /* MyFooterview.h */,
 				BA3018091E9E255C00F7C518 /* MyFooterview.m */,
 				BA30180B1E9E256600F7C518 /* MyFooterview.xib */,
@@ -1982,8 +1998,8 @@
 		BAF3CF841E9CDB2D0000C9A9 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				BA3018021E9E162B00F7C518 /* MyModel.h */,
-				BA3018031E9E162B00F7C518 /* MyModel.m */,
+				BA3018021E9E162B00F7C518 /* TableStaticModel.h */,
+				BA3018031E9E162B00F7C518 /* TableStaticModel.m */,
 				BA3018051E9E180D00F7C518 /* UserInfoModel.h */,
 				BA3018061E9E180D00F7C518 /* UserInfoModel.m */,
 				A520A2AC1EABB4A300359DB1 /* AddressModel.h */,
@@ -2174,8 +2190,9 @@
 				BAF3CE1E1E9CA88E0000C9A9 /* rocker_ball@3x.png in Resources */,
 				BAF3CF471E9CBE3D0000C9A9 /* timeline_image_gif@2x.png in Resources */,
 				BAF3CCA51E9C73BF0000C9A9 /* Main.storyboard in Resources */,
-				BA3018011E9E130800F7C518 /* MyTableViewCell.xib in Resources */,
+				BA3018011E9E130800F7C518 /* TableStaticViewCell.xib in Resources */,
 				BAF3CF8F1E9CDE170000C9A9 /* MyViewController.xib in Resources */,
+				BAED90E91EB1F51D005BF0EC /* PersonInfoViewController.xib in Resources */,
 				A50A044A1EAB08ED00764A42 /* MBProgressHUD.bundle in Resources */,
 				BAF3CE141E9CA88E0000C9A9 /* refreshing_image_1@2x.png in Resources */,
 				BA3017FC1E9E12F100F7C518 /* MyHeaderView.xib in Resources */,
@@ -2235,6 +2252,7 @@
 				BAF3CDE91E9CA88E0000C9A9 /* PayPasswordView.xib in Resources */,
 				BAF3CF501E9CBE3D0000C9A9 /* 椭圆-1@2x.png in Resources */,
 				BAF3CE161E9CA88E0000C9A9 /* refreshing_image_3@2x.png in Resources */,
+				BAED90E41EB1F4F7005BF0EC /* AboutViewController.xib in Resources */,
 				BAF3CF291E9CBE3D0000C9A9 /* compose_guide_check_box_default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2326,12 +2344,12 @@
 				BAF3CE821E9CB8520000C9A9 /* CLLockMainView.m in Sources */,
 				A520A2A21EAB5BD000359DB1 /* MyAddressViewController.m in Sources */,
 				BA3017F11E9E0C8D00F7C518 /* IntegralViewController.m in Sources */,
-				BA3018001E9E130800F7C518 /* MyTableViewCell.m in Sources */,
+				BA3018001E9E130800F7C518 /* TableStaticViewCell.m in Sources */,
 				BAF3CE241E9CA88E0000C9A9 /* AutoScrollLabel.m in Sources */,
 				BAF3CE7B1E9CB8520000C9A9 /* CoreArchive.m in Sources */,
 				BAF3CF021E9CBE3D0000C9A9 /* HXCameraPreviewViewController.m in Sources */,
 				BABD07291EA60318005675CC /* UserManager.m in Sources */,
-				BA3018041E9E162B00F7C518 /* MyModel.m in Sources */,
+				BA3018041E9E162B00F7C518 /* TableStaticModel.m in Sources */,
 				BAF3CDF91E9CA88E0000C9A9 /* PaddingTextField.m in Sources */,
 				BAF3CE231E9CA88E0000C9A9 /* AutoLoopScrollLabel.m in Sources */,
 				BAF3CF8E1E9CDE170000C9A9 /* MyViewController.m in Sources */,
@@ -2347,6 +2365,7 @@
 				BAF3CF0C1E9CBE3D0000C9A9 /* HXPhotoView.m in Sources */,
 				BAF3CDF31E9CA88E0000C9A9 /* UIView+Badge.m in Sources */,
 				BAF3CE261E9CA88E0000C9A9 /* RTLabel.m in Sources */,
+				BAED90E81EB1F51D005BF0EC /* PersonInfoViewController.m in Sources */,
 				BAF3CDED1E9CA88E0000C9A9 /* AdPageView.m in Sources */,
 				BAF3CDF71E9CA88E0000C9A9 /* UIViewController+Loading.m in Sources */,
 				BAF3CF0A1E9CBE3D0000C9A9 /* HXPhotoSubViewCell.m in Sources */,
@@ -2389,6 +2408,7 @@
 				BAF3CE0D1E9CA88E0000C9A9 /* RefreshHeaderView.m in Sources */,
 				BAF3CD4F1E9CA4F10000C9A9 /* NSData+ImageContentType.m in Sources */,
 				BAF3CE7A1E9CB8520000C9A9 /* NSString+File.m in Sources */,
+				BAED90E31EB1F4F7005BF0EC /* AboutViewController.m in Sources */,
 				BAF3CD211E9C88FD0000C9A9 /* UITableView+TableHeadView.m in Sources */,
 				BAF3CE7F1E9CB8520000C9A9 /* CLLockInfoView.m in Sources */,
 				BAF3CD181E9C88FD0000C9A9 /* LocalImageCache.m in Sources */,

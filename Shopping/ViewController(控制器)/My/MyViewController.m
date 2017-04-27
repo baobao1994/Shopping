@@ -13,15 +13,16 @@
 #import "PullToRefreshTableView.h"
 #import "HXPhotoViewController.h"
 #import "CATransition+Addition.h"
+#import "SettingViewController.h"
 #import "UIViewController+Pop.h"
 #import "LoginViewController.h"
-#import "MyTableViewCell.h"
+#import "TableStaticViewCell.h"
+#import "TableStaticModel.h"
 #import "SystemInfoModel.h"
 #import "UserInfoModel.h"
 #import "MyHeaderView.h"
 #import "MyFooterview.h"
 #import "ConstString.h"
-#import "MyModel.h"
 #import "Toast.h"
 
 @interface MyViewController () <PullToRefreshTableViewDelegate,UITableViewDelegate,UITableViewDataSource,HXPhotoViewControllerDelegate>
@@ -62,7 +63,8 @@
 }
 
 - (void)selectedNavigationRightItem:(id)sender {
-    NSLog(@"setting");
+    SettingViewController *settingVC = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 #pragma mark - PullToRefreshTableViewDelegate method
@@ -153,7 +155,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    MyTableViewCell *cell = [MyTableViewCell dequeOrCreateInTable:tableView selectedBackgroundViewColor:UIColorFromHexColor(0xccc2c2)];
+    TableStaticViewCell *cell = [TableStaticViewCell dequeOrCreateInTable:tableView selectedBackgroundViewColor:UIColorFromHexColor(0xccc2c2)];
     [cell setContent:_itemArr[indexPath.row]];
     return cell;
 }
@@ -197,10 +199,10 @@
     self.itemArr = [[NSMutableArray alloc] init];
     NSArray *itemArr = @[@[@"integral_mall",@"积分商城"],@[@"collect",@"我的收藏"],@[@"address",@"我的地址"]];
     for (NSArray *arr in itemArr) {
-        MyModel *myModel = [[MyModel alloc] init];
-        myModel.itemImageName = arr[0];
-        myModel.itemTitleName = arr[1];
-        [self.itemArr addObject:myModel];
+        TableStaticModel *tableStaticModel = [[TableStaticModel alloc] init];
+        tableStaticModel.itemImageName = arr[0];
+        tableStaticModel.itemTitleName = arr[1];
+        [self.itemArr addObject:tableStaticModel];
     }
     [self.tableView reloadData];
 }
@@ -233,9 +235,9 @@
     if (photos.count) {
         HXPhotoModel *photoModel = photos[0];
         self.userImage = photoModel.thumbPhoto;
-        NSString *path_sandox = NSHomeDirectory();
+        NSString *path_sandox = DOCUMENT_PATH;
         //设置一个图片的存储路径
-        NSString *imagePath = [path_sandox stringByAppendingString:@"/Documents/logo.png"];
+        NSString *imagePath = [path_sandox stringByAppendingString:[NSString stringWithFormat:@"/%@",LogoCache]];
         //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
         [UIImagePNGRepresentation(photoModel.thumbPhoto) writeToFile:imagePath atomically:YES];
         //添加图片上去

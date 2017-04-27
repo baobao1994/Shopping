@@ -58,5 +58,6 @@ extern NSString * const kLeaveTopNotificationName;
 extern NSString * const UserInfoCacheFile;
 extern NSString * const UserInfoCache;
 extern NSString * const SystemInfoCache;
+extern NSString * const LogoCache;
 
 @end
