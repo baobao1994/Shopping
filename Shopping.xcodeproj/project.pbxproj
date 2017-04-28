@@ -78,6 +78,16 @@
 		BA48F0011EA4CD2200999921 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0001EA4CD2200999921 /* libc++.tbd */; };
 		BA48F0031EA4CD3900999921 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0021EA4CD3900999921 /* libWeChatSDK.a */; };
 		BA557A091EAD9F7E00A77EF7 /* SystemInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */; };
+		BA9833A01EB3144D0099C86E /* FoodEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */; };
+		BA9833A11EB3144D0099C86E /* FoodEvaluateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */; };
+		BA9833A51EB315DE0099C86E /* FoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833A31EB315DE0099C86E /* FoodListViewController.m */; };
+		BA9833A61EB315DE0099C86E /* FoodListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9833A41EB315DE0099C86E /* FoodListViewController.xib */; };
+		BA9833A91EB31A950099C86E /* FoodCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833A81EB31A950099C86E /* FoodCategoryModel.m */; };
+		BA9833AF1EB31C2B0099C86E /* FoodCollecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833AE1EB31C2B0099C86E /* FoodCollecModel.m */; };
+		BA9833B31EB327DD0099C86E /* HorizontalScrollTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833B11EB327DD0099C86E /* HorizontalScrollTableViewCell.m */; };
+		BA9833B41EB327DD0099C86E /* HorizontalScrollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9833B21EB327DD0099C86E /* HorizontalScrollTableViewCell.xib */; };
+		BA9833BD1EB32BB40099C86E /* HorizonItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833BB1EB32BB40099C86E /* HorizonItemCollectionViewCell.m */; };
+		BA9833BE1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9833BC1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib */; };
 		BABD07231EA5EB44005675CC /* TimeDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07221EA5EB44005675CC /* TimeDownView.m */; };
 		BABD07261EA5F9BA005675CC /* CATransition+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07251EA5F9BA005675CC /* CATransition+Addition.m */; };
 		BABD07291EA60318005675CC /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07281EA60318005675CC /* UserManager.m */; };
@@ -455,6 +465,23 @@
 		BA48F0021EA4CD3900999921 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		BA557A071EAD9F7E00A77EF7 /* SystemInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfoModel.h; sourceTree = "<group>"; };
 		BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfoModel.m; sourceTree = "<group>"; };
+		BA98339D1EB3144D0099C86E /* FoodEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodEvaluateViewController.h; sourceTree = "<group>"; };
+		BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodEvaluateViewController.m; sourceTree = "<group>"; };
+		BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodEvaluateViewController.xib; sourceTree = "<group>"; };
+		BA9833A21EB315DE0099C86E /* FoodListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodListViewController.h; sourceTree = "<group>"; };
+		BA9833A31EB315DE0099C86E /* FoodListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodListViewController.m; sourceTree = "<group>"; };
+		BA9833A41EB315DE0099C86E /* FoodListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodListViewController.xib; sourceTree = "<group>"; };
+		BA9833A71EB31A950099C86E /* FoodCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCategoryModel.h; sourceTree = "<group>"; };
+		BA9833A81EB31A950099C86E /* FoodCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCategoryModel.m; sourceTree = "<group>"; };
+		BA9833AD1EB31C2B0099C86E /* FoodCollecModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodCollecModel.h; sourceTree = "<group>"; };
+		BA9833AE1EB31C2B0099C86E /* FoodCollecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodCollecModel.m; sourceTree = "<group>"; };
+		BA9833B01EB327DD0099C86E /* HorizontalScrollTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollTableViewCell.h; sourceTree = "<group>"; };
+		BA9833B11EB327DD0099C86E /* HorizontalScrollTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollTableViewCell.m; sourceTree = "<group>"; };
+		BA9833B21EB327DD0099C86E /* HorizontalScrollTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalScrollTableViewCell.xib; sourceTree = "<group>"; };
+		BA9833B91EB3291F0099C86E /* HorizontalScrollCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollCellDelegate.h; sourceTree = "<group>"; };
+		BA9833BA1EB32BB40099C86E /* HorizonItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonItemCollectionViewCell.h; sourceTree = "<group>"; };
+		BA9833BB1EB32BB40099C86E /* HorizonItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonItemCollectionViewCell.m; sourceTree = "<group>"; };
+		BA9833BC1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizonItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		BABD07211EA5EB44005675CC /* TimeDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDownView.h; sourceTree = "<group>"; };
 		BABD07221EA5EB44005675CC /* TimeDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDownView.m; sourceTree = "<group>"; };
 		BABD07241EA5F9BA005675CC /* CATransition+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransition+Addition.h"; sourceTree = "<group>"; };
@@ -1926,6 +1953,12 @@
 				BAF3CF861E9CDE090000C9A9 /* HomeViewController.h */,
 				BAF3CF871E9CDE090000C9A9 /* HomeViewController.m */,
 				BAF3CF881E9CDE090000C9A9 /* HomeViewController.xib */,
+				BA98339D1EB3144D0099C86E /* FoodEvaluateViewController.h */,
+				BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */,
+				BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */,
+				BA9833A21EB315DE0099C86E /* FoodListViewController.h */,
+				BA9833A31EB315DE0099C86E /* FoodListViewController.m */,
+				BA9833A41EB315DE0099C86E /* FoodListViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1978,6 +2011,13 @@
 				BA174DB31EB2E455003B293B /* HomeCollectionViewCell.h */,
 				BA174DB41EB2E455003B293B /* HomeCollectionViewCell.m */,
 				BA174DB51EB2E455003B293B /* HomeCollectionViewCell.xib */,
+				BA9833B01EB327DD0099C86E /* HorizontalScrollTableViewCell.h */,
+				BA9833B11EB327DD0099C86E /* HorizontalScrollTableViewCell.m */,
+				BA9833B21EB327DD0099C86E /* HorizontalScrollTableViewCell.xib */,
+				BA9833B91EB3291F0099C86E /* HorizontalScrollCellDelegate.h */,
+				BA9833BA1EB32BB40099C86E /* HorizonItemCollectionViewCell.h */,
+				BA9833BB1EB32BB40099C86E /* HorizonItemCollectionViewCell.m */,
+				BA9833BC1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2020,6 +2060,10 @@
 		BAF3CF831E9CDB2D0000C9A9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BA9833AD1EB31C2B0099C86E /* FoodCollecModel.h */,
+				BA9833AE1EB31C2B0099C86E /* FoodCollecModel.m */,
+				BA9833A71EB31A950099C86E /* FoodCategoryModel.h */,
+				BA9833A81EB31A950099C86E /* FoodCategoryModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2220,6 +2264,7 @@
 				BAF3CE181E9CA88E0000C9A9 /* refreshing_image_5@2x.png in Resources */,
 				BAF3CE1E1E9CA88E0000C9A9 /* rocker_ball@3x.png in Resources */,
 				BAF3CF471E9CBE3D0000C9A9 /* timeline_image_gif@2x.png in Resources */,
+				BA9833A61EB315DE0099C86E /* FoodListViewController.xib in Resources */,
 				BAF3CCA51E9C73BF0000C9A9 /* Main.storyboard in Resources */,
 				BA3018011E9E130800F7C518 /* TableStaticViewCell.xib in Resources */,
 				BAF3CF8F1E9CDE170000C9A9 /* MyViewController.xib in Resources */,
@@ -2230,6 +2275,7 @@
 				BAF3CE011E9CA88E0000C9A9 /* footerArrow.png in Resources */,
 				BAF3CF481E9CBE3D0000C9A9 /* video_delete_button@2x.png in Resources */,
 				BAF3CF161E9CBE3D0000C9A9 /* camera_camera_background_highlighted@2x.png in Resources */,
+				BA9833A11EB3144D0099C86E /* FoodEvaluateViewController.xib in Resources */,
 				BAE5954B1EA5C37700663616 /* ForgetPwdViewController.xib in Resources */,
 				BAF3CF421E9CBE3D0000C9A9 /* hotweibo_back_icon@2x.png in Resources */,
 				BAF3CF2E1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@2x.png in Resources */,
@@ -2243,6 +2289,7 @@
 				BAF3CF3C1E9CBE3D0000C9A9 /* compose_photo_preview_seleted@2x.png in Resources */,
 				BAF3CF3B1E9CBE3D0000C9A9 /* compose_photo_preview_right@2x.png in Resources */,
 				BAF3CE0F1E9CA88E0000C9A9 /* refreshing_image_11@2x.png in Resources */,
+				BA9833BE1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib in Resources */,
 				BAF3CE021E9CA88E0000C9A9 /* footerArrow@2x.png in Resources */,
 				BA3017E61E9E0C6000F7C518 /* LoginViewController.xib in Resources */,
 				BA3017F21E9E0C8D00F7C518 /* IntegralViewController.xib in Resources */,
@@ -2266,6 +2313,7 @@
 				BAF3CF1B1E9CBE3D0000C9A9 /* camera_flashlight_auto@2x.png in Resources */,
 				BAF3CF651E9CCEB60000C9A9 /* Info.plist in Resources */,
 				BAF3CF3A1E9CBE3D0000C9A9 /* compose_photo_preview_highlighted@2x.png in Resources */,
+				BA9833B41EB327DD0099C86E /* HorizontalScrollTableViewCell.xib in Resources */,
 				BAF3CF4D1E9CBE3D0000C9A9 /* video_next_button_highlighted@2x.png in Resources */,
 				BAF3CF251E9CBE3D0000C9A9 /* camera_video_background_highlighted@2x.png in Resources */,
 				BAF3CF4A1E9CBE3D0000C9A9 /* video_delete_dustbin@2x.png in Resources */,
@@ -2325,6 +2373,7 @@
 				BAF3CF0B1E9CBE3D0000C9A9 /* HXPhotoTools.m in Sources */,
 				BAF3CD171E9C88FD0000C9A9 /* CABasicAnimation+Addition.m in Sources */,
 				BAF3CDF01E9CA88E0000C9A9 /* CustomeSheetView.m in Sources */,
+				BA9833A91EB31A950099C86E /* FoodCategoryModel.m in Sources */,
 				BAF3CF031E9CBE3D0000C9A9 /* HXCameraViewController.m in Sources */,
 				BAF3CE2D1E9CAB9A0000C9A9 /* LiveTitleLabel.m in Sources */,
 				BAF3CDE51E9CA88E0000C9A9 /* CustomAlertView.m in Sources */,
@@ -2332,6 +2381,7 @@
 				BA3017EC1E9E0C6B00F7C518 /* SettingViewController.m in Sources */,
 				BAF3CE4D1E9CB4F70000C9A9 /* AFHTTPSessionManager.m in Sources */,
 				BAF3CD241E9C88FD0000C9A9 /* UITextView+Addition.m in Sources */,
+				BA9833AF1EB31C2B0099C86E /* FoodCollecModel.m in Sources */,
 				BAF3CD1C1E9C88FD0000C9A9 /* NSString+Addition.m in Sources */,
 				BA174DB11EB2E443003B293B /* HomeHeaderCollectionReusableView.m in Sources */,
 				BAF3CD531E9CA4F10000C9A9 /* SDWebImageDownloader.m in Sources */,
@@ -2341,6 +2391,7 @@
 				BAF3CE501E9CB4F70000C9A9 /* AFURLRequestSerialization.m in Sources */,
 				BA3017FA1E9E12E500F7C518 /* MyHeaderView.m in Sources */,
 				A50A04361EAB05E900764A42 /* BaiduMapManager.m in Sources */,
+				BA9833A01EB3144D0099C86E /* FoodEvaluateViewController.m in Sources */,
 				BAF3CEFC1E9CBE3D0000C9A9 /* Demo1ViewController.m in Sources */,
 				BAF3CDEF1E9CA88E0000C9A9 /* NSTimer+Addition.m in Sources */,
 				BAF3CE2A1E9CA88E0000C9A9 /* VerifyRegexTool.m in Sources */,
@@ -2382,6 +2433,7 @@
 				BAF3CE241E9CA88E0000C9A9 /* AutoScrollLabel.m in Sources */,
 				BAF3CE7B1E9CB8520000C9A9 /* CoreArchive.m in Sources */,
 				BAF3CF021E9CBE3D0000C9A9 /* HXCameraPreviewViewController.m in Sources */,
+				BA9833BD1EB32BB40099C86E /* HorizonItemCollectionViewCell.m in Sources */,
 				BABD07291EA60318005675CC /* UserManager.m in Sources */,
 				BA3018041E9E162B00F7C518 /* TableStaticModel.m in Sources */,
 				BAF3CDF91E9CA88E0000C9A9 /* PaddingTextField.m in Sources */,
@@ -2433,6 +2485,7 @@
 				BAF3CCE31E9C79C70000C9A9 /* AppDelegate.mm in Sources */,
 				BAF3CF591E9CBFF70000C9A9 /* SHNavigationController.m in Sources */,
 				BAF3CF121E9CBE3D0000C9A9 /* HXVideoPreviewViewController.m in Sources */,
+				BA9833B31EB327DD0099C86E /* HorizontalScrollTableViewCell.m in Sources */,
 				A520A2921EAB32EE00359DB1 /* PlaceView.m in Sources */,
 				BAF3CD191E9C88FD0000C9A9 /* NSArray+Combinations.m in Sources */,
 				BAF3CD231E9C88FD0000C9A9 /* UITextField+Addition.m in Sources */,
@@ -2461,6 +2514,7 @@
 				BAF3CF061E9CBE3D0000C9A9 /* HXPhotoManager.m in Sources */,
 				BAF3CDEC1E9CA88E0000C9A9 /* BasePopViewController.m in Sources */,
 				BAF3CE811E9CB8520000C9A9 /* CLLockLabel.m in Sources */,
+				BA9833A51EB315DE0099C86E /* FoodListViewController.m in Sources */,
 				BAF3CD221E9C88FD0000C9A9 /* UITableViewCell+Addition.m in Sources */,
 				A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */,
 				BAF3CDF81E9CA88E0000C9A9 /* ModalMenuView.m in Sources */,

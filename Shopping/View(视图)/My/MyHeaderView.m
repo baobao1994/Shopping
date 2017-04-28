@@ -32,7 +32,7 @@
 }
 
 - (void)setHeaderContent:(UserInfoModel *)userInfoModel replaceLocalImage:(UIImage *)localImage {
-    if (userInfoModel == nil) {
+    if (userInfoModel.userObjectId == nil) {
         self.userNameLabel.text = @"请登录";
         self.userImageView.image = [UIImage imageNamed:@"default_logo"];
         self.balanceLabel.text = @"-";

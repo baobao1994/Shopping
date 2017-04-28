@@ -17,6 +17,8 @@ extern NSString * const SMSModelNameKey;
 extern NSString * const SystemTable;
 extern NSString * const UserTable;
 extern NSString * const AddressTable;
+extern NSString * const FoodcategoryTable;
+extern NSString * const FoodCollecTable;
 extern NSString * const ObjectIdKey;
 extern NSString * const SystemServiceTelKey;
 extern NSString * const SystemOpenTimeKey;
@@ -41,6 +43,21 @@ extern NSString * const UserSexKey;
 
 extern NSString * const AddressLatitudeKey;
 extern NSString * const AddressLongitudeKey;
+
+#pragma mark - FoodCollec
+extern NSString * const FoodcategoryIdKey;
+extern NSString * const FoodCollecIdKey;
+extern NSString * const FoodCollecNameKey;
+extern NSString * const FoodCollecImageNameKey;
+extern NSString * const FoodCollecPriceKey;
+extern NSString * const FoodCollecSellCountKey;
+
+#pragma mark - FoodCategory
+
+extern NSString * const FoodCategoryIdKey;
+extern NSString * const FoodCategoryNameKey;
+extern NSString * const FoodCategoryImageNameKey;
+extern NSString * const FoodCategoryListKey;
 
 #pragma mark - Tips
 

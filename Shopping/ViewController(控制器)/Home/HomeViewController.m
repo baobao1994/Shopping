@@ -12,6 +12,8 @@
 #import "HomeCollectionViewCell.h"
 #import "HomeFooterCollectionReusableView.h"
 
+#import "FoodListViewController.h"
+
 NSString *const HomeCollectionViewCellIdentifier = @"HomeCollectionViewCell";
 NSString *const HomeHeaderCollectionReusableViewIdentifier = @"HomeHeaderCollectionReusableView";
 NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollectionReusableView";
@@ -40,7 +42,8 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"indexPath = %@",indexPath);
+    FoodListViewController *foodListVC = [[FoodListViewController alloc] init];
+    [self.navigationController pushViewController:foodListVC animated:YES];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{

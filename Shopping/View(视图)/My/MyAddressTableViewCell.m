@@ -20,8 +20,8 @@
 @implementation MyAddressTableViewCell
 
 - (void)setAddress:(AddressModel *)addressModel {
-    NSString *sex = addressModel.sex;
-    if ([sex isEqualToString:@"male"]) {
+    NSString *sex = @"(男士)";
+    if (addressModel.sex) {
         sex = @"(男士)";
     } else {
         sex = @"(女士)";

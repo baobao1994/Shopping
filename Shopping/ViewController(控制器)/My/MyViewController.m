@@ -52,13 +52,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (UserManagerInstance.userInfo) {
+    if (UserManagerInstance.userInfo.userObjectId) {
         self.userInfoModel = UserManagerInstance.userInfo;
         self.systemInfoModel = UserManagerInstance.systemInfo;
     } else {
         self.userImage = nil;
     }
-    [self getHeaderDataSoure];
+    [self reloadList];
     [self.tableView reloadData];
 }
 
@@ -70,7 +70,7 @@
 #pragma mark - PullToRefreshTableViewDelegate method
 
 - (void)getHeaderDataSoure {
-    if (UserManagerInstance.userInfo) {
+    if (UserManagerInstance.userInfo.userObjectId) {
         [self reloadList];
     } else {
         [self pushLoginViewController];
@@ -129,7 +129,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (UserManagerInstance.userInfo) {
+    if (UserManagerInstance.userInfo.userObjectId) {
         NSInteger row = indexPath.row;
         if (row == 0) {
             

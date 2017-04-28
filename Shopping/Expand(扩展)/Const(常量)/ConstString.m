@@ -17,30 +17,48 @@ NSString * const SMSModelNameKey = @"shopping";
 NSString * const SystemTable = @"System";
 NSString * const UserTable = @"User";
 NSString * const AddressTable = @"Address";
+NSString * const FoodcategoryTable = @"Foodcategory";
+NSString * const FoodCollecTable = @"FoodCollec";
 NSString * const ObjectIdKey = @"objectId";
-NSString * const SystemServiceTelKey = @"system_service_tel";
-NSString * const SystemOpenTimeKey = @"system_open_time";
-NSString * const SystemIsOpenKey = @"system_is_open";
+NSString * const SystemServiceTelKey = @"service_tel";
+NSString * const SystemOpenTimeKey = @"open_time";
+NSString * const SystemIsOpenKey = @"is_open";
 
 #pragma mark - UserInfo
 
 NSString * const UserObjectIdKey = @"user_objectId";
-NSString * const UserNameKey = @"user_name";
-NSString * const UserImageNameKey = @"user_imageName";
-NSString * const UserTelePhoneKey = @"user_telephone";
-NSString * const UserBalanceKey = @"user_balance";
-NSString * const UserCouponKey = @"user_coupon";
-NSString * const UserIntegralKey = @"user_integral";
-NSString * const UserPasswordKey = @"user_password";
-NSString * const UserIsRememberKey = @"user_is_remember";
-NSString * const UserAddressKey = @"user_address";
-NSString * const UserDetailAddressKey = @"user_detail_address";
-NSString * const UserSexKey = @"user_sex";
+NSString * const UserNameKey = @"name";
+NSString * const UserImageNameKey = @"imageName";
+NSString * const UserTelePhoneKey = @"telephone";
+NSString * const UserBalanceKey = @"balance";
+NSString * const UserCouponKey = @"coupon";
+NSString * const UserIntegralKey = @"integral";
+NSString * const UserPasswordKey = @"password";
+NSString * const UserIsRememberKey = @"is_remember";
+NSString * const UserAddressKey = @"address";
+NSString * const UserDetailAddressKey = @"detail_address";
+NSString * const UserSexKey = @"sex";
 
 #pragma mark - Address
 
-NSString * const AddressLatitudeKey = @"address_latitude";
-NSString * const AddressLongitudeKey = @"address_longitude";
+NSString * const AddressLatitudeKey = @"latitude";
+NSString * const AddressLongitudeKey = @"longitude";
+
+#pragma mark - FoodCollec
+
+NSString * const FoodcategoryIdKey = @"foodcategory_id";
+NSString * const FoodCollecIdKey = @"food_id";
+NSString * const FoodCollecNameKey = @"name";
+NSString * const FoodCollecImageNameKey = @"imageName";
+NSString * const FoodCollecPriceKey = @"price";
+NSString * const FoodCollecSellCountKey = @"sell_count";
+
+#pragma mark - FoodCategory
+
+NSString * const FoodCategoryIdKey = @"food_id";
+NSString * const FoodCategoryNameKey = @"name";
+NSString * const FoodCategoryImageNameKey = @"imageName";
+NSString * const FoodCategoryListKey = @"list";
 
 #pragma mark - Tips
 

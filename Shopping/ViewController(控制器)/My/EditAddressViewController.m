@@ -49,7 +49,7 @@
         self.title = @"编辑地址";
         [self.sureButton setTitle:@"确认修改" forState:UIControlStateNormal];
         self.nameTF.text = self.addressModel.name;
-        if ([self.addressModel.sex isEqualToString:@"male"]) {
+        if (self.addressModel.sex) {
             self.maleButton.selected = YES;
         } else {
             self.femaleButton.selected = YES;

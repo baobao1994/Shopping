@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *objectId;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *sex;
+@property (nonatomic, assign) BOOL sex;
 @property (nonatomic, copy) NSString *telephone;
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *detailAddress;

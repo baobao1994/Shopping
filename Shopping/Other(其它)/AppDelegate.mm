@@ -36,7 +36,7 @@
     [self initBmob];
     [self initBaiduMap];
     self.userManager = UserManagerInstance;
-    if (!self.userManager.userInfo.isRemember) {
+    if (!self.userManager.userInfo.isRemember || self.userManager.userInfo.userObjectId == nil) {
         [self.userManager deleteUser];
     }
     return YES;
