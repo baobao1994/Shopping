@@ -36,6 +36,13 @@
 		A520A2D31EAC96A000359DB1 /* chiken_06.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CB1EAC96A000359DB1 /* chiken_06.png */; };
 		A520A2D41EAC96A000359DB1 /* chiken_07.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CC1EAC96A000359DB1 /* chiken_07.png */; };
 		A520A2D51EAC96A000359DB1 /* chiken_08.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CD1EAC96A000359DB1 /* chiken_08.png */; };
+		BA174DAD1EB2E304003B293B /* PullToRefreshCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DAC1EB2E304003B293B /* PullToRefreshCollectionView.m */; };
+		BA174DB11EB2E443003B293B /* HomeHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DAF1EB2E443003B293B /* HomeHeaderCollectionReusableView.m */; };
+		BA174DB21EB2E443003B293B /* HomeHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA174DB01EB2E443003B293B /* HomeHeaderCollectionReusableView.xib */; };
+		BA174DB61EB2E455003B293B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DB41EB2E455003B293B /* HomeCollectionViewCell.m */; };
+		BA174DB71EB2E455003B293B /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA174DB51EB2E455003B293B /* HomeCollectionViewCell.xib */; };
+		BA174DBB1EB2E683003B293B /* HomeFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DB91EB2E683003B293B /* HomeFooterCollectionReusableView.m */; };
+		BA174DBC1EB2E683003B293B /* HomeFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA174DBA1EB2E683003B293B /* HomeFooterCollectionReusableView.xib */; };
 		BA3017CC1E9E0A4200F7C518 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017C71E9E0A4200F7C518 /* JVFloatLabeledTextField.m */; };
 		BA3017CD1E9E0A4200F7C518 /* JVFloatLabeledTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017C91E9E0A4200F7C518 /* JVFloatLabeledTextView.m */; };
 		BA3017CE1E9E0A4200F7C518 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3017CB1E9E0A4200F7C518 /* NSString+TextDirectionality.m */; };
@@ -388,6 +395,17 @@
 		A520A2CB1EAC96A000359DB1 /* chiken_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_06.png; sourceTree = "<group>"; };
 		A520A2CC1EAC96A000359DB1 /* chiken_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_07.png; sourceTree = "<group>"; };
 		A520A2CD1EAC96A000359DB1 /* chiken_08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chiken_08.png; sourceTree = "<group>"; };
+		BA174DAB1EB2E304003B293B /* PullToRefreshCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullToRefreshCollectionView.h; sourceTree = "<group>"; };
+		BA174DAC1EB2E304003B293B /* PullToRefreshCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullToRefreshCollectionView.m; sourceTree = "<group>"; };
+		BA174DAE1EB2E443003B293B /* HomeHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		BA174DAF1EB2E443003B293B /* HomeHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		BA174DB01EB2E443003B293B /* HomeHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		BA174DB31EB2E455003B293B /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		BA174DB41EB2E455003B293B /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		BA174DB51EB2E455003B293B /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		BA174DB81EB2E683003B293B /* HomeFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		BA174DB91EB2E683003B293B /* HomeFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		BA174DBA1EB2E683003B293B /* HomeFooterCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		BA3017C61E9E0A4200F7C518 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		BA3017C71E9E0A4200F7C518 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		BA3017C81E9E0A4200F7C518 /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextView.h; sourceTree = "<group>"; };
@@ -1491,6 +1509,8 @@
 				BAF3CDAB1E9CA88E0000C9A9 /* PullToRefreshScrollView.m */,
 				BAF3CDAC1E9CA88E0000C9A9 /* PullToRefreshTableView.h */,
 				BAF3CDAD1E9CA88E0000C9A9 /* PullToRefreshTableView.m */,
+				BA174DAB1EB2E304003B293B /* PullToRefreshCollectionView.h */,
+				BA174DAC1EB2E304003B293B /* PullToRefreshCollectionView.m */,
 				BAF3CDAE1E9CA88E0000C9A9 /* refresh_logo@2x.png */,
 				BAF3CDAF1E9CA88E0000C9A9 /* refresh_logo@3x.png */,
 				BAF3CDB01E9CA88E0000C9A9 /* refresh_normal_image@2x.png */,
@@ -1949,6 +1969,15 @@
 		BAF3CF801E9CDB260000C9A9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BA174DAE1EB2E443003B293B /* HomeHeaderCollectionReusableView.h */,
+				BA174DAF1EB2E443003B293B /* HomeHeaderCollectionReusableView.m */,
+				BA174DB01EB2E443003B293B /* HomeHeaderCollectionReusableView.xib */,
+				BA174DB81EB2E683003B293B /* HomeFooterCollectionReusableView.h */,
+				BA174DB91EB2E683003B293B /* HomeFooterCollectionReusableView.m */,
+				BA174DBA1EB2E683003B293B /* HomeFooterCollectionReusableView.xib */,
+				BA174DB31EB2E455003B293B /* HomeCollectionViewCell.h */,
+				BA174DB41EB2E455003B293B /* HomeCollectionViewCell.m */,
+				BA174DB51EB2E455003B293B /* HomeCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2148,6 +2177,7 @@
 				BAF3CF441E9CBE3D0000C9A9 /* icon_shanchu@2x.png in Resources */,
 				A520A28F1EAB0DCE00359DB1 /* SearchPlaceViewController.xib in Resources */,
 				BAF3CF381E9CBE3D0000C9A9 /* compose_photo_photograph_highlighted@2x.png in Resources */,
+				BA174DB21EB2E443003B293B /* HomeHeaderCollectionReusableView.xib in Resources */,
 				BAF3CE3D1E9CB4020000C9A9 /* ic_back@2x.png in Resources */,
 				BAF3CF451E9CBE3D0000C9A9 /* multimedia_videocard_play@2x.png in Resources */,
 				BAF3CF461E9CBE3D0000C9A9 /* page_score_pic_background@2x.png in Resources */,
@@ -2160,6 +2190,7 @@
 				BAF3CF221E9CBE3D0000C9A9 /* camera_overturn_highlighted@2x.png in Resources */,
 				BAF3CF181E9CBE3D0000C9A9 /* camera_close_highlighted@2x.png in Resources */,
 				A520A2CE1EAC96A000359DB1 /* chiken_01.png in Resources */,
+				BA174DB71EB2E455003B293B /* HomeCollectionViewCell.xib in Resources */,
 				BAF3CCAA1E9C73BF0000C9A9 /* LaunchScreen.storyboard in Resources */,
 				BAF3CF2F1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@3x.png in Resources */,
 				BAF3CE201E9CA88E0000C9A9 /* rocker_image@3x.png in Resources */,
@@ -2222,6 +2253,7 @@
 				A520A2CF1EAC96A000359DB1 /* chiken_02.png in Resources */,
 				BAF3CE031E9CA88E0000C9A9 /* headerArrow.png in Resources */,
 				BAF3CF2C1E9CBE3D0000C9A9 /* compose_live_photo_background@2x.png in Resources */,
+				BA174DBC1EB2E683003B293B /* HomeFooterCollectionReusableView.xib in Resources */,
 				BAF3CE3E1E9CB4020000C9A9 /* ic_back@3x.png in Resources */,
 				BAF3CE121E9CA88E0000C9A9 /* refreshing_image_14@2x.png in Resources */,
 				BAF3CE101E9CA88E0000C9A9 /* refreshing_image_12@2x.png in Resources */,
@@ -2301,6 +2333,7 @@
 				BAF3CE4D1E9CB4F70000C9A9 /* AFHTTPSessionManager.m in Sources */,
 				BAF3CD241E9C88FD0000C9A9 /* UITextView+Addition.m in Sources */,
 				BAF3CD1C1E9C88FD0000C9A9 /* NSString+Addition.m in Sources */,
+				BA174DB11EB2E443003B293B /* HomeHeaderCollectionReusableView.m in Sources */,
 				BAF3CD531E9CA4F10000C9A9 /* SDWebImageDownloader.m in Sources */,
 				BAF3CE7E1E9CB8520000C9A9 /* CLLockNavVC.m in Sources */,
 				BA3017E51E9E0C6000F7C518 /* LoginViewController.m in Sources */,
@@ -2328,6 +2361,7 @@
 				BAF3CF051E9CBE3D0000C9A9 /* HXPhotoConst.m in Sources */,
 				BAF3CEFE1E9CBE3D0000C9A9 /* Demo2ViewController.m in Sources */,
 				BAF3CF011E9CBE3D0000C9A9 /* HXAlbumTitleButton.m in Sources */,
+				BA174DBB1EB2E683003B293B /* HomeFooterCollectionReusableView.m in Sources */,
 				BAF3CDF41E9CA88E0000C9A9 /* LaunchView.m in Sources */,
 				A520A28A1EAB0A3300359DB1 /* TLMBProgressHUD.m in Sources */,
 				BAF3CDF21E9CA88E0000C9A9 /* JOBadgeView.m in Sources */,
@@ -2361,6 +2395,7 @@
 				BAF3CE001E9CA88E0000C9A9 /* EGORefreshTableHeaderView.m in Sources */,
 				BAF3CD5A1E9CA4F10000C9A9 /* UIImage+WebP.m in Sources */,
 				BAF3CF071E9CBE3D0000C9A9 /* HXPhotoModel.m in Sources */,
+				BA174DAD1EB2E304003B293B /* PullToRefreshCollectionView.m in Sources */,
 				BAF3CF091E9CBE3D0000C9A9 /* HXPhotoPreviewViewController.m in Sources */,
 				BAF3CF0C1E9CBE3D0000C9A9 /* HXPhotoView.m in Sources */,
 				BAF3CDF31E9CA88E0000C9A9 /* UIView+Badge.m in Sources */,
@@ -2430,6 +2465,7 @@
 				A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */,
 				BAF3CDF81E9CA88E0000C9A9 /* ModalMenuView.m in Sources */,
 				BAF3CDEE1E9CA88E0000C9A9 /* CycleScrollView.m in Sources */,
+				BA174DB61EB2E455003B293B /* HomeCollectionViewCell.m in Sources */,
 				BAF3CCF41E9C82820000C9A9 /* UIImage+Addition.m in Sources */,
 				BAF3CD561E9CA4F10000C9A9 /* SDWebImagePrefetcher.m in Sources */,
 				BA3017CC1E9E0A4200F7C518 /* JVFloatLabeledTextField.m in Sources */,

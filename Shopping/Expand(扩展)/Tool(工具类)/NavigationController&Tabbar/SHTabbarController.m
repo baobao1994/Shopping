@@ -11,6 +11,7 @@
 #import "MyViewController.h"
 #import "OrderViewController.h"
 #import "SHNavigationController.h"
+#import "UIImage+Addition.h"
 
 @interface SHTabbarController ()
 
@@ -31,6 +32,7 @@
     
     [tabBarItem setTitleTextAttributes:dictNormal forState:UIControlStateNormal];
     [tabBarItem setTitleTextAttributes:dictSelected forState:UIControlStateSelected];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0] andSize:CGSizeMake(UIScreenWidth, 1)]];
 }
 
 - (void)viewDidLoad {
@@ -40,7 +42,7 @@
 
 - (void)setUpAllChildVc {
     HomeViewController *HomeVC = [[HomeViewController alloc] init];
-    [self setUpOneChildVcWithVc:HomeVC Image:@"tabbar_home_normal" selectedImage:@"tabbar_home_select" title:@"首页"];
+    [self setUpOneChildVcWithVc:HomeVC Image:@"tabbar_home_normal" selectedImage:@"tabbar_home_select" title:@"美食"];
     OrderViewController *OrderVC = [[OrderViewController alloc] init];
     [self setUpOneChildVcWithVc:OrderVC Image:@"tabbar_order_normal" selectedImage:@"tabbar_order_select" title:@"订单"];
     MyViewController *MyVC = [[MyViewController alloc] init];

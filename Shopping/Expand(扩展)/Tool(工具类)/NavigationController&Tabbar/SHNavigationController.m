@@ -23,7 +23,8 @@
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
     
     UINavigationBar *bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
-    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:250/255.0 green:227/255.0 blue:111/255.0 alpha:1.0] andSize:CGSizeMake(1, 1)] forBarMetrics:UIBarMetricsDefault];
+    [bar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0] andSize:CGSizeMake(UIScreenWidth, 1)] forBarMetrics:UIBarMetricsDefault];
+    bar.shadowImage = [UIImage imageWithColor:[UIColor colorWithRed:252/255.0 green:252/255.0 blue:252/255.0 alpha:1.0] andSize:CGSizeMake(UIScreenWidth, 1)];
     NSMutableDictionary *dicBar=[NSMutableDictionary dictionary];
     dicBar[NSFontAttributeName]=[UIFont systemFontOfSize:15];
     [bar setTitleTextAttributes:dic];
