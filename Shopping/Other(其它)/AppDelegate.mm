@@ -52,7 +52,7 @@
 }
 
 - (void)initBmob {
-    [Bmob registerWithAppKey:@"32fbb0135e919115092c0e0850636a77"];
+    [Bmob registerWithAppKey:BmobKey];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

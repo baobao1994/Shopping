@@ -35,6 +35,14 @@
 	<string>是否允许定位</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问图片</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>汉仪橄榄体简.ttf</string>
+		<string>迷你简细行楷.TTF</string>
+		<string>汉仪仿宋简.ttf</string>
+		<string>汉仪魏碑繁.ttf</string>
+		<string>loveway.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

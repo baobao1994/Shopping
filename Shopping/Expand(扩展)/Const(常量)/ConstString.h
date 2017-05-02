@@ -13,6 +13,7 @@
 #pragma mark - System
 
 extern NSString * const BaiduMapKey;
+extern NSString * const BmobKey;
 extern NSString * const SMSModelNameKey;
 extern NSString * const SystemTable;
 extern NSString * const UserTable;
@@ -23,6 +24,7 @@ extern NSString * const ObjectIdKey;
 extern NSString * const SystemServiceTelKey;
 extern NSString * const SystemOpenTimeKey;
 extern NSString * const SystemIsOpenKey;
+extern NSString * const CustomFontName;
 
 #pragma mark - UserInfo
 

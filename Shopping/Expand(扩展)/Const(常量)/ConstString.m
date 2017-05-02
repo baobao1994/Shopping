@@ -13,6 +13,7 @@
 #pragma mark - System
 
 NSString * const BaiduMapKey = @"W9qfPDQ0PRjNaGdBfI86SXPitQhuHKyt";
+NSString * const BmobKey = @"32fbb0135e919115092c0e0850636a77";
 NSString * const SMSModelNameKey = @"shopping";
 NSString * const SystemTable = @"System";
 NSString * const UserTable = @"User";
@@ -23,6 +24,7 @@ NSString * const ObjectIdKey = @"objectId";
 NSString * const SystemServiceTelKey = @"service_tel";
 NSString * const SystemOpenTimeKey = @"open_time";
 NSString * const SystemIsOpenKey = @"is_open";
+NSString * const CustomFontName = @"FZLBJW--GB1-0";
 
 #pragma mark - UserInfo
 

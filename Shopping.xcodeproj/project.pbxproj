@@ -78,6 +78,12 @@
 		BA48F0011EA4CD2200999921 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0001EA4CD2200999921 /* libc++.tbd */; };
 		BA48F0031EA4CD3900999921 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0021EA4CD3900999921 /* libWeChatSDK.a */; };
 		BA557A091EAD9F7E00A77EF7 /* SystemInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */; };
+		BA8A98411EB86E9400017075 /* 汉仪橄榄体简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */; };
+		BA8A98451EB86EF900017075 /* 汉仪仿宋简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */; };
+		BA8A98461EB86EF900017075 /* 汉仪魏碑繁.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */; };
+		BA8A98471EB86EF900017075 /* 迷你简细行楷.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98441EB86EF900017075 /* 迷你简细行楷.TTF */; };
+		BA8A984A1EB870B500017075 /* UILabel+Fontchange.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A98491EB870B500017075 /* UILabel+Fontchange.m */; };
+		BA8A984C1EB871E800017075 /* loveway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A984B1EB871E800017075 /* loveway.ttf */; };
 		BA9833A01EB3144D0099C86E /* FoodEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */; };
 		BA9833A11EB3144D0099C86E /* FoodEvaluateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */; };
 		BA9833A51EB315DE0099C86E /* FoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833A31EB315DE0099C86E /* FoodListViewController.m */; };
@@ -465,6 +471,13 @@
 		BA48F0021EA4CD3900999921 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		BA557A071EAD9F7E00A77EF7 /* SystemInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfoModel.h; sourceTree = "<group>"; };
 		BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfoModel.m; sourceTree = "<group>"; };
+		BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪橄榄体简.ttf"; sourceTree = "<group>"; };
+		BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪仿宋简.ttf"; sourceTree = "<group>"; };
+		BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪魏碑繁.ttf"; sourceTree = "<group>"; };
+		BA8A98441EB86EF900017075 /* 迷你简细行楷.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "迷你简细行楷.TTF"; sourceTree = "<group>"; };
+		BA8A98481EB870B500017075 /* UILabel+Fontchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Fontchange.h"; sourceTree = "<group>"; };
+		BA8A98491EB870B500017075 /* UILabel+Fontchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Fontchange.m"; sourceTree = "<group>"; };
+		BA8A984B1EB871E800017075 /* loveway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loveway.ttf; sourceTree = "<group>"; };
 		BA98339D1EB3144D0099C86E /* FoodEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodEvaluateViewController.h; sourceTree = "<group>"; };
 		BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodEvaluateViewController.m; sourceTree = "<group>"; };
 		BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodEvaluateViewController.xib; sourceTree = "<group>"; };
@@ -1011,6 +1024,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA8A983F1EB86E9400017075 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BA8A984B1EB871E800017075 /* loveway.ttf */,
+				BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */,
+				BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */,
+				BA8A98441EB86EF900017075 /* 迷你简细行楷.TTF */,
+				BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		BABD07201EA5EB44005675CC /* TimeDownView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1118,6 +1143,8 @@
 				BAF3CD021E9C88FD0000C9A9 /* NSString+MD5.m */,
 				BAF3CD031E9C88FD0000C9A9 /* UIButton+Addition.h */,
 				BAF3CD041E9C88FD0000C9A9 /* UIButton+Addition.m */,
+				BA8A98481EB870B500017075 /* UILabel+Fontchange.h */,
+				BA8A98491EB870B500017075 /* UILabel+Fontchange.m */,
 				BAF3CCF21E9C82820000C9A9 /* UIImage+Addition.h */,
 				BAF3CCF31E9C82820000C9A9 /* UIImage+Addition.m */,
 				BAF3CD051E9C88FD0000C9A9 /* UIImage+ImageCache.h */,
@@ -1248,6 +1275,7 @@
 		BAF3CCDA1E9C79C70000C9A9 /* Resource(资源) */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A983F1EB86E9400017075 /* Font */,
 				BAF3CCDB1E9C79C70000C9A9 /* Image */,
 				BAF3CCDC1E9C79C70000C9A9 /* Plist */,
 			);
@@ -2216,6 +2244,7 @@
 				BAF3CE071E9CA88E0000C9A9 /* refresh_logo@2x.png in Resources */,
 				BA3017ED1E9E0C6B00F7C518 /* SettingViewController.xib in Resources */,
 				A520A2941EAB330500359DB1 /* PlaceView.xib in Resources */,
+				BA8A984C1EB871E800017075 /* loveway.ttf in Resources */,
 				BAF3CF4E1E9CBE3D0000C9A9 /* VideoSendIcon@2x.png in Resources */,
 				BAF3CF4F1E9CBE3D0000C9A9 /* 椭圆-1-拷贝@2x.png in Resources */,
 				BAF3CF441E9CBE3D0000C9A9 /* icon_shanchu@2x.png in Resources */,
@@ -2225,10 +2254,12 @@
 				BAF3CE3D1E9CB4020000C9A9 /* ic_back@2x.png in Resources */,
 				BAF3CF451E9CBE3D0000C9A9 /* multimedia_videocard_play@2x.png in Resources */,
 				BAF3CF461E9CBE3D0000C9A9 /* page_score_pic_background@2x.png in Resources */,
+				BA8A98411EB86E9400017075 /* 汉仪橄榄体简.ttf in Resources */,
 				BAF3CF191E9CBE3D0000C9A9 /* camera_drop_highlighted@2x.png in Resources */,
 				BAF3CF301E9CBE3D0000C9A9 /* compose_live_photo_open_icon@2x.png in Resources */,
 				BAF3CF261E9CBE3D0000C9A9 /* compose_delete@2x.png in Resources */,
 				BAF3CF311E9CBE3D0000C9A9 /* compose_live_photo_open_icon@3x.png in Resources */,
+				BA8A98451EB86EF900017075 /* 汉仪仿宋简.ttf in Resources */,
 				BAF3CF1E1E9CBE3D0000C9A9 /* camera_flashlight_open@2x.png in Resources */,
 				BAF3CF4B1E9CBE3D0000C9A9 /* video_next_button@2x.png in Resources */,
 				BAF3CF221E9CBE3D0000C9A9 /* camera_overturn_highlighted@2x.png in Resources */,
@@ -2262,6 +2293,7 @@
 				BAF3CE041E9CA88E0000C9A9 /* headerArrow@2x.png in Resources */,
 				BAF3CF371E9CBE3D0000C9A9 /* compose_photo_photograph@2x.png in Resources */,
 				BAF3CE181E9CA88E0000C9A9 /* refreshing_image_5@2x.png in Resources */,
+				BA8A98471EB86EF900017075 /* 迷你简细行楷.TTF in Resources */,
 				BAF3CE1E1E9CA88E0000C9A9 /* rocker_ball@3x.png in Resources */,
 				BAF3CF471E9CBE3D0000C9A9 /* timeline_image_gif@2x.png in Resources */,
 				BA9833A61EB315DE0099C86E /* FoodListViewController.xib in Resources */,
@@ -2290,6 +2322,7 @@
 				BAF3CF3B1E9CBE3D0000C9A9 /* compose_photo_preview_right@2x.png in Resources */,
 				BAF3CE0F1E9CA88E0000C9A9 /* refreshing_image_11@2x.png in Resources */,
 				BA9833BE1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib in Resources */,
+				BA8A98461EB86EF900017075 /* 汉仪魏碑繁.ttf in Resources */,
 				BAF3CE021E9CA88E0000C9A9 /* footerArrow@2x.png in Resources */,
 				BA3017E61E9E0C6000F7C518 /* LoginViewController.xib in Resources */,
 				BA3017F21E9E0C8D00F7C518 /* IntegralViewController.xib in Resources */,
@@ -2517,6 +2550,7 @@
 				BA9833A51EB315DE0099C86E /* FoodListViewController.m in Sources */,
 				BAF3CD221E9C88FD0000C9A9 /* UITableViewCell+Addition.m in Sources */,
 				A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */,
+				BA8A984A1EB870B500017075 /* UILabel+Fontchange.m in Sources */,
 				BAF3CDF81E9CA88E0000C9A9 /* ModalMenuView.m in Sources */,
 				BAF3CDEE1E9CA88E0000C9A9 /* CycleScrollView.m in Sources */,
 				BA174DB61EB2E455003B293B /* HomeCollectionViewCell.m in Sources */,

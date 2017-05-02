@@ -12,6 +12,7 @@
 #import "OrderViewController.h"
 #import "SHNavigationController.h"
 #import "UIImage+Addition.h"
+#import "ConstString.h"
 
 @interface SHTabbarController ()
 
@@ -24,11 +25,11 @@
 
     NSMutableDictionary *dictNormal = [NSMutableDictionary dictionary];
     dictNormal[NSForegroundColorAttributeName] = [UIColor grayColor];
-    dictNormal[NSFontAttributeName] = [UIFont systemFontOfSize:11];
+    dictNormal[NSFontAttributeName] = [UIFont fontWithName:CustomFontName size:11];
     
     NSMutableDictionary *dictSelected = [NSMutableDictionary dictionary];
     dictSelected[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
-    dictSelected[NSFontAttributeName] = [UIFont systemFontOfSize:11];
+    dictSelected[NSFontAttributeName] = [UIFont fontWithName:CustomFontName size:11];
     
     [tabBarItem setTitleTextAttributes:dictNormal forState:UIControlStateNormal];
     [tabBarItem setTitleTextAttributes:dictSelected forState:UIControlStateSelected];
