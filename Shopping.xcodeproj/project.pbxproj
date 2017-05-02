@@ -84,6 +84,7 @@
 		BA8A98471EB86EF900017075 /* 迷你简细行楷.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98441EB86EF900017075 /* 迷你简细行楷.TTF */; };
 		BA8A984A1EB870B500017075 /* UILabel+Fontchange.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A98491EB870B500017075 /* UILabel+Fontchange.m */; };
 		BA8A984C1EB871E800017075 /* loveway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A984B1EB871E800017075 /* loveway.ttf */; };
+		BA8A984F1EB877F600017075 /* UIControl+ButtonClickDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8A984E1EB877F600017075 /* UIControl+ButtonClickDelay.m */; };
 		BA9833A01EB3144D0099C86E /* FoodEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */; };
 		BA9833A11EB3144D0099C86E /* FoodEvaluateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */; };
 		BA9833A51EB315DE0099C86E /* FoodListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833A31EB315DE0099C86E /* FoodListViewController.m */; };
@@ -478,6 +479,8 @@
 		BA8A98481EB870B500017075 /* UILabel+Fontchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Fontchange.h"; sourceTree = "<group>"; };
 		BA8A98491EB870B500017075 /* UILabel+Fontchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Fontchange.m"; sourceTree = "<group>"; };
 		BA8A984B1EB871E800017075 /* loveway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = loveway.ttf; sourceTree = "<group>"; };
+		BA8A984D1EB877F600017075 /* UIControl+ButtonClickDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ButtonClickDelay.h"; sourceTree = "<group>"; };
+		BA8A984E1EB877F600017075 /* UIControl+ButtonClickDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ButtonClickDelay.m"; sourceTree = "<group>"; };
 		BA98339D1EB3144D0099C86E /* FoodEvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodEvaluateViewController.h; sourceTree = "<group>"; };
 		BA98339E1EB3144D0099C86E /* FoodEvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodEvaluateViewController.m; sourceTree = "<group>"; };
 		BA98339F1EB3144D0099C86E /* FoodEvaluateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodEvaluateViewController.xib; sourceTree = "<group>"; };
@@ -1143,6 +1146,8 @@
 				BAF3CD021E9C88FD0000C9A9 /* NSString+MD5.m */,
 				BAF3CD031E9C88FD0000C9A9 /* UIButton+Addition.h */,
 				BAF3CD041E9C88FD0000C9A9 /* UIButton+Addition.m */,
+				BA8A984D1EB877F600017075 /* UIControl+ButtonClickDelay.h */,
+				BA8A984E1EB877F600017075 /* UIControl+ButtonClickDelay.m */,
 				BA8A98481EB870B500017075 /* UILabel+Fontchange.h */,
 				BA8A98491EB870B500017075 /* UILabel+Fontchange.m */,
 				BAF3CCF21E9C82820000C9A9 /* UIImage+Addition.h */,
@@ -2397,6 +2402,7 @@
 				A50A044D1EAB08ED00764A42 /* MBProgrossManager.m in Sources */,
 				A520A2AE1EABB4A300359DB1 /* AddressModel.m in Sources */,
 				BAF3CD251E9C88FD0000C9A9 /* UIView+Addtion.m in Sources */,
+				BA8A984F1EB877F600017075 /* UIControl+ButtonClickDelay.m in Sources */,
 				BA3017CD1E9E0A4200F7C518 /* JVFloatLabeledTextView.m in Sources */,
 				BAF3CD571E9CA4F10000C9A9 /* UIButton+WebCache.m in Sources */,
 				BAF3CF891E9CDE090000C9A9 /* HomeViewController.m in Sources */,
