@@ -20,7 +20,6 @@
         self.userBalance = [dic objectForKey:UserBalanceKey];
         self.userCoupon = [dic objectForKey:UserCouponKey];
         self.userIntegral = [dic objectForKey:UserIntegralKey];
-        self.userPassword = [dic objectForKey:UserPasswordKey];
         self.isRemember = [[dic objectForKey:UserIsRememberKey] boolValue];
     }
     return self;
@@ -40,9 +39,6 @@
     [aCoder encodeObject:self.userBalance forKey:UserBalanceKey];
     [aCoder encodeObject:self.userCoupon forKey:UserCouponKey];
     [aCoder encodeObject:self.userIntegral forKey:UserIntegralKey];
-    if (!isEmptyString(self.userPassword)) {
-        [aCoder encodeObject:self.userPassword forKey:UserPasswordKey];
-    }
     [aCoder encodeObject:[NSNumber numberWithBool:self.isRemember] forKey:UserIsRememberKey];
 }
 
@@ -55,7 +51,6 @@
         self.userBalance = [aDecoder decodeObjectForKey:UserBalanceKey];
         self.userCoupon = [aDecoder decodeObjectForKey:UserCouponKey];
         self.userIntegral = [aDecoder decodeObjectForKey:UserIntegralKey];
-        self.userPassword = [aDecoder decodeObjectForKey:UserPasswordKey];
         self.isRemember = [[aDecoder decodeObjectForKey:UserIsRememberKey] boolValue];
     }
     return self;

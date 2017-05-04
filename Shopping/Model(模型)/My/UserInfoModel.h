@@ -17,7 +17,6 @@
 @property (nonatomic, copy) NSNumber *userBalance;
 @property (nonatomic, copy) NSNumber *userCoupon;
 @property (nonatomic, copy) NSNumber *userIntegral;
-@property (nonatomic, copy) NSString *userPassword;
 @property (nonatomic, assign) BOOL isRemember;
 
 - (id)initWithDictionary:(NSDictionary *)dic;

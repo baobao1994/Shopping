@@ -13,6 +13,8 @@
 #import "HorizontalScrollTableViewCell.h"
 #import "HorizonItemCollectionViewCell.h"
 #import "ConstString.h"
+#import "CustomAlertView.h"
+#import "FoodDetailShowView.h"
 
 NSString *const HorizonItemCollectionViewCellIdentifier = @"HorizonItemCollectionViewCell";
 
@@ -27,6 +29,8 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, assign) CenterTableViewType type;
 @property (nonatomic, assign) NSInteger requestCount;
+@property (nonatomic, strong) CustomAlertView *customAlertView;
+@property (nonatomic, strong) FoodDetailShowView *foodDetailShowView;
 
 @end
 
@@ -36,6 +40,10 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     [super viewDidLoad];
     self.title = @"美食列表";
     self.dataSource = [[NSMutableArray alloc] init];
+    self.foodDetailShowView = [[FoodDetailShowView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth - 60, 180)];
+    [self.foodDetailShowView.closeButton addTarget:self action:@selector(hideFoodDetailShowView) forControlEvents:UIControlEventTouchUpInside];
+    self.customAlertView = [[CustomAlertView alloc] init];
+    self.customAlertView.contentView = self.foodDetailShowView;
     BmobQuery *foodCategoryQuery = [BmobQuery queryWithClassName:FoodcategoryTable];
     [foodCategoryQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [self.dataSource removeAllObjects];
@@ -64,6 +72,10 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     if (self.requestCount == 2) {
         [self.tableView reloadData];
     }
+}
+
+- (void)hideFoodDetailShowView {
+    [self.customAlertView hide];
 }
 
 #pragma mark - UITableView Delegate method
@@ -165,6 +177,7 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 
 - (void)horizontalCellContentsView:(UICollectionView *)horizontalCellContentsView didSelectItemAtContentIndexPath:(NSIndexPath *)contentIndexPath inTableViewIndexPath:(NSIndexPath *)tableViewIndexPath {
     [horizontalCellContentsView deselectItemAtIndexPath:contentIndexPath animated:YES];
+    [self.customAlertView show];
     NSLog(@"Section %ld Row %ld Item %ld is selected", (unsigned long)tableViewIndexPath.section, (unsigned long)tableViewIndexPath.row, (unsigned long)contentIndexPath.item);
 }
 

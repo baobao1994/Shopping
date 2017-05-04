@@ -350,6 +350,11 @@
 		BAF3CF8F1E9CDE170000C9A9 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF8D1E9CDE170000C9A9 /* MyViewController.xib */; };
 		BAF3CF931E9CDE220000C9A9 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF3CF911E9CDE220000C9A9 /* OrderViewController.m */; };
 		BAF3CF941E9CDE220000C9A9 /* OrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CF921E9CDE220000C9A9 /* OrderViewController.xib */; };
+		BAFDEACA1EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAC31EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m */; };
+		BAFDEACB1EBB0610004DB2A2 /* FoodDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAC41EBB0610004DB2A2 /* FoodDetailCollectionViewCell.xib */; };
+		BAFDEACC1EBB0610004DB2A2 /* FoodDetailFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAC61EBB0610004DB2A2 /* FoodDetailFlowLayout.m */; };
+		BAFDEACD1EBB0610004DB2A2 /* FoodDetailShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAC81EBB0610004DB2A2 /* FoodDetailShowView.m */; };
+		BAFDEACE1EBB0610004DB2A2 /* FoodDetailShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAC91EBB0610004DB2A2 /* FoodDetailShowView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -896,6 +901,14 @@
 		BAF3CF901E9CDE220000C9A9 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		BAF3CF911E9CDE220000C9A9 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		BAF3CF921E9CDE220000C9A9 /* OrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderViewController.xib; sourceTree = "<group>"; };
+		BAFDEAC21EBB0610004DB2A2 /* FoodDetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailCollectionViewCell.h; sourceTree = "<group>"; };
+		BAFDEAC31EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailCollectionViewCell.m; sourceTree = "<group>"; };
+		BAFDEAC41EBB0610004DB2A2 /* FoodDetailCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		BAFDEAC51EBB0610004DB2A2 /* FoodDetailFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailFlowLayout.h; sourceTree = "<group>"; };
+		BAFDEAC61EBB0610004DB2A2 /* FoodDetailFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailFlowLayout.m; sourceTree = "<group>"; };
+		BAFDEAC71EBB0610004DB2A2 /* FoodDetailShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailShowView.h; sourceTree = "<group>"; };
+		BAFDEAC81EBB0610004DB2A2 /* FoodDetailShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailShowView.m; sourceTree = "<group>"; };
+		BAFDEAC91EBB0610004DB2A2 /* FoodDetailShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodDetailShowView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2035,6 +2048,14 @@
 		BAF3CF801E9CDB260000C9A9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BAFDEAC21EBB0610004DB2A2 /* FoodDetailCollectionViewCell.h */,
+				BAFDEAC31EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m */,
+				BAFDEAC41EBB0610004DB2A2 /* FoodDetailCollectionViewCell.xib */,
+				BAFDEAC51EBB0610004DB2A2 /* FoodDetailFlowLayout.h */,
+				BAFDEAC61EBB0610004DB2A2 /* FoodDetailFlowLayout.m */,
+				BAFDEAC71EBB0610004DB2A2 /* FoodDetailShowView.h */,
+				BAFDEAC81EBB0610004DB2A2 /* FoodDetailShowView.m */,
+				BAFDEAC91EBB0610004DB2A2 /* FoodDetailShowView.xib */,
 				BA174DAE1EB2E443003B293B /* HomeHeaderCollectionReusableView.h */,
 				BA174DAF1EB2E443003B293B /* HomeHeaderCollectionReusableView.m */,
 				BA174DB01EB2E443003B293B /* HomeHeaderCollectionReusableView.xib */,
@@ -2317,6 +2338,7 @@
 				BAF3CF421E9CBE3D0000C9A9 /* hotweibo_back_icon@2x.png in Resources */,
 				BAF3CF2E1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@2x.png in Resources */,
 				BAF3CF331E9CBE3D0000C9A9 /* compose_live_photo_open_only_icon@3x.png in Resources */,
+				BAFDEACE1EBB0610004DB2A2 /* FoodDetailShowView.xib in Resources */,
 				BAF3CF2B1E9CBE3D0000C9A9 /* compose_guide_check_box_right@2x.png in Resources */,
 				A520A2B31EABB84900359DB1 /* EditAddressViewController.xib in Resources */,
 				BAF3CF3F1E9CBE3D0000C9A9 /* compose_pic_add@2x.png in Resources */,
@@ -2343,6 +2365,7 @@
 				BAF3CE121E9CA88E0000C9A9 /* refreshing_image_14@2x.png in Resources */,
 				BAF3CE101E9CA88E0000C9A9 /* refreshing_image_12@2x.png in Resources */,
 				A520A2A31EAB5BD000359DB1 /* MyAddressViewController.xib in Resources */,
+				BAFDEACB1EBB0610004DB2A2 /* FoodDetailCollectionViewCell.xib in Resources */,
 				BAF3CF341E9CBE3D0000C9A9 /* compose_photo_filter_checkbox_checked@2x.png in Resources */,
 				A520A2D01EAC96A000359DB1 /* chiken_03.png in Resources */,
 				BAF3CE0C1E9CA88E0000C9A9 /* refresh_rocker@3x.png in Resources */,
@@ -2396,6 +2419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFDEACC1EBB0610004DB2A2 /* FoodDetailFlowLayout.m in Sources */,
 				BAF3CE521E9CB4F70000C9A9 /* AFURLSessionManager.m in Sources */,
 				BAF3CE781E9CB8520000C9A9 /* CLLockVC.m in Sources */,
 				BAF3CE4F1E9CB4F70000C9A9 /* AFSecurityPolicy.m in Sources */,
@@ -2444,6 +2468,7 @@
 				BAF3CCF11E9C81B10000C9A9 /* UIImage+CreateBarcode.m in Sources */,
 				BAF3CE271E9CA88E0000C9A9 /* ScratchCardView.m in Sources */,
 				BAF3CE301E9CABEF0000C9A9 /* ConstString.m in Sources */,
+				BAFDEACD1EBB0610004DB2A2 /* FoodDetailShowView.m in Sources */,
 				BAF3CD201E9C88FD0000C9A9 /* UIImageView+Addition.m in Sources */,
 				BAF3CE831E9CB8520000C9A9 /* CLLockView.m in Sources */,
 				BAF3CE871E9CBA390000C9A9 /* UUInputAccessoryView.m in Sources */,
@@ -2482,6 +2507,7 @@
 				BAF3CF111E9CBE3D0000C9A9 /* HXVideoPresentTransition.m in Sources */,
 				BAF3CDFE1E9CA88E0000C9A9 /* UIViewController+Pop.m in Sources */,
 				A520A28E1EAB0DCE00359DB1 /* SearchPlaceViewController.m in Sources */,
+				BAFDEACA1EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m in Sources */,
 				BAF3CD5C1E9CA4F10000C9A9 /* UIImageView+WebCache.m in Sources */,
 				BAF3CE001E9CA88E0000C9A9 /* EGORefreshTableHeaderView.m in Sources */,
 				BAF3CD5A1E9CA4F10000C9A9 /* UIImage+WebP.m in Sources */,

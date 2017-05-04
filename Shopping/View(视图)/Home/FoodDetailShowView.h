@@ -10,4 +10,6 @@
 
 @interface FoodDetailShowView : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+
 @end

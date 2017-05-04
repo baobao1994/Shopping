@@ -27,21 +27,9 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _info = [[UserManager alloc] init];
-//        if (_info.userInfo) {
-//            [_info Login:_info.userInfo];
-//        }
     });
     return _info;
 }
-
-//- (void)Login:(UserInfoModel *)userInfoModel {
-//    if (userInfoModel.isRemember) {
-//        BmobQuery *bquery = [BmobQuery queryWithClassName:UserTable];
-//        [bquery whereKey:UserTelePhoneKey equalTo:userInfoModel.userTelePhone];
-//        [bquery whereKey:UserPasswordKey equalTo:[userInfoModel.userPassword md5HexDigest]];
-//        [bquery calcInBackgroundWithBlock:nil];
-//    }
-//}
 
 - (void)saveUserInfo {
     [self saveUserInfo:_userInfo];
