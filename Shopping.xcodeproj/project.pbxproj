@@ -355,6 +355,16 @@
 		BAFDEACC1EBB0610004DB2A2 /* FoodDetailFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAC61EBB0610004DB2A2 /* FoodDetailFlowLayout.m */; };
 		BAFDEACD1EBB0610004DB2A2 /* FoodDetailShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAC81EBB0610004DB2A2 /* FoodDetailShowView.m */; };
 		BAFDEACE1EBB0610004DB2A2 /* FoodDetailShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAC91EBB0610004DB2A2 /* FoodDetailShowView.xib */; };
+		BAFDEAD51EBB171F004DB2A2 /* ConfirmOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAD31EBB171F004DB2A2 /* ConfirmOrderViewController.m */; };
+		BAFDEAD61EBB171F004DB2A2 /* ConfirmOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAD41EBB171F004DB2A2 /* ConfirmOrderViewController.xib */; };
+		BAFDEAE41EBB19A4004DB2A2 /* PayOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAE21EBB19A4004DB2A2 /* PayOrderTableViewCell.m */; };
+		BAFDEAE51EBB19A4004DB2A2 /* PayOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAE31EBB19A4004DB2A2 /* PayOrderTableViewCell.xib */; };
+		BAFDEAE91EBB19B5004DB2A2 /* PayAddreessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAE71EBB19B5004DB2A2 /* PayAddreessTableViewCell.m */; };
+		BAFDEAEA1EBB19B5004DB2A2 /* PayAddreessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAE81EBB19B5004DB2A2 /* PayAddreessTableViewCell.xib */; };
+		BAFDEAEE1EBB19D0004DB2A2 /* PayPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAEC1EBB19D0004DB2A2 /* PayPriceTableViewCell.m */; };
+		BAFDEAEF1EBB19D0004DB2A2 /* PayPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAED1EBB19D0004DB2A2 /* PayPriceTableViewCell.xib */; };
+		BAFDEAF31EBB1A99004DB2A2 /* PayCouponTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFDEAF11EBB1A99004DB2A2 /* PayCouponTableViewCell.m */; };
+		BAFDEAF41EBB1A99004DB2A2 /* PayCouponTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAFDEAF21EBB1A99004DB2A2 /* PayCouponTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -909,6 +919,21 @@
 		BAFDEAC71EBB0610004DB2A2 /* FoodDetailShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailShowView.h; sourceTree = "<group>"; };
 		BAFDEAC81EBB0610004DB2A2 /* FoodDetailShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailShowView.m; sourceTree = "<group>"; };
 		BAFDEAC91EBB0610004DB2A2 /* FoodDetailShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodDetailShowView.xib; sourceTree = "<group>"; };
+		BAFDEAD21EBB171F004DB2A2 /* ConfirmOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmOrderViewController.h; sourceTree = "<group>"; };
+		BAFDEAD31EBB171F004DB2A2 /* ConfirmOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmOrderViewController.m; sourceTree = "<group>"; };
+		BAFDEAD41EBB171F004DB2A2 /* ConfirmOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmOrderViewController.xib; sourceTree = "<group>"; };
+		BAFDEAE11EBB19A4004DB2A2 /* PayOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayOrderTableViewCell.h; sourceTree = "<group>"; };
+		BAFDEAE21EBB19A4004DB2A2 /* PayOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayOrderTableViewCell.m; sourceTree = "<group>"; };
+		BAFDEAE31EBB19A4004DB2A2 /* PayOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayOrderTableViewCell.xib; sourceTree = "<group>"; };
+		BAFDEAE61EBB19B5004DB2A2 /* PayAddreessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayAddreessTableViewCell.h; sourceTree = "<group>"; };
+		BAFDEAE71EBB19B5004DB2A2 /* PayAddreessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayAddreessTableViewCell.m; sourceTree = "<group>"; };
+		BAFDEAE81EBB19B5004DB2A2 /* PayAddreessTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayAddreessTableViewCell.xib; sourceTree = "<group>"; };
+		BAFDEAEB1EBB19D0004DB2A2 /* PayPriceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPriceTableViewCell.h; sourceTree = "<group>"; };
+		BAFDEAEC1EBB19D0004DB2A2 /* PayPriceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPriceTableViewCell.m; sourceTree = "<group>"; };
+		BAFDEAED1EBB19D0004DB2A2 /* PayPriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayPriceTableViewCell.xib; sourceTree = "<group>"; };
+		BAFDEAF01EBB1A99004DB2A2 /* PayCouponTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayCouponTableViewCell.h; sourceTree = "<group>"; };
+		BAFDEAF11EBB1A99004DB2A2 /* PayCouponTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayCouponTableViewCell.m; sourceTree = "<group>"; };
+		BAFDEAF21EBB1A99004DB2A2 /* PayCouponTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayCouponTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1270,6 +1295,7 @@
 				BAF3CF831E9CDB2D0000C9A9 /* Home */,
 				BAF3CF851E9CDB2D0000C9A9 /* Order */,
 				BAF3CF841E9CDB2D0000C9A9 /* My */,
+				BAFDEAD11EBB16CE004DB2A2 /* Pay */,
 				BAF3CE311E9CAC8A0000C9A9 /* WinMessage.h */,
 				BAF3CE321E9CAC8A0000C9A9 /* WinMessage.m */,
 				BABD07271EA60318005675CC /* UserManager.h */,
@@ -1335,6 +1361,7 @@
 				BAF3CF801E9CDB260000C9A9 /* Home */,
 				BAF3CF821E9CDB260000C9A9 /* Order */,
 				BAF3CF811E9CDB260000C9A9 /* My */,
+				BAFDEAD01EBB16C6004DB2A2 /* Pay */,
 			);
 			path = "View(视图)";
 			sourceTree = "<group>";
@@ -1345,6 +1372,7 @@
 				BAF3CF7D1E9CDB1F0000C9A9 /* Home */,
 				BAF3CF7F1E9CDB1F0000C9A9 /* Order */,
 				BAF3CF7E1E9CDB1F0000C9A9 /* My */,
+				BAFDEACF1EBB16C1004DB2A2 /* Pay */,
 				BAF3CCE11E9C79C70000C9A9 /* ViewController.h */,
 				BAF3CCE21E9C79C70000C9A9 /* ViewController.m */,
 			);
@@ -2142,6 +2170,42 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
+		BAFDEACF1EBB16C1004DB2A2 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				BAFDEAD21EBB171F004DB2A2 /* ConfirmOrderViewController.h */,
+				BAFDEAD31EBB171F004DB2A2 /* ConfirmOrderViewController.m */,
+				BAFDEAD41EBB171F004DB2A2 /* ConfirmOrderViewController.xib */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		BAFDEAD01EBB16C6004DB2A2 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				BAFDEAE11EBB19A4004DB2A2 /* PayOrderTableViewCell.h */,
+				BAFDEAE21EBB19A4004DB2A2 /* PayOrderTableViewCell.m */,
+				BAFDEAE31EBB19A4004DB2A2 /* PayOrderTableViewCell.xib */,
+				BAFDEAF01EBB1A99004DB2A2 /* PayCouponTableViewCell.h */,
+				BAFDEAF11EBB1A99004DB2A2 /* PayCouponTableViewCell.m */,
+				BAFDEAF21EBB1A99004DB2A2 /* PayCouponTableViewCell.xib */,
+				BAFDEAEB1EBB19D0004DB2A2 /* PayPriceTableViewCell.h */,
+				BAFDEAEC1EBB19D0004DB2A2 /* PayPriceTableViewCell.m */,
+				BAFDEAED1EBB19D0004DB2A2 /* PayPriceTableViewCell.xib */,
+				BAFDEAE61EBB19B5004DB2A2 /* PayAddreessTableViewCell.h */,
+				BAFDEAE71EBB19B5004DB2A2 /* PayAddreessTableViewCell.m */,
+				BAFDEAE81EBB19B5004DB2A2 /* PayAddreessTableViewCell.xib */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		BAFDEAD11EBB16CE004DB2A2 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2286,6 +2350,8 @@
 				BAF3CF261E9CBE3D0000C9A9 /* compose_delete@2x.png in Resources */,
 				BAF3CF311E9CBE3D0000C9A9 /* compose_live_photo_open_icon@3x.png in Resources */,
 				BA8A98451EB86EF900017075 /* 汉仪仿宋简.ttf in Resources */,
+				BAFDEAEF1EBB19D0004DB2A2 /* PayPriceTableViewCell.xib in Resources */,
+				BAFDEAE51EBB19A4004DB2A2 /* PayOrderTableViewCell.xib in Resources */,
 				BAF3CF1E1E9CBE3D0000C9A9 /* camera_flashlight_open@2x.png in Resources */,
 				BAF3CF4B1E9CBE3D0000C9A9 /* video_next_button@2x.png in Resources */,
 				BAF3CF221E9CBE3D0000C9A9 /* camera_overturn_highlighted@2x.png in Resources */,
@@ -2298,6 +2364,7 @@
 				BAF3CF2D1E9CBE3D0000C9A9 /* compose_live_photo_background@3x.png in Resources */,
 				BAF3CF131E9CBE3D0000C9A9 /* alert_failed_icon@2x.png in Resources */,
 				BAF3CE1B1E9CA88E0000C9A9 /* refreshing_image_8@2x.png in Resources */,
+				BAFDEAF41EBB1A99004DB2A2 /* PayCouponTableViewCell.xib in Resources */,
 				BAF3CF431E9CBE3D0000C9A9 /* icon_jixu@2x.png in Resources */,
 				BAF3CE131E9CA88E0000C9A9 /* refreshing_image_15@2x.png in Resources */,
 				BAF3CF171E9CBE3D0000C9A9 /* camera_close@2x.png in Resources */,
@@ -2336,6 +2403,7 @@
 				BA9833A11EB3144D0099C86E /* FoodEvaluateViewController.xib in Resources */,
 				BAE5954B1EA5C37700663616 /* ForgetPwdViewController.xib in Resources */,
 				BAF3CF421E9CBE3D0000C9A9 /* hotweibo_back_icon@2x.png in Resources */,
+				BAFDEAD61EBB171F004DB2A2 /* ConfirmOrderViewController.xib in Resources */,
 				BAF3CF2E1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@2x.png in Resources */,
 				BAF3CF331E9CBE3D0000C9A9 /* compose_live_photo_open_only_icon@3x.png in Resources */,
 				BAFDEACE1EBB0610004DB2A2 /* FoodDetailShowView.xib in Resources */,
@@ -2379,6 +2447,7 @@
 				BAF3CF251E9CBE3D0000C9A9 /* camera_video_background_highlighted@2x.png in Resources */,
 				BAF3CF4A1E9CBE3D0000C9A9 /* video_delete_dustbin@2x.png in Resources */,
 				A520A2D31EAC96A000359DB1 /* chiken_06.png in Resources */,
+				BAFDEAEA1EBB19B5004DB2A2 /* PayAddreessTableViewCell.xib in Resources */,
 				A520A2991EAB33B500359DB1 /* PlaceTableViewCell.xib in Resources */,
 				BAF3CF151E9CBE3D0000C9A9 /* camera_camera_background@2x.png in Resources */,
 				BAF3CE0B1E9CA88E0000C9A9 /* refresh_rocker@2x.png in Resources */,
@@ -2439,6 +2508,7 @@
 				BA9833A91EB31A950099C86E /* FoodCategoryModel.m in Sources */,
 				BAF3CF031E9CBE3D0000C9A9 /* HXCameraViewController.m in Sources */,
 				BAF3CE2D1E9CAB9A0000C9A9 /* LiveTitleLabel.m in Sources */,
+				BAFDEAF31EBB1A99004DB2A2 /* PayCouponTableViewCell.m in Sources */,
 				BAF3CDE51E9CA88E0000C9A9 /* CustomAlertView.m in Sources */,
 				BA557A091EAD9F7E00A77EF7 /* SystemInfoModel.m in Sources */,
 				BA3017EC1E9E0C6B00F7C518 /* SettingViewController.m in Sources */,
@@ -2472,6 +2542,7 @@
 				BAF3CD201E9C88FD0000C9A9 /* UIImageView+Addition.m in Sources */,
 				BAF3CE831E9CB8520000C9A9 /* CLLockView.m in Sources */,
 				BAF3CE871E9CBA390000C9A9 /* UUInputAccessoryView.m in Sources */,
+				BAFDEAEE1EBB19D0004DB2A2 /* PayPriceTableViewCell.m in Sources */,
 				BAF3CEFF1E9CBE3D0000C9A9 /* HXAlbumListView.m in Sources */,
 				BAF3CF051E9CBE3D0000C9A9 /* HXPhotoConst.m in Sources */,
 				BAF3CEFE1E9CBE3D0000C9A9 /* Demo2ViewController.m in Sources */,
@@ -2482,7 +2553,9 @@
 				BAF3CDF21E9CA88E0000C9A9 /* JOBadgeView.m in Sources */,
 				BAF3CD5D1E9CA4F10000C9A9 /* UIView+WebCacheOperation.m in Sources */,
 				BAF3CDE71E9CA88E0000C9A9 /* PayPasswordAlertView.m in Sources */,
+				BAFDEAE91EBB19B5004DB2A2 /* PayAddreessTableViewCell.m in Sources */,
 				BA3017E71E9E0C6000F7C518 /* RegisterViewController.m in Sources */,
+				BAFDEAD51EBB171F004DB2A2 /* ConfirmOrderViewController.m in Sources */,
 				BAF3CCE41E9C79C70000C9A9 /* main.m in Sources */,
 				BAF3CE331E9CAC8A0000C9A9 /* WinMessage.m in Sources */,
 				BAF3CE221E9CA88E0000C9A9 /* CheckNetReachability.m in Sources */,
@@ -2576,6 +2649,7 @@
 				BAF3CD261E9C88FD0000C9A9 /* UIView+NIB.m in Sources */,
 				BAF3CE7C1E9CB8520000C9A9 /* CALayer+Anim.m in Sources */,
 				BAF3CE291E9CA88E0000C9A9 /* Toast.m in Sources */,
+				BAFDEAE41EBB19A4004DB2A2 /* PayOrderTableViewCell.m in Sources */,
 				BAF3CF061E9CBE3D0000C9A9 /* HXPhotoManager.m in Sources */,
 				BAF3CDEC1E9CA88E0000C9A9 /* BasePopViewController.m in Sources */,
 				BAF3CE811E9CB8520000C9A9 /* CLLockLabel.m in Sources */,
