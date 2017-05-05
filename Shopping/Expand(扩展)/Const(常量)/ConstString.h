@@ -20,6 +20,8 @@ extern NSString * const UserTable;
 extern NSString * const AddressTable;
 extern NSString * const FoodcategoryTable;
 extern NSString * const FoodCollecTable;
+extern NSString * const BannerTable;
+extern NSString * const HomeFoodListTable;
 extern NSString * const ObjectIdKey;
 extern NSString * const SystemServiceTelKey;
 extern NSString * const SystemOpenTimeKey;
@@ -40,6 +42,17 @@ extern NSString * const UserIsRememberKey;
 extern NSString * const UserAddressKey;
 extern NSString * const UserDetailAddressKey;
 extern NSString * const UserSexKey;
+
+#pragma mark - Banner
+
+extern NSString * const BannerImageUrlKey;
+extern NSString * const BannerNameKey;
+
+#pragma mark - FoodList
+
+extern NSString * const FoodListImageUrlKey;
+extern NSString * const FoodListNameKey;
+extern NSString * const FoodListTypeKey;
 
 #pragma mark - Address
 

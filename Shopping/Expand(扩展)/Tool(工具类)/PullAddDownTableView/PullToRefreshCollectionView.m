@@ -7,17 +7,15 @@
 //
 
 #import "PullToRefreshCollectionView.h"
+#import "RefreshHeaderView.h"
 #import "ConstString.h"
 
-@interface PullToRefreshCollectionView()
+@interface PullToRefreshCollectionView() <RefreshHeaderViewDelegate>
 
-@property (nonatomic, strong) EGORefreshTableHeaderView *refreshHeaderView;
-@property (nonatomic, strong) EGORefreshTableFooterView *refreshFooterView;
+@property (nonatomic, strong) RefreshHeaderView *refreshHeaderView;  //刷新的控件
 @property (nonatomic, strong) UIView *noDataView;
 @property (nonatomic, strong) UIView *loadedAllDataView;
 @property (nonatomic, assign) RefreshCategory category;
-@property (nonatomic, assign) CGPoint point;
-@property (nonatomic, assign) BOOL reloading;
 
 - (void)addHeaderRefreshView;
 - (void)addFooterRefreshView;
@@ -25,8 +23,12 @@
 
 @end
 
-
 @implementation PullToRefreshCollectionView
+
+@synthesize customTableDelegate = _customTableDelegate;
+@synthesize isLoadedAllTheData = _isLoadedAllTheData;
+
+#pragma mark - view lifestyle
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -42,7 +44,10 @@
 }
 
 - (void)dealloc{
+    RELEASE_SAFELY(_refreshHeaderView);
+    RELEASE_SAFELY(_refreshFooterView);
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 #pragma mark - public methods
@@ -58,12 +63,12 @@
         [self addHeaderRefreshView];
         [self addFooterRefreshView];
     }
-    [_refreshHeaderView refreshLastUpdatedDate];
+//    [_refreshHeaderView refreshLastUpdatedDate];
 }
 
 // 此下两个函数是触发动作的开始  即拖拽动作
 - (void)customTableViewWillBeginDragging:(UIScrollView *)scrollView{
-    _point = scrollView.contentOffset;
+    _point =scrollView.contentOffset;
 }
 
 - (void)customTableViewDidScroll:(UIScrollView *)scrollView{
@@ -73,7 +78,7 @@
     
     CGPoint pt =scrollView.contentOffset;
     if (_point.y > pt.y) {//向下拉加载更多
-        [_refreshHeaderView egoRefreshScrollViewDidScroll:self];
+//                [_refreshHeaderView egoRefreshScrollViewDidScroll:self];
     }else if(!_isLoadedAllTheData){//向上提加载更多 且 没有加载完服务器端数据
         [_refreshFooterView egoRefreshScrollViewDidScroll:self];
     }
@@ -87,7 +92,7 @@
     
     CGPoint pt =scrollView.contentOffset;
     if (_point.y > pt.y) {//向下拉加载更多
-        [_refreshHeaderView egoRefreshScrollViewDidEndDragging:self];
+        //        [_refreshHeaderView egoRefreshScrollViewDidEndDragging:self];
     }else if(!_isLoadedAllTheData){ //向上提加载更多 且 没有加载完服务器端数据
         [_refreshFooterView egoRefreshScrollViewDidEndDragging:self];
     }
@@ -143,7 +148,7 @@
 
 - (void)addNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptNotificationMsg:) name:kGoTopNotificationName object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptNotificationMsg:) name:kLeaveTopNotificationName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptNotificationMsg:) name:kLeaveTopNotificationName object:nil];//其中一个TAB离开顶部的时候，如果其他几个偏移量不为0的时候，要把他们都置为0
 }
 
 -(void)acceptNotificationMsg:(NSNotification *)notification{
@@ -180,7 +185,7 @@
 
 - (void)doneLoadingTableViewData{
     _reloading = NO;
-    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self];
+    [_refreshHeaderView stopRefreshing];
     [_refreshFooterView egoRefreshScrollViewDataSourceDidFinishedLoading:self];
     if (_isLoadedAllTheData && _refreshFooterView != nil) {
         [_refreshFooterView  removeFromSuperview];
@@ -189,7 +194,7 @@
 
 #pragma mark EGORefreshTableHeaderDelegate Methods
 
-- (void)refreshHeaderViewDidRefreshing:(EGORefreshTableHeaderView *)view {
+- (void)refreshHeaderViewDidRefreshing:(RefreshHeaderView *)view {
     [self reloadTableViewHeaderDataSource];
 }
 
@@ -199,7 +204,9 @@
 }
 
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
-    return [NSDate date];
+    
+    return [NSDate date]; // should return date data source was last changed
+    
 }
 
 #pragma mark EGORefreshTableFooterDelegate Methods
@@ -213,12 +220,9 @@
 
 - (void)addHeaderRefreshView {
     if (_refreshHeaderView == nil) {
-        _refreshHeaderView =  [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.frame.size.height, self.frame.size.width, self.frame.size.height)];
-        _refreshHeaderView.backgroundColor = [UIColor clearColor];
+        _refreshHeaderView = [[RefreshHeaderView alloc] initWithScrollView:self];
         _refreshHeaderView.delegate = self;
     }
-    [self addSubview:_refreshHeaderView];
-
 }
 
 - (void)addFooterRefreshView {

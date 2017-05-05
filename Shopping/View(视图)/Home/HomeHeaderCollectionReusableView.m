@@ -8,6 +8,13 @@
 
 #import "HomeHeaderCollectionReusableView.h"
 #import "AdPageView.h"
+#import "BannerModel.h"
+
+@interface HomeHeaderCollectionReusableView ()
+
+@property (nonatomic, strong) AdPageView *adPageView;
+
+@end
 
 @implementation HomeHeaderCollectionReusableView
 
@@ -21,19 +28,21 @@
 }
 
 - (void)setUpAdPageView {
-    NSMutableArray *views = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 4; i ++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 120)];
-        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"h%d.jpg",i + 1]];
-        [views addObject:imageView];
+    _adPageView = [[AdPageView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 120 * UIScreenWidth / 320)];
+    _adPageView.iDisplayTime = 5;
+    _adPageView.pageControl.pageIndicatorTintColor = UIColorFromHexColor(0xcccccc);
+    _adPageView.pageControl.currentPageIndicatorTintColor = UIColorFromHexColor(0xe73f40);
+    [self addSubview:_adPageView];
+}
+
+- (void)setUpImage:(NSMutableArray *)imageArr {
+    NSMutableArray *imageUrls = [[NSMutableArray alloc] init];
+    for (BannerModel *bannerModel in imageArr) {
+        [imageUrls addObject:bannerModel.imageUrl];
     }
-    AdPageView *pageView = [[AdPageView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 120)];
-    pageView.iDisplayTime = 3;
-    pageView.pageControl.pageIndicatorTintColor = UIColorFromHexColor(0xcccccc);
-    pageView.pageControl.currentPageIndicatorTintColor = UIColorFromHexColor(0xe73f40);
-    [pageView setupSubviews:views block:^(NSInteger clickIndex) {
+    [_adPageView startAdsWithBlock:imageUrls block:^(NSInteger clickIndex){
+        NSLog(@"点击 = %ld",clickIndex);
     }];
-    [self addSubview:pageView];
 }
 
 @end

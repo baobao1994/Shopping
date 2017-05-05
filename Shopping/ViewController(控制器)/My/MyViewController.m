@@ -44,7 +44,6 @@
     [super viewDidLoad];
     _tableView.customTableDelegate = self;
     [_tableView setRefreshCategory:DropdownRefresh];
-    _tableView.customTableDelegate = self;
     [self createNavigationRightItem:@"setting"];
     [self initItemData];
     [self initPhoto];

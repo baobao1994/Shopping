@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FoodListModel;
+
 @interface HomeCollectionViewCell : UICollectionViewCell
+
+- (void)setConent:(FoodListModel *)foodListModel;
 
 @end

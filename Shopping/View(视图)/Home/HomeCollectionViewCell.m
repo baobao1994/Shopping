@@ -7,12 +7,21 @@
 //
 
 #import "HomeCollectionViewCell.h"
+#import "FoodListModel.h"
+#import "UIImageView+WebCache.h"
+
+@interface HomeCollectionViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *foodImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@end
 
 @implementation HomeCollectionViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)setConent:(FoodListModel *)foodListModel {
+    [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:foodListModel.imageUrl]];
+    self.nameLabel.text = foodListModel.name;
 }
 
 @end

@@ -36,7 +36,7 @@
 		A520A2D31EAC96A000359DB1 /* chiken_06.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CB1EAC96A000359DB1 /* chiken_06.png */; };
 		A520A2D41EAC96A000359DB1 /* chiken_07.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CC1EAC96A000359DB1 /* chiken_07.png */; };
 		A520A2D51EAC96A000359DB1 /* chiken_08.png in Resources */ = {isa = PBXBuildFile; fileRef = A520A2CD1EAC96A000359DB1 /* chiken_08.png */; };
-		BA174DAD1EB2E304003B293B /* PullToRefreshCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DAC1EB2E304003B293B /* PullToRefreshCollectionView.m */; };
+		BA174DAD1EB2E304003B293B /* PullToRefreshCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DAC1EB2E304003B293B /* PullToRefreshCollectionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA174DB11EB2E443003B293B /* HomeHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DAF1EB2E443003B293B /* HomeHeaderCollectionReusableView.m */; };
 		BA174DB21EB2E443003B293B /* HomeHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA174DB01EB2E443003B293B /* HomeHeaderCollectionReusableView.xib */; };
 		BA174DB61EB2E455003B293B /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DB41EB2E455003B293B /* HomeCollectionViewCell.m */; };
@@ -98,6 +98,9 @@
 		BABD07231EA5EB44005675CC /* TimeDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07221EA5EB44005675CC /* TimeDownView.m */; };
 		BABD07261EA5F9BA005675CC /* CATransition+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07251EA5F9BA005675CC /* CATransition+Addition.m */; };
 		BABD07291EA60318005675CC /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07281EA60318005675CC /* UserManager.m */; };
+		BAC793631EBC6F6000443F60 /* BannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC793621EBC6F6000443F60 /* BannerModel.m */; };
+		BAC793661EBC739C00443F60 /* FoodListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC793651EBC739C00443F60 /* FoodListModel.m */; };
+		BAC793691EBC747900443F60 /* FoodTypeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC793681EBC747900443F60 /* FoodTypeConfig.m */; };
 		BAE004E61EA8BF3700373085 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE004DD1EA8BF3700373085 /* BaiduMapAPI_Base.framework */; };
 		BAE004E71EA8BF3700373085 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE004DE1EA8BF3700373085 /* BaiduMapAPI_Cloud.framework */; };
 		BAE004E81EA8BF3700373085 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE004DF1EA8BF3700373085 /* BaiduMapAPI_Location.framework */; };
@@ -519,6 +522,12 @@
 		BABD07251EA5F9BA005675CC /* CATransition+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransition+Addition.m"; sourceTree = "<group>"; };
 		BABD07271EA60318005675CC /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		BABD07281EA60318005675CC /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		BAC793611EBC6F6000443F60 /* BannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerModel.h; sourceTree = "<group>"; };
+		BAC793621EBC6F6000443F60 /* BannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerModel.m; sourceTree = "<group>"; };
+		BAC793641EBC739C00443F60 /* FoodListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodListModel.h; sourceTree = "<group>"; };
+		BAC793651EBC739C00443F60 /* FoodListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodListModel.m; sourceTree = "<group>"; };
+		BAC793671EBC747900443F60 /* FoodTypeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTypeConfig.h; sourceTree = "<group>"; };
+		BAC793681EBC747900443F60 /* FoodTypeConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTypeConfig.m; sourceTree = "<group>"; };
 		BAE004DD1EA8BF3700373085 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		BAE004DE1EA8BF3700373085 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		BAE004DF1EA8BF3700373085 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
@@ -1219,6 +1228,8 @@
 			children = (
 				BAF3CE2E1E9CABEF0000C9A9 /* ConstString.h */,
 				BAF3CE2F1E9CABEF0000C9A9 /* ConstString.m */,
+				BAC793671EBC747900443F60 /* FoodTypeConfig.h */,
+				BAC793681EBC747900443F60 /* FoodTypeConfig.m */,
 			);
 			path = "Const(常量)";
 			sourceTree = "<group>";
@@ -2142,10 +2153,14 @@
 		BAF3CF831E9CDB2D0000C9A9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BAC793611EBC6F6000443F60 /* BannerModel.h */,
+				BAC793621EBC6F6000443F60 /* BannerModel.m */,
 				BA9833AD1EB31C2B0099C86E /* FoodCollecModel.h */,
 				BA9833AE1EB31C2B0099C86E /* FoodCollecModel.m */,
 				BA9833A71EB31A950099C86E /* FoodCategoryModel.h */,
 				BA9833A81EB31A950099C86E /* FoodCategoryModel.m */,
+				BAC793641EBC739C00443F60 /* FoodListModel.h */,
+				BAC793651EBC739C00443F60 /* FoodListModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2553,6 +2568,7 @@
 				BAF3CDF21E9CA88E0000C9A9 /* JOBadgeView.m in Sources */,
 				BAF3CD5D1E9CA4F10000C9A9 /* UIView+WebCacheOperation.m in Sources */,
 				BAF3CDE71E9CA88E0000C9A9 /* PayPasswordAlertView.m in Sources */,
+				BAC793661EBC739C00443F60 /* FoodListModel.m in Sources */,
 				BAFDEAE91EBB19B5004DB2A2 /* PayAddreessTableViewCell.m in Sources */,
 				BA3017E71E9E0C6000F7C518 /* RegisterViewController.m in Sources */,
 				BAFDEAD51EBB171F004DB2A2 /* ConfirmOrderViewController.m in Sources */,
@@ -2580,6 +2596,7 @@
 				BAF3CF111E9CBE3D0000C9A9 /* HXVideoPresentTransition.m in Sources */,
 				BAF3CDFE1E9CA88E0000C9A9 /* UIViewController+Pop.m in Sources */,
 				A520A28E1EAB0DCE00359DB1 /* SearchPlaceViewController.m in Sources */,
+				BAC793631EBC6F6000443F60 /* BannerModel.m in Sources */,
 				BAFDEACA1EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m in Sources */,
 				BAF3CD5C1E9CA4F10000C9A9 /* UIImageView+WebCache.m in Sources */,
 				BAF3CE001E9CA88E0000C9A9 /* EGORefreshTableHeaderView.m in Sources */,
@@ -2629,6 +2646,7 @@
 				BAF3CD231E9C88FD0000C9A9 /* UITextField+Addition.m in Sources */,
 				BA3018071E9E180D00F7C518 /* UserInfoModel.m in Sources */,
 				BAF3CE251E9CA88E0000C9A9 /* BroadcastView.m in Sources */,
+				BAC793691EBC747900443F60 /* FoodTypeConfig.m in Sources */,
 				BAF3CDFF1E9CA88E0000C9A9 /* EGORefreshTableFooterView.m in Sources */,
 				BAF3CDF11E9CA88E0000C9A9 /* FloatButton.m in Sources */,
 				BAF3CE0D1E9CA88E0000C9A9 /* RefreshHeaderView.m in Sources */,

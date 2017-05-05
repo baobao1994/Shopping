@@ -39,10 +39,11 @@ typedef enum{
     if (self) {
         _scrollView = scrollView;
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        UIView *bgView = [[UIView alloc] initWithFrame:scrollView.bounds];
-        bgView.backgroundColor = scrollView.backgroundColor;
-        bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [_scrollView insertSubview:bgView atIndex:0];
+//        UIView *bgView = [[UIView alloc] initWithFrame:scrollView.bounds];
+//        
+//        bgView.backgroundColor = scrollView.backgroundColor;
+//        bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        [_scrollView insertSubview:bgView atIndex:0];
         _scrollView.backgroundColor = [UIColor clearColor];
         
         [_scrollView addObserver:self forKeyPath:kContentOffset options:NSKeyValueObservingOptionNew context:nil];

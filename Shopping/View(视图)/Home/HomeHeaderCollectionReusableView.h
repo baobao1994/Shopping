@@ -10,4 +10,6 @@
 
 @interface HomeHeaderCollectionReusableView : UICollectionReusableView
 
+- (void)setUpImage:(NSMutableArray *)imageArr;
+
 @end

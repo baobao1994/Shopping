@@ -16,6 +16,7 @@
 #import <BmobSDK/Bmob.h>
 #import "MBProgrossManager.h"
 #import "UserManager.h"
+#import "FoodTypeConfig.h"
 
 #define WEAKSELF_SC __weak __typeof(&*self)weakSelf_SC = self
 #define isEmptyString(obj) ([(obj) respondsToSelector:@selector(length)]==NO || (obj)==nil || [(obj) isEqual:[NSNull null]] || [(obj) length]==0)

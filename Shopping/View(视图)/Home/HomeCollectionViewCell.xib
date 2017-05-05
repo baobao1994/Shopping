@@ -53,7 +53,11 @@
                 <constraint firstAttribute="trailing" secondItem="tyx-Lr-71k" secondAttribute="trailing" id="zr7-jX-0gs"/>
             </constraints>
             <size key="customSize" width="156" height="156"/>
-            <point key="canvasLocation" x="14" y="44"/>
+            <connections>
+                <outlet property="foodImageView" destination="Xqo-Pl-JYm" id="qQk-xC-BXf"/>
+                <outlet property="nameLabel" destination="NnZ-H5-1Of" id="fNE-lV-B3t"/>
+            </connections>
+            <point key="canvasLocation" x="-178" y="-2"/>
         </collectionViewCell>
     </objects>
 </document>

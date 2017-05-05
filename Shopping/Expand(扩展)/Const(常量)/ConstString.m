@@ -20,6 +20,8 @@ NSString * const UserTable = @"User";
 NSString * const AddressTable = @"Address";
 NSString * const FoodcategoryTable = @"Foodcategory";
 NSString * const FoodCollecTable = @"FoodCollec";
+NSString * const BannerTable = @"Banner";
+NSString * const HomeFoodListTable = @"HomeFoodList";
 NSString * const ObjectIdKey = @"objectId";
 NSString * const SystemServiceTelKey = @"service_tel";
 NSString * const SystemOpenTimeKey = @"open_time";
@@ -40,6 +42,17 @@ NSString * const UserIsRememberKey = @"is_remember";
 NSString * const UserAddressKey = @"address";
 NSString * const UserDetailAddressKey = @"detail_address";
 NSString * const UserSexKey = @"sex";
+
+#pragma mark - Banner
+
+NSString * const BannerImageUrlKey = @"image_url";
+NSString * const BannerNameKey = @"name";
+
+#pragma mark - FoodList
+
+NSString * const FoodListImageUrlKey = @"image_url";
+NSString * const FoodListNameKey = @"name";
+NSString * const FoodListTypeKey = @"type";
 
 #pragma mark - Address
 
