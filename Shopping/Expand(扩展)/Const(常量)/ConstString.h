@@ -22,6 +22,8 @@ extern NSString * const FoodcategoryTable;
 extern NSString * const FoodCollecTable;
 extern NSString * const BannerTable;
 extern NSString * const HomeFoodListTable;
+extern NSString * const FoodDetailListTable;
+extern NSString * const FoodSecTypeListTable;
 extern NSString * const ObjectIdKey;
 extern NSString * const SystemServiceTelKey;
 extern NSString * const SystemOpenTimeKey;
@@ -90,6 +92,8 @@ extern NSString * const kLeaveTopNotificationName;
 extern NSString * const UserInfoCacheFile;
 extern NSString * const UserInfoCache;
 extern NSString * const SystemInfoCache;
+extern NSString * const BannerInfoCache;
+extern NSString * const FoodCategoryInfoCache;
 extern NSString * const LogoCache;
 
 @end

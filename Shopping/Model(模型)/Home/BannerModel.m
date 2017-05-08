@@ -19,4 +19,22 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    if (!isEmptyString(self.imageUrl)) {
+        [aCoder encodeObject:self.imageUrl forKey:BannerImageUrlKey];
+    }
+    if (!isEmptyString(self.name)) {
+        [aCoder encodeObject:self.name forKey:BannerImageUrlKey];
+    }
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.imageUrl = [aDecoder decodeObjectForKey:BannerImageUrlKey];
+        self.name = [aDecoder decodeObjectForKey:BannerImageUrlKey];
+    }
+    return self;
+}
+
+
 @end

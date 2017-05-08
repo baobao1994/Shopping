@@ -39,13 +39,7 @@ typedef enum{
     if (self) {
         _scrollView = scrollView;
         self.translatesAutoresizingMaskIntoConstraints = NO;
-//        UIView *bgView = [[UIView alloc] initWithFrame:scrollView.bounds];
-//        
-//        bgView.backgroundColor = scrollView.backgroundColor;
-//        bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//        [_scrollView insertSubview:bgView atIndex:0];
         _scrollView.backgroundColor = [UIColor clearColor];
-        
         [_scrollView addObserver:self forKeyPath:kContentOffset options:NSKeyValueObservingOptionNew context:nil];
         [_scrollView.superview insertSubview:self belowSubview:scrollView];
         NSString *widthVf = @"H:|-0-[refreshView]-0-|";
@@ -190,6 +184,13 @@ typedef enum{
 }
 
 - (void)loadComponent {
+    UIView *bgView = [[UIView alloc] initWithFrame:_scrollView.bounds];
+    
+    bgView.backgroundColor = self.scrollView.backgroundColor;
+    bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    [self addSubview:bgView];
+    
 //    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refresh_logo"]];
 //    logoImageView.center = CGPointMake(self.center.x, 90);
 //    logoImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
@@ -223,6 +224,7 @@ typedef enum{
 //    
 //    _rockerBallLayer.contents = (id)[UIImage imageNamed:@"rocker_ball"].CGImage;
 //    [self.layer addSublayer:_rockerBallLayer];
+
 }
 
 @end

@@ -22,6 +22,8 @@ NSString * const FoodcategoryTable = @"Foodcategory";
 NSString * const FoodCollecTable = @"FoodCollec";
 NSString * const BannerTable = @"Banner";
 NSString * const HomeFoodListTable = @"HomeFoodList";
+NSString * const FoodDetailListTable = @"FoodDetailList";
+NSString * const FoodSecTypeListTable = @"FoodSecTypeList";
 NSString * const ObjectIdKey = @"objectId";
 NSString * const SystemServiceTelKey = @"service_tel";
 NSString * const SystemOpenTimeKey = @"open_time";
@@ -92,6 +94,8 @@ NSString * const kLeaveTopNotificationName = @"leaveTop";
 NSString * const UserInfoCacheFile = @"cacheFile";
 NSString * const UserInfoCache = @"userInfoCache";
 NSString * const SystemInfoCache = @"systemInfoCache";
+NSString * const BannerInfoCache = @"bannerInfoCache";
+NSString * const FoodCategoryInfoCache = @"foodCategoryInfoCache";
 NSString * const LogoCache = @"logoCache.png";
 
 @end

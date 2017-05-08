@@ -27,4 +27,29 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    if (!isEmptyString(self.foodCategoryId)) {
+        [aCoder encodeObject:self.foodCategoryId forKey:FoodCategoryIdKey];
+    }
+    if (!isEmptyString(self.foodCategoryName)) {
+        [aCoder encodeObject:self.foodCategoryName forKey:FoodCategoryNameKey];
+    }
+    if (!isEmptyString(self.foodCategoryImageName)) {
+        [aCoder encodeObject:self.foodCategoryImageName forKey:FoodCategoryImageNameKey];
+    }
+    if (self.foodCategorylist.count) {
+        [aCoder encodeObject:self.foodCategorylist forKey:FoodCategoryListKey];
+    }
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.foodCategoryId = [aDecoder decodeObjectForKey:FoodCategoryIdKey];
+        self.foodCategoryName = [aDecoder decodeObjectForKey:FoodCategoryNameKey];
+        self.foodCategoryImageName = [aDecoder decodeObjectForKey:FoodCategoryImageNameKey];
+        self.foodCategorylist = [aDecoder decodeObjectForKey:FoodCategoryListKey];
+    }
+    return self;
+}
+
 @end
