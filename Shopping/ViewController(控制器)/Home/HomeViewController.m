@@ -14,7 +14,7 @@
 #import "ConstString.h"
 #import "BannerModel.h"
 #import "FoodListModel.h"
-
+#import "SystemInfoModel.h"
 #import "FoodListViewController.h"
 
 NSString *const HomeCollectionViewCellIdentifier = @"HomeCollectionViewCell";
@@ -25,7 +25,8 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 
 @property (weak, nonatomic) IBOutlet PullToRefreshCollectionView *collectionView;
 @property (nonatomic, strong) NSMutableArray *bannerArr;
-@property (nonatomic, strong) NSMutableArray *foodlist;
+@property (nonatomic, strong) NSMutableArray *foodCategorylist;
+@property (nonatomic, strong) SystemInfoModel *systemInfoModel;
 @property (nonatomic, assign) NSInteger requestCount;
 
 @end
@@ -43,6 +44,9 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     FoodListViewController *foodListVC = [[FoodListViewController alloc] init];
+    FoodListModel *foodListModel = self.foodCategorylist[indexPath.row];
+    foodListVC.foodTypeId = foodListModel.type;
+    foodListVC.title = foodListModel.name;
     [self.navigationController pushViewController:foodListVC animated:YES];
 }
 
@@ -51,7 +55,11 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    return CGSizeMake(UIScreenWidth, 50);
+    CGSize size = CGSizeZero;
+    if (!isEmptyString(self.systemInfoModel.homeBottomTip)) {
+        size = CGSizeMake(UIScreenWidth, 40);
+    }
+    return size;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -61,7 +69,7 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.foodlist.count;
+    return self.foodCategorylist.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -73,6 +81,7 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     }
     if (kind == UICollectionElementKindSectionFooter) {
         HomeFooterCollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:HomeFooterCollectionReusableViewIdentifier forIndexPath:indexPath];
+        footer.tipLabel.text = self.systemInfoModel.homeBottomTip;
         reusableView = footer;
     }
     return reusableView;
@@ -80,7 +89,7 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HomeCollectionViewCellIdentifier forIndexPath:indexPath];
-    [cell setConent:self.foodlist[indexPath.row]];
+    [cell setConent:self.foodCategorylist[indexPath.row]];
     return cell;
 }
 
@@ -90,6 +99,7 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     self.requestCount = 0;
     [self requestBanner];
     [self requestHomeFoodList];
+    [self requestSystemInfo];
 }
 
 #pragma mark - PriveMothd
@@ -104,10 +114,14 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     self.collectionView.collectionViewLayout = lotteryLayout;
     self.collectionView.showsVerticalScrollIndicator = YES;
     self.collectionView.showsHorizontalScrollIndicator = YES;
-    self.bannerArr = [[NSMutableArray alloc] init];
-    self.foodlist = [[NSMutableArray alloc] init];
     _collectionView.customTableDelegate = self;
     [_collectionView setRefreshCategory:DropdownRefresh];
+    self.bannerArr = [[NSMutableArray alloc] init];
+    self.foodCategorylist = [[NSMutableArray alloc] init];
+    self.bannerArr = UserManagerInstance.bannerArrInfo;
+    self.foodCategorylist = UserManagerInstance.foodCategoryArrInfo;
+    self.systemInfoModel = UserManagerInstance.systemInfo;
+    [self.collectionView reloadData];
 }
 
 - (void)requestBanner {
@@ -120,6 +134,9 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
                 [self.bannerArr addObject:bannerModel];
             }
             self.requestCount ++;
+            if (array.count) {
+                [UserManagerInstance saveBannerArrInfo:self.bannerArr];
+            }
             [self doneLoad];
         } else {
             [MBProgrossManagerInstance showErrorOnlyText:@"网络错误" HudHiddenCallBack:^{
@@ -131,12 +148,16 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
 
 - (void)requestHomeFoodList {
     BmobQuery *query = [BmobQuery queryWithClassName:HomeFoodListTable];
+    [query orderByAscending:FoodListTypeKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (!error) {
-            [self.foodlist removeAllObjects];
+            [self.foodCategorylist removeAllObjects];
             for (BmobObject *obj in array) {
                 FoodListModel *foodListModel = [[FoodListModel alloc] initWithDictionary:(NSDictionary *)obj];
-                [self.foodlist addObject:foodListModel];
+                [self.foodCategorylist addObject:foodListModel];
+            }
+            if (array.count) {
+                [UserManagerInstance saveFoodCategoryArrInfo:self.foodCategorylist];
             }
             self.requestCount ++;
             [self doneLoad];
@@ -148,8 +169,20 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     }];
 }
 
+- (void)requestSystemInfo {
+    BmobQuery *systemQuery = [BmobQuery queryWithClassName:SystemTable];
+    [systemQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (array.count) {
+            self.systemInfoModel = [[SystemInfoModel alloc] initWithDictionary:(NSDictionary *)array[0]];
+            [UserManagerInstance saveSystemInfo:self.systemInfoModel];
+            self.requestCount ++;
+            [self doneLoad];
+        }
+    }];
+}
+
 - (void)doneLoad {
-    if (self.requestCount == 2) {
+    if (self.requestCount == 3) {
         [self.collectionView doneLoadingTableViewData];
         [self.collectionView reloadData];
     }

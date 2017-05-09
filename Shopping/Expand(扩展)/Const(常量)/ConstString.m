@@ -18,7 +18,7 @@ NSString * const SMSModelNameKey = @"shopping";
 NSString * const SystemTable = @"System";
 NSString * const UserTable = @"User";
 NSString * const AddressTable = @"Address";
-NSString * const FoodcategoryTable = @"Foodcategory";
+NSString * const FoodcategoryTable = @"FoodCategory";
 NSString * const FoodCollecTable = @"FoodCollec";
 NSString * const BannerTable = @"Banner";
 NSString * const HomeFoodListTable = @"HomeFoodList";
@@ -27,6 +27,7 @@ NSString * const FoodSecTypeListTable = @"FoodSecTypeList";
 NSString * const ObjectIdKey = @"objectId";
 NSString * const SystemServiceTelKey = @"service_tel";
 NSString * const SystemOpenTimeKey = @"open_time";
+NSString * const SystemHomeBottomTipKey = @"home_bottom_tip";
 NSString * const SystemIsOpenKey = @"is_open";
 NSString * const CustomFontName = @"FZLBJW--GB1-0";
 
@@ -56,6 +57,12 @@ NSString * const FoodListImageUrlKey = @"image_url";
 NSString * const FoodListNameKey = @"name";
 NSString * const FoodListTypeKey = @"type";
 
+#pragma mark - FoodSecTypeList
+
+NSString * const FoodSecTypeListFoodTypeKey = @"food_type";
+NSString * const FoodSecTypeListNameKey = @"name";
+NSString * const FoodSecTypeListTypeKey = @"type";
+
 #pragma mark - Address
 
 NSString * const AddressLatitudeKey = @"latitude";
@@ -63,18 +70,23 @@ NSString * const AddressLongitudeKey = @"longitude";
 
 #pragma mark - FoodCollec
 
-NSString * const FoodcategoryIdKey = @"foodcategory_id";
 NSString * const FoodCollecIdKey = @"food_id";
 NSString * const FoodCollecNameKey = @"name";
-NSString * const FoodCollecImageNameKey = @"imageName";
+NSString * const FoodCollecImageUrlKey = @"image_url";
 NSString * const FoodCollecPriceKey = @"price";
 NSString * const FoodCollecSellCountKey = @"sell_count";
+NSString * const FoodCollecFoodTypeKey = @"food_type";
+NSString * const FoodCollecTypeKey = @"type";
+NSString * const FoodCollecFoodSecTypeKey = @"food_sec_type";
 
 #pragma mark - FoodCategory
 
 NSString * const FoodCategoryIdKey = @"food_id";
 NSString * const FoodCategoryNameKey = @"name";
-NSString * const FoodCategoryImageNameKey = @"imageName";
+NSString * const FoodCategoryImageUrlKey = @"image_url";
+NSString * const FoodCategoryTypeKey = @"food_type";
+NSString * const FoodCategoryFoodTypeKey = @"food_type";
+NSString * const FoodCategoryFoodSecTypeKey = @"food_sec_type";
 NSString * const FoodCategoryListKey = @"list";
 
 #pragma mark - Tips

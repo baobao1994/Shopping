@@ -67,7 +67,11 @@
                 <constraint firstItem="vUo-A8-XJL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="x0C-Ai-6UE"/>
             </constraints>
             <size key="customSize" width="113" height="155"/>
-            <point key="canvasLocation" x="-20.5" y="17.5"/>
+            <connections>
+                <outlet property="priceLabel" destination="vUo-A8-XJL" id="7hj-zd-tmN"/>
+                <outlet property="sellCountLabel" destination="m7s-kY-3z9" id="Kxi-ul-TlR"/>
+            </connections>
+            <point key="canvasLocation" x="-188" y="15"/>
         </collectionViewCell>
     </objects>
 </document>

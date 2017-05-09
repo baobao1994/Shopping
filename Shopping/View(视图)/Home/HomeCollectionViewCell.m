@@ -9,6 +9,7 @@
 #import "HomeCollectionViewCell.h"
 #import "FoodListModel.h"
 #import "UIImageView+WebCache.h"
+#import "UIView+Addtion.h"
 
 @interface HomeCollectionViewCell ()
 
@@ -18,6 +19,11 @@
 @end
 
 @implementation HomeCollectionViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setCornerRadius:5];
+}
 
 - (void)setConent:(FoodListModel *)foodListModel {
     [self.foodImageView sd_setImageWithURL:[NSURL URLWithString:foodListModel.imageUrl]];

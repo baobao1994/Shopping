@@ -12,25 +12,30 @@
 #import "FoodCollecModel.h"
 #import "HorizontalScrollTableViewCell.h"
 #import "HorizonItemCollectionViewCell.h"
+#import "HorizonItemHFCollectionViewCell.h"
 #import "ConstString.h"
 #import "CustomAlertView.h"
 #import "FoodDetailShowView.h"
+#import "PullToRefreshTableView.h"
+#import "FoodSecTypeListModel.h"
 
 NSString *const HorizonItemCollectionViewCellIdentifier = @"HorizonItemCollectionViewCell";
+NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFCollectionViewCell";
 
 typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     CenterTableViewTopic,
     CenterTableViewGoods,
 };
 
-@interface FoodListViewController ()<HorizontalScrollCellDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface FoodListViewController ()<HorizontalScrollCellDelegate,UITableViewDelegate,UITableViewDataSource,PullToRefreshTableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet PullToRefreshTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *secTypeSource;
 @property (nonatomic, assign) CenterTableViewType type;
-@property (nonatomic, assign) NSInteger requestCount;
 @property (nonatomic, strong) CustomAlertView *customAlertView;
 @property (nonatomic, strong) FoodDetailShowView *foodDetailShowView;
+@property (nonatomic, strong) NSMutableArray *isShouldReloadArr;
 
 @end
 
@@ -38,59 +43,58 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"美食列表";
-    self.dataSource = [[NSMutableArray alloc] init];
-    self.foodDetailShowView = [[FoodDetailShowView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth - 60, 180)];
-    [self.foodDetailShowView.closeButton addTarget:self action:@selector(hideFoodDetailShowView) forControlEvents:UIControlEventTouchUpInside];
-    self.customAlertView = [[CustomAlertView alloc] init];
-    self.customAlertView.contentView = self.foodDetailShowView;
-    BmobQuery *foodCategoryQuery = [BmobQuery queryWithClassName:FoodcategoryTable];
+    [self setUp];
+    [self getHeaderDataSoure];
+}
+
+#pragma mark - PullToRefreshTableViewDelegate method
+
+- (void)getHeaderDataSoure {
+    BmobQuery *foodCategoryQuery = [BmobQuery queryWithClassName:FoodSecTypeListTable];
+    [foodCategoryQuery whereKey:FoodSecTypeListFoodTypeKey equalTo:self.foodTypeId];
     [foodCategoryQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [self.dataSource removeAllObjects];
-        self.requestCount ++;
+        [self.secTypeSource removeAllObjects];
+        [self.isShouldReloadArr removeAllObjects];
         for (BmobObject *obj in array) {
-            [self.dataSource addObject:[[FoodCategoryModel alloc] initWithDictionary:(NSDictionary *)obj]];
+            FoodCategoryModel *foodCategoryModel = [[FoodCategoryModel alloc] initWithDictionary:(NSDictionary *)obj];
+            FoodSecTypeListModel *foodSecTypeListModel = [[FoodSecTypeListModel alloc] initWithDictionary:(NSDictionary *)obj];
+            foodCategoryModel.foodSecType = foodSecTypeListModel.type;
+            [self.dataSource addObject:foodCategoryModel];
+            [self.secTypeSource addObject:foodSecTypeListModel];
+            [self.isShouldReloadArr addObject:[NSNumber numberWithBool:YES]];
         }
         BmobQuery *foodCollecQuery = [BmobQuery queryWithClassName:FoodCollecTable];
+        [foodCollecQuery whereKey:FoodSecTypeListFoodTypeKey equalTo:self.foodTypeId];
         [foodCollecQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-            self.requestCount ++;
             for (FoodCategoryModel *foodCategoryModel in self.dataSource) {
-                NSString *foodCategoryId = foodCategoryModel.foodCategoryId;
+                NSString *foodSecType = foodCategoryModel.foodSecType;
                 for (int i = 0; i < array.count; i ++) {
                     FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithDictionary:(NSDictionary *)array[i]];
-                    if ([foodCollecModel.foodCategoryId isEqualToString:foodCategoryId]) {
+                    if ([foodCollecModel.foodSecType isEqualToString:foodSecType]) {
                         [foodCategoryModel.foodCategorylist addObject:foodCollecModel];
                     }
                 }
             }
-            [self requestFinish];
+            [self.tableView doneLoadingTableViewData];
+            [self.tableView reloadData];
         }];
     }];
 }
 
-- (void)requestFinish {
-    if (self.requestCount == 2) {
-        [self.tableView reloadData];
-    }
-}
-
-- (void)hideFoodDetailShowView {
-    [self.customAlertView hide];
-}
-
 #pragma mark - UITableView Delegate method
 
-//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    [self.tableView customTableViewWillBeginDragging:scrollView];
-//}
-//
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    [self.tableView customTableViewDidScroll:scrollView];
-//}
-//
-//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-//    [self.tableView customTableViewDidEndDragging:scrollView];
-//}
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.tableView customTableViewWillBeginDragging:scrollView];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.tableView customTableViewDidScroll:scrollView];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.tableView customTableViewDidEndDragging:scrollView];
+}
 
 #pragma mark - Table view delegate
 
@@ -103,7 +107,11 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01f;
+    CGFloat height = 0.01f;
+    if (section == self.secTypeSource.count - 1) {
+        height = 10.0f;
+    }
+    return height;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -133,11 +141,17 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     if (!cell) {
         cell = [HorizontalScrollTableViewCell loadFromNib];
         [cell.collectionView registerNib:[UINib nibWithNibName:@"HorizonItemCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:HorizonItemCollectionViewCellIdentifier];
+        [cell.collectionView registerNib:[UINib nibWithNibName:@"HorizonItemHFCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:HorizonItemHFCollectionViewCellIdentifier];
         UICollectionViewFlowLayout *horizontalCellLayout = [[UICollectionViewFlowLayout alloc] init];
         horizontalCellLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         horizontalCellLayout.sectionInset = UIEdgeInsetsMake(0, 21, 0, 21);
         cell.collectionView.collectionViewLayout = horizontalCellLayout;
         cell.delegate = self;
+    }
+    BOOL isShouldReload = self.isShouldReloadArr[indexPath.section];
+    if (isShouldReload) {
+        [cell reloadData];
+        self.isShouldReloadArr[indexPath.section] = [NSNumber numberWithBool:NO];
     }
     cell.backgroundColor = RandomColor;
     cell.tableViewIndexPath = indexPath;
@@ -149,15 +163,36 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 - (NSInteger)horizontalCellContentsView:(UICollectionView *)horizontalCellContentsView numberOfItemsInTableViewIndexPath:(NSIndexPath *)tableViewIndexPath{
     FoodCategoryModel *foodcategoryModel = self.dataSource[tableViewIndexPath.section];
     NSInteger count = foodcategoryModel.foodCategorylist.count;
-    if (count > 4) {
-        return 7;
+    if (count > 5) {
+        count = 7;
+    } else {
+        count += 1;
     }
-    return count +1;
+    return count;
 }
 
 - (UICollectionViewCell *)horizontalCellContentsView:(UICollectionView *)horizontalCellContentsView cellForItemAtContentIndexPath:(NSIndexPath *)contentIndexPath inTableViewIndexPath:(NSIndexPath *)tableViewIndexPath{
-    HorizonItemCollectionViewCell *cell = [horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemCollectionViewCellIdentifier forIndexPath:contentIndexPath];
-    cell.backgroundColor = RandomColor;
+    NSInteger section = tableViewIndexPath.section;
+    NSInteger row = contentIndexPath.row;
+    FoodCategoryModel *foodcategoryModel = self.dataSource[section];
+    NSInteger count = foodcategoryModel.foodCategorylist.count;
+    UICollectionViewCell *cell;
+    if (row == 0) {
+        cell = (HorizonItemHFCollectionViewCell *)[horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemHFCollectionViewCellIdentifier forIndexPath:contentIndexPath];
+        [((HorizonItemHFCollectionViewCell *)cell) setConent:self.secTypeSource[section]];
+        cell.backgroundColor = RandomColor;
+    } else {
+        if (count >= 6 && row == 6) {
+            cell = (HorizonItemHFCollectionViewCell *)[horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemHFCollectionViewCellIdentifier forIndexPath:contentIndexPath];
+            cell.backgroundColor = [UIColor yellowColor];
+            ((HorizonItemHFCollectionViewCell *)cell).nameLabel.text = @"更多";
+        } else {
+            cell = [horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemCollectionViewCellIdentifier forIndexPath:contentIndexPath];
+            FoodCategoryModel *foodCategoryModel = self.dataSource[section];
+            [((HorizonItemCollectionViewCell *)cell) setConent:foodCategoryModel.foodCategorylist[row - 1]];
+            cell.backgroundColor = RandomColor;
+        }
+    }
     return cell;
 }
 
@@ -165,7 +200,7 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     CGSize itemSize = CGSizeMake(70, 140);
     if (_type == CenterTableViewTopic) {
         itemSize.width = 312/2;
-        itemSize.height = itemSize.height-20;
+        itemSize.height = itemSize.height - 20;
     } else {
         itemSize.width = 70;
     }
@@ -177,30 +212,34 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 
 - (void)horizontalCellContentsView:(UICollectionView *)horizontalCellContentsView didSelectItemAtContentIndexPath:(NSIndexPath *)contentIndexPath inTableViewIndexPath:(NSIndexPath *)tableViewIndexPath {
     [horizontalCellContentsView deselectItemAtIndexPath:contentIndexPath animated:YES];
-    [self.customAlertView show];
+    NSInteger section = tableViewIndexPath.section;
+    NSInteger item = contentIndexPath.item;
+    if (item == 0) {
+        //这里可以弹出这个类别的说明，比如说功效说明
+    } else if (item == 6) {
+        
+    } else {
+        [self.customAlertView show];
+    }
     NSLog(@"Section %ld Row %ld Item %ld is selected", (unsigned long)tableViewIndexPath.section, (unsigned long)tableViewIndexPath.row, (unsigned long)contentIndexPath.item);
 }
 
 #pragma mark - Private Method
 
-- (NSMutableArray *)loadDataByType:(CenterTableViewType )type {
-    NSArray *nameArray = @[@"办公",@"厨具",@"创意",@"护肤",@"家居",@"美食",@"数码",@"卫浴",@"运动",@"杂货",@"植物",@"主题"];
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:10];
-    [nameArray enumerateObjectsUsingBlock:^(NSString *objname, NSUInteger idx, BOOL *stop) {
-        FoodCategoryModel *categoty = [[FoodCategoryModel alloc] init];
-        categoty.foodCategoryName = objname;
-        NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:10];
-        for (int i = 0 ; i< 5; i++) {
-            FoodCollecModel *item = [[FoodCollecModel alloc] init];
-            item.foodCollecName = [NSString stringWithFormat:@"%@--(%ld)",objname,i*idx];
-            item.foodCollecPrice = [NSString stringWithFormat:@"￥%ld",(i+1)*(idx+1)*2];
-            [itemArray addObject:item];
-        }
-        categoty.foodCategorylist = itemArray;
-        [array addObject:categoty];
-    }];
-    [self.tableView reloadData];
-    return  array;
+- (void)setUp {
+    self.tableView.customTableDelegate = self;
+    [self.tableView setRefreshCategory:DropdownRefresh];
+    self.isShouldReloadArr = [[NSMutableArray alloc] init];
+    self.dataSource = [[NSMutableArray alloc] init];
+    self.secTypeSource = [[NSMutableArray alloc] init];
+    self.foodDetailShowView = [[FoodDetailShowView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth - 60, 180)];
+    [self.foodDetailShowView.closeButton addTarget:self action:@selector(hideFoodDetailShowView) forControlEvents:UIControlEventTouchUpInside];
+    self.customAlertView = [[CustomAlertView alloc] init];
+    self.customAlertView.contentView = self.foodDetailShowView;
+}
+
+- (void)hideFoodDetailShowView {
+    [self.customAlertView hide];
 }
 
 @end

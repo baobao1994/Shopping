@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//这些都是ID，后面再改
 typedef NS_ENUM(NSInteger, FoodType) {
     FoodTypeOfFruitJuice    = 100000,       //果汁
     FoodTypeOfMilkTea       = 200000,       //奶茶

@@ -10,4 +10,6 @@
 
 @interface FoodListViewController : UIViewController
 
+@property (nonatomic, copy) NSString *foodTypeId;
+
 @end

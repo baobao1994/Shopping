@@ -10,25 +10,24 @@
 
 @class UserInfoModel;
 @class SystemInfoModel;
-@class BannerModel;
-@class FoodCategoryModel;
 
 @interface UserManager : NSObject
 
 @property (nonatomic, strong) UserInfoModel *userInfo;
 @property (nonatomic, strong) SystemInfoModel *systemInfo;
-@property (nonatomic, strong) BannerModel *bannerInfo;
-@property (nonatomic, strong) FoodCategoryModel *foodCategoryInfo;
+@property (nonatomic, strong) NSMutableArray *bannerArrInfo;
+@property (nonatomic, strong) NSMutableArray *foodCategoryArrInfo;
 
 + (UserManager *)shareInstance;
 - (void)saveUserInfo:(UserInfoModel *)userInfo;
 - (void)saveUserInfo;
 - (void)deleteUser;
+- (void)deleteCache;
 
-- (void)saveBannerInfo:(BannerModel *)bannerInfo;
-- (void)saveBannerInfo;
-- (void)saveFoodCategoryInfo:(FoodCategoryModel *)foodCategoryInfo;
-- (void)saveFoodCategoryInfo;
+- (void)saveBannerArrInfo:(NSMutableArray *)bannerArrInfo;
+- (void)saveBannerArrInfo;
+- (void)saveFoodCategoryArrInfo:(NSMutableArray *)foodCategoryArrInfo;
+- (void)saveFoodCategoryArrInfo;
 
 - (void)saveSystemInfo:(SystemInfoModel *)systemInfo;
 - (void)saveSystemInfo;

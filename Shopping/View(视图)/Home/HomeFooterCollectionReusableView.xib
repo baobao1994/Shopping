@@ -15,18 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-T8-bCC">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美好的一天就从一杯果汁开始吧！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eeb-oI-7l5">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <color key="backgroundColor" red="0.99607843139999996" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
-                </button>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ate-T8-bCC" secondAttribute="trailing" id="NlD-Ky-Wyp"/>
-                <constraint firstAttribute="bottom" secondItem="Ate-T8-bCC" secondAttribute="bottom" id="Se5-Uj-CLm"/>
-                <constraint firstItem="Ate-T8-bCC" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="sXr-ao-8Sw"/>
-                <constraint firstItem="Ate-T8-bCC" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="ucg-qB-R7Z"/>
+                <constraint firstItem="Eeb-oI-7l5" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Lww-DG-qCX"/>
+                <constraint firstItem="Eeb-oI-7l5" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="eMV-i9-aWp"/>
+                <constraint firstAttribute="trailing" secondItem="Eeb-oI-7l5" secondAttribute="trailing" id="fZe-fo-632"/>
+                <constraint firstAttribute="bottom" secondItem="Eeb-oI-7l5" secondAttribute="bottom" id="rWY-Mm-BLA"/>
             </constraints>
+            <connections>
+                <outlet property="tipLabel" destination="Eeb-oI-7l5" id="NyC-bP-ieN"/>
+            </connections>
         </collectionReusableView>
     </objects>
 </document>

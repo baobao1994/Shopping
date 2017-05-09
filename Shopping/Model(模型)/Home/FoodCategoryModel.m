@@ -14,40 +14,16 @@
 
 - (id)initWithDictionary:(NSDictionary *)dic {
     if (self = [super init]) {
-        self.foodCategoryId = [dic objectForKey:FoodCategoryIdKey];
-        self.foodCategoryName = [dic objectForKey:FoodCategoryNameKey];
-        self.foodCategoryImageName = [dic objectForKey:FoodCategoryImageNameKey];
+        self.name = [dic objectForKey:FoodCategoryNameKey];
+        self.imageUrl = [dic objectForKey:FoodCategoryImageUrlKey];
+        self.foodType = [dic objectForKey:FoodCategoryFoodTypeKey];
+        self.foodSecType = [dic objectForKey:FoodCategoryFoodSecTypeKey];
         NSArray *foodCategoryList = [dic objectForKey:FoodCategoryListKey];
         self.foodCategorylist = [NSMutableArray arrayWithCapacity:foodCategoryList.count];
         for (NSDictionary *foodCollec in foodCategoryList) {
             FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithDictionary:foodCollec];
             [self.foodCategorylist addObject:foodCollecModel];
         }
-    }
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    if (!isEmptyString(self.foodCategoryId)) {
-        [aCoder encodeObject:self.foodCategoryId forKey:FoodCategoryIdKey];
-    }
-    if (!isEmptyString(self.foodCategoryName)) {
-        [aCoder encodeObject:self.foodCategoryName forKey:FoodCategoryNameKey];
-    }
-    if (!isEmptyString(self.foodCategoryImageName)) {
-        [aCoder encodeObject:self.foodCategoryImageName forKey:FoodCategoryImageNameKey];
-    }
-    if (self.foodCategorylist.count) {
-        [aCoder encodeObject:self.foodCategorylist forKey:FoodCategoryListKey];
-    }
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super init]) {
-        self.foodCategoryId = [aDecoder decodeObjectForKey:FoodCategoryIdKey];
-        self.foodCategoryName = [aDecoder decodeObjectForKey:FoodCategoryNameKey];
-        self.foodCategoryImageName = [aDecoder decodeObjectForKey:FoodCategoryImageNameKey];
-        self.foodCategorylist = [aDecoder decodeObjectForKey:FoodCategoryListKey];
     }
     return self;
 }

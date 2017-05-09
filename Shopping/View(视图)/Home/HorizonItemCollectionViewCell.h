@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FoodCollecModel;
+
 @interface HorizonItemCollectionViewCell : UICollectionViewCell
+
+- (void)setConent:(FoodCollecModel *)foodCollecModel;
 
 @end

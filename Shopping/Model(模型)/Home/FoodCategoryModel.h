@@ -10,9 +10,11 @@
 
 @interface FoodCategoryModel : NSObject
 
-@property (nonatomic, copy) NSString *foodCategoryId;
-@property (nonatomic, copy) NSString *foodCategoryName;
-@property (nonatomic, copy) NSString *foodCategoryImageName;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *foodType;
+@property (nonatomic, copy) NSString *foodSecType;
 @property (nonatomic, strong) NSMutableArray *foodCategorylist;
 
 - (id)initWithDictionary:(NSDictionary *)dic;

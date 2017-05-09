@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSString *serviceTel;
 @property (nonatomic, copy) NSString *openTime;
+@property (nonatomic, copy) NSString *homeBottomTip;
 @property (nonatomic, assign) BOOL isOpen;
 
 - (id)initWithDictionary:(NSDictionary *)dic;

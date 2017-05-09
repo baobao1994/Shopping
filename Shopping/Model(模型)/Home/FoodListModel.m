@@ -15,7 +15,28 @@
     if (self = [super init]) {
         self.imageUrl = [dic objectForKey:FoodListImageUrlKey];
         self.name = [dic objectForKey:FoodListNameKey];
-        self.type = [[dic objectForKey:FoodListTypeKey] integerValue];
+        self.type = [dic objectForKey:FoodListTypeKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    if (!isEmptyString(self.imageUrl)) {
+        [aCoder encodeObject:self.imageUrl forKey:FoodListImageUrlKey];
+    }
+    if (!isEmptyString(self.name)) {
+        [aCoder encodeObject:self.name forKey:FoodListNameKey];
+    }
+    if (!isEmptyString(self.type)) {
+        [aCoder encodeObject:self.type forKey:FoodListTypeKey];
+    }
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.imageUrl = [aDecoder decodeObjectForKey:FoodListImageUrlKey];
+        self.name = [aDecoder decodeObjectForKey:FoodListNameKey];
+        self.type = [aDecoder decodeObjectForKey:FoodListTypeKey];
     }
     return self;
 }

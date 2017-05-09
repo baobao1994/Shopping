@@ -13,12 +13,14 @@
 
 - (id)initWithDictionary:(NSDictionary *)dic {
     if (self = [super init]) {
-        self.foodCategoryId = [dic objectForKey:FoodcategoryIdKey];
-        self.foodCollecId = [dic objectForKey:FoodCollecIdKey];
-        self.foodCollecName = [dic objectForKey:FoodCollecNameKey];
-        self.foodCollecImageName = [dic objectForKey:FoodCollecImageNameKey];
-        self.foodCollecPrice = [dic objectForKey:FoodCollecPriceKey];
-        self.foodCollecSellCount = [[dic objectForKey:FoodCollecSellCountKey] integerValue];
+        self.foodId = [dic objectForKey:FoodCollecIdKey];
+        self.name = [dic objectForKey:FoodCollecNameKey];
+        self.imageUrl = [dic objectForKey:FoodCollecImageUrlKey];
+        self.price = [dic objectForKey:FoodCollecPriceKey];
+        self.sellCount = [dic objectForKey:FoodCollecSellCountKey];
+        self.type = [dic objectForKey:FoodCollecTypeKey];
+        self.foodType = [dic objectForKey:FoodCollecFoodTypeKey];
+        self.foodSecType = [dic objectForKey:FoodCollecFoodSecTypeKey];
     }
     return self;
 }

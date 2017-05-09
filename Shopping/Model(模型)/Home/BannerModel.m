@@ -24,14 +24,14 @@
         [aCoder encodeObject:self.imageUrl forKey:BannerImageUrlKey];
     }
     if (!isEmptyString(self.name)) {
-        [aCoder encodeObject:self.name forKey:BannerImageUrlKey];
+        [aCoder encodeObject:self.name forKey:BannerNameKey];
     }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
         self.imageUrl = [aDecoder decodeObjectForKey:BannerImageUrlKey];
-        self.name = [aDecoder decodeObjectForKey:BannerImageUrlKey];
+        self.name = [aDecoder decodeObjectForKey:BannerNameKey];
     }
     return self;
 }

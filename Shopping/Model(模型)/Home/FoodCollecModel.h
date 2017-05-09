@@ -10,12 +10,14 @@
 
 @interface FoodCollecModel : NSObject
 
-@property (nonatomic, copy) NSString *foodCategoryId;
-@property (nonatomic, copy) NSString *foodCollecId;
-@property (nonatomic, copy) NSString *foodCollecName;
-@property (nonatomic, copy) NSString *foodCollecImageName;
-@property (nonatomic, copy) NSString *foodCollecPrice;
-@property (nonatomic, assign) NSInteger foodCollecSellCount;
+@property (nonatomic, copy) NSString *foodId;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSString *sellCount;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *foodType;
+@property (nonatomic, copy) NSString *foodSecType;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 

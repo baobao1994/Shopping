@@ -64,6 +64,7 @@
 		BA3018071E9E180D00F7C518 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3018061E9E180D00F7C518 /* UserInfoModel.m */; };
 		BA30180A1E9E255C00F7C518 /* MyFooterview.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3018091E9E255C00F7C518 /* MyFooterview.m */; };
 		BA30180C1E9E256600F7C518 /* MyFooterview.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA30180B1E9E256600F7C518 /* MyFooterview.xib */; };
+		BA46C8E61EC1919A00E15C3A /* FoodSecTypeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA46C8E51EC1919A00E15C3A /* FoodSecTypeListModel.m */; };
 		BA48EFEA1EA4CCB600999921 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48EFE91EA4CCB600999921 /* BmobSDK.framework */; };
 		BA48EFED1EA4CCD100999921 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48EFEC1EA4CCD100999921 /* CoreLocation.framework */; };
 		BA48EFEF1EA4CCD700999921 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48EFEE1EA4CCD700999921 /* Security.framework */; };
@@ -95,6 +96,8 @@
 		BA9833B41EB327DD0099C86E /* HorizontalScrollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9833B21EB327DD0099C86E /* HorizontalScrollTableViewCell.xib */; };
 		BA9833BD1EB32BB40099C86E /* HorizonItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9833BB1EB32BB40099C86E /* HorizonItemCollectionViewCell.m */; };
 		BA9833BE1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA9833BC1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib */; };
+		BAB580471EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB580451EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m */; };
+		BAB580481EC1B7800062F301 /* HorizonItemHFCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB580461EC1B7800062F301 /* HorizonItemHFCollectionViewCell.xib */; };
 		BABD07231EA5EB44005675CC /* TimeDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07221EA5EB44005675CC /* TimeDownView.m */; };
 		BABD07261EA5F9BA005675CC /* CATransition+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07251EA5F9BA005675CC /* CATransition+Addition.m */; };
 		BABD07291EA60318005675CC /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BABD07281EA60318005675CC /* UserManager.m */; };
@@ -475,6 +478,8 @@
 		BA3018081E9E255C00F7C518 /* MyFooterview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFooterview.h; sourceTree = "<group>"; };
 		BA3018091E9E255C00F7C518 /* MyFooterview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFooterview.m; sourceTree = "<group>"; };
 		BA30180B1E9E256600F7C518 /* MyFooterview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFooterview.xib; sourceTree = "<group>"; };
+		BA46C8E41EC1919A00E15C3A /* FoodSecTypeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodSecTypeListModel.h; sourceTree = "<group>"; };
+		BA46C8E51EC1919A00E15C3A /* FoodSecTypeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodSecTypeListModel.m; sourceTree = "<group>"; };
 		BA48EFE91EA4CCB600999921 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		BA48EFEC1EA4CCD100999921 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BA48EFEE1EA4CCD700999921 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -516,6 +521,9 @@
 		BA9833BA1EB32BB40099C86E /* HorizonItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonItemCollectionViewCell.h; sourceTree = "<group>"; };
 		BA9833BB1EB32BB40099C86E /* HorizonItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonItemCollectionViewCell.m; sourceTree = "<group>"; };
 		BA9833BC1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizonItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		BAB580441EC1B7800062F301 /* HorizonItemHFCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonItemHFCollectionViewCell.h; sourceTree = "<group>"; };
+		BAB580451EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonItemHFCollectionViewCell.m; sourceTree = "<group>"; };
+		BAB580461EC1B7800062F301 /* HorizonItemHFCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizonItemHFCollectionViewCell.xib; sourceTree = "<group>"; };
 		BABD07211EA5EB44005675CC /* TimeDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeDownView.h; sourceTree = "<group>"; };
 		BABD07221EA5EB44005675CC /* TimeDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeDownView.m; sourceTree = "<group>"; };
 		BABD07241EA5F9BA005675CC /* CATransition+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransition+Addition.h"; sourceTree = "<group>"; };
@@ -2111,6 +2119,9 @@
 				BA9833BA1EB32BB40099C86E /* HorizonItemCollectionViewCell.h */,
 				BA9833BB1EB32BB40099C86E /* HorizonItemCollectionViewCell.m */,
 				BA9833BC1EB32BB40099C86E /* HorizonItemCollectionViewCell.xib */,
+				BAB580441EC1B7800062F301 /* HorizonItemHFCollectionViewCell.h */,
+				BAB580451EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m */,
+				BAB580461EC1B7800062F301 /* HorizonItemHFCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2155,12 +2166,14 @@
 			children = (
 				BAC793611EBC6F6000443F60 /* BannerModel.h */,
 				BAC793621EBC6F6000443F60 /* BannerModel.m */,
-				BA9833AD1EB31C2B0099C86E /* FoodCollecModel.h */,
-				BA9833AE1EB31C2B0099C86E /* FoodCollecModel.m */,
-				BA9833A71EB31A950099C86E /* FoodCategoryModel.h */,
-				BA9833A81EB31A950099C86E /* FoodCategoryModel.m */,
 				BAC793641EBC739C00443F60 /* FoodListModel.h */,
 				BAC793651EBC739C00443F60 /* FoodListModel.m */,
+				BA46C8E41EC1919A00E15C3A /* FoodSecTypeListModel.h */,
+				BA46C8E51EC1919A00E15C3A /* FoodSecTypeListModel.m */,
+				BA9833A71EB31A950099C86E /* FoodCategoryModel.h */,
+				BA9833A81EB31A950099C86E /* FoodCategoryModel.m */,
+				BA9833AD1EB31C2B0099C86E /* FoodCollecModel.h */,
+				BA9833AE1EB31C2B0099C86E /* FoodCollecModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2366,6 +2379,7 @@
 				BAF3CF311E9CBE3D0000C9A9 /* compose_live_photo_open_icon@3x.png in Resources */,
 				BA8A98451EB86EF900017075 /* 汉仪仿宋简.ttf in Resources */,
 				BAFDEAEF1EBB19D0004DB2A2 /* PayPriceTableViewCell.xib in Resources */,
+				BAB580481EC1B7800062F301 /* HorizonItemHFCollectionViewCell.xib in Resources */,
 				BAFDEAE51EBB19A4004DB2A2 /* PayOrderTableViewCell.xib in Resources */,
 				BAF3CF1E1E9CBE3D0000C9A9 /* camera_flashlight_open@2x.png in Resources */,
 				BAF3CF4B1E9CBE3D0000C9A9 /* video_next_button@2x.png in Resources */,
@@ -2666,6 +2680,7 @@
 				BAF3CDF61E9CA88E0000C9A9 /* UINavigationController+Loading.m in Sources */,
 				BAF3CD261E9C88FD0000C9A9 /* UIView+NIB.m in Sources */,
 				BAF3CE7C1E9CB8520000C9A9 /* CALayer+Anim.m in Sources */,
+				BA46C8E61EC1919A00E15C3A /* FoodSecTypeListModel.m in Sources */,
 				BAF3CE291E9CA88E0000C9A9 /* Toast.m in Sources */,
 				BAFDEAE41EBB19A4004DB2A2 /* PayOrderTableViewCell.m in Sources */,
 				BAF3CF061E9CBE3D0000C9A9 /* HXPhotoManager.m in Sources */,
@@ -2675,6 +2690,7 @@
 				BAF3CD221E9C88FD0000C9A9 /* UITableViewCell+Addition.m in Sources */,
 				A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */,
 				BA8A984A1EB870B500017075 /* UILabel+Fontchange.m in Sources */,
+				BAB580471EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m in Sources */,
 				BAF3CDF81E9CA88E0000C9A9 /* ModalMenuView.m in Sources */,
 				BAF3CDEE1E9CA88E0000C9A9 /* CycleScrollView.m in Sources */,
 				BA174DB61EB2E455003B293B /* HomeCollectionViewCell.m in Sources */,

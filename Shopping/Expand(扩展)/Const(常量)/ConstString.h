@@ -27,6 +27,7 @@ extern NSString * const FoodSecTypeListTable;
 extern NSString * const ObjectIdKey;
 extern NSString * const SystemServiceTelKey;
 extern NSString * const SystemOpenTimeKey;
+extern NSString * const SystemHomeBottomTipKey;
 extern NSString * const SystemIsOpenKey;
 extern NSString * const CustomFontName;
 
@@ -56,24 +57,36 @@ extern NSString * const FoodListImageUrlKey;
 extern NSString * const FoodListNameKey;
 extern NSString * const FoodListTypeKey;
 
+#pragma mark - FoodSecTypeList
+
+extern NSString * const FoodSecTypeListFoodTypeKey;
+extern NSString * const FoodSecTypeListNameKey;
+extern NSString * const FoodSecTypeListTypeKey;
+
 #pragma mark - Address
 
 extern NSString * const AddressLatitudeKey;
 extern NSString * const AddressLongitudeKey;
 
 #pragma mark - FoodCollec
-extern NSString * const FoodcategoryIdKey;
+
 extern NSString * const FoodCollecIdKey;
 extern NSString * const FoodCollecNameKey;
-extern NSString * const FoodCollecImageNameKey;
+extern NSString * const FoodCollecImageUrlKey;
 extern NSString * const FoodCollecPriceKey;
 extern NSString * const FoodCollecSellCountKey;
+extern NSString * const FoodCollecFoodTypeKey;
+extern NSString * const FoodCollecTypeKey;
+extern NSString * const FoodCollecFoodSecTypeKey;
 
 #pragma mark - FoodCategory
 
 extern NSString * const FoodCategoryIdKey;
 extern NSString * const FoodCategoryNameKey;
-extern NSString * const FoodCategoryImageNameKey;
+extern NSString * const FoodCategoryImageUrlKey;
+extern NSString * const FoodCategoryTypeKey;
+extern NSString * const FoodCategoryFoodTypeKey;
+extern NSString * const FoodCategoryFoodSecTypeKey;
 extern NSString * const FoodCategoryListKey;
 
 #pragma mark - Tips

@@ -15,7 +15,8 @@
 @implementation HorizontalScrollTableViewCell
 
 - (void)reloadData {
-    [_collectionView scrollRectToVisible:CGRectMake(0, 0, 140, 70) animated:NO];
+    [_collectionView setContentOffset:CGPointZero animated:YES];
+//    [_collectionView scrollRectToVisible:CGRectZero animated:NO];
     [_collectionView reloadData];
 }
 

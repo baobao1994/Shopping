@@ -17,9 +17,13 @@
 
 - (id)init {
     if (self = [super init]) {
-        NSDictionary *userDic = [self getUserDicFromFile];
-        self.userInfo = [userDic objectForKey:UserInfoCache];
-        self.systemInfo = [userDic objectForKey:SystemInfoCache];
+        NSDictionary *cacheDic = [self getCacheDicFromFile];
+        self.bannerArrInfo = [[NSMutableArray alloc] init];
+        self.foodCategoryArrInfo = [[NSMutableArray alloc] init];
+        self.userInfo = [cacheDic objectForKey:UserInfoCache];
+        self.systemInfo = [cacheDic objectForKey:SystemInfoCache];
+        self.foodCategoryArrInfo = [cacheDic objectForKey:FoodCategoryInfoCache];
+        self.bannerArrInfo = [cacheDic objectForKey:BannerInfoCache];
     }
     return self;
 }
@@ -39,46 +43,35 @@
 
 - (void)saveUserInfo:(UserInfoModel *)userInfo {
     self.userInfo = userInfo;
-    NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
-    NSMutableDictionary *userDic = [NSMutableDictionary dictionaryWithCapacity:1];
-    if (userInfo != nil) {
-        [userDic setObject:userInfo forKey:UserInfoCache];
-    }
-    [NSKeyedArchiver archiveRootObject:userDic toFile:cachePath];
+    [self saveUserInfo:userInfo bannerArrInfo:_bannerArrInfo foodCategoryArrInfo:_foodCategoryArrInfo systemInfo:_systemInfo];
 }
 
 - (void)deleteUser {
     self.userInfo = nil;
+    [self saveUserInfo:_userInfo bannerArrInfo:_bannerArrInfo foodCategoryArrInfo:_foodCategoryArrInfo systemInfo:_systemInfo];
+}
+
+- (void)deleteCache {
     NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
     DELETE_FILE(cachePath);
 }
 
-- (void)saveBannerInfo:(BannerModel *)bannerInfo {
-    self.bannerInfo = bannerInfo;
-    NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
-    NSMutableDictionary *bannerDic = [NSMutableDictionary dictionaryWithCapacity:1];
-    if (bannerInfo != nil) {
-        [bannerDic setObject:bannerInfo forKey:BannerInfoCache];
-    }
-    [NSKeyedArchiver archiveRootObject:bannerDic toFile:cachePath];
+- (void)saveBannerArrInfo:(NSMutableArray *)bannerArrInfo {
+    self.bannerArrInfo = bannerArrInfo;
+    [self saveUserInfo:_userInfo bannerArrInfo:bannerArrInfo foodCategoryArrInfo:_foodCategoryArrInfo systemInfo:_systemInfo];
 }
 
-- (void)saveBannerInfo {
-    [self saveBannerInfo:_bannerInfo];
+- (void)saveBannerArrInfo {
+    [self saveBannerArrInfo:_bannerArrInfo];
 }
 
-- (void)saveFoodCategoryInfo:(FoodCategoryModel *)foodCategoryInfo {
-    self.foodCategoryInfo = foodCategoryInfo;
-    NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
-    NSMutableDictionary *foodCategoryDic = [NSMutableDictionary dictionaryWithCapacity:1];
-    if (foodCategoryInfo != nil) {
-        [foodCategoryDic setObject:foodCategoryInfo forKey:FoodCategoryInfoCache];
-    }
-    [NSKeyedArchiver archiveRootObject:foodCategoryDic toFile:cachePath];
+- (void)saveFoodCategoryArrInfo:(NSMutableArray *)foodCategoryArrInfo {
+    self.foodCategoryArrInfo = foodCategoryArrInfo;
+    [self saveUserInfo:_userInfo bannerArrInfo:_bannerArrInfo foodCategoryArrInfo:foodCategoryArrInfo systemInfo:_systemInfo];
 }
 
-- (void)saveFoodCategoryInfo {
-    [self saveFoodCategoryInfo:_foodCategoryInfo];
+- (void)saveFoodCategoryArrInfo {
+    [self saveFoodCategoryArrInfo:_foodCategoryArrInfo];
 }
 
 - (void)saveSystemInfo {
@@ -87,36 +80,30 @@
 
 - (void)saveSystemInfo:(SystemInfoModel *)systemInfo {
     self.systemInfo = systemInfo;
-    NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
-    NSMutableDictionary *userDic = [NSMutableDictionary dictionaryWithCapacity:1];
-    if (systemInfo != nil) {
-        [userDic setObject:systemInfo forKey:SystemInfoCache];
-    }
-    [NSKeyedArchiver archiveRootObject:userDic toFile:cachePath];
+    [self saveUserInfo:_userInfo bannerArrInfo:_bannerArrInfo foodCategoryArrInfo:_foodCategoryArrInfo systemInfo:systemInfo];
 }
-/*
- - (void)saveUserInfo:(UserInfo *)userInfo bankInfo:(BankCard *)bank userIntegral:(UserIntegral *)userIntegral signInInfo:(SignIn *)signIn {
- NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
- NSMutableDictionary *userDic = [NSMutableDictionary dictionaryWithCapacity:2];
- if (userInfo != nil) {
- [userDic setObject:userInfo forKey:UserInfoCache];
- }
- if (bank != nil) {
- [userDic setObject:bank forKey:BankInfoCache];
- }
- if (userIntegral != nil) {
- [userDic setObject:userIntegral forKey:UserIntegralInfoCache];
- }
- if (signIn != nil) {
- [userDic setObject:signIn forKey:SignInInfoCache];
- }
- [NSKeyedArchiver archiveRootObject:userDic toFile:cachePath];
- }
-*/
+
+- (void)saveUserInfo:(UserInfoModel *)userInfo bannerArrInfo:(NSMutableArray *)bannerArrInfo foodCategoryArrInfo:(NSMutableArray *)foodCategoryArrInfo systemInfo:(SystemInfoModel *)systemInfo {
+     NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
+     NSMutableDictionary *cacheDic = [NSMutableDictionary dictionaryWithCapacity:4];
+     if (userInfo != nil) {
+         [cacheDic setObject:userInfo forKey:UserInfoCache];
+     }
+     if (bannerArrInfo.count) {
+         [cacheDic setObject:bannerArrInfo forKey:BannerInfoCache];
+     }
+     if (foodCategoryArrInfo.count) {
+         [cacheDic setObject:foodCategoryArrInfo forKey:FoodCategoryInfoCache];
+     }
+     if (systemInfo != nil) {
+         [cacheDic setObject:systemInfo forKey:SystemInfoCache];
+     }
+     [NSKeyedArchiver archiveRootObject:cacheDic toFile:cachePath];
+}
 
 #pragma mark - Private Method
 
-- (NSDictionary *)getUserDicFromFile {
+- (NSDictionary *)getCacheDicFromFile {
     NSDictionary *cacheDic = nil;
     NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:UserInfoCacheFile];
     NSMutableData *cacheData = [[NSMutableData alloc] initWithContentsOfFile:cachePath];

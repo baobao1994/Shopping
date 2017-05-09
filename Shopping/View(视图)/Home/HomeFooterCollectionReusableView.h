@@ -10,4 +10,6 @@
 
 @interface HomeFooterCollectionReusableView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+
 @end

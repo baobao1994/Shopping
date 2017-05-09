@@ -15,6 +15,7 @@
     if (self = [super init]) {
         self.serviceTel = [dic objectForKey:SystemServiceTelKey];
         self.openTime = [dic objectForKey:SystemOpenTimeKey];
+        self.homeBottomTip = [dic objectForKey:SystemHomeBottomTipKey];
         self.isOpen = [[dic objectForKey:SystemIsOpenKey] boolValue];
     }
     return self;
@@ -27,6 +28,9 @@
     if (!isEmptyString(self.openTime)) {
         [aCoder encodeObject:self.openTime forKey:SystemOpenTimeKey];
     }
+    if (!isEmptyString(self.homeBottomTip)) {
+        [aCoder encodeObject:self.homeBottomTip forKey:SystemHomeBottomTipKey];
+    }
     [aCoder encodeObject:[NSNumber numberWithBool:self.isOpen] forKey:SystemIsOpenKey];
 }
 
@@ -34,6 +38,7 @@
     if (self = [super init]) {
         self.serviceTel = [aDecoder decodeObjectForKey:SystemServiceTelKey];
         self.openTime = [aDecoder decodeObjectForKey:SystemOpenTimeKey];
+        self.homeBottomTip = [aDecoder decodeObjectForKey:SystemHomeBottomTipKey];
         self.isOpen = [[aDecoder decodeObjectForKey:SystemIsOpenKey] boolValue];
     }
     return self;
