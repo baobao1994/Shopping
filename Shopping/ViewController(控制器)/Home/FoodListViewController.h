@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CenterTableViewType) {
+    CenterTableViewTopic,//一个个小的
+    CenterTableViewGoods,//一整个大的
+};
+
 @interface FoodListViewController : UIViewController
 
 @property (nonatomic, copy) NSString *foodTypeId;
+@property (nonatomic, assign) CenterTableViewType type;
 
 @end

@@ -9,12 +9,13 @@
 #import "FoodDetailShowView.h"
 #import "FoodDetailFlowLayout.h"
 #import "FoodDetailCollectionViewCell.h"
+#import "FoodCollecModel.h"
 
 NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionViewCell";
 
 @interface FoodDetailShowView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
 
 @end
 
@@ -24,7 +25,8 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
     if (self = [super initWithFrame:frame]) {
         self = [[[NSBundle mainBundle] loadNibNamed:@"FoodDetailShowView" owner:self options:nil] firstObject];
         self.frame = frame;
-        [self.collectionView registerClass:[FoodDetailCollectionViewCell class] forCellWithReuseIdentifier:FoodDetailCollectionViewCellIdentifier];
+        self.dateSource = [[NSMutableArray alloc] init];
+        [_collectionView registerNib:[UINib nibWithNibName:@"FoodDetailCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:FoodDetailCollectionViewCellIdentifier];
         FoodDetailFlowLayout *flowlayout = [[FoodDetailFlowLayout alloc] init];
         self.collectionView.collectionViewLayout = flowlayout;
     }
@@ -32,7 +34,7 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return self.dateSource.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -43,6 +45,22 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
     FoodDetailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:FoodDetailCollectionViewCellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = RandomColor;
     return cell;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger current = scrollView.contentOffset.x / (UIScreenWidth - 120);
+    FoodCollecModel *foodCollecModel = self.dateSource[current];
+    self.foodNameLabel.text = foodCollecModel.name;
+}
+
+- (void)reload {
+    FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
+    self.foodNameLabel.text = foodCollecModel.name;
+    [self.collectionView reloadData];
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    if (self.currentIndex != 0) {
+        [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + 30, 0) animated:NO];
+    }
 }
 
 @end

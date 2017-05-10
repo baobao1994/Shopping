@@ -47,6 +47,7 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     FoodListModel *foodListModel = self.foodCategorylist[indexPath.row];
     foodListVC.foodTypeId = foodListModel.type;
     foodListVC.title = foodListModel.name;
+    foodListVC.type = foodListModel.showType;
     [self.navigationController pushViewController:foodListVC animated:YES];
 }
 

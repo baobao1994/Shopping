@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *foodType;
 @property (nonatomic, copy) NSString *foodSecType;
 @property (nonatomic, strong) NSMutableArray *foodCategorylist;
+@property (nonatomic, assign) CGPoint contentOffset;
+@property (nonatomic, assign) BOOL animate;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 

@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, assign) NSInteger showType;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 

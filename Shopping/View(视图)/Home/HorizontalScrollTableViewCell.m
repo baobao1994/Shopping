@@ -15,8 +15,7 @@
 @implementation HorizontalScrollTableViewCell
 
 - (void)reloadData {
-    [_collectionView setContentOffset:CGPointZero animated:YES];
-//    [_collectionView scrollRectToVisible:CGRectZero animated:NO];
+    [_collectionView setContentOffset:self.contentOffset animated:self.animate];
     [_collectionView reloadData];
 }
 
@@ -38,6 +37,10 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.delegate horizontalCellContentsView:collectionView didSelectItemAtContentIndexPath:indexPath inTableViewIndexPath:self.tableViewIndexPath];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.delegate contentOffset:scrollView.contentOffset atIndex:self.collectionView.tag];
 }
 
 @end

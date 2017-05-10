@@ -56,6 +56,7 @@ extern NSString * const BannerNameKey;
 extern NSString * const FoodListImageUrlKey;
 extern NSString * const FoodListNameKey;
 extern NSString * const FoodListTypeKey;
+extern NSString * const FoodListShowTypeKey;
 
 #pragma mark - FoodSecTypeList
 

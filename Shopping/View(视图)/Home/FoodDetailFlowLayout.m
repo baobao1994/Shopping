@@ -20,7 +20,7 @@
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.minimumLineSpacing = 20;
     self.sectionInset = UIEdgeInsetsMake(0, 30, 0, 30);
-    self.itemSize = CGSizeMake(UIScreenWidth - 120, 120);
+    self.itemSize = CGSizeMake(UIScreenWidth - 120, (UIScreenWidth - 120) * 2 / 3);
     [super prepareLayout];
 }
 
@@ -45,6 +45,7 @@
         CGFloat scaleForDistance = distance / self.itemSize.height;
         // 0.2可调整，值越大，显示就越大
         CGFloat scaleForCell = 1 + 0.2 * (1 - fabs(scaleForDistance));
+        NSLog(@"scaleForCell = %.2f",scaleForCell);
         
         // only scale y-axis
         attribute.transform3D = CATransform3DMakeScale(1, scaleForCell, 1);

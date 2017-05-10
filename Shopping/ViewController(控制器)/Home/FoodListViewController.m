@@ -22,20 +22,13 @@
 NSString *const HorizonItemCollectionViewCellIdentifier = @"HorizonItemCollectionViewCell";
 NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFCollectionViewCell";
 
-typedef NS_ENUM(NSUInteger, CenterTableViewType) {
-    CenterTableViewTopic,
-    CenterTableViewGoods,
-};
-
 @interface FoodListViewController ()<HorizontalScrollCellDelegate,UITableViewDelegate,UITableViewDataSource,PullToRefreshTableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PullToRefreshTableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray *secTypeSource;
-@property (nonatomic, assign) CenterTableViewType type;
 @property (nonatomic, strong) CustomAlertView *customAlertView;
 @property (nonatomic, strong) FoodDetailShowView *foodDetailShowView;
-@property (nonatomic, strong) NSMutableArray *isShouldReloadArr;
 
 @end
 
@@ -55,14 +48,14 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     [foodCategoryQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [self.dataSource removeAllObjects];
         [self.secTypeSource removeAllObjects];
-        [self.isShouldReloadArr removeAllObjects];
         for (BmobObject *obj in array) {
             FoodCategoryModel *foodCategoryModel = [[FoodCategoryModel alloc] initWithDictionary:(NSDictionary *)obj];
+            foodCategoryModel.contentOffset = CGPointZero;
+            foodCategoryModel.animate = YES;
             FoodSecTypeListModel *foodSecTypeListModel = [[FoodSecTypeListModel alloc] initWithDictionary:(NSDictionary *)obj];
             foodCategoryModel.foodSecType = foodSecTypeListModel.type;
             [self.dataSource addObject:foodCategoryModel];
             [self.secTypeSource addObject:foodSecTypeListModel];
-            [self.isShouldReloadArr addObject:[NSNumber numberWithBool:YES]];
         }
         BmobQuery *foodCollecQuery = [BmobQuery queryWithClassName:FoodCollecTable];
         [foodCollecQuery whereKey:FoodSecTypeListFoodTypeKey equalTo:self.foodTypeId];
@@ -99,7 +92,11 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0f;
+    CGFloat height = 140.0f;
+    if (_type == CenterTableViewGoods) {
+        height = UIScreenHeight - 64 - 5;
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -108,8 +105,10 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     CGFloat height = 0.01f;
-    if (section == self.secTypeSource.count - 1) {
-        height = 10.0f;
+    if (_type == CenterTableViewTopic) {
+        if (section == self.secTypeSource.count - 1) {
+            height = 10.0f;
+        }
     }
     return height;
 }
@@ -129,7 +128,15 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSource.count;
+    NSInteger count = self.dataSource.count;
+    if (_type == CenterTableViewGoods) {
+        if (self.dataSource.count) {
+            count = 1;
+        } else {
+            count = 0;
+        }
+    }
+    return count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -143,18 +150,22 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
         [cell.collectionView registerNib:[UINib nibWithNibName:@"HorizonItemCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:HorizonItemCollectionViewCellIdentifier];
         [cell.collectionView registerNib:[UINib nibWithNibName:@"HorizonItemHFCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:HorizonItemHFCollectionViewCellIdentifier];
         UICollectionViewFlowLayout *horizontalCellLayout = [[UICollectionViewFlowLayout alloc] init];
-        horizontalCellLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        if (_type == CenterTableViewTopic) {
+            horizontalCellLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        } else {
+            horizontalCellLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        }
         horizontalCellLayout.sectionInset = UIEdgeInsetsMake(0, 21, 0, 21);
         cell.collectionView.collectionViewLayout = horizontalCellLayout;
         cell.delegate = self;
+        cell.contentOffset = CGPointZero;
     }
-    BOOL isShouldReload = self.isShouldReloadArr[indexPath.section];
-    if (isShouldReload) {
-        [cell reloadData];
-        self.isShouldReloadArr[indexPath.section] = [NSNumber numberWithBool:NO];
-    }
-    cell.backgroundColor = RandomColor;
+    FoodCategoryModel *foodCategoryModel = self.dataSource[indexPath.section];
+    cell.contentOffset = foodCategoryModel.contentOffset;
+    cell.animate = foodCategoryModel.animate;
     cell.tableViewIndexPath = indexPath;
+    cell.collectionView.tag = indexPath.section;
+    [cell reloadData];
     return cell;
 }
 
@@ -163,9 +174,7 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 - (NSInteger)horizontalCellContentsView:(UICollectionView *)horizontalCellContentsView numberOfItemsInTableViewIndexPath:(NSIndexPath *)tableViewIndexPath{
     FoodCategoryModel *foodcategoryModel = self.dataSource[tableViewIndexPath.section];
     NSInteger count = foodcategoryModel.foodCategorylist.count;
-    if (count > 5) {
-        count = 7;
-    } else {
+    if (_type == CenterTableViewTopic) {
         count += 1;
     }
     return count;
@@ -174,38 +183,35 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 - (UICollectionViewCell *)horizontalCellContentsView:(UICollectionView *)horizontalCellContentsView cellForItemAtContentIndexPath:(NSIndexPath *)contentIndexPath inTableViewIndexPath:(NSIndexPath *)tableViewIndexPath{
     NSInteger section = tableViewIndexPath.section;
     NSInteger row = contentIndexPath.row;
-    FoodCategoryModel *foodcategoryModel = self.dataSource[section];
-    NSInteger count = foodcategoryModel.foodCategorylist.count;
     UICollectionViewCell *cell;
-    if (row == 0) {
-        cell = (HorizonItemHFCollectionViewCell *)[horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemHFCollectionViewCellIdentifier forIndexPath:contentIndexPath];
-        [((HorizonItemHFCollectionViewCell *)cell) setConent:self.secTypeSource[section]];
-        cell.backgroundColor = RandomColor;
-    } else {
-        if (count >= 6 && row == 6) {
+    if (_type == CenterTableViewTopic) {
+        if (row == 0) {
             cell = (HorizonItemHFCollectionViewCell *)[horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemHFCollectionViewCellIdentifier forIndexPath:contentIndexPath];
-            cell.backgroundColor = [UIColor yellowColor];
-            ((HorizonItemHFCollectionViewCell *)cell).nameLabel.text = @"更多";
+            [((HorizonItemHFCollectionViewCell *)cell) setConent:self.secTypeSource[section]];
+            cell.backgroundColor = RandomColor;
         } else {
             cell = [horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemCollectionViewCellIdentifier forIndexPath:contentIndexPath];
             FoodCategoryModel *foodCategoryModel = self.dataSource[section];
             [((HorizonItemCollectionViewCell *)cell) setConent:foodCategoryModel.foodCategorylist[row - 1]];
             cell.backgroundColor = RandomColor;
         }
+    } else {
+        cell = [horizontalCellContentsView dequeueReusableCellWithReuseIdentifier:HorizonItemCollectionViewCellIdentifier forIndexPath:contentIndexPath];
+        FoodCategoryModel *foodCategoryModel = self.dataSource[section];
+        [((HorizonItemCollectionViewCell *)cell) setConent:foodCategoryModel.foodCategorylist[row]];
+        cell.backgroundColor = RandomColor;
     }
     return cell;
 }
 
 - (CGSize)horizontalCellContentsView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize itemSize = CGSizeMake(70, 140);
+    CGSize itemSize = CGSizeMake(80, 140);
     if (_type == CenterTableViewTopic) {
-        itemSize.width = 312/2;
-        itemSize.height = itemSize.height - 20;
+        if (indexPath.row != 0) {
+            itemSize.width = 100;
+        }
     } else {
-        itemSize.width = 70;
-    }
-    if (indexPath.row == 0 ||indexPath.row == 6) {
-        return CGSizeMake(70, itemSize.height);
+        itemSize.width = UIScreenWidth - 42;
     }
     return itemSize;
 }
@@ -216,12 +222,20 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
     NSInteger item = contentIndexPath.item;
     if (item == 0) {
         //这里可以弹出这个类别的说明，比如说功效说明
-    } else if (item == 6) {
-        
     } else {
+        FoodCategoryModel *foodCategoryModel = self.dataSource[section];
+        self.foodDetailShowView.currentIndex = item - 1;
+        self.foodDetailShowView.dateSource = foodCategoryModel.foodCategorylist;
+        [self.foodDetailShowView reload];
         [self.customAlertView show];
     }
     NSLog(@"Section %ld Row %ld Item %ld is selected", (unsigned long)tableViewIndexPath.section, (unsigned long)tableViewIndexPath.row, (unsigned long)contentIndexPath.item);
+}
+
+- (void)contentOffset:(CGPoint)contentOffset atIndex:(NSInteger)atIndex {
+    FoodCategoryModel *foodCategoryModel = self.dataSource[atIndex];
+    foodCategoryModel.contentOffset = contentOffset;
+    foodCategoryModel.animate = NO;
 }
 
 #pragma mark - Private Method
@@ -229,16 +243,16 @@ typedef NS_ENUM(NSUInteger, CenterTableViewType) {
 - (void)setUp {
     self.tableView.customTableDelegate = self;
     [self.tableView setRefreshCategory:DropdownRefresh];
-    self.isShouldReloadArr = [[NSMutableArray alloc] init];
     self.dataSource = [[NSMutableArray alloc] init];
     self.secTypeSource = [[NSMutableArray alloc] init];
-    self.foodDetailShowView = [[FoodDetailShowView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth - 60, 180)];
+    self.foodDetailShowView = [[FoodDetailShowView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth - 60, UIScreenHeight * 2 / 3)];
     [self.foodDetailShowView.closeButton addTarget:self action:@selector(hideFoodDetailShowView) forControlEvents:UIControlEventTouchUpInside];
     self.customAlertView = [[CustomAlertView alloc] init];
     self.customAlertView.contentView = self.foodDetailShowView;
 }
 
 - (void)hideFoodDetailShowView {
+    [self.foodDetailShowView.collectionView setContentOffset:CGPointZero animated:NO];
     [self.customAlertView hide];
 }
 

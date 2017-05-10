@@ -49,4 +49,6 @@
 
 - (CGFloat)tableViewHeightForRowAtIndexPath:(NSIndexPath *)indexPath;
 
+- (void)contentOffset:(CGPoint)contentOffset atIndex:(NSInteger)atIndex;
+
 @end

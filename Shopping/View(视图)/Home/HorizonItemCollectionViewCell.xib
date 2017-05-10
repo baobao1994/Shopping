@@ -13,10 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HorizonItemCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="113" height="155"/>
+            <rect key="frame" x="0.0" y="0.0" width="113" height="140"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="113" height="155"/>
+                <rect key="frame" x="0.0" y="0.0" width="113" height="140"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEY-K9-3Ne">
@@ -28,7 +28,7 @@
                         <state key="normal" title="❤️"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:12¥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUo-A8-XJL">
-                        <rect key="frame" x="0.0" y="113" width="113" height="20"/>
+                        <rect key="frame" x="0.0" y="100" width="113" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="kNd-5J-rwc"/>
                         </constraints>
@@ -37,13 +37,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0yA-DN-hYA">
-                        <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
+                        <rect key="frame" x="0.0" y="0.0" width="113" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="0yA-DN-hYA" secondAttribute="height" id="O8l-WL-IZp"/>
+                            <constraint firstAttribute="height" constant="100" id="vWH-ci-N6E"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell Count:12'" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7s-kY-3z9">
-                        <rect key="frame" x="0.0" y="133" width="113" height="20"/>
+                        <rect key="frame" x="0.0" y="120" width="113" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="ODs-bX-nu9"/>
                         </constraints>
@@ -71,7 +71,7 @@
                 <outlet property="priceLabel" destination="vUo-A8-XJL" id="7hj-zd-tmN"/>
                 <outlet property="sellCountLabel" destination="m7s-kY-3z9" id="Kxi-ul-TlR"/>
             </connections>
-            <point key="canvasLocation" x="-188" y="15"/>
+            <point key="canvasLocation" x="-384" y="-17"/>
         </collectionViewCell>
     </objects>
 </document>

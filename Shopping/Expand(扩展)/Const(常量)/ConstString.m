@@ -56,6 +56,7 @@ NSString * const BannerNameKey = @"name";
 NSString * const FoodListImageUrlKey = @"image_url";
 NSString * const FoodListNameKey = @"name";
 NSString * const FoodListTypeKey = @"type";
+NSString * const FoodListShowTypeKey = @"show_type";
 
 #pragma mark - FoodSecTypeList
 

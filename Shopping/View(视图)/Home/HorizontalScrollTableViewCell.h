@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic,weak) id <HorizontalScrollCellDelegate> delegate;
 @property (strong, nonatomic) NSIndexPath *tableViewIndexPath;
+@property (nonatomic, assign) CGPoint contentOffset;
+@property (nonatomic, assign) BOOL animate;
 
 - (void)reloadData;
 
