@@ -117,10 +117,16 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     self.collectionView.showsHorizontalScrollIndicator = YES;
     _collectionView.customTableDelegate = self;
     [_collectionView setRefreshCategory:DropdownRefresh];
-    self.bannerArr = [[NSMutableArray alloc] init];
-    self.foodCategorylist = [[NSMutableArray alloc] init];
-    self.bannerArr = UserManagerInstance.bannerArrInfo;
-    self.foodCategorylist = UserManagerInstance.foodCategoryArrInfo;
+    if (UserManagerInstance.bannerArrInfo) {
+       self.bannerArr = UserManagerInstance.bannerArrInfo;
+    } else {
+        self.bannerArr = [[NSMutableArray alloc] init];
+    }
+    if (UserManagerInstance.foodCategoryArrInfo) {
+        self.foodCategorylist = UserManagerInstance.foodCategoryArrInfo;
+    } else {
+        self.foodCategorylist = [[NSMutableArray alloc] init];
+    }
     self.systemInfoModel = UserManagerInstance.systemInfo;
     [self.collectionView reloadData];
 }
