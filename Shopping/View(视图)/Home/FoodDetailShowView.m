@@ -10,12 +10,14 @@
 #import "FoodDetailFlowLayout.h"
 #import "FoodDetailCollectionViewCell.h"
 #import "FoodCollecModel.h"
+#import "OrderModel.h"
 
 NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionViewCell";
 
 @interface FoodDetailShowView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
+@property (nonatomic, strong) NSMutableArray *orderList;
 
 @end
 
@@ -29,6 +31,7 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
         [_collectionView registerNib:[UINib nibWithNibName:@"FoodDetailCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:FoodDetailCollectionViewCellIdentifier];
         FoodDetailFlowLayout *flowlayout = [[FoodDetailFlowLayout alloc] init];
         self.collectionView.collectionViewLayout = flowlayout;
+        self.orderList = OrderManagerInstance.orderList;
     }
     return self;
 }
@@ -49,6 +52,7 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger current = scrollView.contentOffset.x / (UIScreenWidth - 120);
+    self.currentIndex = current;
     FoodCollecModel *foodCollecModel = self.dateSource[current];
     self.foodNameLabel.text = foodCollecModel.name;
 }
@@ -61,6 +65,14 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
     if (self.currentIndex != 0) {
         [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentOffset.x + 30, 0) animated:NO];
     }
+}
+
+- (IBAction)didSelectAddShoppingCartBtn:(UIButton *)sender {
+    [OrderManagerInstance addFoodCollecOrder:self.dateSource[self.currentIndex]];
+}
+
+- (IBAction)didSelectBuyBtn:(UIButton *)sender {
+    self.toGoBuy();
 }
 
 @end

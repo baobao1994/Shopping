@@ -59,14 +59,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zw-Da-3u0">
-                    <rect key="frame" x="30" y="617" width="315" height="30"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Nrs-xh-orc"/>
-                    </constraints>
-                    <state key="normal" title="加入购物车"/>
-                </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="介绍:将军金甲夜不脱加减奖金军斤斤计较斤斤计较咔咔咔咔咔咔咔卡" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp6-cR-fbH">
                     <rect key="frame" x="30" y="341" width="315" height="276"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,22 +74,45 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJz-zU-p8X">
+                    <rect key="frame" x="30" y="617" width="77" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="gzn-yh-pNb"/>
+                    </constraints>
+                    <state key="normal" title="加入购物车"/>
+                    <connections>
+                        <action selector="didSelectAddShoppingCartBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Roy-iD-Aqc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zw-Da-3u0">
+                    <rect key="frame" x="283" y="617" width="62" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Nrs-xh-orc"/>
+                    </constraints>
+                    <state key="normal" title="立即购买"/>
+                    <connections>
+                        <action selector="didSelectBuyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="F5g-2i-qeH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dcP-9Z-9Ir" firstAttribute="top" secondItem="89Y-sz-PPF" secondAttribute="bottom" constant="5" id="0wT-xb-qAC"/>
+                <constraint firstItem="iJz-zU-p8X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="6eh-nZ-7Dr"/>
                 <constraint firstItem="bOH-ri-RFD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CVm-4P-eT5"/>
                 <constraint firstAttribute="trailing" secondItem="bOH-ri-RFD" secondAttribute="trailing" id="H5D-pM-5gU"/>
                 <constraint firstAttribute="trailing" secondItem="fp6-cR-fbH" secondAttribute="trailing" constant="30" id="HAV-Ci-Pov"/>
                 <constraint firstItem="89Y-sz-PPF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IkS-mj-Roh"/>
                 <constraint firstItem="89Y-sz-PPF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="KBT-m5-DYK"/>
+                <constraint firstItem="iJz-zU-p8X" firstAttribute="centerY" secondItem="9Zw-Da-3u0" secondAttribute="centerY" id="Pvk-r4-q8X"/>
                 <constraint firstItem="9Zw-Da-3u0" firstAttribute="top" secondItem="fp6-cR-fbH" secondAttribute="bottom" id="QBB-HO-yPC"/>
                 <constraint firstItem="JvE-Mh-TnZ" firstAttribute="top" secondItem="dcP-9Z-9Ir" secondAttribute="bottom" id="W2O-E3-RQZ"/>
                 <constraint firstItem="fp6-cR-fbH" firstAttribute="top" secondItem="bql-za-JR9" secondAttribute="bottom" id="WZB-pt-3pT"/>
                 <constraint firstItem="bql-za-JR9" firstAttribute="centerY" secondItem="JvE-Mh-TnZ" secondAttribute="centerY" id="fFh-UX-EqO"/>
                 <constraint firstAttribute="trailing" secondItem="89Y-sz-PPF" secondAttribute="trailing" id="g4N-nJ-zov"/>
                 <constraint firstItem="dcP-9Z-9Ir" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="kUj-CR-lv0"/>
-                <constraint firstItem="9Zw-Da-3u0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="lEb-xn-H1U"/>
                 <constraint firstAttribute="trailing" secondItem="bql-za-JR9" secondAttribute="trailing" constant="35" id="mSy-6h-uJO"/>
                 <constraint firstAttribute="trailing" secondItem="9Zw-Da-3u0" secondAttribute="trailing" constant="30" id="oE9-UA-7ZI"/>
                 <constraint firstItem="JvE-Mh-TnZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="sEq-XL-2DL"/>
@@ -110,7 +125,7 @@
                 <outlet property="collectionView" destination="89Y-sz-PPF" id="MQy-ZP-mWU"/>
                 <outlet property="foodNameLabel" destination="dcP-9Z-9Ir" id="8Ih-JO-Tqx"/>
             </connections>
-            <point key="canvasLocation" x="-160" y="-36"/>
+            <point key="canvasLocation" x="-750" y="-604"/>
         </view>
     </objects>
 </document>

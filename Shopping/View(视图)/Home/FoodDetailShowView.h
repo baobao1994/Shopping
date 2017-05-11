@@ -10,6 +10,7 @@
 
 @interface FoodDetailShowView : UIView
 
+@property (nonatomic, copy) void (^toGoBuy)(void);
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (nonatomic, assign) NSInteger currentIndex;

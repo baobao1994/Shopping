@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +18,152 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfa-AM-ggy">
+                    <rect key="frame" x="50" y="100" width="84" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="vcx-U1-6Dk"/>
+                    </constraints>
+                    <state key="normal" title="加入购物车1"/>
+                    <connections>
+                        <action selector="addOrderBtn:" destination="-1" eventType="touchUpInside" id="QO3-Xn-10B"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-Gh-K42">
+                    <rect key="frame" x="50" y="150" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0kp-tc-LcM"/>
+                    </constraints>
+                    <state key="normal" title="加入购物车2"/>
+                    <connections>
+                        <action selector="addOrderBtn:" destination="-1" eventType="touchUpInside" id="tFd-vU-udn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeD-wS-EKT">
+                    <rect key="frame" x="50" y="200" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="qpq-ak-pMl"/>
+                    </constraints>
+                    <state key="normal" title="加入购物车3"/>
+                    <connections>
+                        <action selector="addOrderBtn:" destination="-1" eventType="touchUpInside" id="Q89-zM-sYr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZF3-ME-m6e">
+                    <rect key="frame" x="50" y="250" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="bmm-CK-45P"/>
+                    </constraints>
+                    <state key="normal" title="加入购物车4"/>
+                    <connections>
+                        <action selector="addOrderBtn:" destination="-1" eventType="touchUpInside" id="mf0-sO-lX2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfV-bd-pXr">
+                    <rect key="frame" x="50" y="300" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZZE-uj-F3D"/>
+                    </constraints>
+                    <state key="normal" title="加入购物车5"/>
+                    <connections>
+                        <action selector="addOrderBtn:" destination="-1" eventType="touchUpInside" id="oMt-sv-7Vv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyk-zI-Nh6">
+                    <rect key="frame" x="170" y="100" width="84" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="woF-Zk-aOg"/>
+                    </constraints>
+                    <state key="normal" title="删除购物车1"/>
+                    <connections>
+                        <action selector="cutOrderBtn:" destination="-1" eventType="touchUpInside" id="GoB-GG-TOd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-oW-MjR">
+                    <rect key="frame" x="170" y="150" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="JXt-jM-mDs"/>
+                    </constraints>
+                    <state key="normal" title="删除购物车2"/>
+                    <connections>
+                        <action selector="cutOrderBtn:" destination="-1" eventType="touchUpInside" id="JRR-BE-B0G"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWY-bp-7Zd">
+                    <rect key="frame" x="170" y="200" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="nMq-Hi-wxX"/>
+                    </constraints>
+                    <state key="normal" title="删除购物车3"/>
+                    <connections>
+                        <action selector="cutOrderBtn:" destination="-1" eventType="touchUpInside" id="2A9-et-Pm0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYY-d4-rNY">
+                    <rect key="frame" x="170" y="250" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="aUN-dr-ilA"/>
+                    </constraints>
+                    <state key="normal" title="删除购物车4"/>
+                    <connections>
+                        <action selector="cutOrderBtn:" destination="-1" eventType="touchUpInside" id="lLa-Nu-Vpm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCR-cn-0Q8">
+                    <rect key="frame" x="170" y="300" width="86" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="kOg-iF-wTb"/>
+                    </constraints>
+                    <state key="normal" title="删除购物车5"/>
+                    <connections>
+                        <action selector="cutOrderBtn:" destination="-1" eventType="touchUpInside" id="bj8-g0-BZq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc6-nZ-4Zj">
+                    <rect key="frame" x="77" y="358" width="241" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.94901960780000005" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="统计"/>
+                    <connections>
+                        <action selector="nslogBtn:" destination="-1" eventType="touchUpInside" id="4rc-wg-Ujh"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Sfa-AM-ggy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="17G-Ys-2Jr"/>
+                <constraint firstItem="XfV-bd-pXr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="39f-hy-PYv"/>
+                <constraint firstItem="lWY-bp-7Zd" firstAttribute="top" secondItem="Oin-oW-MjR" secondAttribute="bottom" constant="20" id="50u-KO-XFg"/>
+                <constraint firstItem="ZF3-ME-m6e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="5Ki-61-SwT"/>
+                <constraint firstItem="yeD-wS-EKT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="6F8-lk-lEZ"/>
+                <constraint firstItem="Sfa-AM-ggy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="9dr-dZ-wsx"/>
+                <constraint firstItem="d1a-Gh-K42" firstAttribute="top" secondItem="Sfa-AM-ggy" secondAttribute="bottom" constant="20" id="EwU-iu-jGQ"/>
+                <constraint firstItem="d1a-Gh-K42" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="GAP-rT-PBC"/>
+                <constraint firstItem="XfV-bd-pXr" firstAttribute="top" secondItem="ZF3-ME-m6e" secondAttribute="bottom" constant="20" id="Mpq-UI-XHZ"/>
+                <constraint firstItem="lWY-bp-7Zd" firstAttribute="leading" secondItem="Oin-oW-MjR" secondAttribute="leading" id="Q0K-V0-LDn"/>
+                <constraint firstItem="ZYY-d4-rNY" firstAttribute="top" secondItem="lWY-bp-7Zd" secondAttribute="bottom" constant="20" id="VI8-wG-Hsu"/>
+                <constraint firstItem="ZYY-d4-rNY" firstAttribute="leading" secondItem="lWY-bp-7Zd" secondAttribute="leading" id="W1P-Y8-hmX"/>
+                <constraint firstItem="Oin-oW-MjR" firstAttribute="leading" secondItem="Zyk-zI-Nh6" secondAttribute="leading" id="WLN-vg-pE4"/>
+                <constraint firstAttribute="trailing" secondItem="yc6-nZ-4Zj" secondAttribute="trailing" constant="57" id="YQx-xT-mvd"/>
+                <constraint firstItem="RCR-cn-0Q8" firstAttribute="top" secondItem="ZYY-d4-rNY" secondAttribute="bottom" constant="20" id="dLq-Up-B0z"/>
+                <constraint firstItem="Oin-oW-MjR" firstAttribute="top" secondItem="Zyk-zI-Nh6" secondAttribute="bottom" constant="20" id="fcV-Mq-pTc"/>
+                <constraint firstItem="yeD-wS-EKT" firstAttribute="top" secondItem="d1a-Gh-K42" secondAttribute="bottom" constant="20" id="tx4-rk-J2j"/>
+                <constraint firstItem="yc6-nZ-4Zj" firstAttribute="top" secondItem="XfV-bd-pXr" secondAttribute="bottom" constant="28" id="v9l-4K-P94"/>
+                <constraint firstItem="yc6-nZ-4Zj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="77" id="veg-gZ-s0d"/>
+                <constraint firstItem="Zyk-zI-Nh6" firstAttribute="centerY" secondItem="Sfa-AM-ggy" secondAttribute="centerY" id="xAc-Ir-hJB"/>
+                <constraint firstItem="Zyk-zI-Nh6" firstAttribute="leading" secondItem="Sfa-AM-ggy" secondAttribute="trailing" constant="36" id="yLI-AC-G08"/>
+                <constraint firstItem="ZF3-ME-m6e" firstAttribute="top" secondItem="yeD-wS-EKT" secondAttribute="bottom" constant="20" id="yfx-w9-xI6"/>
+                <constraint firstItem="RCR-cn-0Q8" firstAttribute="leading" secondItem="ZYY-d4-rNY" secondAttribute="leading" id="zjb-nF-Rn7"/>
+            </constraints>
         </view>
     </objects>
 </document>

@@ -18,6 +18,9 @@
 #import "FoodDetailShowView.h"
 #import "PullToRefreshTableView.h"
 #import "FoodSecTypeListModel.h"
+#import "UIViewController+Pop.h"
+#import "ShoppingCartViewController.h"
+#import "ConfirmOrderViewController.h"
 
 NSString *const HorizonItemCollectionViewCellIdentifier = @"HorizonItemCollectionViewCell";
 NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFCollectionViewCell";
@@ -38,6 +41,12 @@ NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFColle
     [super viewDidLoad];
     [self setUp];
     [self getHeaderDataSoure];
+    [self createNavigationRightItem:@"setting"];
+}
+
+- (void)selectedNavigationRightItem:(id)sender {
+    ShoppingCartViewController *shoppingCartVC = [[ShoppingCartViewController alloc] init];
+    [self.navigationController pushViewController:shoppingCartVC animated:YES];
 }
 
 #pragma mark - PullToRefreshTableViewDelegate method
@@ -220,16 +229,23 @@ NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFColle
     [horizontalCellContentsView deselectItemAtIndexPath:contentIndexPath animated:YES];
     NSInteger section = tableViewIndexPath.section;
     NSInteger item = contentIndexPath.item;
-    if (item == 0) {
-        //这里可以弹出这个类别的说明，比如说功效说明
+    FoodCategoryModel *foodCategoryModel = self.dataSource[section];
+    if (_type == CenterTableViewTopic) {
+        if (item == 0) {
+            [MBProgrossManagerInstance showOnlyText:foodCategoryModel.name HudHiddenCallBack:nil];
+        } else {
+            self.foodDetailShowView.currentIndex = item - 1;
+            self.foodDetailShowView.dateSource = foodCategoryModel.foodCategorylist;
+            [self.foodDetailShowView reload];
+            [self.customAlertView show];
+        }
     } else {
-        FoodCategoryModel *foodCategoryModel = self.dataSource[section];
-        self.foodDetailShowView.currentIndex = item - 1;
+        self.foodDetailShowView.currentIndex = item;
         self.foodDetailShowView.dateSource = foodCategoryModel.foodCategorylist;
         [self.foodDetailShowView reload];
         [self.customAlertView show];
     }
-    NSLog(@"Section %ld Row %ld Item %ld is selected", (unsigned long)tableViewIndexPath.section, (unsigned long)tableViewIndexPath.row, (unsigned long)contentIndexPath.item);
+//    NSLog(@"Section %ld Row %ld Item %ld is selected", (unsigned long)tableViewIndexPath.section, (unsigned long)tableViewIndexPath.row, (unsigned long)contentIndexPath.item);
 }
 
 - (void)contentOffset:(CGPoint)contentOffset atIndex:(NSInteger)atIndex {
@@ -241,11 +257,19 @@ NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFColle
 #pragma mark - Private Method
 
 - (void)setUp {
+    WEAKSELF_SC;
     self.tableView.customTableDelegate = self;
     [self.tableView setRefreshCategory:DropdownRefresh];
     self.dataSource = [[NSMutableArray alloc] init];
     self.secTypeSource = [[NSMutableArray alloc] init];
     self.foodDetailShowView = [[FoodDetailShowView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth - 60, UIScreenHeight * 2 / 3)];
+    [self.foodDetailShowView setToGoBuy:^{
+        [weakSelf_SC hideFoodDetailShowView];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            ConfirmOrderViewController *confirmOrderVC = [[ConfirmOrderViewController alloc] init];
+            [weakSelf_SC.navigationController pushViewController:confirmOrderVC animated:YES];
+        });
+    }];
     [self.foodDetailShowView.closeButton addTarget:self action:@selector(hideFoodDetailShowView) forControlEvents:UIControlEventTouchUpInside];
     self.customAlertView = [[CustomAlertView alloc] init];
     self.customAlertView.contentView = self.foodDetailShowView;

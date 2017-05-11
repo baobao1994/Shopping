@@ -79,6 +79,12 @@
 		BA48F0011EA4CD2200999921 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0001EA4CD2200999921 /* libc++.tbd */; };
 		BA48F0031EA4CD3900999921 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA48F0021EA4CD3900999921 /* libWeChatSDK.a */; };
 		BA557A091EAD9F7E00A77EF7 /* SystemInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */; };
+		BA57E56B1EC4461A00B9552E /* ShoppingCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA57E5691EC4461A00B9552E /* ShoppingCartViewController.m */; };
+		BA57E56C1EC4461A00B9552E /* ShoppingCartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57E56A1EC4461A00B9552E /* ShoppingCartViewController.xib */; };
+		BA57E5701EC4488000B9552E /* ShoopingCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA57E56E1EC4488000B9552E /* ShoopingCartTableViewCell.m */; };
+		BA57E5711EC4488000B9552E /* ShoopingCartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57E56F1EC4488000B9552E /* ShoopingCartTableViewCell.xib */; };
+		BA57E5741EC44CF300B9552E /* OrderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA57E5731EC44CF300B9552E /* OrderManager.m */; };
+		BA8495841EC40BE900E55FB3 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8495831EC40BE900E55FB3 /* OrderModel.m */; };
 		BA8A98411EB86E9400017075 /* 汉仪橄榄体简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */; };
 		BA8A98451EB86EF900017075 /* 汉仪仿宋简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */; };
 		BA8A98461EB86EF900017075 /* 汉仪魏碑繁.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */; };
@@ -495,6 +501,16 @@
 		BA48F0021EA4CD3900999921 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		BA557A071EAD9F7E00A77EF7 /* SystemInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfoModel.h; sourceTree = "<group>"; };
 		BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfoModel.m; sourceTree = "<group>"; };
+		BA57E5681EC4461A00B9552E /* ShoppingCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCartViewController.h; sourceTree = "<group>"; };
+		BA57E5691EC4461A00B9552E /* ShoppingCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCartViewController.m; sourceTree = "<group>"; };
+		BA57E56A1EC4461A00B9552E /* ShoppingCartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingCartViewController.xib; sourceTree = "<group>"; };
+		BA57E56D1EC4488000B9552E /* ShoopingCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoopingCartTableViewCell.h; sourceTree = "<group>"; };
+		BA57E56E1EC4488000B9552E /* ShoopingCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoopingCartTableViewCell.m; sourceTree = "<group>"; };
+		BA57E56F1EC4488000B9552E /* ShoopingCartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoopingCartTableViewCell.xib; sourceTree = "<group>"; };
+		BA57E5721EC44CF300B9552E /* OrderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderManager.h; sourceTree = "<group>"; };
+		BA57E5731EC44CF300B9552E /* OrderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderManager.m; sourceTree = "<group>"; };
+		BA8495821EC40BE900E55FB3 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
+		BA8495831EC40BE900E55FB3 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
 		BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪橄榄体简.ttf"; sourceTree = "<group>"; };
 		BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪仿宋简.ttf"; sourceTree = "<group>"; };
 		BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪魏碑繁.ttf"; sourceTree = "<group>"; };
@@ -1319,6 +1335,8 @@
 				BAF3CE321E9CAC8A0000C9A9 /* WinMessage.m */,
 				BABD07271EA60318005675CC /* UserManager.h */,
 				BABD07281EA60318005675CC /* UserManager.m */,
+				BA57E5721EC44CF300B9552E /* OrderManager.h */,
+				BA57E5731EC44CF300B9552E /* OrderManager.m */,
 				BA557A071EAD9F7E00A77EF7 /* SystemInfoModel.h */,
 				BA557A081EAD9F7E00A77EF7 /* SystemInfoModel.m */,
 			);
@@ -2052,6 +2070,9 @@
 				BA9833A21EB315DE0099C86E /* FoodListViewController.h */,
 				BA9833A31EB315DE0099C86E /* FoodListViewController.m */,
 				BA9833A41EB315DE0099C86E /* FoodListViewController.xib */,
+				BA57E5681EC4461A00B9552E /* ShoppingCartViewController.h */,
+				BA57E5691EC4461A00B9552E /* ShoppingCartViewController.m */,
+				BA57E56A1EC4461A00B9552E /* ShoppingCartViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2122,6 +2143,9 @@
 				BAB580441EC1B7800062F301 /* HorizonItemHFCollectionViewCell.h */,
 				BAB580451EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m */,
 				BAB580461EC1B7800062F301 /* HorizonItemHFCollectionViewCell.xib */,
+				BA57E56D1EC4488000B9552E /* ShoopingCartTableViewCell.h */,
+				BA57E56E1EC4488000B9552E /* ShoopingCartTableViewCell.m */,
+				BA57E56F1EC4488000B9552E /* ShoopingCartTableViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -2194,6 +2218,8 @@
 		BAF3CF851E9CDB2D0000C9A9 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				BA8495821EC40BE900E55FB3 /* OrderModel.h */,
+				BA8495831EC40BE900E55FB3 /* OrderModel.m */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -2301,7 +2327,8 @@
 				TargetAttributes = {
 					BAF3CC961E9C73BF0000C9A9 = {
 						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 4T5GA24FX8;
+						ProvisioningStyle = Automatic;
 					};
 					BAF3CCAF1E9C73BF0000C9A9 = {
 						CreatedOnToolsVersion = 8.3;
@@ -2389,6 +2416,7 @@
 				BA174DB71EB2E455003B293B /* HomeCollectionViewCell.xib in Resources */,
 				BAF3CCAA1E9C73BF0000C9A9 /* LaunchScreen.storyboard in Resources */,
 				BAF3CF2F1E9CBE3D0000C9A9 /* compose_live_photo_close_icon@3x.png in Resources */,
+				BA57E5711EC4488000B9552E /* ShoopingCartTableViewCell.xib in Resources */,
 				BAF3CE201E9CA88E0000C9A9 /* rocker_image@3x.png in Resources */,
 				BAF3CF2D1E9CBE3D0000C9A9 /* compose_live_photo_background@3x.png in Resources */,
 				BAF3CF131E9CBE3D0000C9A9 /* alert_failed_icon@2x.png in Resources */,
@@ -2482,6 +2510,7 @@
 				BAF3CE0B1E9CA88E0000C9A9 /* refresh_rocker@2x.png in Resources */,
 				BAF3CF3D1E9CBE3D0000C9A9 /* compose_photo_video@2x.png in Resources */,
 				BAF3CF8A1E9CDE090000C9A9 /* HomeViewController.xib in Resources */,
+				BA57E56C1EC4461A00B9552E /* ShoppingCartViewController.xib in Resources */,
 				BAF3CF281E9CBE3D0000C9A9 /* compose_gifbutton_background_highlighted@2x.png in Resources */,
 				BAF3CF1C1E9CBE3D0000C9A9 /* camera_flashlight_auto_disable@2x.png in Resources */,
 				BA3017E81E9E0C6000F7C518 /* RegisterViewController.xib in Resources */,
@@ -2603,6 +2632,7 @@
 				BA9833BD1EB32BB40099C86E /* HorizonItemCollectionViewCell.m in Sources */,
 				BABD07291EA60318005675CC /* UserManager.m in Sources */,
 				BA3018041E9E162B00F7C518 /* TableStaticModel.m in Sources */,
+				BA57E5701EC4488000B9552E /* ShoopingCartTableViewCell.m in Sources */,
 				BAF3CDF91E9CA88E0000C9A9 /* PaddingTextField.m in Sources */,
 				BAF3CE231E9CA88E0000C9A9 /* AutoLoopScrollLabel.m in Sources */,
 				BAF3CF8E1E9CDE170000C9A9 /* MyViewController.m in Sources */,
@@ -2610,6 +2640,7 @@
 				BAF3CF111E9CBE3D0000C9A9 /* HXVideoPresentTransition.m in Sources */,
 				BAF3CDFE1E9CA88E0000C9A9 /* UIViewController+Pop.m in Sources */,
 				A520A28E1EAB0DCE00359DB1 /* SearchPlaceViewController.m in Sources */,
+				BA57E5741EC44CF300B9552E /* OrderManager.m in Sources */,
 				BAC793631EBC6F6000443F60 /* BannerModel.m in Sources */,
 				BAFDEACA1EBB0610004DB2A2 /* FoodDetailCollectionViewCell.m in Sources */,
 				BAF3CD5C1E9CA4F10000C9A9 /* UIImageView+WebCache.m in Sources */,
@@ -2651,6 +2682,7 @@
 				BAF3CD1F1E9C88FD0000C9A9 /* UIImage+ImageCache.m in Sources */,
 				BAF3CF001E9CBE3D0000C9A9 /* HXAlbumModel.m in Sources */,
 				A520A29C1EAB42B100359DB1 /* PlaceBubbleView.m in Sources */,
+				BA8495841EC40BE900E55FB3 /* OrderModel.m in Sources */,
 				BAF3CCE31E9C79C70000C9A9 /* AppDelegate.mm in Sources */,
 				BAF3CF591E9CBFF70000C9A9 /* SHNavigationController.m in Sources */,
 				BAF3CF121E9CBE3D0000C9A9 /* HXVideoPreviewViewController.m in Sources */,
@@ -2678,6 +2710,7 @@
 				BAF3CD1E1E9C88FD0000C9A9 /* UIButton+Addition.m in Sources */,
 				BAF3CF5A1E9CBFF70000C9A9 /* SHTabbarController.m in Sources */,
 				BAF3CDF61E9CA88E0000C9A9 /* UINavigationController+Loading.m in Sources */,
+				BA57E56B1EC4461A00B9552E /* ShoppingCartViewController.m in Sources */,
 				BAF3CD261E9C88FD0000C9A9 /* UIView+NIB.m in Sources */,
 				BAF3CE7C1E9CB8520000C9A9 /* CALayer+Anim.m in Sources */,
 				BA46C8E61EC1919A00E15C3A /* FoodSecTypeListModel.m in Sources */,
@@ -2850,7 +2883,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4T5GA24FX8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks/**",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",
@@ -2876,7 +2910,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4T5GA24FX8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks/**",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",

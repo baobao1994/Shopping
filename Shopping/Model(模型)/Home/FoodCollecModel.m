@@ -8,6 +8,7 @@
 
 #import "FoodCollecModel.h"
 #import "ConstString.h"
+#import "OrderModel.h"
 
 @implementation FoodCollecModel
 
@@ -21,6 +22,22 @@
         self.type = [dic objectForKey:FoodCollecTypeKey];
         self.foodType = [dic objectForKey:FoodCollecFoodTypeKey];
         self.foodSecType = [dic objectForKey:FoodCollecFoodSecTypeKey];
+        self.isCoupon = [[dic objectForKey:FoodCollecIsCouponKey] boolValue];
+        self.couponPrice = [dic objectForKey:FoodCollecCouponPriceKey];
+        self.couponCount = [[dic objectForKey:FoodCollecCouponCountKey] integerValue];
+    }
+    return self;
+}
+
+- (id)initWithOrderModel:(OrderModel *)orderModel {
+    if (self = [super init]) {
+        self.foodId = orderModel.foodId;
+        self.name = orderModel.name;
+        self.imageUrl = orderModel.imageUrl;
+        self.price = orderModel.price;
+        self.isCoupon = orderModel.isCoupon;
+        self.couponPrice = orderModel.couponPrice;
+        self.couponCount = orderModel.couponCount;
     }
     return self;
 }

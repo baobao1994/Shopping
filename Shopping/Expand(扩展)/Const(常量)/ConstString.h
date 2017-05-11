@@ -79,6 +79,9 @@ extern NSString * const FoodCollecSellCountKey;
 extern NSString * const FoodCollecFoodTypeKey;
 extern NSString * const FoodCollecTypeKey;
 extern NSString * const FoodCollecFoodSecTypeKey;
+extern NSString * const FoodCollecIsCouponKey;
+extern NSString * const FoodCollecCouponPriceKey;
+extern NSString * const FoodCollecCouponCountKey;
 
 #pragma mark - FoodCategory
 
@@ -89,6 +92,18 @@ extern NSString * const FoodCategoryTypeKey;
 extern NSString * const FoodCategoryFoodTypeKey;
 extern NSString * const FoodCategoryFoodSecTypeKey;
 extern NSString * const FoodCategoryListKey;
+
+#pragma mark - Order
+
+extern NSString * const OrderFoodIdKey;
+extern NSString * const OrderNameKey;
+extern NSString * const OrderImageUrlKey;
+extern NSString * const OrderPriceKey;
+extern NSString * const OrderFoodPriceKey;
+extern NSString * const OrderCountKey;
+extern NSString * const OrderIsCouponKey;
+extern NSString * const OrderCouponPriceKey;
+extern NSString * const OrderCouponCountKey;
 
 #pragma mark - Tips
 
@@ -103,10 +118,13 @@ extern NSString * const kGoTopNotificationName;
 extern NSString * const kLeaveTopNotificationName;
 
 #pragma mark - Cache
+
 extern NSString * const UserInfoCacheFile;
+extern NSString * const OrderInfoCacheFile;
 extern NSString * const UserInfoCache;
 extern NSString * const SystemInfoCache;
 extern NSString * const BannerInfoCache;
+extern NSString * const OrderInfoCache;
 extern NSString * const FoodCategoryInfoCache;
 extern NSString * const LogoCache;
 

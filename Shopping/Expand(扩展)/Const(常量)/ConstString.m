@@ -79,6 +79,9 @@ NSString * const FoodCollecSellCountKey = @"sell_count";
 NSString * const FoodCollecFoodTypeKey = @"food_type";
 NSString * const FoodCollecTypeKey = @"type";
 NSString * const FoodCollecFoodSecTypeKey = @"food_sec_type";
+NSString * const FoodCollecIsCouponKey = @"is_coupon";
+NSString * const FoodCollecCouponPriceKey = @"coupon_price";
+NSString * const FoodCollecCouponCountKey = @"coupon_count";
 
 #pragma mark - FoodCategory
 
@@ -89,6 +92,18 @@ NSString * const FoodCategoryTypeKey = @"food_type";
 NSString * const FoodCategoryFoodTypeKey = @"food_type";
 NSString * const FoodCategoryFoodSecTypeKey = @"food_sec_type";
 NSString * const FoodCategoryListKey = @"list";
+
+#pragma mark - Order
+
+NSString * const OrderFoodIdKey = @"food_id";
+NSString * const OrderNameKey = @"name";
+NSString * const OrderImageUrlKey = @"image_url";
+NSString * const OrderPriceKey = @"price";
+NSString * const OrderFoodPriceKey = @"food_price";
+NSString * const OrderCountKey = @"count";
+NSString * const OrderIsCouponKey = @"is_coupon";
+NSString * const OrderCouponPriceKey = @"coupon_price";
+NSString * const OrderCouponCountKey = @"coupon_count";
 
 #pragma mark - Tips
 
@@ -105,9 +120,11 @@ NSString * const kLeaveTopNotificationName = @"leaveTop";
 #pragma mark - Cache
 
 NSString * const UserInfoCacheFile = @"cacheFile";
+NSString * const OrderInfoCacheFile = @"orderCacheFile";
 NSString * const UserInfoCache = @"userInfoCache";
 NSString * const SystemInfoCache = @"systemInfoCache";
 NSString * const BannerInfoCache = @"bannerInfoCache";
+NSString * const OrderInfoCache = @"orderInfoCache";
 NSString * const FoodCategoryInfoCache = @"foodCategoryInfoCache";
 NSString * const LogoCache = @"logoCache.png";
 

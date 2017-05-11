@@ -4,4 +4,7 @@
    <FileRef
       location = "self:/Users/guoweiwen1994/Desktop/InCommonUseTools 2/Shopping.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:">
+   </FileRef>
 </Workspace>

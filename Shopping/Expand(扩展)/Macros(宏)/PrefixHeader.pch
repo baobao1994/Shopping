@@ -16,6 +16,7 @@
 #import <BmobSDK/Bmob.h>
 #import "MBProgrossManager.h"
 #import "UserManager.h"
+#import "OrderManager.h"
 #import "FoodTypeConfig.h"
 
 #define WEAKSELF_SC __weak __typeof(&*self)weakSelf_SC = self
@@ -55,7 +56,9 @@
 
 #define UIScreenWidth [UIScreen mainScreen].bounds.size.width
 #define UIScreenHeight [UIScreen mainScreen].bounds.size.height
+
 #define MBProgrossManagerInstance [MBProgrossManager shareInstance]
 #define UserManagerInstance [UserManager shareInstance]
+#define OrderManagerInstance [OrderManager shareInstance]
 
 #endif /* PrefixHeader_pch */
