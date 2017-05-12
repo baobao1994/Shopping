@@ -20,6 +20,9 @@
 @property (nonatomic, assign) BOOL isCoupon;
 @property (nonatomic, copy) NSString *couponPrice;
 @property (nonatomic, assign) NSInteger couponCount;
+//@property (nonatomic, assign) float sendPrice;//配送费
+//@property (nonatomic, assign) BOOL isUseCoupon;//是否使用优惠券
+//@property (nonatomic, copy) NSString *couponName;//优惠券名称
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 

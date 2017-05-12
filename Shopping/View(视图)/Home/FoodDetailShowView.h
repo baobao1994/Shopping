@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class FoodCollecModel;
+
 @interface FoodDetailShowView : UIView
 
 @property (nonatomic, copy) void (^toGoBuy)(void);
+@property (nonatomic, copy) void (^toGoAddOrder)(FoodCollecModel *foodCollecModel);
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (nonatomic, assign) NSInteger currentIndex;

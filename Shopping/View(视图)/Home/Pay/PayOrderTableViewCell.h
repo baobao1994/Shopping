@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class OrderModel;
+
 @interface PayOrderTableViewCell : UITableViewCell
+
+- (void)setContent:(OrderModel *)orderModel;
 
 @end

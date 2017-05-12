@@ -75,9 +75,9 @@
         order.count = 1;
         order.isCoupon = foodCollecModel.isCoupon;
         if (order.isCoupon) {
-            order.foodPrice = foodCollecModel.couponPrice;
+            order.foodPrice = [NSString stringWithFormat:@"%.2f",[foodCollecModel.couponPrice floatValue]];
         } else {
-            order.foodPrice = foodCollecModel.price;
+            order.foodPrice = [NSString stringWithFormat:@"%.2f",[foodCollecModel.price floatValue]];
         }
         order.couponPrice = foodCollecModel.couponPrice;
         order.couponCount = foodCollecModel.couponCount;

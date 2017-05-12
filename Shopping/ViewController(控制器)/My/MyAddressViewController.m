@@ -29,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的地址";
+    if (self.isSelectAddress) {
+        self.tableView.allowsSelection = YES;
+    }
     self.editAddressVC = [[EditAddressViewController alloc] init];
 }
 
@@ -55,6 +58,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80.0f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.changeAddress(self.myAddressArr[indexPath.row]);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source

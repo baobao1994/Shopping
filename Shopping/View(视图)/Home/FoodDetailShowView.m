@@ -11,6 +11,7 @@
 #import "FoodDetailCollectionViewCell.h"
 #import "FoodCollecModel.h"
 #import "OrderModel.h"
+#import "Toast.h"
 
 NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionViewCell";
 
@@ -18,6 +19,7 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
 @property (nonatomic, strong) NSMutableArray *orderList;
+@property (weak, nonatomic) IBOutlet UILabel *orderCountLabel;
 
 @end
 
@@ -51,15 +53,12 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger current = scrollView.contentOffset.x / (UIScreenWidth - 120);
-    self.currentIndex = current;
-    FoodCollecModel *foodCollecModel = self.dateSource[current];
-    self.foodNameLabel.text = foodCollecModel.name;
+    self.currentIndex = scrollView.contentOffset.x / (UIScreenWidth - 120);
+    [self reloadShowDate];
 }
 
 - (void)reload {
-    FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
-    self.foodNameLabel.text = foodCollecModel.name;
+    [self reloadShowDate];
     [self.collectionView reloadData];
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     if (self.currentIndex != 0) {
@@ -69,10 +68,39 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 
 - (IBAction)didSelectAddShoppingCartBtn:(UIButton *)sender {
     [OrderManagerInstance addFoodCollecOrder:self.dateSource[self.currentIndex]];
+    [self reloadShowDate];
 }
 
 - (IBAction)didSelectBuyBtn:(UIButton *)sender {
     self.toGoBuy();
+}
+
+- (void)reloadShowDate {
+    FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
+    self.foodNameLabel.text = foodCollecModel.name;
+    NSString *orderCount = @"0";
+    for (OrderModel *orderModel in self.orderList) {
+        if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {
+            orderCount = [NSString stringWithFormat:@"%ld",orderModel.count];
+            break;
+        }
+    }
+    self.orderCountLabel.transform = CGAffineTransformIdentity;
+    [UIView animateKeyframesWithDuration:0.5 delay:0 options:0 animations: ^{
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 / 3.0 animations: ^{
+            self.orderCountLabel.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:1/3.0 relativeDuration:1/3.0 animations: ^{
+            self.orderCountLabel.transform = CGAffineTransformMakeScale(0.8, 0.8);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:2/3.0 relativeDuration:1/3.0 animations: ^{
+            self.orderCountLabel.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        }];
+    } completion:^(BOOL finished) {
+        self.orderCountLabel.text = orderCount;
+        self.orderCountLabel.adjustsFontSizeToFitWidth = YES;
+        self.orderCountLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    }];
 }
 
 @end

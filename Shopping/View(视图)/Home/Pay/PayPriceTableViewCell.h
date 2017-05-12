@@ -1,5 +1,5 @@
 //
-//  PayAddreessTableViewCell.h
+//  PayPriceTableViewCell.h
 //  Shopping
 //
 //  Created by 郭伟文 on 2017/5/4.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PayAddreessTableViewCell : UITableViewCell
+@interface PayPriceTableViewCell : UITableViewCell
+
+- (void)setContent:(NSMutableArray *)orderList;
 
 @end

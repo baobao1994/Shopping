@@ -270,6 +270,11 @@ NSString *const HorizonItemHFCollectionViewCellIdentifier = @"HorizonItemHFColle
             [weakSelf_SC.navigationController pushViewController:confirmOrderVC animated:YES];
         });
     }];
+//    [self.foodDetailShowView setToGoAddOrder:^(FoodCollecModel *foodCollecModel) {
+//        [OrderManagerInstance addFoodCollecOrder:foodCollecModel];
+//    }];
+//    [MBProgrossManagerInstance showOnlyText:@"已添加到购物车" HudHiddenCallBack:nil];
+
     [self.foodDetailShowView.closeButton addTarget:self action:@selector(hideFoodDetailShowView) forControlEvents:UIControlEventTouchUpInside];
     self.customAlertView = [[CustomAlertView alloc] init];
     self.customAlertView.contentView = self.foodDetailShowView;

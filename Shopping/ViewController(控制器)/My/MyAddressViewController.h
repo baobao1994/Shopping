@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class AddressModel;
+
 @interface MyAddressViewController : UIViewController
+
+@property (nonatomic, copy) void (^changeAddress)(AddressModel *addressModel);
+@property (nonatomic, assign) BOOL isSelectAddress;
 
 @end
