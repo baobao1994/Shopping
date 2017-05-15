@@ -43,6 +43,7 @@
 		BA174DB71EB2E455003B293B /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA174DB51EB2E455003B293B /* HomeCollectionViewCell.xib */; };
 		BA174DBB1EB2E683003B293B /* HomeFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA174DB91EB2E683003B293B /* HomeFooterCollectionReusableView.m */; };
 		BA174DBC1EB2E683003B293B /* HomeFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA174DBA1EB2E683003B293B /* HomeFooterCollectionReusableView.xib */; };
+		BA2131601EC94BA4007B46B9 /* QQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21315F1EC94BA4007B46B9 /* QQButton.m */; };
 		BA288E471EC5844500485621 /* UIImage+ScottExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BA288E461EC5844500485621 /* UIImage+ScottExtension.m */; };
 		BA288E5E1EC584F000485621 /* ScottBaseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA288E4B1EC584F000485621 /* ScottBaseAnimation.m */; };
 		BA288E5F1EC584F000485621 /* ScottDropDownAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA288E4D1EC584F000485621 /* ScottDropDownAnimation.m */; };
@@ -460,6 +461,8 @@
 		BA174DB81EB2E683003B293B /* HomeFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFooterCollectionReusableView.h; sourceTree = "<group>"; };
 		BA174DB91EB2E683003B293B /* HomeFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFooterCollectionReusableView.m; sourceTree = "<group>"; };
 		BA174DBA1EB2E683003B293B /* HomeFooterCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFooterCollectionReusableView.xib; sourceTree = "<group>"; };
+		BA21315E1EC94BA4007B46B9 /* QQButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQButton.h; sourceTree = "<group>"; };
+		BA21315F1EC94BA4007B46B9 /* QQButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQButton.m; sourceTree = "<group>"; };
 		BA288E451EC5844500485621 /* UIImage+ScottExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ScottExtension.h"; sourceTree = "<group>"; };
 		BA288E461EC5844500485621 /* UIImage+ScottExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ScottExtension.m"; sourceTree = "<group>"; };
 		BA288E4A1EC584F000485621 /* ScottBaseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScottBaseAnimation.h; sourceTree = "<group>"; };
@@ -1060,6 +1063,15 @@
 			path = BaiduManager;
 			sourceTree = "<group>";
 		};
+		BA21315D1EC94BA4007B46B9 /* QQButton */ = {
+			isa = PBXGroup;
+			children = (
+				BA21315E1EC94BA4007B46B9 /* QQButton.h */,
+				BA21315F1EC94BA4007B46B9 /* QQButton.m */,
+			);
+			path = QQButton;
+			sourceTree = "<group>";
+		};
 		BA288E481EC584F000485621 /* ScottAlertController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1413,6 +1425,7 @@
 				BAF3CD981E9CA88E0000C9A9 /* ParallaxNC */,
 				BAF3CD9E1E9CA88E0000C9A9 /* PopViewController */,
 				BAF3CDA11E9CA88E0000C9A9 /* PullAddDownTableView */,
+				BA21315D1EC94BA4007B46B9 /* QQButton */,
 				BAF3CDC91E9CA88E0000C9A9 /* RadioButton */,
 				BAF3CDCC1E9CA88E0000C9A9 /* Reachability */,
 				BAF3CDCF1E9CA88E0000C9A9 /* RevolvingDoor */,
@@ -2705,6 +2718,7 @@
 				BAF3CF041E9CBE3D0000C9A9 /* HXCollectionView.m in Sources */,
 				BA288E5F1EC584F000485621 /* ScottDropDownAnimation.m in Sources */,
 				BAF3CE821E9CB8520000C9A9 /* CLLockMainView.m in Sources */,
+				BA2131601EC94BA4007B46B9 /* QQButton.m in Sources */,
 				A520A2A21EAB5BD000359DB1 /* MyAddressViewController.m in Sources */,
 				BA3017F11E9E0C8D00F7C518 /* IntegralViewController.m in Sources */,
 				BA3018001E9E130800F7C518 /* TableStaticViewCell.m in Sources */,

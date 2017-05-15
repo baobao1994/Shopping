@@ -20,5 +20,6 @@
 
 - (void)addFoodCollecOrder:(FoodCollecModel *)foodCollecModel;
 - (void)cutFoodCollecOrder:(FoodCollecModel *)foodCollecModel;
+- (void)removeFoodCollecOrder:(FoodCollecModel *)foodCollecModel;
 
 @end

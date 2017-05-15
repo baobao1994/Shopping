@@ -96,13 +96,15 @@
                         <action selector="didSelectBuyBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="F5g-2i-qeH"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-1L-7k3">
-                    <rect key="frame" x="99" y="596" width="8" height="21"/>
-                    <color key="backgroundColor" red="0.87450980389999999" green="0.16862745100000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqn-7m-Jfu" customClass="QQButton">
+                    <rect key="frame" x="82" y="584" width="25" height="25"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="IRl-Mh-tbp"/>
+                        <constraint firstAttribute="width" constant="25" id="bJs-xM-WbO"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -113,6 +115,7 @@
                 <constraint firstAttribute="trailing" secondItem="fp6-cR-fbH" secondAttribute="trailing" constant="30" id="HAV-Ci-Pov"/>
                 <constraint firstItem="89Y-sz-PPF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IkS-mj-Roh"/>
                 <constraint firstItem="89Y-sz-PPF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="KBT-m5-DYK"/>
+                <constraint firstItem="iJz-zU-p8X" firstAttribute="top" secondItem="Uqn-7m-Jfu" secondAttribute="bottom" constant="8" id="PiH-Yj-ptM"/>
                 <constraint firstItem="iJz-zU-p8X" firstAttribute="centerY" secondItem="9Zw-Da-3u0" secondAttribute="centerY" id="Pvk-r4-q8X"/>
                 <constraint firstItem="9Zw-Da-3u0" firstAttribute="top" secondItem="fp6-cR-fbH" secondAttribute="bottom" id="QBB-HO-yPC"/>
                 <constraint firstItem="JvE-Mh-TnZ" firstAttribute="top" secondItem="dcP-9Z-9Ir" secondAttribute="bottom" id="W2O-E3-RQZ"/>
@@ -120,22 +123,21 @@
                 <constraint firstItem="bql-za-JR9" firstAttribute="centerY" secondItem="JvE-Mh-TnZ" secondAttribute="centerY" id="fFh-UX-EqO"/>
                 <constraint firstAttribute="trailing" secondItem="89Y-sz-PPF" secondAttribute="trailing" id="g4N-nJ-zov"/>
                 <constraint firstItem="dcP-9Z-9Ir" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="kUj-CR-lv0"/>
+                <constraint firstItem="Uqn-7m-Jfu" firstAttribute="trailing" secondItem="iJz-zU-p8X" secondAttribute="trailing" id="knq-rh-C5h"/>
                 <constraint firstAttribute="trailing" secondItem="bql-za-JR9" secondAttribute="trailing" constant="35" id="mSy-6h-uJO"/>
                 <constraint firstAttribute="trailing" secondItem="9Zw-Da-3u0" secondAttribute="trailing" constant="30" id="oE9-UA-7ZI"/>
                 <constraint firstItem="JvE-Mh-TnZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="sEq-XL-2DL"/>
                 <constraint firstItem="fp6-cR-fbH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="suc-rc-3d1"/>
-                <constraint firstItem="8Pb-1L-7k3" firstAttribute="trailing" secondItem="iJz-zU-p8X" secondAttribute="trailing" id="vba-tZ-ueZ"/>
                 <constraint firstAttribute="bottom" secondItem="9Zw-Da-3u0" secondAttribute="bottom" constant="20" id="vic-Fs-kMi"/>
                 <constraint firstAttribute="trailing" secondItem="dcP-9Z-9Ir" secondAttribute="trailing" constant="14" id="xlY-Tb-ShG"/>
-                <constraint firstItem="iJz-zU-p8X" firstAttribute="top" secondItem="8Pb-1L-7k3" secondAttribute="bottom" id="yzl-ps-sJd"/>
             </constraints>
             <connections>
                 <outlet property="closeButton" destination="bOH-ri-RFD" id="ZxR-u9-mz5"/>
                 <outlet property="collectionView" destination="89Y-sz-PPF" id="MQy-ZP-mWU"/>
                 <outlet property="foodNameLabel" destination="dcP-9Z-9Ir" id="8Ih-JO-Tqx"/>
-                <outlet property="orderCountLabel" destination="8Pb-1L-7k3" id="sdZ-Ct-UxG"/>
+                <outlet property="orderCountButton" destination="Uqn-7m-Jfu" id="dJ6-hQ-WJN"/>
             </connections>
-            <point key="canvasLocation" x="-750.5" y="-604.5"/>
+            <point key="canvasLocation" x="-1111" y="-615"/>
         </view>
     </objects>
 </document>

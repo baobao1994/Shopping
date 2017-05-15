@@ -46,6 +46,7 @@
 - (void)deleteOrderList {
     NSString *cachePath = [DOCUMENT_PATH stringByAppendingPathComponent:OrderInfoCacheFile];
     DELETE_FILE(cachePath);
+    [self.orderList removeAllObjects];
 }
 
 - (void)addFoodCollecOrder:(FoodCollecModel *)foodCollecModel {
@@ -111,6 +112,20 @@
     if (orderCount == 0) {
         [self.orderList removeObjectAtIndex:atIndex];
     }
+    [OrderManagerInstance saveOrderList:self.orderList];
+}
+
+- (void)removeFoodCollecOrder:(FoodCollecModel *)foodCollecModel {
+    NSString *foodId = foodCollecModel.foodId;
+    for (int i = 0; i < self.orderList.count; i ++) {
+        OrderModel *orderModel = self.orderList[i];
+        NSString *orderModelId = orderModel.foodId;
+        if ([orderModelId isEqualToString:foodId]) {
+            [self.orderList removeObjectAtIndex:i];
+            break;
+        }
+    }
+    [OrderManagerInstance saveOrderList:self.orderList];
 }
 
 #pragma mark - Private Method

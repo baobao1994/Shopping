@@ -189,10 +189,6 @@
         NSLog(@"%@",action.title);
     }]];
     
-//    [alertView addAction:[ScottAlertAction actionWithTitle:@"删除" style:ScottAlertActionStyleDestructive handler:^(ScottAlertAction *action) {
-//        NSLog(@"%@",action.title);
-//    }]];
-    
     [alertView addAction:[ScottAlertAction actionWithTitle:@"取消" style:ScottAlertActionStyleCancel handler:^(ScottAlertAction *action) {
         NSLog(@"%@",action.title);
     }]];

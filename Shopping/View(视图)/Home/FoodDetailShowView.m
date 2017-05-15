@@ -11,6 +11,7 @@
 #import "FoodDetailCollectionViewCell.h"
 #import "FoodCollecModel.h"
 #import "OrderModel.h"
+#import "QQButton.h"
 #import "Toast.h"
 
 NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionViewCell";
@@ -19,7 +20,7 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
 @property (nonatomic, strong) NSMutableArray *orderList;
-@property (weak, nonatomic) IBOutlet UILabel *orderCountLabel;
+@property (weak, nonatomic) IBOutlet QQButton *orderCountButton;
 
 @end
 
@@ -34,6 +35,17 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
         FoodDetailFlowLayout *flowlayout = [[FoodDetailFlowLayout alloc] init];
         self.collectionView.collectionViewLayout = flowlayout;
         self.orderList = OrderManagerInstance.orderList;
+        [self.orderCountButton setDestroyAnimationsBlock:^{
+            FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
+            for (OrderModel *orderModel in self.orderList) {
+                if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {
+                    [OrderManagerInstance removeFoodCollecOrder:foodCollecModel];
+                    self.orderList = OrderManagerInstance.orderList;
+                    [self.orderCountButton setTitle:@"0" forState:UIControlStateNormal];
+                    break;
+                }
+            }
+        }];
     }
     return self;
 }
@@ -72,6 +84,17 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 }
 
 - (IBAction)didSelectBuyBtn:(UIButton *)sender {
+    FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
+    NSString *orderCount = @"0";
+    for (OrderModel *orderModel in self.orderList) {
+        if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {
+            orderCount = [NSString stringWithFormat:@"%ld",orderModel.count];
+            break;
+        }
+    }
+    if ([orderCount isEqualToString:@"0"]) {
+        [OrderManagerInstance addFoodCollecOrder:foodCollecModel];
+    }
     self.toGoBuy();
 }
 
@@ -85,21 +108,19 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
             break;
         }
     }
-    self.orderCountLabel.transform = CGAffineTransformIdentity;
+    self.orderCountButton.transform = CGAffineTransformIdentity;
     [UIView animateKeyframesWithDuration:0.5 delay:0 options:0 animations: ^{
         [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 / 3.0 animations: ^{
-            self.orderCountLabel.transform = CGAffineTransformMakeScale(1.2, 1.2);
+            self.orderCountButton.transform = CGAffineTransformMakeScale(1.2, 1.2);
         }];
         [UIView addKeyframeWithRelativeStartTime:1/3.0 relativeDuration:1/3.0 animations: ^{
-            self.orderCountLabel.transform = CGAffineTransformMakeScale(0.8, 0.8);
+            self.orderCountButton.transform = CGAffineTransformMakeScale(0.8, 0.8);
         }];
         [UIView addKeyframeWithRelativeStartTime:2/3.0 relativeDuration:1/3.0 animations: ^{
-            self.orderCountLabel.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            self.orderCountButton.transform = CGAffineTransformMakeScale(1.0, 1.0);
         }];
     } completion:^(BOOL finished) {
-        self.orderCountLabel.text = orderCount;
-        self.orderCountLabel.adjustsFontSizeToFitWidth = YES;
-        self.orderCountLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+        [self.orderCountButton setTitle:orderCount forState:UIControlStateNormal];
     }];
 }
 

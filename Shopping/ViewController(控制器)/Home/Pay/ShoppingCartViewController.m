@@ -38,6 +38,9 @@
     [alertView addAction:[ScottAlertAction actionWithTitle:@"取消" style:ScottAlertActionStyleCancel handler:^(ScottAlertAction *action) {
     }]];
     [alertView addAction:[ScottAlertAction actionWithTitle:@"确定" style:ScottAlertActionStyleDestructive handler:^(ScottAlertAction *action) {
+        [OrderManagerInstance deleteOrderList];
+        self.orderList = OrderManagerInstance.orderList;
+        [self.tableView reloadData];
     }]];
     ScottAlertViewController *alertController = [ScottAlertViewController alertControllerWithAlertView:alertView preferredStyle:ScottAlertControllerStyleAlert transitionAnimationStyle:ScottAlertTransitionStyleDropDown];
     alertController.tapBackgroundDismissEnable = YES;
