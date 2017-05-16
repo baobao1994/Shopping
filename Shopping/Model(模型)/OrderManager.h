@@ -22,4 +22,6 @@
 - (void)cutFoodCollecOrder:(FoodCollecModel *)foodCollecModel;
 - (void)removeFoodCollecOrder:(FoodCollecModel *)foodCollecModel;
 
+- (void)changeFoodCollecOrder:(FoodCollecModel *)foodCollecModel Count:(NSInteger)count;
+
 @end

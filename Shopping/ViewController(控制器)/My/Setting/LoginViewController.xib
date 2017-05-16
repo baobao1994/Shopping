@@ -33,12 +33,6 @@
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fH-RA-l6O">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55f-F9-EmR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <connections>
-                                        <action selector="didSelectHideKeyBoardBtn:" destination="-1" eventType="touchUpInside" id="05o-Xz-vkV"/>
-                                    </connections>
-                                </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5r-uT-p2R">
                                     <rect key="frame" x="20" y="286" width="25" height="25"/>
                                     <constraints>
@@ -59,7 +53,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <action selector="hideKeyBoard:" destination="-1" eventType="editingDidEnd" id="asx-jM-5IJ"/>
                                     </connections>
@@ -148,7 +142,6 @@
                                 <constraint firstItem="xdG-2e-21i" firstAttribute="leading" secondItem="6fH-RA-l6O" secondAttribute="leading" id="DN7-nK-MXc"/>
                                 <constraint firstItem="916-Dy-D0U" firstAttribute="leading" secondItem="6fH-RA-l6O" secondAttribute="leading" constant="20" id="EUB-jB-DrV"/>
                                 <constraint firstItem="h3n-2T-sbC" firstAttribute="top" secondItem="foZ-Ex-QEH" secondAttribute="bottom" constant="10" id="Gdz-sb-F9E"/>
-                                <constraint firstItem="55f-F9-EmR" firstAttribute="leading" secondItem="6fH-RA-l6O" secondAttribute="leading" id="Kdi-uL-ei7"/>
                                 <constraint firstItem="ODl-xF-8cC" firstAttribute="top" secondItem="gg0-Qh-3QM" secondAttribute="bottom" constant="80" id="M6m-XK-3ui"/>
                                 <constraint firstItem="h3n-2T-sbC" firstAttribute="leading" secondItem="6fH-RA-l6O" secondAttribute="leading" constant="20" id="MTS-iO-Jo7"/>
                                 <constraint firstAttribute="height" constant="667" id="N3L-8u-l7w"/>
@@ -163,18 +156,15 @@
                                 <constraint firstItem="foZ-Ex-QEH" firstAttribute="leading" secondItem="6fH-RA-l6O" secondAttribute="leading" constant="20" id="ahs-dN-c43"/>
                                 <constraint firstAttribute="trailing" secondItem="xdG-2e-21i" secondAttribute="trailing" id="ajJ-rU-M8X"/>
                                 <constraint firstItem="xdG-2e-21i" firstAttribute="top" secondItem="6fH-RA-l6O" secondAttribute="top" constant="230" id="bMn-2w-qcJ"/>
-                                <constraint firstAttribute="trailing" secondItem="55f-F9-EmR" secondAttribute="trailing" id="bxY-Dm-zqK"/>
                                 <constraint firstAttribute="width" constant="375" id="dBy-jk-J6h"/>
                                 <constraint firstAttribute="trailing" secondItem="foZ-Ex-QEH" secondAttribute="trailing" constant="20" id="dcZ-CG-YO2"/>
                                 <constraint firstItem="q5r-uT-p2R" firstAttribute="width" secondItem="q5r-uT-p2R" secondAttribute="height" multiplier="1:1" id="dld-Xd-unW"/>
                                 <constraint firstItem="gg0-Qh-3QM" firstAttribute="top" secondItem="OjC-Os-suQ" secondAttribute="bottom" constant="10" id="dx0-qz-pPc"/>
-                                <constraint firstAttribute="bottom" secondItem="55f-F9-EmR" secondAttribute="bottom" id="fZX-YD-ffZ"/>
                                 <constraint firstItem="xdG-2e-21i" firstAttribute="top" secondItem="gve-7a-B0j" secondAttribute="bottom" constant="40" id="gK4-eI-jxI"/>
                                 <constraint firstAttribute="trailing" secondItem="ODl-xF-8cC" secondAttribute="trailing" constant="20" id="oBM-bW-NmG"/>
                                 <constraint firstAttribute="trailing" secondItem="gg0-Qh-3QM" secondAttribute="trailing" constant="10" id="qbr-Cg-WcS"/>
                                 <constraint firstItem="MUW-8b-9Wf" firstAttribute="top" secondItem="gg0-Qh-3QM" secondAttribute="bottom" constant="10" id="u42-NE-Cpn"/>
                                 <constraint firstAttribute="trailing" secondItem="MUW-8b-9Wf" secondAttribute="trailing" constant="30" id="vXl-B9-tOE"/>
-                                <constraint firstItem="55f-F9-EmR" firstAttribute="top" secondItem="6fH-RA-l6O" secondAttribute="top" id="xdc-8o-ejq"/>
                                 <constraint firstAttribute="trailing" secondItem="h3n-2T-sbC" secondAttribute="trailing" constant="20" id="yMk-lb-pa9"/>
                             </constraints>
                         </view>
@@ -185,9 +175,6 @@
                         <constraint firstItem="6fH-RA-l6O" firstAttribute="top" secondItem="jhM-Po-yMg" secondAttribute="top" id="7Lo-U9-zpE"/>
                         <constraint firstAttribute="trailing" secondItem="6fH-RA-l6O" secondAttribute="trailing" id="NYJ-vB-8jz"/>
                     </constraints>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="v5A-XN-OSo"/>
-                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

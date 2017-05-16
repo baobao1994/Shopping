@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,12 +35,6 @@
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjV-Gx-IiQ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDf-wh-geK">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <connections>
-                                        <action selector="didSelectHideKeyBoardBtn:" destination="-1" eventType="touchUpInside" id="p5w-xU-1Le"/>
-                                    </connections>
-                                </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SkY-JE-rXf">
                                     <rect key="frame" x="20" y="111" width="25" height="25"/>
                                     <constraints>
@@ -55,7 +49,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <action selector="hideKeyBoard:" destination="-1" eventType="editingDidEnd" id="AgI-sN-fpv"/>
                                     </connections>
@@ -148,7 +142,6 @@
                                 <constraint firstItem="pVU-iO-xDZ" firstAttribute="leading" secondItem="SkY-JE-rXf" secondAttribute="trailing" constant="10" id="3m0-hT-xDw"/>
                                 <constraint firstItem="o9b-en-HHT" firstAttribute="centerY" secondItem="MKZ-Mi-6AA" secondAttribute="centerY" id="54j-4K-SdH"/>
                                 <constraint firstAttribute="trailing" secondItem="5GX-9G-vJw" secondAttribute="trailing" constant="20" id="5Fg-lx-I2N"/>
-                                <constraint firstItem="eDf-wh-geK" firstAttribute="leading" secondItem="LjV-Gx-IiQ" secondAttribute="leading" id="6nJ-MT-IKe"/>
                                 <constraint firstItem="MKZ-Mi-6AA" firstAttribute="top" secondItem="1fK-Yt-kIL" secondAttribute="bottom" constant="20" id="7sn-vw-ckI"/>
                                 <constraint firstItem="MKZ-Mi-6AA" firstAttribute="width" secondItem="MKZ-Mi-6AA" secondAttribute="height" multiplier="1:1" id="8Le-gm-tew"/>
                                 <constraint firstItem="nlq-N6-O2g" firstAttribute="leading" secondItem="SkY-JE-rXf" secondAttribute="leading" id="8na-VF-VZg"/>
@@ -164,7 +157,6 @@
                                 <constraint firstItem="SkY-JE-rXf" firstAttribute="top" secondItem="Seb-Nh-iKS" secondAttribute="bottom" constant="40" id="LME-mP-fix"/>
                                 <constraint firstItem="nlq-N6-O2g" firstAttribute="width" secondItem="nlq-N6-O2g" secondAttribute="height" multiplier="1:1" id="LyJ-rv-Ick"/>
                                 <constraint firstItem="SkY-JE-rXf" firstAttribute="leading" secondItem="LjV-Gx-IiQ" secondAttribute="leading" constant="20" id="Nt3-hh-NNn"/>
-                                <constraint firstAttribute="trailing" secondItem="eDf-wh-geK" secondAttribute="trailing" id="O4C-dA-db1"/>
                                 <constraint firstAttribute="trailing" secondItem="Seb-Nh-iKS" secondAttribute="trailing" id="RTd-9P-VVG"/>
                                 <constraint firstItem="1fK-Yt-kIL" firstAttribute="leading" secondItem="nlq-N6-O2g" secondAttribute="leading" id="WWq-Mr-dYg"/>
                                 <constraint firstItem="SkY-JE-rXf" firstAttribute="width" secondItem="SkY-JE-rXf" secondAttribute="height" multiplier="1:1" id="WgX-CQ-deW"/>
@@ -174,10 +166,8 @@
                                 <constraint firstItem="n4P-dF-gqx" firstAttribute="leading" secondItem="LjV-Gx-IiQ" secondAttribute="leading" constant="20" id="d4v-hg-Dx4"/>
                                 <constraint firstItem="VoG-j8-5j1" firstAttribute="leading" secondItem="nlq-N6-O2g" secondAttribute="trailing" constant="10" id="eRj-cz-sQU"/>
                                 <constraint firstItem="nlq-N6-O2g" firstAttribute="width" secondItem="nlq-N6-O2g" secondAttribute="height" multiplier="1:1" id="foT-De-8Ly"/>
-                                <constraint firstAttribute="bottom" secondItem="eDf-wh-geK" secondAttribute="bottom" id="g7V-WF-7lR"/>
                                 <constraint firstItem="MKZ-Mi-6AA" firstAttribute="width" secondItem="MKZ-Mi-6AA" secondAttribute="height" multiplier="1:1" id="hGn-Bf-bTu"/>
                                 <constraint firstItem="MKZ-Mi-6AA" firstAttribute="leading" secondItem="1fK-Yt-kIL" secondAttribute="leading" id="hvh-TD-Vod"/>
-                                <constraint firstItem="eDf-wh-geK" firstAttribute="top" secondItem="LjV-Gx-IiQ" secondAttribute="top" id="i20-3r-6BZ"/>
                                 <constraint firstItem="SkY-JE-rXf" firstAttribute="width" secondItem="SkY-JE-rXf" secondAttribute="height" multiplier="1:1" id="irk-rk-wAJ"/>
                                 <constraint firstAttribute="trailing" secondItem="HRO-eu-KaT" secondAttribute="trailing" constant="20" id="jNA-Fk-TEt"/>
                                 <constraint firstAttribute="height" constant="667" id="kWc-Ge-faj"/>
@@ -205,9 +195,6 @@
                         <constraint firstAttribute="trailing" secondItem="LjV-Gx-IiQ" secondAttribute="trailing" id="MTD-QJ-DId"/>
                         <constraint firstAttribute="bottom" secondItem="LjV-Gx-IiQ" secondAttribute="bottom" id="vb1-Ra-C42"/>
                     </constraints>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="q3q-7r-pbK"/>
-                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

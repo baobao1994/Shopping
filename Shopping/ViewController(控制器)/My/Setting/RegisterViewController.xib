@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,12 +35,6 @@
                         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1A-1g-no8">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDp-R0-QIb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <connections>
-                                        <action selector="didSelectHideKeyBoardBtn:" destination="-1" eventType="touchUpInside" id="Idc-Bz-eGG"/>
-                                    </connections>
-                                </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jFL-2l-mZB">
                                     <rect key="frame" x="20" y="111" width="25" height="25"/>
                                     <constraints>
@@ -55,7 +49,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
                                         <action selector="hideKeyBoard:" destination="-1" eventType="editingDidEnd" id="FQy-Bh-Q8c"/>
                                     </connections>
@@ -151,11 +145,9 @@
                                 <constraint firstItem="pWd-Ni-ql5" firstAttribute="width" secondItem="pWd-Ni-ql5" secondAttribute="height" multiplier="1:1" id="88z-jv-JCM"/>
                                 <constraint firstItem="pWd-Ni-ql5" firstAttribute="width" secondItem="pWd-Ni-ql5" secondAttribute="height" multiplier="1:1" id="B59-XY-WKq"/>
                                 <constraint firstAttribute="trailing" secondItem="YHW-Nm-c7N" secondAttribute="trailing" id="BEa-Fg-XGK"/>
-                                <constraint firstItem="JDp-R0-QIb" firstAttribute="leading" secondItem="z1A-1g-no8" secondAttribute="leading" id="Brp-by-bj7"/>
                                 <constraint firstItem="Xsj-Fz-HKY" firstAttribute="leading" secondItem="pWd-Ni-ql5" secondAttribute="trailing" constant="10" id="Cca-rG-qIC"/>
                                 <constraint firstItem="ajK-ez-1kh" firstAttribute="leading" secondItem="Xsj-Fz-HKY" secondAttribute="trailing" constant="10" id="Eoe-kw-9dj"/>
                                 <constraint firstAttribute="height" constant="667" id="Fzn-ua-4H9"/>
-                                <constraint firstAttribute="trailing" secondItem="JDp-R0-QIb" secondAttribute="trailing" id="HxB-a5-QDW"/>
                                 <constraint firstItem="YHW-Nm-c7N" firstAttribute="leading" secondItem="z1A-1g-no8" secondAttribute="leading" id="MHR-JW-blw"/>
                                 <constraint firstItem="YAv-E2-LrX" firstAttribute="leading" secondItem="pWd-Ni-ql5" secondAttribute="leading" id="NOJ-J9-9Q7"/>
                                 <constraint firstItem="axQ-MB-Kdy" firstAttribute="width" secondItem="axQ-MB-Kdy" secondAttribute="height" multiplier="1:1" id="NSV-J9-Et8"/>
@@ -175,7 +167,6 @@
                                 <constraint firstItem="RF4-74-9zh" firstAttribute="centerY" secondItem="jFL-2l-mZB" secondAttribute="centerY" id="YRu-YM-T0b"/>
                                 <constraint firstAttribute="trailing" secondItem="sOq-8x-RQi" secondAttribute="trailing" constant="20" id="a4K-ZP-Hmg"/>
                                 <constraint firstItem="axQ-MB-Kdy" firstAttribute="leading" secondItem="YAv-E2-LrX" secondAttribute="leading" id="aPF-Q0-twU"/>
-                                <constraint firstItem="JDp-R0-QIb" firstAttribute="top" secondItem="z1A-1g-no8" secondAttribute="top" id="acV-xd-KS0"/>
                                 <constraint firstItem="axQ-MB-Kdy" firstAttribute="width" secondItem="axQ-MB-Kdy" secondAttribute="height" multiplier="1:1" id="cV4-sx-Xn1"/>
                                 <constraint firstAttribute="trailing" secondItem="ajK-ez-1kh" secondAttribute="trailing" constant="20" id="d9I-9a-kgZ"/>
                                 <constraint firstItem="YAv-E2-LrX" firstAttribute="width" secondItem="YAv-E2-LrX" secondAttribute="height" multiplier="1:1" id="dmI-ng-YX6"/>
@@ -191,7 +182,6 @@
                                 <constraint firstItem="Xsj-Fz-HKY" firstAttribute="centerY" secondItem="pWd-Ni-ql5" secondAttribute="centerY" id="vUT-Ii-s23"/>
                                 <constraint firstItem="jFL-2l-mZB" firstAttribute="width" secondItem="jFL-2l-mZB" secondAttribute="height" multiplier="1:1" id="xPl-Jk-KAD"/>
                                 <constraint firstItem="jFL-2l-mZB" firstAttribute="leading" secondItem="z1A-1g-no8" secondAttribute="leading" constant="20" id="yG1-Sn-hpH"/>
-                                <constraint firstAttribute="bottom" secondItem="JDp-R0-QIb" secondAttribute="bottom" id="zp4-4t-EEB"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -201,9 +191,6 @@
                         <constraint firstItem="z1A-1g-no8" firstAttribute="leading" secondItem="QS3-hr-eQQ" secondAttribute="leading" id="Ru1-Xt-X1O"/>
                         <constraint firstItem="z1A-1g-no8" firstAttribute="top" secondItem="QS3-hr-eQQ" secondAttribute="top" id="vek-s0-ibm"/>
                     </constraints>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="b2b-BN-0aM"/>
-                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

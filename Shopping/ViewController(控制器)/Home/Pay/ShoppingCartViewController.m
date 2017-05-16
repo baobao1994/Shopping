@@ -82,6 +82,42 @@
     return cell;
 }
 
+#pragma mark - UITextFiled delegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    NSLog(@"textField.text = %@",textField.text);
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSString *text = textField.text;
+    if (isEmptyString(string)) {
+        text = [text substringToIndex:textField.text.length - 1];
+    } else {
+        text = [textField.text stringByAppendingString:string];
+    }
+    if ([text integerValue] <= 0) {
+        ScottAlertView *alertView = [ScottAlertView alertViewWithTitle:@"提示" message:@"数量不能少于0"];
+        ScottAlertAction *action = [ScottAlertAction actionWithTitle:@"好的" style:ScottAlertActionStyleDestructive handler:nil];
+        [alertView addAction:action];
+        [ScottShowAlertView showAlertViewWithView:alertView backgroundDismissEnable:YES];
+        textField.text = @"1";
+        return NO;
+    }
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithOrderModel:self.orderList[textField.tag]];
+    [OrderManagerInstance changeFoodCollecOrder:foodCollecModel Count:[textField.text integerValue]];
+    self.orderList = OrderManagerInstance.orderList;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        [self culculateOrder];
+    });
+    return YES;
+}
+
 #pragma mark - Private Method
 
 - (void)didSelectAddBtn:(UIButton *)sender {

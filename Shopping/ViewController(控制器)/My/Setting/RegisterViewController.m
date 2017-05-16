@@ -12,7 +12,7 @@
 #import "NSString+MD5.h"
 #import "ConstString.h"
 
-@interface RegisterViewController ()<UIScrollViewDelegate>
+@interface RegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -118,16 +118,8 @@
     }
 }
 
-- (IBAction)didSelectHideKeyBoardBtn:(UIButton *)sender {
-    [self.view endEditing:YES];
-}
-
 - (IBAction)hideKeyBoard:(JVFloatLabeledTextField *)sender {
     [sender resignFirstResponder];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.view endEditing:YES];
 }
 
 @end

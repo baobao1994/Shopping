@@ -11,6 +11,7 @@
 #import "ConstString.h"
 #import "UserManager.h"
 #import "UserInfoModel.h"
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -35,6 +36,7 @@
     [self.window makeKeyAndVisible];
     [self initBmob];
     [self initBaiduMap];
+    [self initIQKeyboard];
     self.userManager = UserManagerInstance;
     if (!self.userManager.userInfo.isRemember || self.userManager.userInfo.userObjectId == nil) {
         [self.userManager deleteUser];
@@ -53,6 +55,13 @@
 
 - (void)initBmob {
     [Bmob registerWithAppKey:BmobKey];
+}
+
+- (void)initIQKeyboard {
+    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
+    manager.enable = YES;
+    manager.overrideKeyboardAppearance = YES;
+    manager.shouldResignOnTouchOutside = YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

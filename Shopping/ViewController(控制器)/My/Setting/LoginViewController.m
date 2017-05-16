@@ -15,7 +15,7 @@
 #import "ConstString.h"
 #import "MBProgressHUD+ND.h"
 
-@interface LoginViewController ()<UIScrollViewDelegate>
+@interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -85,16 +85,8 @@
     [self.navigationController pushViewController:forgetPwdVC animated:YES];
 }
 
-- (IBAction)didSelectHideKeyBoardBtn:(UIButton *)sender {
-    [self.view endEditing:YES];
-}
-
 - (IBAction)hideKeyBoard:(JVFloatLabeledTextField *)sender {
     [sender resignFirstResponder];
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.view endEditing:YES];
 }
 
 @end

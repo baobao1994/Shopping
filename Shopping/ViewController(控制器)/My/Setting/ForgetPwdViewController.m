@@ -118,17 +118,8 @@
     }
 }
 
-- (IBAction)didSelectHideKeyBoardBtn:(UIButton *)sender {
-    [self.view endEditing:YES];
-}
-
 - (IBAction)hideKeyBoard:(JVFloatLabeledTextField *)sender {
     [sender resignFirstResponder];
 }
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.view endEditing:YES];
-}
-
 
 @end

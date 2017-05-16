@@ -128,6 +128,33 @@
     [OrderManagerInstance saveOrderList:self.orderList];
 }
 
+- (void)changeFoodCollecOrder:(FoodCollecModel *)foodCollecModel Count:(NSInteger)count {
+    NSString *foodId = foodCollecModel.foodId;
+    for (OrderModel *orderModel in self.orderList) {
+        NSString *orderModelId = orderModel.foodId;
+        if ([orderModelId isEqualToString:foodId]) {
+            BOOL isCoupon = foodCollecModel.isCoupon;
+            orderModel.count = count;
+            float foodPrice = 0.0;
+            if (isCoupon) {
+                if (count > orderModel.couponCount) {
+                    foodPrice += [foodCollecModel.couponPrice floatValue] * foodCollecModel.couponCount;
+                    count -= foodCollecModel.couponCount;
+                } else {
+                    foodPrice += [foodCollecModel.couponPrice floatValue] * count;
+                    count = 0;
+                }
+            }
+            if (count) {
+                foodPrice += [foodCollecModel.price floatValue] * count;
+            }
+            orderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
+            break;
+        }
+    }
+    [OrderManagerInstance saveOrderList:self.orderList];
+}
+
 #pragma mark - Private Method
 
 - (NSDictionary *)getCacheDicFromFile {
