@@ -139,7 +139,6 @@
         }
     } else {
         [self pushLoginViewController];
-        [self pushMyAddressViewController];
     }
 }
 

@@ -135,7 +135,10 @@
                 <outlet property="closeButton" destination="bOH-ri-RFD" id="ZxR-u9-mz5"/>
                 <outlet property="collectionView" destination="89Y-sz-PPF" id="MQy-ZP-mWU"/>
                 <outlet property="foodNameLabel" destination="dcP-9Z-9Ir" id="8Ih-JO-Tqx"/>
+                <outlet property="introduceTV" destination="fp6-cR-fbH" id="xUS-VM-Kct"/>
                 <outlet property="orderCountButton" destination="Uqn-7m-Jfu" id="dJ6-hQ-WJN"/>
+                <outlet property="priceLabel" destination="JvE-Mh-TnZ" id="m54-ty-Cmb"/>
+                <outlet property="sellCountLabel" destination="bql-za-JR9" id="WkG-0S-be6"/>
             </connections>
             <point key="canvasLocation" x="-1111" y="-615"/>
         </view>

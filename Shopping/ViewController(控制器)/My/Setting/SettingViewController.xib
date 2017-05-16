@@ -21,21 +21,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mpU-M7-C8H">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="xQV-tk-cFU"/>
                         <outlet property="delegate" destination="-1" id="7Pq-4a-ZBb"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2k-O7-ARi">
+                    <rect key="frame" x="10" y="627" width="355" height="30"/>
+                    <state key="normal" title="退出登录"/>
+                    <connections>
+                        <action selector="didSelectOutLoginBtn:" destination="-1" eventType="touchUpInside" id="KIM-zp-8qS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="mpU-M7-C8H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3TK-Bx-cAz"/>
+                <constraint firstAttribute="trailing" secondItem="y2k-O7-ARi" secondAttribute="trailing" constant="10" id="NmQ-Tt-k3c"/>
                 <constraint firstItem="mpU-M7-C8H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VTI-QE-SRI"/>
-                <constraint firstAttribute="bottom" secondItem="mpU-M7-C8H" secondAttribute="bottom" id="rru-JA-Wi0"/>
+                <constraint firstAttribute="bottom" secondItem="y2k-O7-ARi" secondAttribute="bottom" constant="10" id="VWD-pw-d43"/>
+                <constraint firstAttribute="bottom" secondItem="mpU-M7-C8H" secondAttribute="bottom" constant="50" id="rru-JA-Wi0"/>
+                <constraint firstItem="y2k-O7-ARi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wTB-77-264"/>
                 <constraint firstAttribute="trailing" secondItem="mpU-M7-C8H" secondAttribute="trailing" id="xPg-eZ-rNw"/>
+                <constraint firstItem="y2k-O7-ARi" firstAttribute="top" secondItem="mpU-M7-C8H" secondAttribute="bottom" constant="10" id="z5l-65-cXT"/>
             </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>
 </document>

@@ -47,7 +47,7 @@
 }
 
 - (void)deleteUser {
-    self.userInfo = nil;
+    self.userInfo.userObjectId = nil;
     [self saveUserInfo:_userInfo bannerArrInfo:_bannerArrInfo foodCategoryArrInfo:_foodCategoryArrInfo systemInfo:_systemInfo];
 }
 

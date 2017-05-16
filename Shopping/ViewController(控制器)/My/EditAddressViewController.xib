@@ -88,7 +88,7 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     <connections>
                                         <action selector="hideKeyBoard:" destination="-1" eventType="editingDidEnd" id="J8R-Vj-y2A"/>
                                     </connections>

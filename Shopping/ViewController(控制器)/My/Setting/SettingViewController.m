@@ -125,4 +125,11 @@
     [[SDImageCache sharedImageCache] cleanDisk];
 }
 
+- (IBAction)didSelectOutLoginBtn:(UIButton *)sender {
+    [UserManagerInstance deleteUser];
+    [MBProgrossManagerInstance showSuccessOnlyText:@"退出成功" HudHiddenCallBack:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
 @end

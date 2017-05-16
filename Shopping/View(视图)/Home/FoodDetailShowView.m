@@ -19,8 +19,11 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 @interface FoodDetailShowView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *foodNameLabel;
-@property (nonatomic, strong) NSMutableArray *orderList;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sellCountLabel;
+@property (weak, nonatomic) IBOutlet UITextView *introduceTV;
 @property (weak, nonatomic) IBOutlet QQButton *orderCountButton;
+@property (nonatomic, strong) NSMutableArray *orderList;
 
 @end
 
@@ -101,6 +104,8 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 - (void)reloadShowDate {
     FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
     self.foodNameLabel.text = foodCollecModel.name;
+    self.priceLabel.text = [NSString stringWithFormat:@"价格:%@元",foodCollecModel.price];
+    self.sellCountLabel.text = [NSString stringWithFormat:@"销售数量:%@",foodCollecModel.sellCount];
     NSString *orderCount = @"0";
     for (OrderModel *orderModel in self.orderList) {
         if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {

@@ -123,9 +123,9 @@
             [user setObject:self.detailAddressButton.titleLabel.text forKey:UserDetailAddressKey];
             [user setObject:self.addressTF.text forKey:UserAddressKey];
             if (self.maleButton.selected) {
-                [user setObject:@"male" forKey:UserSexKey];
+                [user setObject:@(YES) forKey:UserSexKey];
             } else {
-                [user setObject:@"female" forKey:UserSexKey];
+                [user setObject:@(NO) forKey:UserSexKey];
             }
             [user setObject:self.addressModel.latitude forKey:AddressLatitudeKey];
             [user setObject:self.addressModel.longitude forKey:AddressLongitudeKey];
