@@ -16,6 +16,7 @@
 #import "FoodListModel.h"
 #import "SystemInfoModel.h"
 #import "FoodListViewController.h"
+#import "UICollectionView+Gzw.h"
 
 NSString *const HomeCollectionViewCellIdentifier = @"HomeCollectionViewCell";
 NSString *const HomeHeaderCollectionReusableViewIdentifier = @"HomeHeaderCollectionReusableView";
@@ -38,6 +39,19 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setUp];
     [self getHeaderDataSoure];
+    [_collectionView gzwLoading:^{
+        [self getHeaderDataSoure];
+    }];
+}
+
+-(void)loadingData:(BOOL)data {
+    self.collectionView.loading = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!data) {
+            self.collectionView.loading = NO;
+        }
+        [self.collectionView reloadData];
+    });
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -126,6 +140,7 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
         self.foodCategorylist = UserManagerInstance.foodCategoryArrInfo;
     } else {
         self.foodCategorylist = [[NSMutableArray alloc] init];
+        [self loadingData:NO];
     }
     self.systemInfoModel = UserManagerInstance.systemInfo;
     [self.collectionView reloadData];
@@ -146,8 +161,8 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
             }
             [self doneLoad];
         } else {
-            [MBProgrossManagerInstance showErrorOnlyText:@"网络错误" HudHiddenCallBack:^{
-                
+            [MBProgrossManagerInstance showErrorOnlyText:@"网络错误,请检查网络" HudHiddenCallBack:^{
+                [self.collectionView doneLoadingTableViewData];
             }];
         }
     }];
@@ -169,8 +184,8 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
             self.requestCount ++;
             [self doneLoad];
         } else {
-            [MBProgrossManagerInstance showErrorOnlyText:@"网络错误" HudHiddenCallBack:^{
-                
+            [MBProgrossManagerInstance showErrorOnlyText:@"网络错误,请检查网络" HudHiddenCallBack:^{
+                [self.collectionView doneLoadingTableViewData];
             }];
         }
     }];

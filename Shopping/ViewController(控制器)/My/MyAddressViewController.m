@@ -15,6 +15,8 @@
 #import "EditAddressViewController.h"
 #import "ConstString.h"
 #import "UserInfoModel.h"
+#import "UIViewController+Pop.h"
+#import "UITableView+Gzw.h"
 
 @interface MyAddressViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -33,6 +35,19 @@
         self.tableView.allowsSelection = YES;
     }
     self.editAddressVC = [[EditAddressViewController alloc] init];
+    [self createNavigationRightItem:@"setting"];
+    [_tableView gzwLoading:^{
+        if ([_tableView.buttonText isEqualToString:@"再次刷新"]) {
+            [self requestAddress];
+        } else {
+            [self selectedNavigationRightItem:nil];
+        }
+    }];
+}
+
+- (void)selectedNavigationRightItem:(id)sender {
+    EditAddressViewController *editAddressVC = [[EditAddressViewController alloc] init];
+    [self.navigationController pushViewController:editAddressVC animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -40,18 +55,7 @@
     if (!self.myAddressArr) {
         self.myAddressArr = [[NSMutableArray alloc] init];
     }
-    BmobQuery *bquery = [BmobQuery queryWithClassName:AddressTable];
-    [bquery whereKey:UserObjectIdKey equalTo:UserManagerInstance.userInfo.userObjectId];
-    [bquery calcInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        [self.myAddressArr removeAllObjects];
-        for (BmobObject *obj in array) {
-            AddressModel *addreModel = [[AddressModel alloc] initWithDictionary:(NSDictionary *)obj];
-            [self.myAddressArr addObject:addreModel];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }];
+    [self requestAddress];
 }
 
 #pragma mark - Table view delegate
@@ -61,7 +65,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.changeAddress(self.myAddressArr[indexPath.row]);
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -116,9 +119,43 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (IBAction)didSelectAddNewAddressBtn:(UIButton *)sender {
-    EditAddressViewController *editAddressVC = [[EditAddressViewController alloc] init];
-    [self.navigationController pushViewController:editAddressVC animated:YES];
+- (void)requestAddress {
+    BmobQuery *bquery = [BmobQuery queryWithClassName:AddressTable];
+    [bquery whereKey:UserObjectIdKey equalTo:UserManagerInstance.userInfo.userObjectId];
+    [bquery calcInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (!error) {
+            [self.myAddressArr removeAllObjects];
+            for (BmobObject *obj in array) {
+                AddressModel *addreModel = [[AddressModel alloc] initWithDictionary:(NSDictionary *)obj];
+                [self.myAddressArr addObject:addreModel];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (self.myAddressArr.count == 0) {
+                    _tableView.descriptionText = @"没有数据";
+                    _tableView.buttonText = @"添加地址";
+                    [self loadingData:NO];
+                } else {
+                    _tableView.descriptionText = @"没有数据！您可以尝试重新获取";
+                    _tableView.buttonText = @"再次刷新";
+                    [self.tableView reloadData];
+                }
+            });
+        } else {
+            _tableView.descriptionText = @"网络错误,请检查网络";
+            _tableView.buttonText = @"再次刷新";
+            [self loadingData:NO];
+        }
+    }];
+}
+
+-(void)loadingData:(BOOL)data {
+    self.tableView.loading = YES;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!data) {
+            self.tableView.loading = NO;
+        }
+        [self.tableView reloadData];
+    });
 }
 
 @end

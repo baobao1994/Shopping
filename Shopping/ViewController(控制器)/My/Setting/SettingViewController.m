@@ -16,10 +16,12 @@
 #import "CATransition+Addition.h"
 #import "SDImageCache.h"
 #import "ConstString.h"
+#import "UserInfoModel.h"
 
 @interface SettingViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (nonatomic, strong) NSMutableArray *itemArr;
 
 @end
@@ -28,7 +30,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"设置";
     [self initItemData];
+    if (UserManagerInstance.userInfo.userObjectId) {
+        self.logoutButton.selected = NO;
+    }
 }
 
 #pragma mark - Table view delegate

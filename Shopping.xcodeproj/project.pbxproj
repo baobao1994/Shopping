@@ -120,7 +120,20 @@
 		BA6CEA8C1ECA9652004F13CD /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6CEA7B1ECA9652004F13CD /* IQToolbar.m */; };
 		BA6CEA8D1ECA9652004F13CD /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6CEA7D1ECA9652004F13CD /* IQUIView+IQKeyboardToolbar.m */; };
 		BA6CEA8E1ECA9652004F13CD /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA6CEA7F1ECA9652004F13CD /* IQKeyboardManager.bundle */; };
+		BA6CEA921ECAE727004F13CD /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6CEA911ECAE727004F13CD /* UIScrollView+EmptyDataSet.m */; };
+		BA6CEA971ECAE83B004F13CD /* placeholder_fancy.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6CEA931ECAE83B004F13CD /* placeholder_fancy.png */; };
+		BA6CEA981ECAE83B004F13CD /* placeholder_fancy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA6CEA941ECAE83B004F13CD /* placeholder_fancy@2x.png */; };
+		BA6CEA9C1ECAEB34004F13CD /* UICollectionView+Gzw.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6CEA9B1ECAEB34004F13CD /* UICollectionView+Gzw.m */; };
+		BA6CEA9F1ECAF0A9004F13CD /* UITableView+Gzw.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6CEA9E1ECAF0A9004F13CD /* UITableView+Gzw.m */; };
 		BA8495841EC40BE900E55FB3 /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8495831EC40BE900E55FB3 /* OrderModel.m */; };
+		BA88B3C91ECBDFC8003C266D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3C81ECBDFC8003C266D /* CoreFoundation.framework */; };
+		BA88B3CB1ECBDFEC003C266D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3CA1ECBDFEC003C266D /* Foundation.framework */; };
+		BA88B3CD1ECBDFF8003C266D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3CC1ECBDFF8003C266D /* UIKit.framework */; };
+		BA88B3CF1ECBE013003C266D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3CE1ECBE013003C266D /* AdSupport.framework */; };
+		BA88B3D11ECBE022003C266D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3D01ECBE022003C266D /* UserNotifications.framework */; };
+		BA88B3D31ECBE034003C266D /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3D21ECBE034003C266D /* libresolv.tbd */; };
+		BA88B3D91ECBE0DB003C266D /* jcore-ios-1.1.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3D61ECBE0DB003C266D /* jcore-ios-1.1.3.a */; };
+		BA88B3DA1ECBE0DB003C266D /* jpush-ios-3.0.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA88B3D71ECBE0DB003C266D /* jpush-ios-3.0.5.a */; };
 		BA8A98411EB86E9400017075 /* 汉仪橄榄体简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */; };
 		BA8A98451EB86EF900017075 /* 汉仪仿宋简.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */; };
 		BA8A98461EB86EF900017075 /* 汉仪魏碑繁.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */; };
@@ -604,8 +617,26 @@
 		BA6CEA7C1ECA9652004F13CD /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
 		BA6CEA7D1ECA9652004F13CD /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		BA6CEA7F1ECA9652004F13CD /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		BA6CEA901ECAE727004F13CD /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		BA6CEA911ECAE727004F13CD /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		BA6CEA931ECAE83B004F13CD /* placeholder_fancy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_fancy.png; sourceTree = "<group>"; };
+		BA6CEA941ECAE83B004F13CD /* placeholder_fancy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_fancy@2x.png"; sourceTree = "<group>"; };
+		BA6CEA9A1ECAEB34004F13CD /* UICollectionView+Gzw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Gzw.h"; sourceTree = "<group>"; };
+		BA6CEA9B1ECAEB34004F13CD /* UICollectionView+Gzw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Gzw.m"; sourceTree = "<group>"; };
+		BA6CEA9D1ECAF0A9004F13CD /* UITableView+Gzw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Gzw.h"; sourceTree = "<group>"; };
+		BA6CEA9E1ECAF0A9004F13CD /* UITableView+Gzw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Gzw.m"; sourceTree = "<group>"; };
 		BA8495821EC40BE900E55FB3 /* OrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
 		BA8495831EC40BE900E55FB3 /* OrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderModel.m; sourceTree = "<group>"; };
+		BA88B3C81ECBDFC8003C266D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BA88B3CA1ECBDFEC003C266D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BA88B3CC1ECBDFF8003C266D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BA88B3CE1ECBE013003C266D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		BA88B3D01ECBE022003C266D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		BA88B3D21ECBE034003C266D /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		BA88B3D41ECBE048003C266D /* Shopping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shopping.entitlements; sourceTree = "<group>"; };
+		BA88B3D61ECBE0DB003C266D /* jcore-ios-1.1.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.1.3.a"; sourceTree = "<group>"; };
+		BA88B3D71ECBE0DB003C266D /* jpush-ios-3.0.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.5.a"; sourceTree = "<group>"; };
+		BA88B3D81ECBE0DB003C266D /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		BA8A98401EB86E9400017075 /* 汉仪橄榄体简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪橄榄体简.ttf"; sourceTree = "<group>"; };
 		BA8A98421EB86EF900017075 /* 汉仪仿宋简.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪仿宋简.ttf"; sourceTree = "<group>"; };
 		BA8A98431EB86EF900017075 /* 汉仪魏碑繁.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汉仪魏碑繁.ttf"; sourceTree = "<group>"; };
@@ -1054,6 +1085,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA88B3D31ECBE034003C266D /* libresolv.tbd in Frameworks */,
+				BA88B3D11ECBE022003C266D /* UserNotifications.framework in Frameworks */,
+				BA88B3CF1ECBE013003C266D /* AdSupport.framework in Frameworks */,
+				BA88B3CD1ECBDFF8003C266D /* UIKit.framework in Frameworks */,
+				BA88B3D91ECBE0DB003C266D /* jcore-ios-1.1.3.a in Frameworks */,
+				BA88B3CB1ECBDFEC003C266D /* Foundation.framework in Frameworks */,
+				BA88B3C91ECBDFC8003C266D /* CoreFoundation.framework in Frameworks */,
 				BAE004F61EA8BFE200373085 /* libstdc++.6.0.9.tbd in Frameworks */,
 				BAE004F41EA8BFC700373085 /* libsqlite3.0.tbd in Frameworks */,
 				BAE004F21EA8BF9900373085 /* OpenGLES.framework in Frameworks */,
@@ -1078,6 +1116,7 @@
 				BAE004E91EA8BF3700373085 /* BaiduMapAPI_Map.framework in Frameworks */,
 				BA48EFED1EA4CCD100999921 /* CoreLocation.framework in Frameworks */,
 				BA48EFEA1EA4CCB600999921 /* BmobSDK.framework in Frameworks */,
+				BA88B3DA1ECBE0DB003C266D /* jpush-ios-3.0.5.a in Frameworks */,
 				BAE004E81EA8BF3700373085 /* BaiduMapAPI_Location.framework in Frameworks */,
 				BAE004ED1EA8BF3700373085 /* libcrypto.a in Frameworks */,
 			);
@@ -1245,6 +1284,12 @@
 		BA48EFEB1EA4CCD100999921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA88B3D21ECBE034003C266D /* libresolv.tbd */,
+				BA88B3D01ECBE022003C266D /* UserNotifications.framework */,
+				BA88B3CE1ECBE013003C266D /* AdSupport.framework */,
+				BA88B3CC1ECBDFF8003C266D /* UIKit.framework */,
+				BA88B3CA1ECBDFEC003C266D /* Foundation.framework */,
+				BA88B3C81ECBDFC8003C266D /* CoreFoundation.framework */,
 				BAE004F51EA8BFE200373085 /* libstdc++.6.0.9.tbd */,
 				BAE004F31EA8BFC700373085 /* libsqlite3.0.tbd */,
 				BAE004F11EA8BF9900373085 /* OpenGLES.framework */,
@@ -1342,6 +1387,31 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BA6CEA8F1ECAE6EE004F13CD /* ScrollViewEmptyData */ = {
+			isa = PBXGroup;
+			children = (
+				BA6CEA931ECAE83B004F13CD /* placeholder_fancy.png */,
+				BA6CEA941ECAE83B004F13CD /* placeholder_fancy@2x.png */,
+				BA6CEA9D1ECAF0A9004F13CD /* UITableView+Gzw.h */,
+				BA6CEA9E1ECAF0A9004F13CD /* UITableView+Gzw.m */,
+				BA6CEA9A1ECAEB34004F13CD /* UICollectionView+Gzw.h */,
+				BA6CEA9B1ECAEB34004F13CD /* UICollectionView+Gzw.m */,
+				BA6CEA901ECAE727004F13CD /* UIScrollView+EmptyDataSet.h */,
+				BA6CEA911ECAE727004F13CD /* UIScrollView+EmptyDataSet.m */,
+			);
+			path = ScrollViewEmptyData;
+			sourceTree = "<group>";
+		};
+		BA88B3D51ECBE0DB003C266D /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				BA88B3D61ECBE0DB003C266D /* jcore-ios-1.1.3.a */,
+				BA88B3D71ECBE0DB003C266D /* jpush-ios-3.0.5.a */,
+				BA88B3D81ECBE0DB003C266D /* JPUSHService.h */,
+			);
+			path = JPush;
+			sourceTree = "<group>";
+		};
 		BA8A983F1EB86E9400017075 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -1404,6 +1474,7 @@
 		BAF3CC991E9C73BF0000C9A9 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				BA88B3D41ECBE048003C266D /* Shopping.entitlements */,
 				BAF3CCD41E9C79C70000C9A9 /* Framework(框架) */,
 				BAF3CCDE1E9C79C70000C9A9 /* Vender(第三方) */,
 				BAF3CCCD1E9C79C70000C9A9 /* Expand(扩展) */,
@@ -1556,6 +1627,7 @@
 				BAF3CDD61E9CA88E0000C9A9 /* RTLabel */,
 				BA288E481EC584F000485621 /* ScottAlertController */,
 				BAF3CDD91E9CA88E0000C9A9 /* Scratchcard */,
+				BA6CEA8F1ECAE6EE004F13CD /* ScrollViewEmptyData */,
 				BAF3CDDC1E9CA88E0000C9A9 /* StackViewController */,
 				BABD07201EA5EB44005675CC /* TimeDownView */,
 				BAF3CDDF1E9CA88E0000C9A9 /* Toast */,
@@ -1629,6 +1701,7 @@
 		BAF3CCDE1E9C79C70000C9A9 /* Vender(第三方) */ = {
 			isa = PBXGroup;
 			children = (
+				BA88B3D51ECBE0DB003C266D /* JPush */,
 				BA6CEA5B1ECA9652004F13CD /* IQKeyboardManager */,
 				BAE004DC1EA8BF3700373085 /* BaiduMapKit */,
 				BA48EFE81EA4CCB600999921 /* Bmob */,
@@ -2543,6 +2616,11 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = G5D635BWZS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BAF3CCAF1E9C73BF0000C9A9 = {
 						CreatedOnToolsVersion = 8.3;
@@ -2650,6 +2728,7 @@
 				BAF3CF491E9CBE3D0000C9A9 /* video_delete_button_highlighted@2x.png in Resources */,
 				BAF3CF5E1E9CCBB10000C9A9 /* Info.plist in Resources */,
 				BAF3CF2A1E9CBE3D0000C9A9 /* compose_guide_check_box_default@2x副本.png in Resources */,
+				BA6CEA971ECAE83B004F13CD /* placeholder_fancy.png in Resources */,
 				BAF3CE1D1E9CA88E0000C9A9 /* rocker_ball@2x.png in Resources */,
 				BA3017F71E9E0CFE00F7C518 /* CouponViewController.xib in Resources */,
 				BA30180C1E9E256600F7C518 /* MyFooterview.xib in Resources */,
@@ -2714,6 +2793,7 @@
 				BAF3CF1A1E9CBE3D0000C9A9 /* camera_flashlight@2x.png in Resources */,
 				BAF3CF231E9CBE3D0000C9A9 /* camera_tag_dot_white@2x.png in Resources */,
 				BAF3CF1B1E9CBE3D0000C9A9 /* camera_flashlight_auto@2x.png in Resources */,
+				BA6CEA981ECAE83B004F13CD /* placeholder_fancy@2x.png in Resources */,
 				BAF3CF651E9CCEB60000C9A9 /* Info.plist in Resources */,
 				BAF3CF3A1E9CBE3D0000C9A9 /* compose_photo_preview_highlighted@2x.png in Resources */,
 				BA9833B41EB327DD0099C86E /* HorizontalScrollTableViewCell.xib in Resources */,
@@ -2895,6 +2975,7 @@
 				BAF3CD501E9CA4F10000C9A9 /* SDImageCache.m in Sources */,
 				BAF3CDE81E9CA88E0000C9A9 /* PayPasswordView.m in Sources */,
 				BAF3CF101E9CBE3D0000C9A9 /* HXTransition.m in Sources */,
+				BA6CEA921ECAE727004F13CD /* UIScrollView+EmptyDataSet.m in Sources */,
 				BA6CEA881ECA9652004F13CD /* IQTextView.m in Sources */,
 				BAF3CF0D1E9CBE3D0000C9A9 /* HXPhotoViewCell.m in Sources */,
 				BAF3CD271E9C88FD0000C9A9 /* UIViewController+Addition.m in Sources */,
@@ -2960,6 +3041,7 @@
 				BAF3CE811E9CB8520000C9A9 /* CLLockLabel.m in Sources */,
 				BA9833A51EB315DE0099C86E /* FoodListViewController.m in Sources */,
 				BAF3CD221E9C88FD0000C9A9 /* UITableViewCell+Addition.m in Sources */,
+				BA6CEA9C1ECAEB34004F13CD /* UICollectionView+Gzw.m in Sources */,
 				A520A2B21EABB84900359DB1 /* EditAddressViewController.m in Sources */,
 				BA8A984A1EB870B500017075 /* UILabel+Fontchange.m in Sources */,
 				BAB580471EC1B7800062F301 /* HorizonItemHFCollectionViewCell.m in Sources */,
@@ -2971,6 +3053,7 @@
 				BA3017CC1E9E0A4200F7C518 /* JVFloatLabeledTextField.m in Sources */,
 				BAF3CD4E1E9CA4F10000C9A9 /* MKAnnotationView+WebCache.m in Sources */,
 				BAF3CD581E9CA4F10000C9A9 /* UIImage+GIF.m in Sources */,
+				BA6CEA9F1ECAF0A9004F13CD /* UITableView+Gzw.m in Sources */,
 				BAF3CF521E9CBE3D0000C9A9 /* UIImage+HXExtension.m in Sources */,
 				BA6CEA851ECA9652004F13CD /* IQUIWindow+Hierarchy.m in Sources */,
 				BAF3CE511E9CB4F70000C9A9 /* AFURLResponseSerialization.m in Sources */,
@@ -3123,6 +3206,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Shopping/Shopping.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G5D635BWZS;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3138,6 +3222,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/BaiduMapKit",
+					"$(PROJECT_DIR)/Shopping/Vender(第三方)/JPush",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xh.shopping;
@@ -3150,6 +3235,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Shopping/Shopping.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G5D635BWZS;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3165,6 +3251,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/BaiduMapKit",
+					"$(PROJECT_DIR)/Shopping/Vender(第三方)/JPush",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xh.shopping;

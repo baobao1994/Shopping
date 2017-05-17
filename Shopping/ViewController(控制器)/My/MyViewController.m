@@ -168,8 +168,8 @@
 
 - (void)pushMyAddressViewController {
     MyAddressViewController *loginVC = [[MyAddressViewController alloc] init];
-    [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
-    [self.navigationController pushViewController:loginVC animated:NO];
+//    [CATransition setAnimationType:@"rippleEffect" duration:0.5 subtype:-1];
+    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 - (void)reloadList {
@@ -217,7 +217,7 @@
 #pragma mark - didSelectBtn
 
 - (void)didSelectChangeUserLogoBtn:(UIButton *)sender {
-    if (UserManagerInstance.userInfo.isRemember) {
+    if (UserManagerInstance.userInfo.userObjectId) {
         HXPhotoViewController *photoVC = [[HXPhotoViewController alloc] init];
         photoVC.delegate = self;
         photoVC.manager = self.manager;

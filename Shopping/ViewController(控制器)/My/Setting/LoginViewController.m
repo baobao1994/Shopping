@@ -14,6 +14,7 @@
 #import "UserInfoModel.h"
 #import "ConstString.h"
 #import "MBProgressHUD+ND.h"
+#import "JPUSHService.h"
 
 @interface LoginViewController ()
 
@@ -70,6 +71,7 @@
                 self.userInfoModel = [[UserInfoModel alloc] initWithDictionary:array[0]];
                 self.userInfoModel.isRemember = self.rememberSwitch.isOn;
                 [UserManagerInstance saveUserInfo:self.userInfoModel];
+                [JPUSHService setAlias:self.userInfoModel.userObjectId callbackSelector:nil object:nil];
             }
         }];
     }

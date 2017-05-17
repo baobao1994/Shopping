@@ -14,6 +14,7 @@
 
 extern NSString * const BaiduMapKey;
 extern NSString * const BmobKey;
+extern NSString * const JPushKey;
 extern NSString * const SMSModelNameKey;
 extern NSString * const SystemTable;
 extern NSString * const UserTable;

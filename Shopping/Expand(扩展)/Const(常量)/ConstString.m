@@ -14,6 +14,7 @@
 
 NSString * const BaiduMapKey = @"W9qfPDQ0PRjNaGdBfI86SXPitQhuHKyt";
 NSString * const BmobKey = @"32fbb0135e919115092c0e0850636a77";
+NSString * const JPushKey = @"ec6d482dd88a50296a01b33e";
 NSString * const SMSModelNameKey = @"shopping";
 NSString * const SystemTable = @"System";
 NSString * const UserTable = @"User";
