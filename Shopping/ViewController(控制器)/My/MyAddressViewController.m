@@ -149,12 +149,14 @@
 }
 
 -(void)loadingData:(BOOL)data {
-    self.tableView.loading = YES;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (!data) {
-            self.tableView.loading = NO;
-        }
-        [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tableView.loading = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!data) {
+                self.tableView.loading = NO;
+            }
+            [self.tableView reloadData];
+        });
     });
 }
 

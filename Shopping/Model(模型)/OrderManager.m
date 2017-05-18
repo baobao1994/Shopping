@@ -8,7 +8,7 @@
 
 #import "OrderManager.h"
 #import "FoodCollecModel.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 #import "ConstString.h"
 
 @implementation OrderManager
@@ -52,24 +52,24 @@
 - (void)addFoodCollecOrder:(FoodCollecModel *)foodCollecModel {
     BOOL isNotExist = YES;
     NSString *foodId = foodCollecModel.foodId;
-    for (OrderModel *orderModel in self.orderList) {
-        NSString *orderModelId = orderModel.foodId;
-        if ([orderModelId isEqualToString:foodId]) {
+    for (CartOrderModel *CartOrderModel in self.orderList) {
+        NSString *CartOrderModelId = CartOrderModel.foodId;
+        if ([CartOrderModelId isEqualToString:foodId]) {
             BOOL isCoupon = foodCollecModel.isCoupon;
-            float foodPrice = [orderModel.foodPrice floatValue];
-            if (isCoupon && orderModel.count < orderModel.couponCount) {
+            float foodPrice = [CartOrderModel.foodPrice floatValue];
+            if (isCoupon && CartOrderModel.count < CartOrderModel.couponCount) {
                 foodPrice += [foodCollecModel.couponPrice floatValue];
             } else {
                 foodPrice += [foodCollecModel.price floatValue];
             }
-            orderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
-            orderModel.count ++;
+            CartOrderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
+            CartOrderModel.count ++;
             isNotExist = NO;
             break;
         }
     }
     if (isNotExist) {
-        OrderModel *order = [[OrderModel alloc] init];
+        CartOrderModel *order = [[CartOrderModel alloc] init];
         order.foodId = foodCollecModel.foodId;
         order.name = foodCollecModel.name;
         order.price = foodCollecModel.price;
@@ -92,19 +92,19 @@
     NSInteger orderCount = -1;
     NSInteger atIndex = 0;
     NSString *foodId = foodCollecModel.foodId;
-    for (OrderModel *orderModel in self.orderList) {
-        NSString *orderModelId = orderModel.foodId;
-        if ([orderModelId isEqualToString:foodId]) {
+    for (CartOrderModel *CartOrderModel in self.orderList) {
+        NSString *CartOrderModelId = CartOrderModel.foodId;
+        if ([CartOrderModelId isEqualToString:foodId]) {
             BOOL isCoupon = foodCollecModel.isCoupon;
-            float foodPrice = [orderModel.foodPrice floatValue];
-            if (isCoupon && orderModel.count <= orderModel.couponCount) {
+            float foodPrice = [CartOrderModel.foodPrice floatValue];
+            if (isCoupon && CartOrderModel.count <= CartOrderModel.couponCount) {
                 foodPrice -= [foodCollecModel.couponPrice floatValue];
             } else {
                 foodPrice -= [foodCollecModel.price floatValue];
             }
-            orderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
-            orderModel.count --;
-            orderCount = orderModel.count;
+            CartOrderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
+            CartOrderModel.count --;
+            orderCount = CartOrderModel.count;
             break;
         }
         atIndex ++;
@@ -118,9 +118,9 @@
 - (void)removeFoodCollecOrder:(FoodCollecModel *)foodCollecModel {
     NSString *foodId = foodCollecModel.foodId;
     for (int i = 0; i < self.orderList.count; i ++) {
-        OrderModel *orderModel = self.orderList[i];
-        NSString *orderModelId = orderModel.foodId;
-        if ([orderModelId isEqualToString:foodId]) {
+        CartOrderModel *CartOrderModel = self.orderList[i];
+        NSString *CartOrderModelId = CartOrderModel.foodId;
+        if ([CartOrderModelId isEqualToString:foodId]) {
             [self.orderList removeObjectAtIndex:i];
             break;
         }
@@ -130,14 +130,14 @@
 
 - (void)changeFoodCollecOrder:(FoodCollecModel *)foodCollecModel Count:(NSInteger)count {
     NSString *foodId = foodCollecModel.foodId;
-    for (OrderModel *orderModel in self.orderList) {
-        NSString *orderModelId = orderModel.foodId;
-        if ([orderModelId isEqualToString:foodId]) {
+    for (CartOrderModel *CartOrderModel in self.orderList) {
+        NSString *CartOrderModelId = CartOrderModel.foodId;
+        if ([CartOrderModelId isEqualToString:foodId]) {
             BOOL isCoupon = foodCollecModel.isCoupon;
-            orderModel.count = count;
+            CartOrderModel.count = count;
             float foodPrice = 0.0;
             if (isCoupon) {
-                if (count > orderModel.couponCount) {
+                if (count > CartOrderModel.couponCount) {
                     foodPrice += [foodCollecModel.couponPrice floatValue] * foodCollecModel.couponCount;
                     count -= foodCollecModel.couponCount;
                 } else {
@@ -148,11 +148,39 @@
             if (count) {
                 foodPrice += [foodCollecModel.price floatValue] * count;
             }
-            orderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
+            CartOrderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
             break;
         }
     }
     [OrderManagerInstance saveOrderList:self.orderList];
+}
+
+- (float)calculatePrice:(NSMutableArray *)orderList {
+    float price = 0.00;
+    float couponPrice = 0;
+    for (CartOrderModel *CartOrderModel in orderList) {
+        price += [CartOrderModel.foodPrice floatValue];
+        if (CartOrderModel.count >= CartOrderModel.couponCount) {
+            couponPrice += [CartOrderModel.couponPrice floatValue] * CartOrderModel.couponCount;
+        } else {
+            couponPrice = [CartOrderModel.couponPrice floatValue];
+        }
+    }
+    return price;
+}
+
+- (float)calculateCouponPrice:(NSMutableArray *)orderList {
+    float price = 0.00;
+    float couponPrice = 0;
+    for (CartOrderModel *CartOrderModel in orderList) {
+        price += [CartOrderModel.foodPrice floatValue];
+        if (CartOrderModel.count >= CartOrderModel.couponCount) {
+            couponPrice += [CartOrderModel.couponPrice floatValue] * CartOrderModel.couponCount;
+        } else {
+            couponPrice = [CartOrderModel.couponPrice floatValue];
+        }
+    }
+    return couponPrice;
 }
 
 #pragma mark - Private Method

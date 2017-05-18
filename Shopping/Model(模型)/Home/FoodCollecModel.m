@@ -8,7 +8,7 @@
 
 #import "FoodCollecModel.h"
 #import "ConstString.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 
 @implementation FoodCollecModel
 
@@ -29,15 +29,15 @@
     return self;
 }
 
-- (id)initWithOrderModel:(OrderModel *)orderModel {
+- (id)initWithCartOrderModel:(CartOrderModel *)CartOrderModel {
     if (self = [super init]) {
-        self.foodId = orderModel.foodId;
-        self.name = orderModel.name;
-        self.imageUrl = orderModel.imageUrl;
-        self.price = orderModel.price;
-        self.isCoupon = orderModel.isCoupon;
-        self.couponPrice = orderModel.couponPrice;
-        self.couponCount = orderModel.couponCount;
+        self.foodId = CartOrderModel.foodId;
+        self.name = CartOrderModel.name;
+        self.imageUrl = CartOrderModel.imageUrl;
+        self.price = CartOrderModel.price;
+        self.isCoupon = CartOrderModel.isCoupon;
+        self.couponPrice = CartOrderModel.couponPrice;
+        self.couponCount = CartOrderModel.couponCount;
     }
     return self;
 }

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class OrderModel;
+@class CartOrderModel;
 
 @interface PayOrderTableViewCell : UITableViewCell
 
-- (void)setContent:(OrderModel *)orderModel;
+- (void)setContent:(CartOrderModel *)CartOrderModel;
 
 @end

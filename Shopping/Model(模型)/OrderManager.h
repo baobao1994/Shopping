@@ -23,5 +23,7 @@
 - (void)removeFoodCollecOrder:(FoodCollecModel *)foodCollecModel;
 
 - (void)changeFoodCollecOrder:(FoodCollecModel *)foodCollecModel Count:(NSInteger)count;
+- (float)calculatePrice:(NSMutableArray *)orderList;
+- (float)calculateCouponPrice:(NSMutableArray *)orderList;
 
 @end

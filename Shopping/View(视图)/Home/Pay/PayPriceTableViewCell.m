@@ -7,7 +7,7 @@
 //
 
 #import "PayPriceTableViewCell.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 
 @interface PayPriceTableViewCell ()
 
@@ -20,24 +20,9 @@
 
 @implementation PayPriceTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
 - (void)setContent:(NSMutableArray *)orderList {
-    float price = 0.00;
-    float couponPrice = 0;
-    for (OrderModel *orderModel in orderList) {
-        price += [orderModel.foodPrice floatValue];
-        if (orderModel.count >= orderModel.couponCount) {
-            couponPrice += [orderModel.couponPrice floatValue] * orderModel.couponCount;
-        } else {
-            couponPrice = [orderModel.couponPrice floatValue];
-        }
-    }
-    self.priceLabel.text = [NSString stringWithFormat:@"一共%.2f元,已优惠%.2f元",price,couponPrice];
-    self.allPriceLabel.text = [NSString stringWithFormat:@"一共%.2f元",price];
+    self.priceLabel.text = [NSString stringWithFormat:@"一共%.2f元,已优惠%.2f元",[OrderManagerInstance calculatePrice:orderList],[OrderManagerInstance calculateCouponPrice:orderList]];
+    self.allPriceLabel.text = [NSString stringWithFormat:@"一共%.2f元",[OrderManagerInstance calculatePrice:orderList]];
 }
 
 @end

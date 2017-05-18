@@ -25,7 +25,9 @@ NSString * const BannerTable = @"Banner";
 NSString * const HomeFoodListTable = @"HomeFoodList";
 NSString * const FoodDetailListTable = @"FoodDetailList";
 NSString * const FoodSecTypeListTable = @"FoodSecTypeList";
+NSString * const OrderTable = @"Order";
 NSString * const ObjectIdKey = @"objectId";
+NSString * const CreatedAtKey = @"createdAt";
 NSString * const SystemServiceTelKey = @"service_tel";
 NSString * const SystemOpenTimeKey = @"open_time";
 NSString * const SystemHomeBottomTipKey = @"home_bottom_tip";
@@ -105,6 +107,9 @@ NSString * const OrderCountKey = @"count";
 NSString * const OrderIsCouponKey = @"is_coupon";
 NSString * const OrderCouponPriceKey = @"coupon_price";
 NSString * const OrderCouponCountKey = @"coupon_count";
+NSString * const OrderIsEvaluateKey = @"is_evaluate";
+NSString * const OrderStatusKey = @"status";
+NSString * const OrderListKey = @"order_list";
 
 #pragma mark - Tips
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class OrderModel;
+@class CartOrderModel;
 
 @interface FoodCollecModel : NSObject
 
@@ -25,6 +25,6 @@
 @property (nonatomic, assign) NSInteger couponCount;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
-- (id)initWithOrderModel:(OrderModel *)orderModel;
+- (id)initWithCartOrderModel:(CartOrderModel *)CartOrderModel;
 
 @end

@@ -10,7 +10,7 @@
 #import "FoodDetailFlowLayout.h"
 #import "FoodDetailCollectionViewCell.h"
 #import "FoodCollecModel.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 #import "QQButton.h"
 #import "Toast.h"
 
@@ -40,8 +40,8 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
         self.orderList = OrderManagerInstance.orderList;
         [self.orderCountButton setDestroyAnimationsBlock:^{
             FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
-            for (OrderModel *orderModel in self.orderList) {
-                if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {
+            for (CartOrderModel *CartOrderModel in self.orderList) {
+                if ([foodCollecModel.foodId isEqualToString:CartOrderModel.foodId]) {
                     [OrderManagerInstance removeFoodCollecOrder:foodCollecModel];
                     self.orderList = OrderManagerInstance.orderList;
                     [self.orderCountButton setTitle:@"0" forState:UIControlStateNormal];
@@ -89,9 +89,9 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
 - (IBAction)didSelectBuyBtn:(UIButton *)sender {
     FoodCollecModel *foodCollecModel = self.dateSource[self.currentIndex];
     NSString *orderCount = @"0";
-    for (OrderModel *orderModel in self.orderList) {
-        if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {
-            orderCount = [NSString stringWithFormat:@"%ld",orderModel.count];
+    for (CartOrderModel *CartOrderModel in self.orderList) {
+        if ([foodCollecModel.foodId isEqualToString:CartOrderModel.foodId]) {
+            orderCount = [NSString stringWithFormat:@"%ld",CartOrderModel.count];
             break;
         }
     }
@@ -107,9 +107,9 @@ NSString *const FoodDetailCollectionViewCellIdentifier = @"FoodDetailCollectionV
     self.priceLabel.text = [NSString stringWithFormat:@"价格:%@元",foodCollecModel.price];
     self.sellCountLabel.text = [NSString stringWithFormat:@"销售数量:%@",foodCollecModel.sellCount];
     NSString *orderCount = @"0";
-    for (OrderModel *orderModel in self.orderList) {
-        if ([foodCollecModel.foodId isEqualToString:orderModel.foodId]) {
-            orderCount = [NSString stringWithFormat:@"%ld",orderModel.count];
+    for (CartOrderModel *CartOrderModel in self.orderList) {
+        if ([foodCollecModel.foodId isEqualToString:CartOrderModel.foodId]) {
+            orderCount = [NSString stringWithFormat:@"%ld",CartOrderModel.count];
             break;
         }
     }

@@ -8,7 +8,7 @@
 
 #import "ShoopingCartTableViewCell.h"
 #import "UIImageView+WebCache.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 
 @interface ShoopingCartTableViewCell ()
 
@@ -22,22 +22,22 @@
 
 @implementation ShoopingCartTableViewCell
 
-- (void)setContent:(OrderModel *)orderModel {
-    self.nameLabel.text = orderModel.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"单价 %@元",orderModel.price];
-    if (orderModel.isCoupon) {
+- (void)setContent:(CartOrderModel *)CartOrderModel {
+    self.nameLabel.text = CartOrderModel.name;
+    self.priceLabel.text = [NSString stringWithFormat:@"单价 %@元",CartOrderModel.price];
+    if (CartOrderModel.isCoupon) {
         float couponPrice = 0;
-        if (orderModel.count >= orderModel.couponCount) {
-            couponPrice += [orderModel.couponPrice floatValue] * orderModel.couponCount;
+        if (CartOrderModel.count >= CartOrderModel.couponCount) {
+            couponPrice += [CartOrderModel.couponPrice floatValue] * CartOrderModel.couponCount;
         } else {
-            couponPrice = [orderModel.couponPrice floatValue];
+            couponPrice = [CartOrderModel.couponPrice floatValue];
         }
         self.couponPriceLabel.text = [NSString stringWithFormat:@"该单品优惠%.2f元",couponPrice];
     } else {
         self.couponPriceLabel.text = @"该单品无优惠";
     }
-    self.foodPriceLabel.text = [NSString stringWithFormat:@"一共%@元",orderModel.foodPrice];
-    self.foodCountTF.text = [NSString stringWithFormat:@"%ld",orderModel.count];
+    self.foodPriceLabel.text = [NSString stringWithFormat:@"一共%@元",CartOrderModel.foodPrice];
+    self.foodCountTF.text = [NSString stringWithFormat:@"%ld",CartOrderModel.count];
 }
 
 @end

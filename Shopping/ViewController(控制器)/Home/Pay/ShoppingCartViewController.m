@@ -9,7 +9,7 @@
 #import "ShoppingCartViewController.h"
 #import "UITableViewCell+Addition.h"
 #import "ShoopingCartTableViewCell.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 #import "FoodCollecModel.h"
 #import "UIViewController+Pop.h"
 #import "ScottAlertController.h"
@@ -108,7 +108,7 @@
         textField.text = @"1";
         return NO;
     } else {
-        FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithOrderModel:self.orderList[textField.tag]];
+        FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithCartOrderModel:self.orderList[textField.tag]];
         [OrderManagerInstance changeFoodCollecOrder:foodCollecModel Count:[textField.text integerValue]];
         self.orderList = OrderManagerInstance.orderList;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -122,8 +122,8 @@
 #pragma mark - Private Method
 
 - (void)didSelectAddBtn:(UIButton *)sender {
-    OrderModel *orderModel = self.orderList[sender.tag];
-    FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithOrderModel:orderModel];
+    CartOrderModel *CartOrderModel = self.orderList[sender.tag];
+    FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithCartOrderModel:CartOrderModel];
     [OrderManagerInstance addFoodCollecOrder:foodCollecModel];
     self.orderList = OrderManagerInstance.orderList;
     [self.tableView reloadData];
@@ -131,9 +131,9 @@
 }
 
 - (void)didSelectCutBtn:(UIButton *)sender {
-    OrderModel *orderModel = self.orderList[sender.tag];
-    FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithOrderModel:orderModel];
-    if (orderModel.count == 1) {
+    CartOrderModel *CartOrderModel = self.orderList[sender.tag];
+    FoodCollecModel *foodCollecModel = [[FoodCollecModel alloc] initWithCartOrderModel:CartOrderModel];
+    if (CartOrderModel.count == 1) {
         ScottAlertView *alertView = [ScottAlertView alertViewWithTitle:[NSString stringWithFormat:@"%@",foodCollecModel.name] message:@"仅剩一件,是否清空?"];
         [alertView addAction:[ScottAlertAction actionWithTitle:@"取消" style:ScottAlertActionStyleCancel handler:^(ScottAlertAction *action) {
         }]];
@@ -156,17 +156,7 @@
 }
 
 - (void)culculateOrder {
-    float price = 0.00;
-    float couponPrice = 0;
-    for (OrderModel *orderModel in self.orderList) {
-        price += [orderModel.foodPrice floatValue];
-        if (orderModel.count >= orderModel.couponCount) {
-            couponPrice += [orderModel.couponPrice floatValue] * orderModel.couponCount;
-        } else {
-            couponPrice = [orderModel.couponPrice floatValue];
-        }
-    }
-    self.orderPriceLabel.text = [NSString stringWithFormat:@"一共需要支付%.2f元,已优惠%.2f元",price,couponPrice];
+    self.orderPriceLabel.text = [NSString stringWithFormat:@"一共需要支付%.2f元,已优惠%.2f元",[OrderManagerInstance calculatePrice:self.orderList],[OrderManagerInstance calculateCouponPrice:self.orderList]];
 }
 
 - (IBAction)didSelectBuyBtn:(UIButton *)sender {

@@ -97,6 +97,8 @@ typedef enum{
     if (_refreshState != RefreshStateDefault) {
         self.refreshState = RefreshStateDefault;
     }
+    _normalImageView.frame = CGRectMake(0, 0, 40, 40);
+    _normalImageView.center = CGPointMake(self.center.x, -_normalImageView.frame.size.height / 2 - 10);
 }
 
 #pragma mark - PrivateMethod

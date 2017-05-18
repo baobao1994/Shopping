@@ -7,17 +7,21 @@
 //
 
 #import "OrderViewController.h"
-#import "OrderModel.h"
+#import "CartOrderModel.h"
 #import "FoodCollecModel.h"
+#import "OrderTableViewCell.h"
+#import "OrderModel.h"
+#import "PullToRefreshTableView.h"
+#import "UITableView+Gzw.h"
+#import "UITableViewCell+Addition.h"
+#import "ConstString.h"
+#import "UserInfoModel.h"
+#import "LoginViewController.h"
 
-@interface OrderViewController ()
+@interface OrderViewController ()<UITableViewDelegate,UITableViewDataSource,PullToRefreshTableViewDelegate>
 
-@property (nonatomic, strong) NSMutableArray *orderArr;
-@property (nonatomic, strong) FoodCollecModel *foodCollecModel1;
-@property (nonatomic, strong) FoodCollecModel *foodCollecModel2;
-@property (nonatomic, strong) FoodCollecModel *foodCollecModel3;
-@property (nonatomic, strong) FoodCollecModel *foodCollecModel4;
-@property (nonatomic, strong) FoodCollecModel *foodCollecModel5;
+@property (weak, nonatomic) IBOutlet PullToRefreshTableView *tableView;
+@property (nonatomic, strong) NSMutableArray *orderList;
 
 @end
 
@@ -25,166 +29,141 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUp];
-}
-- (IBAction)nslogBtn:(UIButton *)sender {
-    float price = 0;
-    for (OrderModel *orderModel in self.orderArr) {
-        price += [orderModel.foodPrice floatValue];
-    }
-    NSLog(@"price = %.2f",price);
-}
-
-- (void)addOrder:(FoodCollecModel *)foodCollecModel {
-    BOOL isNotExist = YES;
-    NSString *foodId = foodCollecModel.foodId;
-    for (OrderModel *orderModel in self.orderArr) {
-        NSString *orderModelId = orderModel.foodId;
-        if ([orderModelId isEqualToString:foodId]) {
-            BOOL isCoupon = foodCollecModel.isCoupon;
-            float foodPrice = [orderModel.foodPrice floatValue];
-            if (isCoupon && orderModel.count < orderModel.couponCount) {
-                foodPrice += [foodCollecModel.couponPrice floatValue];
-            } else {
-                foodPrice += [foodCollecModel.price floatValue];
-            }
-            orderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
-            orderModel.count ++;
-            isNotExist = NO;
-            break;
-        }
-    }
-    if (isNotExist) {
-        OrderModel *order = [[OrderModel alloc] init];
-        order.foodId = foodCollecModel.foodId;
-        order.name = foodCollecModel.name;
-        order.price = foodCollecModel.price;
-        order.count = 1;
-        order.isCoupon = foodCollecModel.isCoupon;
-        if (order.isCoupon) {
-            order.foodPrice = foodCollecModel.couponPrice;
+    self.orderList = [[NSMutableArray alloc] init];
+    _tableView.customTableDelegate = self;
+    [_tableView setRefreshCategory:DropdownRefresh];
+    _tableView.loading = YES;
+    [_tableView gzwLoading:^{
+        if ([_tableView.buttonText isEqualToString:@"点击登录"]) {
+            [self pushLoginViewController];
         } else {
-            order.foodPrice = foodCollecModel.price;
+            self.tabBarController.selectedIndex = 0;
         }
-        order.couponPrice = foodCollecModel.couponPrice;
-        order.couponCount = foodCollecModel.couponCount;
-        order.imageUrl = foodCollecModel.imageUrl;
-        [self.orderArr addObject:order];
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (UserManagerInstance.userInfo.userObjectId) {
+        [self getHeaderDataSoure];
+    } else {
+        _tableView.descriptionText = @"请登录";
+        _tableView.buttonText = @"点击登录";
+        [self loadingData:NO];
     }
 }
 
-- (void)cutOrder:(FoodCollecModel *)foodCollecModel {
-    NSInteger orderCount = -1;
-    NSInteger atIndex = 0;
-    NSString *foodId = foodCollecModel.foodId;
-    for (OrderModel *orderModel in self.orderArr) {
-        NSString *orderModelId = orderModel.foodId;
-        if ([orderModelId isEqualToString:foodId]) {
-            BOOL isCoupon = foodCollecModel.isCoupon;
-            float foodPrice = [orderModel.foodPrice floatValue];
-            if (isCoupon && orderModel.count <= orderModel.couponCount) {
-                foodPrice -= [foodCollecModel.couponPrice floatValue];
+#pragma mark - PullToRefreshTableViewDelegate method
+
+- (void)getHeaderDataSoure {
+    [self reloadList];
+}
+
+#pragma mark - UITableView Delegate method
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.tableView customTableViewWillBeginDragging:scrollView];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self.tableView customTableViewDidScroll:scrollView];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.tableView customTableViewDidEndDragging:scrollView];
+}
+
+#pragma mark - Table view delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 67.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 10)];
+    headerView.backgroundColor = UIColorFromHexColor(0XFFFFFF);
+    return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, UIScreenWidth, 0.01)];
+    footerView.backgroundColor = UIColorFromHexColor(0XFFFFFF);
+    return footerView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.orderList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    OrderTableViewCell * cell = [OrderTableViewCell dequeInTable:tableView];
+    if (!cell) {
+        cell = [OrderTableViewCell loadFromNib];
+    }
+    [cell setContent:self.orderList[indexPath.row]];
+    return cell;
+}
+
+#pragma mark - Private Method
+
+- (void)reloadList {
+    BmobQuery *orderQuery = [BmobQuery queryWithClassName:OrderTable];
+    orderQuery.limit = 5;//每组5最多5条数据
+    orderQuery.skip = 0;//第一组
+    [orderQuery orderByAscending:CreatedAtKey];
+    [orderQuery whereKey:UserObjectIdKey equalTo:UserManagerInstance.userInfo.userObjectId];
+    [orderQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (!error) {
+            [_tableView doneLoadingTableViewData];
+            [self.orderList removeAllObjects];
+            if (array.count) {
+                for (BmobObject *obj in array) {
+                    OrderModel *orderModel = [[OrderModel alloc] initWithDictionary:(NSDictionary *)obj];
+                    [self.orderList addObject:orderModel];
+                }
+                [self loadingData:YES];
             } else {
-                foodPrice -= [foodCollecModel.price floatValue];
+                _tableView.descriptionText = @"没有订单";
+                _tableView.buttonText = @"点击购买";
+                [self loadingData:NO];
             }
-            orderModel.foodPrice = [NSString stringWithFormat:@"%.2f",foodPrice];
-            orderModel.count --;
-            orderCount = orderModel.count;
-            break;
         }
-        atIndex ++;
-    }
-    if (orderCount == 0) {
-        [self.orderArr removeObjectAtIndex:atIndex];
-    }
+    }];
 }
 
-- (IBAction)addOrderBtn:(UIButton *)sender {
-    switch (sender.tag) {
-        case 1:
-            [self addOrder:self.foodCollecModel1];
-            break;
-        case 2:
-            [self addOrder:self.foodCollecModel2];
-            break;
-        case 3:
-            [self addOrder:self.foodCollecModel3];
-            break;
-        case 4:
-            [self addOrder:self.foodCollecModel4];
-            break;
-        case 5:
-            [self addOrder:self.foodCollecModel5];
-            break;
-        default:
-            break;
-    }
+-(void)loadingData:(BOOL)data {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tableView.loading = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!data) {
+                self.tableView.loading = NO;
+            }
+            [self.tableView reloadData];
+        });
+    });
 }
 
-- (IBAction)cutOrderBtn:(UIButton *)sender {
-    switch (sender.tag) {
-        case 1:
-            [self cutOrder:self.foodCollecModel1];
-            break;
-        case 2:
-            [self cutOrder:self.foodCollecModel2];
-            break;
-        case 3:
-            [self cutOrder:self.foodCollecModel3];
-            break;
-        case 4:
-            [self cutOrder:self.foodCollecModel4];
-            break;
-        case 5:
-            [self cutOrder:self.foodCollecModel5];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)setUp {
-    self.orderArr = [[NSMutableArray alloc] init];
-    
-    self.foodCollecModel1 = [[FoodCollecModel alloc] init];
-    self.foodCollecModel1.foodId = @"1001";
-    self.foodCollecModel1.name = @"食物1";
-    self.foodCollecModel1.price = @"10";
-    self.foodCollecModel1.isCoupon = YES;
-    self.foodCollecModel1.couponPrice = @"5";
-    self.foodCollecModel1.couponCount = 1;
-
-    self.foodCollecModel2 = [[FoodCollecModel alloc] init];
-    self.foodCollecModel2.foodId = @"1002";
-    self.foodCollecModel2.name = @"食物2";
-    self.foodCollecModel2.price = @"20";
-    self.foodCollecModel2.isCoupon = NO;
-    self.foodCollecModel2.couponPrice = @"8";
-    self.foodCollecModel2.couponCount = 1;
-    
-    self.foodCollecModel3 = [[FoodCollecModel alloc] init];
-    self.foodCollecModel3.foodId = @"1003";
-    self.foodCollecModel3.name = @"食物3";
-    self.foodCollecModel3.price = @"30";
-    self.foodCollecModel3.isCoupon = YES;
-    self.foodCollecModel3.couponPrice = @"8";
-    self.foodCollecModel3.couponCount = 2;
-    
-    self.foodCollecModel4 = [[FoodCollecModel alloc] init];
-    self.foodCollecModel4.foodId = @"1004";
-    self.foodCollecModel4.name = @"食物4";
-    self.foodCollecModel4.price = @"40";
-    self.foodCollecModel4.isCoupon = YES;
-    self.foodCollecModel4.couponPrice = @"10";
-    self.foodCollecModel4.couponCount = 1;
-    
-    self.foodCollecModel5 = [[FoodCollecModel alloc] init];
-    self.foodCollecModel5.foodId = @"1005";
-    self.foodCollecModel5.name = @"食物5";
-    self.foodCollecModel5.price = @"50";
-    self.foodCollecModel5.isCoupon = NO;
-    self.foodCollecModel5.couponPrice = @"8";
-    self.foodCollecModel5.couponCount = 1;
+- (void)pushLoginViewController {
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:loginVC animated:YES];
 }
 
 @end

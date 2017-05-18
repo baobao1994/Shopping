@@ -44,16 +44,6 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
     }];
 }
 
--(void)loadingData:(BOOL)data {
-    self.collectionView.loading = YES;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (!data) {
-            self.collectionView.loading = NO;
-        }
-        [self.collectionView reloadData];
-    });
-}
-
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -208,6 +198,18 @@ NSString *const HomeFooterCollectionReusableViewIdentifier = @"HomeFooterCollect
         [self.collectionView doneLoadingTableViewData];
         [self.collectionView reloadData];
     }
+}
+
+-(void)loadingData:(BOOL)data {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.collectionView.loading = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (!data) {
+                self.collectionView.loading = NO;
+            }
+            [self.collectionView reloadData];
+        });
+    });
 }
 
 @end

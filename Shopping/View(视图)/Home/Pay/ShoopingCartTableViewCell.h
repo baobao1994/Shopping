@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class OrderModel;
+@class CartOrderModel;
 
 @interface ShoopingCartTableViewCell : UITableViewCell
 
@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UITextField *foodCountTF;
 
-- (void)setContent:(OrderModel *)orderModel;
+- (void)setContent:(CartOrderModel *)CartOrderModel;
 
 @end
