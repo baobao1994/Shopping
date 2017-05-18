@@ -1,5 +1,5 @@
 //
-//  OrderModel.h
+//  CartCartOrderModel.h
 //  Shopping
 //
 //  Created by 郭伟文 on 2017/5/11.
@@ -23,7 +23,6 @@
 //@property (nonatomic, assign) float sendPrice;//配送费
 //@property (nonatomic, assign) BOOL isUseCoupon;//是否使用优惠券
 //@property (nonatomic, copy) NSString *couponName;//优惠券名称
-
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 
