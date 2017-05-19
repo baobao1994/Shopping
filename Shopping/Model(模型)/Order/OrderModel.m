@@ -9,13 +9,14 @@
 #import "OrderModel.h"
 #import "ConstString.h"
 #import "CartOrderModel.h"
+#import "AddressModel.h"
 
 @implementation OrderModel
 
 - (id)initWithDictionary:(NSDictionary *)dic {
     if (self = [super init]) {
         self.objectId = [dic objectForKey:ObjectIdKey];
-        self.is_evaluate = [[dic objectForKey:OrderIsEvaluateKey] boolValue];
+        self.isEvaluate = [[dic objectForKey:OrderIsEvaluateKey] boolValue];
         self.status = [dic objectForKey:OrderStatusKey];
         self.userId = [dic objectForKey:UserObjectIdKey];
         self.price = [dic objectForKey:OrderPriceKey];
@@ -25,6 +26,9 @@
             CartOrderModel *cartOrderInfo = [[CartOrderModel alloc] initWithDictionary:cartOrderDic];
             [self.orderList addObject:cartOrderInfo];
         }
+        self.isInTheShop = [[dic objectForKey:OrderIsIntheShopKey] boolValue];
+        self.address = [[AddressModel alloc] initWithDictionary:[dic objectForKey:OrderAddressKey]];
+        self.sendPrice = [dic objectForKey:OrderSendPriceKey];
     }
     return self;
 }

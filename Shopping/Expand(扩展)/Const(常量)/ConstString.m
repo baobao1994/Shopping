@@ -32,6 +32,9 @@ NSString * const SystemServiceTelKey = @"service_tel";
 NSString * const SystemOpenTimeKey = @"open_time";
 NSString * const SystemHomeBottomTipKey = @"home_bottom_tip";
 NSString * const SystemIsOpenKey = @"is_open";
+NSString * const SystemSendFreeDistanceKey = @"send_free_distance";
+NSString * const SystemLimitSendPriceKey = @"limit_send_price";
+NSString * const SystemBeginSendPriceKey = @"begin_send_price";
 NSString * const CustomFontName = @"FZLBJW--GB1-0";
 
 #pragma mark - UserInfo
@@ -110,6 +113,9 @@ NSString * const OrderCouponCountKey = @"coupon_count";
 NSString * const OrderIsEvaluateKey = @"is_evaluate";
 NSString * const OrderStatusKey = @"status";
 NSString * const OrderListKey = @"order_list";
+NSString * const OrderIsIntheShopKey = @"is_in_the_shop";
+NSString * const OrderSendPriceKey = @"send_price";
+NSString * const OrderAddressKey = @"address";
 
 #pragma mark - Tips
 

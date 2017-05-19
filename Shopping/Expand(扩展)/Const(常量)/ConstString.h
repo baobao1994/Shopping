@@ -32,6 +32,9 @@ extern NSString * const SystemServiceTelKey;
 extern NSString * const SystemOpenTimeKey;
 extern NSString * const SystemHomeBottomTipKey;
 extern NSString * const SystemIsOpenKey;
+extern NSString * const SystemSendFreeDistanceKey;
+extern NSString * const SystemLimitSendPriceKey;
+extern NSString * const SystemBeginSendPriceKey;
 extern NSString * const CustomFontName;
 
 #pragma mark - UserInfo
@@ -110,6 +113,9 @@ extern NSString * const OrderCouponCountKey;
 extern NSString * const OrderIsEvaluateKey;
 extern NSString * const OrderStatusKey;
 extern NSString * const OrderListKey;
+extern NSString * const OrderIsIntheShopKey;
+extern NSString * const OrderSendPriceKey;
+extern NSString * const OrderAddressKey;
 
 #pragma mark - Tips
 

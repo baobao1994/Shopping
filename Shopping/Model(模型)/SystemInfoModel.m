@@ -17,6 +17,11 @@
         self.openTime = [dic objectForKey:SystemOpenTimeKey];
         self.homeBottomTip = [dic objectForKey:SystemHomeBottomTipKey];
         self.isOpen = [[dic objectForKey:SystemIsOpenKey] boolValue];
+        self.latitude = [dic objectForKey:AddressLatitudeKey];
+        self.longitude = [dic objectForKey:AddressLongitudeKey];
+        self.sendFreeDistance = [dic objectForKey:SystemSendFreeDistanceKey];
+        self.limitSendPrice = [dic objectForKey:SystemLimitSendPriceKey];
+        self.beginSendPrice = [dic objectForKey:SystemBeginSendPriceKey];
     }
     return self;
 }
@@ -32,6 +37,17 @@
         [aCoder encodeObject:self.homeBottomTip forKey:SystemHomeBottomTipKey];
     }
     [aCoder encodeObject:[NSNumber numberWithBool:self.isOpen] forKey:SystemIsOpenKey];
+    [aCoder encodeObject:self.latitude forKey:AddressLatitudeKey];
+    [aCoder encodeObject:self.longitude forKey:AddressLongitudeKey];
+    if (!isEmptyString(self.sendFreeDistance)) {
+        [aCoder encodeObject:self.sendFreeDistance forKey:SystemSendFreeDistanceKey];
+    }
+    if (!isEmptyString(self.limitSendPrice)) {
+        [aCoder encodeObject:self.limitSendPrice forKey:SystemLimitSendPriceKey];
+    }
+    if (!isEmptyString(self.beginSendPrice)) {
+        [aCoder encodeObject:self.beginSendPrice forKey:SystemBeginSendPriceKey];
+    }
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -40,6 +56,11 @@
         self.openTime = [aDecoder decodeObjectForKey:SystemOpenTimeKey];
         self.homeBottomTip = [aDecoder decodeObjectForKey:SystemHomeBottomTipKey];
         self.isOpen = [[aDecoder decodeObjectForKey:SystemIsOpenKey] boolValue];
+        self.latitude = [aDecoder decodeObjectForKey:AddressLatitudeKey];
+        self.longitude = [aDecoder decodeObjectForKey:AddressLongitudeKey];
+        self.sendFreeDistance = [aDecoder decodeObjectForKey:SystemSendFreeDistanceKey];
+        self.limitSendPrice = [aDecoder decodeObjectForKey:SystemLimitSendPriceKey];
+        self.beginSendPrice = [aDecoder decodeObjectForKey:SystemBeginSendPriceKey];
     }
     return self;
 }

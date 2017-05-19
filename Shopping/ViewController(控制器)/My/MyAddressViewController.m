@@ -135,8 +135,7 @@
                     _tableView.buttonText = @"添加地址";
                     [self loadingData:NO];
                 } else {
-                    _tableView.descriptionText = @"没有数据！您可以尝试重新获取";
-                    _tableView.buttonText = @"再次刷新";
+                    [self loadingData:YES];
                     [self.tableView reloadData];
                 }
             });

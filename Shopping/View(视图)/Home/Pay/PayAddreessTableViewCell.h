@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *outTheShopButton;
 @property (weak, nonatomic) IBOutlet UIButton *changeAddressButton;
 
-- (void)setContent:(AddressModel *)addressModel;
+- (void)setContent:(AddressModel *)addressModel sendPrice:(NSString *)sendPrice;
 
 @end

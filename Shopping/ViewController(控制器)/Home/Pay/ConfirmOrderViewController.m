@@ -20,6 +20,8 @@
 #import "GetNSDictionary.h"
 #import "LoginViewController.h"
 #import "Toast.h"
+#import "BaiduMapManager.h"
+#import "SystemInfoModel.h"
 
 @interface ConfirmOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -136,7 +138,10 @@
                 ((PayAddreessTableViewCell *)cell).inTheShopButton.selected = NO;
                 ((PayAddreessTableViewCell *)cell).outTheShopButton.selected = YES;
             }
-            [((PayAddreessTableViewCell *)cell) setContent:self.addressModel];
+            if (self.addressModel) {
+                [((PayAddreessTableViewCell *)cell).changeAddressButton setTitle:@"" forState:UIControlStateNormal];
+            }
+            [((PayAddreessTableViewCell *)cell) setContent:self.addressModel sendPrice:[self sendPrice]];
             break;
         case 2:
             cell = [PayCouponTableViewCell dequeInTable:tableView];
@@ -149,7 +154,7 @@
             if (!cell) {
                 cell = [PayPriceTableViewCell loadFromNib];
             }
-            [((PayPriceTableViewCell *)cell) setContent:self.orderList];
+            [((PayPriceTableViewCell *)cell) setContent:self.orderList sendPrice:[self sendPrice]];
             break;
         default:
             break;
@@ -218,6 +223,11 @@
             NSDictionary *dic = [GetNSDictionary getObjectData:cartOrderModel];
             [orderList addObject:dic];
         }
+        [orderQuery setObject:[NSNumber numberWithBool:self.isInTheShopEat] forKey:OrderIsIntheShopKey];
+        if (!self.isInTheShopEat) {
+            [orderQuery setObject:[GetNSDictionary getObjectData:self.addressModel] forKey:OrderAddressKey];
+        }
+        [orderQuery setObject:[self sendPrice] forKey:OrderSendPriceKey];
         [orderQuery setObject:orderList forKey:OrderListKey];
         [orderQuery saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
             if (!error) {
@@ -244,6 +254,15 @@
             
         }];
     }
+}
+
+- (NSString *)sendPrice {
+    double distance = [BaiduMapManager getDistanceFromFirstCoor:CLLocationCoordinate2DMake([UserManagerInstance.systemInfo.latitude doubleValue], [UserManagerInstance.systemInfo.longitude doubleValue]) ToSecondPoint:CLLocationCoordinate2DMake([self.addressModel.latitude doubleValue], [self.addressModel.longitude doubleValue])];
+    NSString *sendPrice = @"配送费:0元";
+    if (distance > [UserManagerInstance.systemInfo.sendFreeDistance integerValue] && !self.isInTheShopEat) {
+        sendPrice = [NSString stringWithFormat:@"配送费:%ld元",((int)distance / 1000) * [UserManagerInstance.systemInfo.limitSendPrice integerValue] + [UserManagerInstance.systemInfo.beginSendPrice integerValue]];
+    }
+    return sendPrice;
 }
 
 - (void)pushLoginViewController {

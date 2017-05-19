@@ -14,17 +14,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *telLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *sendPriceLabel;
 
 @end
 
 @implementation PayAddreessTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setContent:(AddressModel *)addressModel {
+- (void)setContent:(AddressModel *)addressModel sendPrice:(NSString *)sendPrice {
     if (addressModel) {
         NSString *sex = @"女士";
         if (addressModel.sex) {
@@ -33,6 +29,7 @@
         self.nameLabel.text = [NSString stringWithFormat:@"%@ (%@)",addressModel.name,sex];
         self.telLabel.text = addressModel.telephone;
         self.addressLabel.text = [NSString stringWithFormat:@"地址:%@%@",addressModel.detailAddress,addressModel.address];
+        self.sendPriceLabel.text = sendPrice;
     }
 }
 

@@ -10,6 +10,6 @@
 
 @interface PayPriceTableViewCell : UITableViewCell
 
-- (void)setContent:(NSMutableArray *)orderList;
+- (void)setContent:(NSMutableArray *)orderList sendPrice:(NSString *)sendPrice;
 
 @end

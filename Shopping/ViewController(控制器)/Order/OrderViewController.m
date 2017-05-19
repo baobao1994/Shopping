@@ -128,7 +128,7 @@
     BmobQuery *orderQuery = [BmobQuery queryWithClassName:OrderTable];
     orderQuery.limit = 5;//每组5最多5条数据
     orderQuery.skip = 0;//第一组
-    [orderQuery orderByAscending:CreatedAtKey];
+    [orderQuery orderByDescending:CreatedAtKey];
     [orderQuery whereKey:UserObjectIdKey equalTo:UserManagerInstance.userInfo.userObjectId];
     [orderQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (!error) {

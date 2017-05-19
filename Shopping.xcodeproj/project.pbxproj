@@ -3245,6 +3245,7 @@
 				CODE_SIGN_ENTITLEMENTS = Shopping/Shopping.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G5D635BWZS;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks/**",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",
@@ -3274,6 +3275,7 @@
 				CODE_SIGN_ENTITLEMENTS = Shopping/Shopping.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G5D635BWZS;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks/**",
 					"$(PROJECT_DIR)/Shopping/Vender(第三方)/Bmob",

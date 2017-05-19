@@ -20,9 +20,10 @@
 
 @implementation PayPriceTableViewCell
 
-- (void)setContent:(NSMutableArray *)orderList {
-    self.priceLabel.text = [NSString stringWithFormat:@"一共%.2f元,已优惠%.2f元",[OrderManagerInstance calculatePrice:orderList],[OrderManagerInstance calculateCouponPrice:orderList]];
-    self.allPriceLabel.text = [NSString stringWithFormat:@"一共%.2f元",[OrderManagerInstance calculatePrice:orderList]];
+- (void)setContent:(NSMutableArray *)orderList sendPrice:(NSString *)sendPrice {
+    self.sendPriceLabel.text = sendPrice;
+    self.priceLabel.text = [NSString stringWithFormat:@"订单总额一共%.2f元,已优惠%.2f元",[OrderManagerInstance calculatePrice:orderList],[OrderManagerInstance calculateCouponPrice:orderList]];
+    self.allPriceLabel.text = [NSString stringWithFormat:@"需支付%.2f元",[OrderManagerInstance calculatePrice:orderList]];
 }
 
 @end

@@ -14,6 +14,11 @@
 @property (nonatomic, copy) NSString *openTime;
 @property (nonatomic, copy) NSString *homeBottomTip;
 @property (nonatomic, assign) BOOL isOpen;
+@property (nonatomic, copy) NSNumber *latitude;
+@property (nonatomic, copy) NSNumber *longitude;
+@property (nonatomic, copy) NSString *sendFreeDistance;
+@property (nonatomic, copy) NSString *limitSendPrice;
+@property (nonatomic, copy) NSString *beginSendPrice;
 
 - (id)initWithDictionary:(NSDictionary *)dic;
 
